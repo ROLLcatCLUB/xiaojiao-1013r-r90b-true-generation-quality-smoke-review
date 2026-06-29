@@ -1,0 +1,90 @@
+{
+  "round": "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1",
+  "substage": "provider_smoke_same_targets",
+  "generated_at": "2026-06-30T03:39:24",
+  "result": "PASS",
+  "raw_provider_json_parse_ok": true,
+  "strict_provider_raw_validation": {
+    "result": "PASS",
+    "details": {
+      "candidate_count": 4,
+      "candidate_results": [
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.teacher_probe_question",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_probe_question"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.student_observation",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_observation"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.visual_language_focus",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.visual_language_focus"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.success_criteria",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.success_criteria"
+          }
+        }
+      ]
+    }
+  },
+  "quality_smoke": {
+    "result": "BASIC_USABLE",
+    "passed_count": 4,
+    "total": 4,
+    "checks": [
+      {
+        "dimension": "teacher_probe_question",
+        "passed": true,
+        "text": "请指出这片色块里，色彩是从哪里浅、往哪里深，又是怎样从这一色过渡到另一色的？"
+      },
+      {
+        "dimension": "student_observation",
+        "passed": true,
+        "text": "用笔圈出端色与中间过渡带，并口述色相与明度由浅到深的变化方向。"
+      },
+      {
+        "dimension": "visual_language_focus",
+        "passed": true,
+        "text": "聚焦明度阶梯与色相过渡的层次关系，识别端色、中间色与过渡方向。"
+      },
+      {
+        "dimension": "success_criteria",
+        "passed": true,
+        "text": "能圈出至少三处层次清晰的过渡带，并说明明度或色相的渐变方向。"
+      }
+    ]
+  },
+  "provider_meta": {
+    "provider": "openai_compatible",
+    "model": "MiniMax-M3",
+    "base_url": "https://api.minimaxi.com/v1",
+    "credential_source": "env",
+    "reasoning_split": false,
+    "latency_ms": 12303
+  },
+  "scope": {
+    "provider_runtime_connected": true,
+    "r21_modified": false,
+    "formal_apply_allowed": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "new_fields_added": false,
+    "full_lesson_generation": false,
+    "salvage_used": false
+  },
+  "next_recommended_round": "1013R_R91_MULTI_STEP_CLASSROOM_FLOW_SMOKE"
+}
