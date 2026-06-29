@@ -1,0 +1,2373 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1013R R88 字段生成质量静态验证页 · 当前回填</title>
+  <style>
+    :root {
+      --ink: #1f2f2b;
+      --muted: #60736c;
+      --green: #2d7f72;
+      --green-dark: #1b5d52;
+      --line: #d9e7df;
+      --paper: #fffdf7;
+      --warm: #fff6e8;
+      --orange: #c97519;
+      --blue: #eaf3ff;
+      --blue-line: #9bbfe8;
+      --grid: rgba(45, 127, 114, .12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 14px/1.65 "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        #f8fbf7;
+      background-size: 28px 28px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: rgba(255, 255, 255, .92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--green-dark);
+      font-weight: 800;
+      font-size: 24px;
+    }
+    .brand span { color: var(--muted); font-size: 12px; font-weight: 500; }
+    .stage-chip {
+      border: 1px solid #b7ded3;
+      background: #eef9f5;
+      color: var(--green-dark);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr) 320px;
+      gap: 18px;
+      padding: 18px;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    aside, main {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 250, .94);
+      box-shadow: 0 16px 40px rgba(31, 47, 43, .08);
+    }
+    aside {
+      border-radius: 8px;
+      padding: 16px;
+      align-self: start;
+      position: sticky;
+      top: 90px;
+      max-height: calc(100vh - 110px);
+      overflow: auto;
+    }
+    main {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .hero {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fffef8, #f5fbf5);
+    }
+    .hero h1 {
+      margin: 0;
+      color: #14231f;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    .hero p {
+      max-width: 880px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+    .section {
+      padding: 26px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    .nav-title {
+      margin: 0 0 10px;
+      color: var(--green-dark);
+      font-weight: 800;
+    }
+    .nav-link {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+    .nav-link:hover {
+      border-color: #b7ded3;
+      background: #eef9f5;
+    }
+    .counts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .count-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .count-card strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 20px;
+    }
+    .layer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .layer-card {
+      border: 1px solid #cfe0d8;
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .layer-card span {
+      display: inline-block;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .layer-card strong {
+      display: block;
+      margin-top: 4px;
+      color: var(--green-dark);
+    }
+    .layer-card p { margin: 6px 0 0; color: var(--muted); }
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .field-card {
+      border: 1px solid #f0cb96;
+      background: #fffaf1;
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .field-card.lesson {
+      border-color: #bcd8f3;
+      background: #f5faff;
+    }
+    .field-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .field-kicker {
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 11px;
+    }
+    h3 {
+      margin: 2px 0 8px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    .order-pill {
+      min-width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--orange);
+      font-weight: 800;
+    }
+    .order-pill.lesson { background: #2f75b5; }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      border: 1px solid #e4d4b8;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: #fff;
+      color: #7b4b10;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: normal;
+    }
+    .chip.visible { color: #1f6f63; border-color: #b7ded3; background: #f2fbf8; }
+    .chip.engineering { color: #255f96; border-color: #bcd8f3; background: #eef6ff; }
+    .chip.canonical { color: #83540c; border-color: #f0cb96; background: #fff8ea; }
+    .chip.quality { color: #754b10; background: #fff; }
+    .chip.inherit { color: #315f7e; border-color: #bcd8f3; background: #f5faff; }
+    .chip.warn { color: #a34825; border-color: #efb9aa; background: #fff4f0; }
+    .role-text, .inherit-block {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .placeholder {
+      margin-top: 12px;
+      border: 1px dashed #d89843;
+      background: rgba(255, 255, 255, .72);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .placeholder-title {
+      color: var(--orange);
+      font-weight: 800;
+    }
+    .placeholder-desc {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+    .placeholder-empty {
+      margin-top: 8px;
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+      color: #a56b20;
+      font-size: 12px;
+    }
+    .step-group {
+      border: 1px solid #cfe0d8;
+      background: #f9fcf8;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+    .step-group-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .step-group-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+    .step-row {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .step-row div:first-child {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--green-dark);
+    }
+    .step-row span {
+      color: #2f75b5;
+      font-size: 12px;
+    }
+    .step-row p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+    .quality-panel {
+      display: grid;
+      gap: 10px;
+    }
+    .quality-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fff;
+    }
+    .quality-item strong {
+      color: var(--green-dark);
+    }
+    .warning {
+      border-color: #efb9aa;
+      background: #fff7f4;
+      color: #8b3525;
+    }
+    @media (max-width: 1200px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; max-height: none; }
+      .field-grid, .layer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <style id="shiwei-r91a-r88-current-backfill-style">
+    .nav-link.current-backfill-link { border-color: #1b5d52; background: #e8f6f1; }
+    .r91a-current-context {
+      border-color: #9bcdbf;
+      background: linear-gradient(180deg, #fbfffc, #f3faf6);
+    }
+    .section-note { color: var(--muted); margin-top: -6px; }
+    .r91a-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .r91a-summary-grid div {
+      border: 1px solid rgba(45, 127, 114, .18);
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+    .r91a-summary-grid strong,
+    .r91a-summary-grid span { display: block; }
+    .r91a-summary-grid strong { color: var(--green-dark); font-size: 12px; text-transform: uppercase; }
+    .r91a-summary-grid span { color: var(--ink); margin-top: 4px; font-weight: 700; }
+    .r91a-quality-dimensions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 14px 0;
+    }
+    .r91a-quality-dimensions li {
+      border: 1px solid rgba(201, 117, 25, .22);
+      background: #fffaf2;
+      border-radius: 8px;
+      padding: 9px 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .r91a-target-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .r91a-target-table th,
+    .r91a-target-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+    .r91a-target-table th { color: var(--green-dark); background: #eef9f5; }
+    .placeholder.r91a-current-filled {
+      border-color: #7fbdad;
+      background: #fbfffc;
+    }
+    .placeholder.r91a-current-filled .placeholder-title {
+      color: var(--green-dark);
+      font-weight: 800;
+    }
+    .r91a-field-status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .r91a-field-status span {
+      border: 1px solid rgba(45, 127, 114, .18);
+      border-radius: 999px;
+      background: #eef9f5;
+      color: var(--green-dark);
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .r91a-before-after {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+      margin: 8px 0;
+    }
+    .r91a-before-after section,
+    .r91a-suggestion,
+    .r91a-review-foot {
+      border-left: 3px solid #7fbdad;
+      background: #fff;
+      padding: 8px 10px;
+    }
+    .r91a-before-after p,
+    .r91a-suggestion p,
+    .r91a-review-foot p { margin: 4px 0; }
+    .r91a-review-foot b {
+      display: inline-block;
+      min-width: 66px;
+      color: var(--green-dark);
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="brand">师维 <span>字段生成质量静态验证页</span></div>
+    <div class="stage-chip">1013R_R88 · static only · no prompt text</div>
+  </header>
+  <div class="layout">
+    <aside>
+      <div class="nav-title">验证导航</div>
+      <a class="nav-link" href="#layers">生成层级</a>
+      <a class="nav-link" href="#big-unit">大单元 22 字段</a>
+      <a class="nav-link" href="#lesson">单课 14 字段</a>
+      <a class="nav-link" href="#step-contract">教学过程行级契约</a>
+      <a class="nav-link current-backfill-link" href="#current-backfill">当前回填</a>
+        <a class="nav-link" href="#quality">质量观察</a>
+      <div class="counts">
+        <div class="count-card"><strong>22</strong>大单元</div>
+        <div class="count-card"><strong>14</strong>单课</div>
+        <div class="count-card"><strong>47</strong>行级</div>
+      </div>
+    </aside>
+    <main>
+      <section class="hero">
+        <h1>底层字段与内容生成质量验证样板</h1>
+        <p>这是一页独立静态页，用来验证“大单元主线 → 单课切片 → 字段内部结构 → 派生物”的生成质量。页面只标注外显字段、工程字段、模型生成内容占位，不展示提示词，不调用模型，不写入正式备课本。</p>
+      </section>
+      <section class="section" id="layers">
+        <h2>一、生成层级</h2>
+        <div class="layer-grid">
+        <div class="layer-card">
+          <span>unit_spine</span>
+          <strong>大单元主线</strong>
+          <p>先确定单元主题、大观念、基本问题和任务证据，不直接从空白写单课。</p>
+        </div>
+        
+
+        <div class="layer-card">
+          <span>lesson_slice</span>
+          <strong>单课切片</strong>
+          <p>把大单元主线切到当前课时，形成本课依据、目标、任务和证据。</p>
+        </div>
+        
+
+        <div class="layer-card">
+          <span>field_internal</span>
+          <strong>字段内部结构</strong>
+          <p>每个字段内部继续拆成可观察、可上课、可评价的子结构。</p>
+        </div>
+        
+
+        <div class="layer-card">
+          <span>derived_objects</span>
+          <strong>派生物</strong>
+          <p>大屏、学习单、评价表只从已确认的教学过程和证据派生。</p>
+        </div>
+        </div>
+      </section>
+      <section class="section" id="big-unit">
+        <h2>二、大单元 22 字段</h2>
+        <div class="field-grid">
+      <article class="field-card" id="big-unit-1" data-visible-field="单元信息" data-engineering-key="big_unit.unit_basic_info">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 1</div>
+            <h3>单元信息</h3>
+          </div>
+          <div class="order-pill">1</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元信息</span>
+          <span class="chip engineering">工程字段: big_unit.unit_basic_info</span>
+          <span class="chip canonical">canonical: unit_basic_info</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">事实锚定</span><span class="chip quality">年级教材清楚</span><span class="chip quality">课时范围清楚</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.unit_basic_info">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-2" data-visible-field="单元主题" data-engineering-key="big_unit.unit_theme">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 2</div>
+            <h3>单元主题</h3>
+          </div>
+          <div class="order-pill">2</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元主题</span>
+          <span class="chip engineering">工程字段: big_unit.unit_theme</span>
+          <span class="chip canonical">canonical: unit_theme</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">主题可统领</span><span class="chip quality">不是口号</span><span class="chip quality">能连到作品表达</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.unit_theme">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-3" data-visible-field="大观念" data-engineering-key="big_unit.big_idea">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 3</div>
+            <h3>大观念</h3>
+          </div>
+          <div class="order-pill">3</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 大观念</span>
+          <span class="chip engineering">工程字段: big_unit.big_idea</span>
+          <span class="chip canonical">canonical: big_idea</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">可迁移理解</span><span class="chip quality">不写成步骤</span><span class="chip quality">能统领单课</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.big_idea">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-4" data-visible-field="基本问题" data-engineering-key="big_unit.essential_question">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 4</div>
+            <h3>基本问题</h3>
+          </div>
+          <div class="order-pill">4</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 基本问题</span>
+          <span class="chip engineering">工程字段: big_unit.essential_question</span>
+          <span class="chip canonical">canonical: unit_questions</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">可持续追问</span><span class="chip quality">贴近儿童</span><span class="chip quality">能落到课堂活动</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.essential_question">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-5" data-visible-field="单元学习目标" data-engineering-key="big_unit.learning_goals">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 5</div>
+            <h3>单元学习目标</h3>
+          </div>
+          <div class="order-pill">5</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元学习目标</span>
+          <span class="chip engineering">工程字段: big_unit.learning_goals</span>
+          <span class="chip canonical">canonical: core_literacy_goals</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">可观察行为</span><span class="chip quality">学科语言适度</span><span class="chip quality">目标不过满</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.learning_goals">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-6" data-visible-field="单元内容分析" data-engineering-key="big_unit.content_analysis">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 6</div>
+            <h3>单元内容分析</h3>
+          </div>
+          <div class="order-pill">6</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元内容分析</span>
+          <span class="chip engineering">工程字段: big_unit.content_analysis</span>
+          <span class="chip canonical">canonical: knowledge_and_skills</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">教材线索</span><span class="chip quality">美术语言隐性支撑</span><span class="chip quality">活动关系清楚</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.content_analysis">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-7" data-visible-field="学情分析" data-engineering-key="big_unit.student_context">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 7</div>
+            <h3>学情分析</h3>
+          </div>
+          <div class="order-pill">7</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学情分析</span>
+          <span class="chip engineering">工程字段: big_unit.student_context</span>
+          <span class="chip canonical">canonical: student_starting_point</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">不伪造班情</span><span class="chip quality">儿童经验具体</span><span class="chip quality">困难可转支架</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.student_context">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-8" data-visible-field="学习重难点" data-engineering-key="big_unit.key_difficult_points">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 8</div>
+            <h3>学习重难点</h3>
+          </div>
+          <div class="order-pill">8</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习重难点</span>
+          <span class="chip engineering">工程字段: big_unit.key_difficult_points</span>
+          <span class="chip canonical">canonical: knowledge_and_skills</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">重点难点分开</span><span class="chip quality">不重复目标</span><span class="chip quality">能指导活动</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.key_difficult_points">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-9" data-visible-field="表现性任务" data-engineering-key="big_unit.performance_task">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 9</div>
+            <h3>表现性任务</h3>
+          </div>
+          <div class="order-pill">9</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 表现性任务</span>
+          <span class="chip engineering">工程字段: big_unit.performance_task</span>
+          <span class="chip canonical">canonical: performance_task</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">学生产出明确</span><span class="chip quality">证据可见</span><span class="chip quality">不空泛</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.performance_task">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-10" data-visible-field="任务评估要点" data-engineering-key="big_unit.task_assessment_points">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 10</div>
+            <h3>任务评估要点</h3>
+          </div>
+          <div class="order-pill">10</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 任务评估要点</span>
+          <span class="chip engineering">工程字段: big_unit.task_assessment_points</span>
+          <span class="chip canonical">canonical: assessment_evidence</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">和任务对应</span><span class="chip quality">标准可判断</span><span class="chip quality">不只看好看</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.task_assessment_points">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-11" data-visible-field="学习阶段" data-engineering-key="big_unit.learning_stages">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 11</div>
+            <h3>学习阶段</h3>
+          </div>
+          <div class="order-pill">11</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习阶段</span>
+          <span class="chip engineering">工程字段: big_unit.learning_stages</span>
+          <span class="chip canonical">canonical: learning_progression</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">阶段递进</span><span class="chip quality">不是课时流水账</span><span class="chip quality">承接大观念</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.learning_stages">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-12" data-visible-field="学习任务" data-engineering-key="big_unit.learning_tasks">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 12</div>
+            <h3>学习任务</h3>
+          </div>
+          <div class="order-pill">12</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习任务</span>
+          <span class="chip engineering">工程字段: big_unit.learning_tasks</span>
+          <span class="chip canonical">canonical: lesson_task_chain</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">任务链清楚</span><span class="chip quality">每课有责任</span><span class="chip quality">能切到单课</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.learning_tasks">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-13" data-visible-field="小问题" data-engineering-key="big_unit.micro_questions">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 13</div>
+            <h3>小问题</h3>
+          </div>
+          <div class="order-pill">13</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 小问题</span>
+          <span class="chip engineering">工程字段: big_unit.micro_questions</span>
+          <span class="chip canonical">canonical: unit_questions</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">问题能驱动活动</span><span class="chip quality">儿童能回答</span><span class="chip quality">层级不乱</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.micro_questions">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-14" data-visible-field="学习活动" data-engineering-key="big_unit.learning_activities">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 14</div>
+            <h3>学习活动</h3>
+          </div>
+          <div class="order-pill">14</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习活动</span>
+          <span class="chip engineering">工程字段: big_unit.learning_activities</span>
+          <span class="chip canonical">canonical: lesson_task_chain</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">活动服务任务</span><span class="chip quality">可上课</span><span class="chip quality">有观察点</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.learning_activities">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-15" data-visible-field="学习评价" data-engineering-key="big_unit.learning_assessment">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 15</div>
+            <h3>学习评价</h3>
+          </div>
+          <div class="order-pill">15</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习评价</span>
+          <span class="chip engineering">工程字段: big_unit.learning_assessment</span>
+          <span class="chip canonical">canonical: assessment_evidence</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">过程证据</span><span class="chip quality">作品证据</span><span class="chip quality">表达证据</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.learning_assessment">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-16" data-visible-field="情境支架" data-engineering-key="big_unit.scaffold.context">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 16</div>
+            <h3>情境支架</h3>
+          </div>
+          <div class="order-pill">16</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 情境支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.context</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">情境贴近儿童</span><span class="chip quality">不喧宾夺主</span><span class="chip quality">能引出任务</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.scaffold.context">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-17" data-visible-field="任务支架" data-engineering-key="big_unit.scaffold.task">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 17</div>
+            <h3>任务支架</h3>
+          </div>
+          <div class="order-pill">17</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 任务支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.task</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">步骤清楚</span><span class="chip quality">降低难度</span><span class="chip quality">不替学生完成</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.scaffold.task">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-18" data-visible-field="资源支架" data-engineering-key="big_unit.scaffold.resource">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 18</div>
+            <h3>资源支架</h3>
+          </div>
+          <div class="order-pill">18</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 资源支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.resource</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">材料真实</span><span class="chip quality">来源可补</span><span class="chip quality">不虚构教材图</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.scaffold.resource">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-19" data-visible-field="策略支架" data-engineering-key="big_unit.scaffold.strategy">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 19</div>
+            <h3>策略支架</h3>
+          </div>
+          <div class="order-pill">19</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 策略支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.strategy</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">方法可操作</span><span class="chip quality">语言可教</span><span class="chip quality">能迁移到单课</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.scaffold.strategy">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-20" data-visible-field="学习单" data-engineering-key="big_unit.handout_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 20</div>
+            <h3>学习单</h3>
+          </div>
+          <div class="order-pill">20</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习单</span>
+          <span class="chip engineering">工程字段: big_unit.handout_plan</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">不堆文字</span><span class="chip quality">任务辅助</span><span class="chip quality">能记录证据</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.handout_plan">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-21" data-visible-field="评价支架" data-engineering-key="big_unit.assessment_scaffold">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 21</div>
+            <h3>评价支架</h3>
+          </div>
+          <div class="order-pill">21</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 评价支架</span>
+          <span class="chip engineering">工程字段: big_unit.assessment_scaffold</span>
+          <span class="chip canonical">canonical: assessment_evidence</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">评价语言儿童化</span><span class="chip quality">标准可判断</span><span class="chip quality">能反馈改进</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.assessment_scaffold">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-22" data-visible-field="资料补充" data-engineering-key="big_unit.material_requests">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 22</div>
+            <h3>资料补充</h3>
+          </div>
+          <div class="order-pill">22</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 资料补充</span>
+          <span class="chip engineering">工程字段: big_unit.material_requests</span>
+          <span class="chip canonical">canonical: material_requests</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">只提示补资料</span><span class="chip quality">不写正式课包</span><span class="chip quality">来源缺口清楚</span></div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/big_unit.material_requests">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后贴入本字段候选，不覆盖原文；教师确认后才进入结构化正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    </div>
+      </section>
+      <section class="section" id="lesson">
+        <h2>三、单课 14 字段</h2>
+        <div class="field-grid">
+      <article class="field-card lesson" data-visible-field="课时身份" data-engineering-key="lesson.lesson_identity">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 1 · lesson_header</div>
+            <h3>课时身份</h3>
+          </div>
+          <div class="order-pill lesson">1</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 课时身份</span>
+          <span class="chip engineering">工程字段: lesson.lesson_identity</span>
+          <span class="chip canonical">target: lesson_header</span>
+        </div>
+        <div class="role-text">确认年级、单元、课题、课时、教材页码和课时序号。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.unit_basic_info</span><span class="chip inherit">big_unit.learning_tasks</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.lesson_identity">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="继承单元主线" data-engineering-key="lesson.inherited_unit_context">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 2 · 本课依据</div>
+            <h3>继承单元主线</h3>
+          </div>
+          <div class="order-pill lesson">2</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 继承单元主线</span>
+          <span class="chip engineering">工程字段: lesson.inherited_unit_context</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">把单元主题、大观念、基本问题、表现性任务带入本课依据。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.unit_theme</span><span class="chip inherit">big_unit.big_idea</span><span class="chip inherit">big_unit.essential_question</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.inherited_unit_context">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="教材锚点" data-engineering-key="lesson.textbook_anchor">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 3 · 本课依据</div>
+            <h3>教材锚点</h3>
+          </div>
+          <div class="order-pill lesson">3</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 教材锚点</span>
+          <span class="chip engineering">工程字段: lesson.textbook_anchor</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">定位教材页、图例、练习、材料来源；缺失时转入资料补充。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.material_requests</span><span class="chip inherit">big_unit.content_analysis</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.textbook_anchor">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="本课概念切片" data-engineering-key="lesson.lesson_concept_slice">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 4 · 本课依据</div>
+            <h3>本课概念切片</h3>
+          </div>
+          <div class="order-pill lesson">4</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 本课概念切片</span>
+          <span class="chip engineering">工程字段: lesson.lesson_concept_slice</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">说明本课从单元大观念中切出哪一块可教、可观察的内容。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.big_idea</span><span class="chip inherit">big_unit.learning_stages</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.lesson_concept_slice">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="本课驱动问题" data-engineering-key="lesson.lesson_focus_question">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 5 · 本课依据</div>
+            <h3>本课驱动问题</h3>
+          </div>
+          <div class="order-pill lesson">5</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 本课驱动问题</span>
+          <span class="chip engineering">工程字段: lesson.lesson_focus_question</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">把单元基本问题转成这一课能展开的驱动问题。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.essential_question</span><span class="chip inherit">big_unit.micro_questions</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.lesson_focus_question">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="课时目标" data-engineering-key="lesson.lesson_objectives">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 6 · 教学目标</div>
+            <h3>课时目标</h3>
+          </div>
+          <div class="order-pill lesson">6</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 课时目标</span>
+          <span class="chip engineering">工程字段: lesson.lesson_objectives</span>
+          <span class="chip canonical">target: goals</span>
+        </div>
+        <div class="role-text">把课标、单元学习目标和本课任务转成可观察目标。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.learning_goals</span><span class="chip inherit">big_unit.task_assessment_points</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.lesson_objectives">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="学生起点" data-engineering-key="lesson.student_starting_point">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 7 · 学情分析</div>
+            <h3>学生起点</h3>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学生起点</span>
+          <span class="chip engineering">工程字段: lesson.student_starting_point</span>
+          <span class="chip canonical">target: analysis</span>
+        </div>
+        <div class="role-text">写清学生已有经验、常见困难和进入本课的可用支架。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.student_context</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.student_starting_point">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="重难点" data-engineering-key="lesson.key_difficult_points">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 8 · 教学重难点</div>
+            <h3>重难点</h3>
+          </div>
+          <div class="order-pill lesson">8</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 重难点</span>
+          <span class="chip engineering">工程字段: lesson.key_difficult_points</span>
+          <span class="chip canonical">target: keypoints</span>
+        </div>
+        <div class="role-text">区分本课学习重点和理解/表现难点。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.key_difficult_points</span><span class="chip inherit">big_unit.content_analysis</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.key_difficult_points">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="本课任务与证据" data-engineering-key="lesson.lesson_task_evidence">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 9 · 学习单与评价</div>
+            <h3>本课任务与证据</h3>
+          </div>
+          <div class="order-pill lesson">9</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 本课任务与证据</span>
+          <span class="chip engineering">工程字段: lesson.lesson_task_evidence</span>
+          <span class="chip canonical">target: assessment</span>
+        </div>
+        <div class="role-text">定义学生产出、说明、互评或课堂观察证据。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.performance_task</span><span class="chip inherit">big_unit.learning_assessment</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.lesson_task_evidence">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="教学过程" data-engineering-key="lesson.classroom_flow">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 10 · 教学过程</div>
+            <h3>教学过程</h3>
+          </div>
+          <div class="order-pill lesson">10</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 教学过程</span>
+          <span class="chip engineering">工程字段: lesson.classroom_flow</span>
+          <span class="chip canonical">target: teaching_process</span>
+        </div>
+        <div class="role-text">生成步骤级教学过程，并拆成教师动作、学生活动、材料/屏幕、评价证据。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.learning_activities</span><span class="chip inherit">big_unit.scaffold.strategy</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="课件/大屏计划" data-engineering-key="lesson.courseware_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 11 · 右栏大屏/课件预览</div>
+            <h3>课件/大屏计划</h3>
+          </div>
+          <div class="order-pill lesson">11</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 课件/大屏计划</span>
+          <span class="chip engineering">工程字段: lesson.courseware_plan</span>
+          <span class="chip canonical">target: courseware_plan</span>
+        </div>
+        <div class="role-text">从教学过程派生每个环节的大屏/课件屏幕意图。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.scaffold.resource</span><span class="chip inherit">big_unit.learning_activities</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.courseware_plan">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="学习单/学生任务单计划" data-engineering-key="lesson.handout_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 12 · 学习单与评价 / 右栏学习单</div>
+            <h3>学习单/学生任务单计划</h3>
+          </div>
+          <div class="order-pill lesson">12</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习单/学生任务单计划</span>
+          <span class="chip engineering">工程字段: lesson.handout_plan</span>
+          <span class="chip canonical">target: handout_plan</span>
+        </div>
+        <div class="role-text">从学习活动和证据要求派生轻量学习单。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.handout_plan</span><span class="chip inherit">big_unit.learning_assessment</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.handout_plan">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="评价计划" data-engineering-key="lesson.assessment_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 13 · 学习单与评价 / 右栏评价表</div>
+            <h3>评价计划</h3>
+          </div>
+          <div class="order-pill lesson">13</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 评价计划</span>
+          <span class="chip engineering">工程字段: lesson.assessment_plan</span>
+          <span class="chip canonical">target: assessment</span>
+        </div>
+        <div class="role-text">把本课任务证据转成过程评价、作品评价和反馈语言。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.assessment_scaffold</span><span class="chip inherit">big_unit.task_assessment_points</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.assessment_plan">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="资料补充" data-engineering-key="lesson.material_requests">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 14 · 资料补充提示位</div>
+            <h3>资料补充</h3>
+          </div>
+          <div class="order-pill lesson">14</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 资料补充</span>
+          <span class="chip engineering">工程字段: lesson.material_requests</span>
+          <span class="chip canonical">target: material_requests</span>
+        </div>
+        <div class="role-text">缺教材、课时安排、示范图、学生作品、真实学情时只提示补资料。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.material_requests</span></div>
+        </div>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.material_requests">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">生成后先进入字段候选位；可采纳、删除、重试，再决定是否写入正文。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    </div>
+      </section>
+      <section class="section" id="step-contract">
+        <h2>四、教学过程行级契约</h2>
+        
+      <section class="step-group" data-step-group-id="step_frame">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · step_frame</div>
+            <h3>环节骨架</h3>
+            <p>确定这一环节在整堂课中的位置、时长和推进责任。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>1. 环节ID</strong>
+          <span>lesson.classroom_flow.step.step_id</span>
+        </div>
+        <p>稳定定位环节，便于局部重生和追踪。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.step_id">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>2. 环节顺序</strong>
+          <span>lesson.classroom_flow.step.step_order</span>
+        </div>
+        <p>明确课堂推进先后，避免候选串位。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.step_order">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>3. 环节名称</strong>
+          <span>lesson.classroom_flow.step.step_name</span>
+        </div>
+        <p>教师能一眼识别当前环节任务。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.step_name">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>4. 时间分配</strong>
+          <span>lesson.classroom_flow.step.duration</span>
+        </div>
+        <p>控制课堂节奏，暴露时间风险。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.duration">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>5. 环节功能</strong>
+          <span>lesson.classroom_flow.step.phase_role</span>
+        </div>
+        <p>说明本环节是导入、探究、创作、展示还是评价。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.phase_role">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>6. 承接上一环节</strong>
+          <span>lesson.classroom_flow.step.prior_connection</span>
+        </div>
+        <p>说明学生从哪里来，不做断裂活动。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.prior_connection">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>7. 引出下一环节</strong>
+          <span>lesson.classroom_flow.step.next_connection</span>
+        </div>
+        <p>说明本环节如何推动后续任务。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.next_connection">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="teacher_moves">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · teacher_moves</div>
+            <h3>教师行为</h3>
+            <p>把教师在课堂中的语言、示范、巡视和反馈拆开生成。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>8. 教师指令</strong>
+          <span>lesson.classroom_flow.step.teacher_instruction</span>
+        </div>
+        <p>学生听完知道马上要做什么。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_instruction">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>9. 核心提问</strong>
+          <span>lesson.classroom_flow.step.teacher_core_question</span>
+        </div>
+        <p>推动观察、比较、表达或判断。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_core_question">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>10. 追问</strong>
+          <span>lesson.classroom_flow.step.teacher_probe_question</span>
+        </div>
+        <p>当学生回答浅时继续推进思考。</p>
+        
+      
+      <div class="placeholder r91a-current-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_probe_question" data-r90b-provider-candidate="r90b_provider_candidate_001" data-r91a-card-id="teacher_review_card_001" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">R90B 已生成候选 · R91A 已映射 TeacherReviewCard</div>
+        <div class="r91a-field-status">
+          <span>target_step=observation_inquiry_01</span>
+          <span>destination=existing_edit_card_before_after_suggestion_panel</span>
+          <span>preview_only=true</span>
+          <span>formal_apply_allowed=false</span>
+        </div>
+        <div class="r91a-before-after">
+          <section><strong>修改前</strong><p>教师泛问颜色有什么变化。</p></section>
+          <section><strong>修改后候选</strong><p>请指出这片色块里，色彩是从哪里浅、往哪里深，又是怎样从这一色过渡到另一色的？</p></section>
+        </div>
+        <div class="r91a-suggestion"><strong>小教建议</strong><p>主问过渡方向与明度变化。</p></div>
+        <div class="r91a-review-foot">
+          <p><b>质量提示</b>R90B-P1: BASIC_USABLE / blocking=false</p>
+          <p><b>影响范围</b>classroom_flow / observation_inquiry_01 / teacher_probe_question</p>
+          <p><b>审阅卡</b>TeacherReviewCard · prep_notebook / teaching_process / stage_body</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>11. 教师示范</strong>
+          <span>lesson.classroom_flow.step.teacher_demo</span>
+        </div>
+        <p>示范材料、技法、观察或表达方式。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_demo">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>12. 教师示范语言</strong>
+          <span>lesson.classroom_flow.step.teacher_modeling_language</span>
+        </div>
+        <p>给教师可直接说出口的课堂话术。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_modeling_language">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>13. 巡视观察</strong>
+          <span>lesson.classroom_flow.step.teacher_patrol_observation</span>
+        </div>
+        <p>教师走动时看什么、记什么、提醒什么。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_patrol_observation">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>14. 即时反馈动作</strong>
+          <span>lesson.classroom_flow.step.teacher_feedback_move</span>
+        </div>
+        <p>教师如何肯定、纠偏、追问或调整。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_feedback_move">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="student_moves">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · student_moves</div>
+            <h3>学生行为</h3>
+            <p>明确学生在每个环节的真实学习动作和可见产出。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>15. 学生观察</strong>
+          <span>lesson.classroom_flow.step.student_observation</span>
+        </div>
+        <p>学生观察什么对象、特征或差异。</p>
+        
+      
+      <div class="placeholder r91a-current-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_observation" data-r90b-provider-candidate="r90b_provider_candidate_002" data-r91a-card-id="teacher_review_card_002" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">R90B 已生成候选 · R91A 已映射 TeacherReviewCard</div>
+        <div class="r91a-field-status">
+          <span>target_step=observation_inquiry_01</span>
+          <span>destination=existing_edit_card_before_after_suggestion_panel</span>
+          <span>preview_only=true</span>
+          <span>formal_apply_allowed=false</span>
+        </div>
+        <div class="r91a-before-after">
+          <section><strong>修改前</strong><p>学生大致说出颜色好看。</p></section>
+          <section><strong>修改后候选</strong><p>用笔圈出端色与中间过渡带，并口述色相与明度由浅到深的变化方向。</p></section>
+        </div>
+        <div class="r91a-suggestion"><strong>小教建议</strong><p>要求圈出过渡带并说方向。</p></div>
+        <div class="r91a-review-foot">
+          <p><b>质量提示</b>R90B-P1: BASIC_USABLE / blocking=false</p>
+          <p><b>影响范围</b>classroom_flow / observation_inquiry_01 / student_observation</p>
+          <p><b>审阅卡</b>TeacherReviewCard · prep_notebook / teaching_process / stage_body</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>16. 学生讨论</strong>
+          <span>lesson.classroom_flow.step.student_discussion</span>
+        </div>
+        <p>学生和同伴交流什么问题或判断。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_discussion">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>17. 学生尝试</strong>
+          <span>lesson.classroom_flow.step.student_try</span>
+        </div>
+        <p>学生短时试验什么方法或材料。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_try">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>18. 学生创作</strong>
+          <span>lesson.classroom_flow.step.student_creation</span>
+        </div>
+        <p>学生正式完成什么作品或局部任务。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_creation">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>19. 学生记录</strong>
+          <span>lesson.classroom_flow.step.student_recording</span>
+        </div>
+        <p>学生留下词语、选择、草图或学习单记录。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_recording">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>20. 学生展示</strong>
+          <span>lesson.classroom_flow.step.student_display</span>
+        </div>
+        <p>学生展示什么、以何种方式展示。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_display">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>21. 学生修订</strong>
+          <span>lesson.classroom_flow.step.student_revision</span>
+        </div>
+        <p>学生基于反馈做什么调整。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_revision">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="art_learning_content">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · art_learning_content</div>
+            <h3>美术学习内容</h3>
+            <p>保证教学过程不是泛泛活动，而是有美术学科判断和材料经验。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>22. 观察对象</strong>
+          <span>lesson.classroom_flow.step.visual_object</span>
+        </div>
+        <p>教材图、生活图、作品图或学生作品样例。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.visual_object">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>23. 美术语言焦点</strong>
+          <span>lesson.classroom_flow.step.visual_language_focus</span>
+        </div>
+        <p>色彩、线条、形状、构图等隐性支撑点。</p>
+        
+      
+      <div class="placeholder r91a-current-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.visual_language_focus" data-r90b-provider-candidate="r90b_provider_candidate_003" data-r91a-card-id="teacher_review_card_003" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">R90B 已生成候选 · R91A 已映射 TeacherReviewCard</div>
+        <div class="r91a-field-status">
+          <span>target_step=observation_inquiry_01</span>
+          <span>destination=existing_edit_card_before_after_suggestion_panel</span>
+          <span>preview_only=true</span>
+          <span>formal_apply_allowed=false</span>
+        </div>
+        <div class="r91a-before-after">
+          <section><strong>修改前</strong><p>只说颜色丰富。</p></section>
+          <section><strong>修改后候选</strong><p>聚焦明度阶梯与色相过渡的层次关系，识别端色、中间色与过渡方向。</p></section>
+        </div>
+        <div class="r91a-suggestion"><strong>小教建议</strong><p>锁定明度与色相两轴的层次。</p></div>
+        <div class="r91a-review-foot">
+          <p><b>质量提示</b>R90B-P1: BASIC_USABLE / blocking=false</p>
+          <p><b>影响范围</b>classroom_flow / observation_inquiry_01 / visual_language_focus</p>
+          <p><b>审阅卡</b>TeacherReviewCard · prep_notebook / teaching_process / stage_body</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>24. 技法要点</strong>
+          <span>lesson.classroom_flow.step.technique_focus</span>
+        </div>
+        <p>学生需要掌握或体验的操作方法。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.technique_focus">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>25. 材料使用</strong>
+          <span>lesson.classroom_flow.step.material_use</span>
+        </div>
+        <p>纸、笔、颜料、色卡、剪贴等材料怎么用。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.material_use">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>26. 造型/构图/色彩关注点</strong>
+          <span>lesson.classroom_flow.step.composition_or_color_focus</span>
+        </div>
+        <p>这一环节主要看的视觉关系。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.composition_or_color_focus">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>27. 作品或生活例证</strong>
+          <span>lesson.classroom_flow.step.artwork_or_life_example</span>
+        </div>
+        <p>支撑理解的图像或生活经验来源。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.artwork_or_life_example">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>28. 正反例</strong>
+          <span>lesson.classroom_flow.step.positive_negative_example</span>
+        </div>
+        <p>帮助学生分辨有效与无效表现。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.positive_negative_example">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="scaffolds">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · scaffolds</div>
+            <h3>学习支架</h3>
+            <p>把学生做得出来所需要的支架拆清楚，避免教师替学生完成。</p>
+          </div>
+          <div class="order-pill lesson">6</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>29. 情境支架</strong>
+          <span>lesson.classroom_flow.step.context_scaffold</span>
+        </div>
+        <p>用什么情境让学生愿意进入任务。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.context_scaffold">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>30. 任务支架</strong>
+          <span>lesson.classroom_flow.step.task_scaffold</span>
+        </div>
+        <p>把复杂任务拆成学生可执行步骤。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.task_scaffold">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>31. 语言支架</strong>
+          <span>lesson.classroom_flow.step.language_scaffold</span>
+        </div>
+        <p>给学生观察、表达、互评的句式或词语。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.language_scaffold">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>32. 材料支架</strong>
+          <span>lesson.classroom_flow.step.material_scaffold</span>
+        </div>
+        <p>通过材料或模板降低操作门槛。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.material_scaffold">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>33. 同伴支架</strong>
+          <span>lesson.classroom_flow.step.peer_scaffold</span>
+        </div>
+        <p>安排同桌互看、互说、互评或合作。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.peer_scaffold">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>34. 差异化支架</strong>
+          <span>lesson.classroom_flow.step.differentiation_scaffold</span>
+        </div>
+        <p>给不同速度和能力学生不同入口。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.differentiation_scaffold">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="assessment_evidence">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · assessment_evidence</div>
+            <h3>评价与证据</h3>
+            <p>让课堂不是只完成作品，而是留下能判断学习发生的证据。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>35. 过程证据</strong>
+          <span>lesson.classroom_flow.step.process_evidence</span>
+        </div>
+        <p>学生观察、试验、讨论或修订过程的证据。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.process_evidence">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>36. 作品证据</strong>
+          <span>lesson.classroom_flow.step.work_evidence</span>
+        </div>
+        <p>作品中哪些部分能证明学习目标。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.work_evidence">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>37. 表达证据</strong>
+          <span>lesson.classroom_flow.step.expression_evidence</span>
+        </div>
+        <p>学生用语言说明选择、感受或理由。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.expression_evidence">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>38. 同伴评价</strong>
+          <span>lesson.classroom_flow.step.peer_assessment</span>
+        </div>
+        <p>同伴如何给出可用反馈。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.peer_assessment">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>39. 教师观察点</strong>
+          <span>lesson.classroom_flow.step.teacher_observation_point</span>
+        </div>
+        <p>教师重点记录哪些学生表现。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_observation_point">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>40. 成功标准</strong>
+          <span>lesson.classroom_flow.step.success_criteria</span>
+        </div>
+        <p>学生怎样知道自己完成得有效。</p>
+        
+      
+      <div class="placeholder r91a-current-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.success_criteria" data-r90b-provider-candidate="r90b_provider_candidate_004" data-r91a-card-id="teacher_review_card_004" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">R90B 已生成候选 · R91A 已映射 TeacherReviewCard</div>
+        <div class="r91a-field-status">
+          <span>target_step=observation_inquiry_01</span>
+          <span>destination=existing_edit_card_before_after_suggestion_panel</span>
+          <span>preview_only=true</span>
+          <span>formal_apply_allowed=false</span>
+        </div>
+        <div class="r91a-before-after">
+          <section><strong>修改前</strong><p>作品颜色多即可。</p></section>
+          <section><strong>修改后候选</strong><p>能圈出至少三处层次清晰的过渡带，并说明明度或色相的渐变方向。</p></section>
+        </div>
+        <div class="r91a-suggestion"><strong>小教建议</strong><p>以过渡带数量与方向为自检点。</p></div>
+        <div class="r91a-review-foot">
+          <p><b>质量提示</b>R90B-P1: BASIC_USABLE / blocking=false</p>
+          <p><b>影响范围</b>classroom_flow / observation_inquiry_01 / success_criteria</p>
+          <p><b>审阅卡</b>TeacherReviewCard · prep_notebook / teaching_process / stage_body</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>41. 证据留存</strong>
+          <span>lesson.classroom_flow.step.evidence_storage</span>
+        </div>
+        <p>照片、学习单、板贴、评价卡如何保存。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.evidence_storage">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="risk_and_orchestration">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · risk_and_orchestration</div>
+            <h3>风险与调度</h3>
+            <p>提前暴露课堂风险，给出可替换、可补救的调度方案。</p>
+          </div>
+          <div class="order-pill lesson">6</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>42. 常见误区</strong>
+          <span>lesson.classroom_flow.step.common_misconception</span>
+        </div>
+        <p>学生最可能误解或做偏的地方。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.common_misconception">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>43. 时间风险</strong>
+          <span>lesson.classroom_flow.step.time_risk</span>
+        </div>
+        <p>本环节可能超时或被压缩的点。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.time_risk">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>44. 材料风险</strong>
+          <span>lesson.classroom_flow.step.material_risk</span>
+        </div>
+        <p>材料不足、弄脏、难操作时怎么办。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.material_risk">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>45. 课堂秩序风险</strong>
+          <span>lesson.classroom_flow.step.class_management_risk</span>
+        </div>
+        <p>活动组织可能失控的点。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.class_management_risk">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>46. 补救策略</strong>
+          <span>lesson.classroom_flow.step.fallback_strategy</span>
+        </div>
+        <p>出现问题时教师如何快速补救。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.fallback_strategy">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>47. 替代方案</strong>
+          <span>lesson.classroom_flow.step.alternative_plan</span>
+        </div>
+        <p>没有某些材料或时间不足时如何替换。</p>
+        
+      <div class="placeholder" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.alternative_plan">
+        <div class="placeholder-title">模型生成内容占位</div>
+        <div class="placeholder-desc">教学过程内部行级候选，服务课堂环节，不单独形成正文大饼。</div>
+        <div class="placeholder-empty">待生成：候选文本 / 质量观察 / 教师动作</div>
+      </div>
+    
+      </article>
+    
+      </section>
+    
+      </section>
+      
+      <section class="section r91a-current-context" id="current-backfill">
+        <h2>当前闭环回填 · R90B / P1 / R91A</h2>
+        <p class="section-note">本页保留 R88 的 83 个字段槽位，并把已经真实生成和通过壳层预检的 4 个候选回填到对应 `R88-GEN/...` 槽位。R91B 的 9 个目标字段只做预备标记，本轮不调用 provider。</p>
+        <div class="r91a-summary-grid">
+          <div><strong>active profile</strong><span>art_lesson_design_profile_v1@1.0.0</span></div>
+          <div><strong>candidate contract</strong><span>candidate_required_keys_v1</span></div>
+          <div><strong>R88 fields</strong><span>22 + 14 + 47 = 83</span></div>
+          <div><strong>R90 active rows</strong><span>40</span></div>
+          <div><strong>filled candidates</strong><span>4</span></div>
+          <div><strong>quality sentinel</strong><span>BASIC_USABLE · blocking=false</span></div>
+          <div><strong>R91A validator</strong><span>PASS_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT</span></div>
+          <div><strong>boundary</strong><span>static copy only · no R36/R21 edit</span></div>
+        </div>
+        <ul class="r91a-quality-dimensions">
+          <li><b>学科性</b><span>PASS</span></li>
+<li><b>动作性</b><span>PASS</span></li>
+<li><b>证据性</b><span>PASS_WITH_NOTES</span></li>
+<li><b>可采纳性</b><span>PASS_WITH_NOTES</span></li>
+<li><b>年段适配</b><span>PASS_WITH_NOTES</span></li>
+        </ul>
+        <h3>R91B 预备目标字段</h3>
+        <table class="r91a-target-table">
+          <thead><tr><th>step_type</th><th>target_field_key</th><th>页面字段名</th><th>R90A 覆盖状态</th></tr></thead>
+          <tbody><tr><td>observation_inquiry</td><td>lesson.classroom_flow.step.teacher_probe_question</td><td>追问</td><td>activated_in_r90</td></tr><tr><td>observation_inquiry</td><td>lesson.classroom_flow.step.student_observation</td><td>学生观察</td><td>activated_in_r90</td></tr><tr><td>observation_inquiry</td><td>lesson.classroom_flow.step.visual_language_focus</td><td>美术语言焦点</td><td>activated_in_r90</td></tr><tr><td>teacher_demo</td><td>lesson.classroom_flow.step.teacher_demo</td><td>教师示范</td><td>activated_in_r90</td></tr><tr><td>teacher_demo</td><td>lesson.classroom_flow.step.teacher_modeling_language</td><td>教师示范语言</td><td>activated_in_r90</td></tr><tr><td>teacher_demo</td><td>lesson.classroom_flow.step.technique_focus</td><td>技法要点</td><td>activated_in_r90</td></tr><tr><td>student_creation</td><td>lesson.classroom_flow.step.student_creation</td><td>学生创作</td><td>activated_in_r90</td></tr><tr><td>student_creation</td><td>lesson.classroom_flow.step.task_scaffold</td><td>任务支架</td><td>activated_in_r90</td></tr><tr><td>student_creation</td><td>lesson.classroom_flow.step.success_criteria</td><td>成功标准</td><td>activated_in_r90</td></tr></tbody>
+        </table>
+      </section>
+
+      <section class="section" id="quality">
+        <h2>五、质量观察</h2>
+        <div class="quality-panel">
+          <div class="quality-item"><strong>大单元先行</strong><br>生成单课前，必须能看见单元主题、大观念、基本问题、表现性任务和评价证据的传递关系。</div>
+          <div class="quality-item"><strong>字段内拆解</strong><br>不是每个字段生成一段大文本，而是按字段内部结构生成候选，再由教师采纳、删除或重试。</div>
+          <div class="quality-item"><strong>派生物后置</strong><br>大屏、学习单、评价表从已确认的教学过程和证据派生，不抢在主教案之前。</div>
+          <div class="quality-item warning"><strong>边界</strong><br>本页不含提示词、不接 provider、不保存、不导出、不 formal apply。所有占位都是待生成容器。</div>
+        </div>
+      </section>
+    </main>
+    <aside>
+      <div class="nav-title">当前边界</div>
+      <div class="quality-panel">
+        <div class="quality-item"><strong>页面类型</strong><br>独立静态验证页</div>
+        <div class="quality-item"><strong>主线保护</strong><br>不修改 R21 / R87 页面</div>
+        <div class="quality-item"><strong>提示词</strong><br>本版隐藏，后续按需单独展开</div>
+        <div class="quality-item"><strong>模型内容</strong><br>仅有占位，不执行生成</div>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
