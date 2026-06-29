@@ -1,0 +1,105 @@
+{
+  "round": "1013R_R90B_P1_QUALITY_SENTINEL_V0_AND_LINEAGE_REPAIR",
+  "source_round": "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1",
+  "created_at": "2026-06-30T05:08:52",
+  "result": "PASS_WITH_NOTES",
+  "quality_sentinel_v0_result": "BASIC_USABLE",
+  "blocking": false,
+  "candidate_count": 4,
+  "lineage_hash_coverage": {
+    "input_file_count": 6,
+    "hash_count": 6,
+    "complete": true
+  },
+  "checks": {
+    "input_6_files_exist": {
+      "result": "PASS",
+      "count": 6
+    },
+    "input_6_hashes_recorded": {
+      "result": "PASS"
+    },
+    "provider_not_called_in_this_round": {
+      "result": "PASS"
+    },
+    "strict_provider_raw_validation_still_pass": {
+      "result": "PASS"
+    },
+    "raw_provider_json_parse_ok": {
+      "result": "PASS"
+    },
+    "salvage_used_false": {
+      "result": "PASS"
+    },
+    "normalized_candidate_count_4": {
+      "result": "PASS",
+      "count": 4
+    },
+    "target_field_keys_match_r90b": {
+      "result": "PASS",
+      "target_field_keys": [
+        "lesson.classroom_flow.step.teacher_probe_question",
+        "lesson.classroom_flow.step.student_observation",
+        "lesson.classroom_flow.step.visual_language_focus",
+        "lesson.classroom_flow.step.success_criteria"
+      ]
+    },
+    "target_line_contract_ids_match_targets": {
+      "result": "PASS",
+      "target_line_contract_ids": [
+        "R88-GEN/lesson.classroom_flow.step.teacher_probe_question",
+        "R88-GEN/lesson.classroom_flow.step.student_observation",
+        "R88-GEN/lesson.classroom_flow.step.visual_language_focus",
+        "R88-GEN/lesson.classroom_flow.step.success_criteria"
+      ]
+    },
+    "quality_sentinel_has_5_dimensions": {
+      "result": "PASS",
+      "dimension_count": 5
+    },
+    "quality_sentinel_overall_result_allowed": {
+      "result": "PASS",
+      "value": "BASIC_USABLE"
+    },
+    "blocking_field_exists": {
+      "result": "PASS",
+      "value": false
+    },
+    "lineage_chain_complete": {
+      "result": "PASS"
+    },
+    "r21_modified_false": {
+      "result": "PASS"
+    },
+    "formal_apply_false": {
+      "result": "PASS"
+    },
+    "database_feishu_memory_write_false": {
+      "result": "PASS"
+    },
+    "new_fields_false": {
+      "result": "PASS"
+    },
+    "full_lesson_generation_false": {
+      "result": "PASS"
+    },
+    "r90c_r91_not_executed": {
+      "result": "PASS"
+    }
+  },
+  "failed_checks": [],
+  "boundary_flags": {
+    "r21_modified": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "new_fields_added": false,
+    "full_lesson_generated": false,
+    "provider_called_in_this_round": false,
+    "r90c_executed": false,
+    "r91_executed": false
+  },
+  "next_round_blocked_until_gpt_review": true,
+  "next_recommended_round": "1013R_R90C_PROFILE_TO_SHELL_VIEWMODEL_BINDING_PREFLIGHT_OR_1013R_R91_AFTER_REVIEW"
+}
