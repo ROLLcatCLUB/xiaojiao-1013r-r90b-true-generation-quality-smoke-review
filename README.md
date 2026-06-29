@@ -86,3 +86,12 @@ No provider call, no page/UI binding, no R36/R21 modification, no new fields, no
 ```
 
 Review files live under `r91a_outputs/`.
+## 1013R_R91A Static Page Backfill
+
+A static review page has been added under `r91a_static_page_backfill/`. It copies the earlier R39 product-mode candidate preview page and fills R90B / R90B-P1 / R91-A review results into a new HTML page.
+
+Boundary:
+
+```text
+R39 source not modified; R36/R21 not modified; no provider call; no runtime/page binding; no formal apply; no database/Feishu/memory write; R91B not executed.
+```
