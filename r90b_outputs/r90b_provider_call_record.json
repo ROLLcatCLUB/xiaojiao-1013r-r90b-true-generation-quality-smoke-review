@@ -1,0 +1,14 @@
+{
+  "provider_called": true,
+  "provider_error": null,
+  "provider_meta": {
+    "provider": "openai_compatible",
+    "model": "MiniMax-M3",
+    "base_url": "https://api.minimaxi.com/v1",
+    "credential_source": "env",
+    "reasoning_split": false,
+    "latency_ms": 12303
+  },
+  "raw_text_length": 5673,
+  "elapsed_ms": 12303
+}
