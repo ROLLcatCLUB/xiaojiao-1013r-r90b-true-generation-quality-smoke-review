@@ -1,0 +1,214 @@
+{
+  "stage": "1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT",
+  "card_count": 4,
+  "cards": [
+    {
+      "card_id": "teacher_review_card_001",
+      "source_candidate_id": "r90b_provider_candidate_001",
+      "component": "TeacherReviewCard",
+      "render_slot": {
+        "level_1": "platform_shell",
+        "level_2": "prep_room",
+        "level_3_tool_id": "prep_notebook",
+        "level_4_content_slot_id": "teaching_process",
+        "shell_render_slot": "stage_body",
+        "target_destination": "existing_edit_card_before_after_suggestion_panel",
+        "visible_selector_reference": "[data-edit-target], .nb-edit-bubble, .nb-edit-panel"
+      },
+      "shell_state": {
+        "shell_name": "ShiweiShell",
+        "room_id": "prep_room",
+        "room_label": "备课室",
+        "active_view": "prepNotebook",
+        "source_page_baseline": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013L_R36_existing_page_static_patch_consolidation\\prep_room_render_canvas_deepen_v1_1013L_R36_consolidated.html",
+        "page_connection_performed": false,
+        "dom_patch_performed": false,
+        "uses_native_edit_bubble_contract": true
+      },
+      "teacher_review_payload": {
+        "before_summary": "教师泛问颜色有什么变化。",
+        "after_candidate": "请指出这片色块里，色彩是从哪里浅、往哪里深，又是怎样从这一色过渡到另一色的？",
+        "xiaojiao_suggestion": "主问过渡方向与明度变化。",
+        "target_field_key": "lesson.classroom_flow.step.teacher_probe_question",
+        "target_step_id": "observation_inquiry_01",
+        "impact_scope": [
+          "classroom_flow",
+          "observation_inquiry_01",
+          "teacher_probe_question"
+        ],
+        "source_refs": [
+          "active_profile:art_lesson_design_profile_v1@1.0.0",
+          "lesson_case:色彩的渐变"
+        ],
+        "reasoning_basis": "把提问锚定在渐变过渡方向和明度深浅，符合 known_start 与 current_problem。",
+        "teacher_review_required": true,
+        "preview_only": true,
+        "formal_apply_allowed": false,
+        "applied": false
+      },
+      "gate": {
+        "gate_type": "preview_then_confirm",
+        "allowed_now": true,
+        "requires_teacher_confirmation": true,
+        "write_effect": "preview_only",
+        "formal_apply_allowed": false
+      }
+    },
+    {
+      "card_id": "teacher_review_card_002",
+      "source_candidate_id": "r90b_provider_candidate_002",
+      "component": "TeacherReviewCard",
+      "render_slot": {
+        "level_1": "platform_shell",
+        "level_2": "prep_room",
+        "level_3_tool_id": "prep_notebook",
+        "level_4_content_slot_id": "teaching_process",
+        "shell_render_slot": "stage_body",
+        "target_destination": "existing_edit_card_before_after_suggestion_panel",
+        "visible_selector_reference": "[data-edit-target], .nb-edit-bubble, .nb-edit-panel"
+      },
+      "shell_state": {
+        "shell_name": "ShiweiShell",
+        "room_id": "prep_room",
+        "room_label": "备课室",
+        "active_view": "prepNotebook",
+        "source_page_baseline": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013L_R36_existing_page_static_patch_consolidation\\prep_room_render_canvas_deepen_v1_1013L_R36_consolidated.html",
+        "page_connection_performed": false,
+        "dom_patch_performed": false,
+        "uses_native_edit_bubble_contract": true
+      },
+      "teacher_review_payload": {
+        "before_summary": "学生大致说出颜色好看。",
+        "after_candidate": "用笔圈出端色与中间过渡带，并口述色相与明度由浅到深的变化方向。",
+        "xiaojiao_suggestion": "要求圈出过渡带并说方向。",
+        "target_field_key": "lesson.classroom_flow.step.student_observation",
+        "target_step_id": "observation_inquiry_01",
+        "impact_scope": [
+          "classroom_flow",
+          "observation_inquiry_01",
+          "student_observation"
+        ],
+        "source_refs": [
+          "active_profile:art_lesson_design_profile_v1@1.0.0",
+          "lesson_case:色彩的渐变"
+        ],
+        "reasoning_basis": "把可观察动作落到圈出与口述，并显性带出色相与明度两轴。",
+        "teacher_review_required": true,
+        "preview_only": true,
+        "formal_apply_allowed": false,
+        "applied": false
+      },
+      "gate": {
+        "gate_type": "preview_then_confirm",
+        "allowed_now": true,
+        "requires_teacher_confirmation": true,
+        "write_effect": "preview_only",
+        "formal_apply_allowed": false
+      }
+    },
+    {
+      "card_id": "teacher_review_card_003",
+      "source_candidate_id": "r90b_provider_candidate_003",
+      "component": "TeacherReviewCard",
+      "render_slot": {
+        "level_1": "platform_shell",
+        "level_2": "prep_room",
+        "level_3_tool_id": "prep_notebook",
+        "level_4_content_slot_id": "teaching_process",
+        "shell_render_slot": "stage_body",
+        "target_destination": "existing_edit_card_before_after_suggestion_panel",
+        "visible_selector_reference": "[data-edit-target], .nb-edit-bubble, .nb-edit-panel"
+      },
+      "shell_state": {
+        "shell_name": "ShiweiShell",
+        "room_id": "prep_room",
+        "room_label": "备课室",
+        "active_view": "prepNotebook",
+        "source_page_baseline": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013L_R36_existing_page_static_patch_consolidation\\prep_room_render_canvas_deepen_v1_1013L_R36_consolidated.html",
+        "page_connection_performed": false,
+        "dom_patch_performed": false,
+        "uses_native_edit_bubble_contract": true
+      },
+      "teacher_review_payload": {
+        "before_summary": "只说颜色丰富。",
+        "after_candidate": "聚焦明度阶梯与色相过渡的层次关系，识别端色、中间色与过渡方向。",
+        "xiaojiao_suggestion": "锁定明度与色相两轴的层次。",
+        "target_field_key": "lesson.classroom_flow.step.visual_language_focus",
+        "target_step_id": "observation_inquiry_01",
+        "impact_scope": [
+          "classroom_flow",
+          "observation_inquiry_01",
+          "visual_language_focus"
+        ],
+        "source_refs": [
+          "active_profile:art_lesson_design_profile_v1@1.0.0",
+          "lesson_case:色彩的渐变"
+        ],
+        "reasoning_basis": "满足至少两个核心词要求，落到层次与过渡。",
+        "teacher_review_required": true,
+        "preview_only": true,
+        "formal_apply_allowed": false,
+        "applied": false
+      },
+      "gate": {
+        "gate_type": "preview_then_confirm",
+        "allowed_now": true,
+        "requires_teacher_confirmation": true,
+        "write_effect": "preview_only",
+        "formal_apply_allowed": false
+      }
+    },
+    {
+      "card_id": "teacher_review_card_004",
+      "source_candidate_id": "r90b_provider_candidate_004",
+      "component": "TeacherReviewCard",
+      "render_slot": {
+        "level_1": "platform_shell",
+        "level_2": "prep_room",
+        "level_3_tool_id": "prep_notebook",
+        "level_4_content_slot_id": "teaching_process",
+        "shell_render_slot": "stage_body",
+        "target_destination": "existing_edit_card_before_after_suggestion_panel",
+        "visible_selector_reference": "[data-edit-target], .nb-edit-bubble, .nb-edit-panel"
+      },
+      "shell_state": {
+        "shell_name": "ShiweiShell",
+        "room_id": "prep_room",
+        "room_label": "备课室",
+        "active_view": "prepNotebook",
+        "source_page_baseline": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013L_R36_existing_page_static_patch_consolidation\\prep_room_render_canvas_deepen_v1_1013L_R36_consolidated.html",
+        "page_connection_performed": false,
+        "dom_patch_performed": false,
+        "uses_native_edit_bubble_contract": true
+      },
+      "teacher_review_payload": {
+        "before_summary": "作品颜色多即可。",
+        "after_candidate": "能圈出至少三处层次清晰的过渡带，并说明明度或色相的渐变方向。",
+        "xiaojiao_suggestion": "以过渡带数量与方向为自检点。",
+        "target_field_key": "lesson.classroom_flow.step.success_criteria",
+        "target_step_id": "observation_inquiry_01",
+        "impact_scope": [
+          "classroom_flow",
+          "observation_inquiry_01",
+          "success_criteria"
+        ],
+        "source_refs": [
+          "active_profile:art_lesson_design_profile_v1@1.0.0",
+          "lesson_case:色彩的渐变"
+        ],
+        "reasoning_basis": "给出可自检的成功标准，避免空泛表扬，覆盖层次与过渡方向。",
+        "teacher_review_required": true,
+        "preview_only": true,
+        "formal_apply_allowed": false,
+        "applied": false
+      },
+      "gate": {
+        "gate_type": "preview_then_confirm",
+        "allowed_now": true,
+        "requires_teacher_confirmation": true,
+        "write_effect": "preview_only",
+        "formal_apply_allowed": false
+      }
+    }
+  ]
+}
