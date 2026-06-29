@@ -1,0 +1,23 @@
+{
+  "stage": "1013R_R91A_STATIC_PAGE_BACKFILL",
+  "status": "PASS",
+  "files": [
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_STATIC_PAGE_BACKFILL\\R91A_static_page_backfill_from_R39_product_candidate_preview.html",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_STATIC_PAGE_BACKFILL\\README.md",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_STATIC_PAGE_BACKFILL\\validate_1013R_R91A_static_page_backfill_result.json",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_STATIC_PAGE_BACKFILL\\build_1013r_r91a_static_page_backfill.py"
+  ],
+  "boundary": {
+    "static_page_copy_only": true,
+    "r39_source_modified": false,
+    "r36_modified": false,
+    "r21_modified": false,
+    "provider_called": false,
+    "model_called": false,
+    "formal_apply_performed": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "r91b_executed": false
+  }
+}
