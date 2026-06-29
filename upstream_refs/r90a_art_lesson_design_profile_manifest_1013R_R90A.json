@@ -1,0 +1,48 @@
+{
+  "schema_id": "r90a_art_lesson_design_profile_manifest_1013R_R90A",
+  "stage": "1013R_R90A_TRUE_GENERATION_CONTRACT_AND_PROFILE_PREFLIGHT",
+  "profile_id": "art_lesson_design_profile_v1",
+  "profile_name": "美术备课方案规范 V1",
+  "profile_version": "1.0.0",
+  "subject": "art",
+  "stage_scope": [
+    "primary"
+  ],
+  "status": "frozen_for_minimum_generation_smoke",
+  "field_system_policy": "freeze_R88_R89_no_new_fields",
+  "candidate_contract_version": "candidate_required_keys_v1",
+  "compatibility_policy": "read_legacy_write_active",
+  "source_stage_range": [
+    "1013R_R88",
+    "1013R_R89"
+  ],
+  "field_counts": {
+    "big_unit_fields": 22,
+    "lesson_fields": 14,
+    "step_contract_fields": 47,
+    "total_profile_fields": 83
+  },
+  "profile_components": {
+    "field_registry_source": "upstream_refs/field_generation_quality_static_lab_ledger_1013R_R88.json",
+    "alias_map_source": "upstream_refs/r89_big_unit_key_alias_map_1013R_R89.json",
+    "phase_cluster_registry_source": "upstream_refs/r89_generation_phase_and_field_cluster_registry_1013R_R89.json",
+    "canonical_ref_audit_source": "upstream_refs/r89_canonical_ref_audit_1013R_R89.json",
+    "step_adapter_source": "upstream_refs/r89_step_contract_adapter_r81_to_r88_1013R_R89.json",
+    "activation_matrix_source": "r90a_r88_step_field_activation_coverage_audit_1013R_R90A.json",
+    "causal_chain_rules_source": "upstream_refs/r89_causal_chain_gate_1013R_R89.json",
+    "candidate_required_keys_source": "upstream_refs/r89_candidate_required_keys_single_source_1013R_R89.json",
+    "strict_vs_salvage_boundary_source": "upstream_refs/r89_strict_vs_salvage_validator_boundary_1013R_R89.json",
+    "strict_validator_policy_source": "r90a_true_generation_strict_validator_policy_1013R_R90A.json",
+    "renderer_policy_source": "r90a_profile_loader_minimum_contract_1013R_R90A.json"
+  },
+  "platform_boundary": {
+    "profile_is_replaceable": true,
+    "prep_room_core_must_not_hardcode_art_fields": true,
+    "r21_modified": false,
+    "provider_runtime_connected": false,
+    "formal_apply_allowed": false,
+    "database_write": false,
+    "feishu_write": false,
+    "memory_write": false
+  }
+}
