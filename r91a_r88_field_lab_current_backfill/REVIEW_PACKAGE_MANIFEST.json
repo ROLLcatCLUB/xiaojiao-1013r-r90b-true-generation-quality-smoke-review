@@ -1,0 +1,24 @@
+{
+  "stage": "1013R_R91A_R88_FIELD_LAB_CURRENT_BACKFILL",
+  "status": "PASS",
+  "files": [
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_R88_FIELD_LAB_CURRENT_BACKFILL\\field_generation_quality_static_lab_1013R_R88_current_backfill.html",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_R88_FIELD_LAB_CURRENT_BACKFILL\\validate_1013R_R91A_R88_field_lab_current_backfill_result.json",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_R88_FIELD_LAB_CURRENT_BACKFILL\\README.md",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_R88_FIELD_LAB_CURRENT_BACKFILL\\build_1013r_r91a_r88_field_lab_current_backfill.py"
+  ],
+  "output_html_sha256": "44be024f47506b2599ed7b5851ef3205b18e703748ef33b3d03a3216f6e0ca6f",
+  "boundary": {
+    "static_copy_only": true,
+    "source_r88_modified": false,
+    "r36_modified": false,
+    "r21_modified": false,
+    "provider_called": false,
+    "model_called": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "formal_apply_performed": false,
+    "r91b_executed": false
+  }
+}
