@@ -1,0 +1,56 @@
+{
+  "stage": "1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT",
+  "created_at": "2026-06-30T05:57:49",
+  "status": "PASS",
+  "files": [
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT\\README.md",
+      "size": 942,
+      "sha256": "70d1a498aa6924b0857bb86a154f4b2e1eac83964c3399cefe486a326694078a"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT\\r91a_shell_viewmodel_fixture.json",
+      "size": 14252,
+      "sha256": "6e66f2bd3407cd8aee13e91c6f9942412e781e63b071e45ee4cc74a18209b7ca"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT\\teacher_review_card_viewmodel_map_1013R_R91A.json",
+      "size": 9305,
+      "sha256": "8ff47a95f63bf33fbe2b389471a73a01451d208fbc2c7fb349411e19e682d8b1"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT\\validate_1013R_R91A_shell_viewmodel_fixture_preflight_result.json",
+      "size": 1302,
+      "sha256": "e4904ff80cca0449ff28bc56ef73b00b7270eccac9d9e81011a9cc786e1c0de5"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT\\r91a_shell_viewmodel_fixture_preflight_notes.md",
+      "size": 1055,
+      "sha256": "1fcefa3aedc2d7b4b4196394ce793d952a2289ba7affc9374eccd28d33ff5234"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT\\GPT_REVIEW_PROMPT_1013R_R91A.md",
+      "size": 526,
+      "sha256": "33ff7080d9c8a0e69eda763efab10b713682cdbf3aa72a17296e46d550baf166"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT\\build_1013r_r91a_shell_viewmodel_fixture_preflight.py",
+      "size": 16476,
+      "sha256": "008ca0c09be4eed8adf7bc06239937584b67b028bca09bce036afdce5701bd0c"
+    }
+  ],
+  "boundary": {
+    "fixture_only": true,
+    "page_connection_performed": false,
+    "r36_modified": false,
+    "r21_modified": false,
+    "provider_called": false,
+    "model_called": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "new_fields_added": false,
+    "formal_apply_performed": false,
+    "r91b_provider_expansion_performed": false
+  }
+}
