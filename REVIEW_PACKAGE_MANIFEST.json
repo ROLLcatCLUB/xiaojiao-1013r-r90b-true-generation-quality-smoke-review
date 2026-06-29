@@ -1,0 +1,131 @@
+﻿{
+    "package":  "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1_GITHUB_PACKAGE",
+    "repo":  "ROLLcatCLUB/xiaojiao-1013r-r90b-true-generation-quality-smoke-review",
+    "created_at":  "2026-06-30T03:44:16",
+    "source_stage":  "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1",
+    "result":  "PASS",
+    "strict_provider_raw_validation_result":  "PASS",
+    "quality_smoke_result":  "BASIC_USABLE",
+    "provider_model":  "MiniMax-M3",
+    "forbidden_upload":  [
+                             ".env",
+                             "api keys",
+                             "tokens",
+                             "whole xiaobei-core",
+                             "database",
+                             "Feishu export",
+                             "memory store"
+                         ],
+    "files":  [
+                  {
+                      "path":  ".gitattributes",
+                      "size":  90,
+                      "sha256":  "815164582be432b5667a936c8261619f430835ae72b497665c1bec6e77e814d9"
+                  },
+                  {
+                      "path":  "r90b_outputs\\normalized_candidates.json",
+                      "size":  5413,
+                      "sha256":  "69aa46cf34845f3d5260ca062bd0c3ae6fd0120b49a1b477d8fdbe20655731f1"
+                  },
+                  {
+                      "path":  "r90b_outputs\\quality_smoke_result.md",
+                      "size":  1026,
+                      "sha256":  "8768856bdde2fd49b825511f787be298f45dae81bb2c1e87df7d4fa8c7bdef04"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_d0_negative_candidate_fixtures.json",
+                      "size":  3827,
+                      "sha256":  "0444dd55d722cd1ebc7be68a79c558803e8c162c3f3a8bfc12515b2b183c7a4a"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_d0_strict_validation_result.json",
+                      "size":  3628,
+                      "sha256":  "e7434c531bd701d041c0a21478d196f80f1cd4421a508b8aa11cf5b8bd8e199e"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_d0_synthetic_provider_response.json",
+                      "size":  8492,
+                      "sha256":  "a257ec5d721adb1b0a6abb185336b009ddd4cc54c3715307d42e15f990ff0e15"
+                  },
+                  {
+                      "path":  "r90b_outputs\\R90B_D0_SYNTHETIC_STRICT_GATE_NOTES.md",
+                      "size":  836,
+                      "sha256":  "34b259828e6a492b1633f03cc90a2b655e55dcefd36b09a9f2cce90e9ef8f6ed"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_d0_teacher_review_card_preview.md",
+                      "size":  2280,
+                      "sha256":  "b1f1182a1478748f97b9fe2ffff71bce0f090368b9c414bedf4188963f9aaa72"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_provider_call_record.json",
+                      "size":  343,
+                      "sha256":  "5058e8aea2cf133006d34e1135cb260467407cff79bc2ce61ff8a20d4d7cf266"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_provider_raw_response.json",
+                      "size":  8632,
+                      "sha256":  "d91f0a2f1d6bc38e839f45167fef109f5bdc6808352277441113ea4fe07ceecd"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_provider_raw_response.txt",
+                      "size":  7083,
+                      "sha256":  "4af3c98bff2c511f61f8c277044ec16f5d0e6430a1a2735269784ebe0f51913e"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_provider_request.json",
+                      "size":  7073,
+                      "sha256":  "b68bfcfde4453419efa2eca74cba7bc41c5add7d9a94d2d4b0285c3bee5651a7"
+                  },
+                  {
+                      "path":  "r90b_outputs\\r90b_provider_teacher_review_card_preview.md",
+                      "size":  2572,
+                      "sha256":  "b9fbcba13c22876e2175b78646c0ffaef04042e2f4e31f86050669d03976ce9e"
+                  },
+                  {
+                      "path":  "r90b_outputs\\README.md",
+                      "size":  1305,
+                      "sha256":  "158808c3e8ab8dfbfd7aee887ac9ad8e2f6654804a154d552368c8c52a11c5cc"
+                  },
+                  {
+                      "path":  "r90b_outputs\\strict_provider_raw_validation_result.json",
+                      "size":  3022,
+                      "sha256":  "33fe35479e0d0705184dd61418f1054d9441b2967eaad3821a29d2b42460d36b"
+                  },
+                  {
+                      "path":  "README.md",
+                      "size":  1305,
+                      "sha256":  "158808c3e8ab8dfbfd7aee887ac9ad8e2f6654804a154d552368c8c52a11c5cc"
+                  },
+                  {
+                      "path":  "scripts\\build_1013r_r90b_d0_synthetic_candidate_strict_gate_dry_run.py",
+                      "size":  21365,
+                      "sha256":  "08a36ebc5c6046094bd86c0b93e6b6c37a1f727dd90c598e0608c4e9a7c2f6ce"
+                  },
+                  {
+                      "path":  "scripts\\run_1013r_r90b_provider_smoke_same_targets.py",
+                      "size":  20126,
+                      "sha256":  "539ebd56c821d0465a6ed35710ec8bb4437d17d990fb0457c4da74b9c2282839"
+                  },
+                  {
+                      "path":  "upstream_refs\\lesson_generation_response_schema_1013R_R82.json",
+                      "size":  3095,
+                      "sha256":  "6bfb938d66cb4d23b59eec7299fd45f77c2c7a7da2e6f96273ff81dfc5dccd48"
+                  },
+                  {
+                      "path":  "upstream_refs\\r89_candidate_required_keys_single_source_1013R_R89.json",
+                      "size":  4337,
+                      "sha256":  "3970ddc7b074f0f451f287df9dd99698836737730d0d5ea81d3fe5ba16fce5e5"
+                  },
+                  {
+                      "path":  "upstream_refs\\r90a_art_lesson_design_profile_manifest_1013R_R90A.json",
+                      "size":  2231,
+                      "sha256":  "875f0789041788f8e6967e69048b7b12cad1c05debd599b21c1124679be147f3"
+                  },
+                  {
+                      "path":  "upstream_refs\\r90a_true_generation_strict_validator_policy_1013R_R90A.json",
+                      "size":  11201,
+                      "sha256":  "7e0564c43c6816098dd75d001ca2f9b46763d1c3591daa73dcc05b44f6374cd5"
+                  }
+              ]
+}
