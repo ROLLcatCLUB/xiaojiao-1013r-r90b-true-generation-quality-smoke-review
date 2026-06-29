@@ -1,0 +1,149 @@
+{
+  "source_round": "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1",
+  "repair_round": "1013R_R90B_P1_QUALITY_SENTINEL_V0_AND_LINEAGE_REPAIR",
+  "created_at": "2026-06-30T05:08:52",
+  "active_profile": {
+    "profile_id": "art_lesson_design_profile_v1",
+    "profile_version": "1.0.0",
+    "candidate_contract_version": "candidate_required_keys_v1",
+    "profile_source": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90A_TRUE_GENERATION_CONTRACT_AND_PROFILE_PREFLIGHT\\r90a_art_lesson_design_profile_manifest_1013R_R90A.json"
+  },
+  "provider": {
+    "provider": "openai_compatible",
+    "model": "MiniMax-M3",
+    "base_url": "https://api.minimaxi.com/v1",
+    "credential_source": "env",
+    "provider_call_reused": true,
+    "provider_called_in_this_round": false,
+    "source_provider_call_round": "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1"
+  },
+  "input_files": {
+    "provider_request": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\r90b_provider_request.json",
+    "provider_raw_response": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\r90b_provider_raw_response.json",
+    "strict_validation_result": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\strict_provider_raw_validation_result.json",
+    "normalized_candidates": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\normalized_candidates.json",
+    "teacher_review_card_preview": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\r90b_provider_teacher_review_card_preview.md",
+    "quality_smoke_result": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\quality_smoke_result.md"
+  },
+  "hashes": {
+    "provider_request": {
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\r90b_provider_request.json",
+      "size": 7073,
+      "sha256": "b68bfcfde4453419efa2eca74cba7bc41c5add7d9a94d2d4b0285c3bee5651a7"
+    },
+    "provider_raw_response": {
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\r90b_provider_raw_response.json",
+      "size": 8632,
+      "sha256": "d91f0a2f1d6bc38e839f45167fef109f5bdc6808352277441113ea4fe07ceecd"
+    },
+    "strict_validation_result": {
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\strict_provider_raw_validation_result.json",
+      "size": 3022,
+      "sha256": "33fe35479e0d0705184dd61418f1054d9441b2967eaad3821a29d2b42460d36b"
+    },
+    "normalized_candidates": {
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\normalized_candidates.json",
+      "size": 5413,
+      "sha256": "69aa46cf34845f3d5260ca062bd0c3ae6fd0120b49a1b477d8fdbe20655731f1"
+    },
+    "teacher_review_card_preview": {
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\r90b_provider_teacher_review_card_preview.md",
+      "size": 2572,
+      "sha256": "b9fbcba13c22876e2175b78646c0ffaef04042e2f4e31f86050669d03976ce9e"
+    },
+    "quality_smoke_result": {
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1\\quality_smoke_result.md",
+      "size": 1026,
+      "sha256": "8768856bdde2fd49b825511f787be298f45dae81bb2c1e87df7d4fa8c7bdef04"
+    }
+  },
+  "prompt_hash": "b68bfcfde4453419efa2eca74cba7bc41c5add7d9a94d2d4b0285c3bee5651a7",
+  "request_hash": "b68bfcfde4453419efa2eca74cba7bc41c5add7d9a94d2d4b0285c3bee5651a7",
+  "strict_validation": {
+    "result": "PASS",
+    "raw_provider_json_parse_ok": true,
+    "salvage_used": false,
+    "strict_provider_raw_validation_result": "PASS"
+  },
+  "candidate_summary": {
+    "candidate_count": 4,
+    "target_field_keys": [
+      "lesson.classroom_flow.step.teacher_probe_question",
+      "lesson.classroom_flow.step.student_observation",
+      "lesson.classroom_flow.step.visual_language_focus",
+      "lesson.classroom_flow.step.success_criteria"
+    ],
+    "target_line_contract_ids": [
+      "R88-GEN/lesson.classroom_flow.step.teacher_probe_question",
+      "R88-GEN/lesson.classroom_flow.step.student_observation",
+      "R88-GEN/lesson.classroom_flow.step.visual_language_focus",
+      "R88-GEN/lesson.classroom_flow.step.success_criteria"
+    ],
+    "all_candidates_have_19_keys": true,
+    "all_teacher_review_required": true,
+    "all_preview_only": true,
+    "all_formal_apply_blocked": true,
+    "all_unapplied": true
+  },
+  "chain": [
+    {
+      "step": "profile",
+      "status": "reused",
+      "id": "art_lesson_design_profile_v1@1.0.0"
+    },
+    {
+      "step": "provider_request",
+      "status": "reused",
+      "file": "r90b_provider_request.json"
+    },
+    {
+      "step": "raw_response",
+      "status": "reused",
+      "file": "r90b_provider_raw_response.json"
+    },
+    {
+      "step": "strict_validation",
+      "status": "PASS",
+      "file": "strict_provider_raw_validation_result.json"
+    },
+    {
+      "step": "normalized_candidates",
+      "status": "reused",
+      "file": "normalized_candidates.json"
+    },
+    {
+      "step": "teacher_review_preview",
+      "status": "reused",
+      "file": "r90b_provider_teacher_review_card_preview.md"
+    },
+    {
+      "step": "quality_sentinel_v0",
+      "status": "BASIC_USABLE",
+      "file": "quality_sentinel_v0_result.json"
+    }
+  ],
+  "quality_sentinel_v0": {
+    "result": "BASIC_USABLE",
+    "blocking": false,
+    "result_file": "quality_sentinel_v0_result.json"
+  },
+  "boundary_flags": {
+    "r21_modified": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "new_fields_added": false,
+    "full_lesson_generated": false,
+    "provider_called_in_this_round": false,
+    "r90c_executed": false,
+    "r91_executed": false
+  },
+  "old_r90b_next_recommendation_overridden": {
+    "old_value": "1013R_R91_MULTI_STEP_CLASSROOM_FLOW_SMOKE",
+    "override_reason": "R90B quality_smoke is a thin 4-field check; latest handoff requires R90B-P1 before R90C or R91."
+  },
+  "next_recommended_round": "1013R_R90C_PROFILE_TO_SHELL_VIEWMODEL_BINDING_PREFLIGHT_OR_1013R_R91_AFTER_REVIEW",
+  "next_round_blocked_until_gpt_review": true,
+  "provider_request_stage": "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1"
+}
