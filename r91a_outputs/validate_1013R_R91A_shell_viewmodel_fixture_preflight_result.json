@@ -1,0 +1,38 @@
+{
+  "stage": "1013R_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT",
+  "status": "PASS",
+  "created_at": "2026-06-30T05:57:49",
+  "checks": {
+    "r36_shell_baseline_exists": true,
+    "r36_shell_markers_present": true,
+    "p1_quality_not_blocking": true,
+    "p1_quality_basic_usable": true,
+    "p1_strict_contract_pass": true,
+    "candidate_count": 4,
+    "candidate_count_at_least_4": true,
+    "all_candidates_teacher_review_cards": true,
+    "r29_prep_notebook_tool_present": true,
+    "r29_teaching_process_slot_present": true,
+    "r30_prep_notebook_connector_present": true,
+    "no_provider_call": true,
+    "no_page_or_runtime_write": true
+  },
+  "errors": [],
+  "warnings": [],
+  "final_status": "PASS_R91A_SHELL_VIEWMODEL_FIXTURE_PREFLIGHT",
+  "next_recommendation": "1013R_R91B_MULTI_STEP_CLASSROOM_FLOW_PROVIDER_SMOKE_ONLY_IF_GPT_REVIEW_ACCEPTS_R91A",
+  "boundary": {
+    "fixture_only": true,
+    "page_connection_performed": false,
+    "r36_modified": false,
+    "r21_modified": false,
+    "provider_called": false,
+    "model_called": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "new_fields_added": false,
+    "formal_apply_performed": false,
+    "r91b_provider_expansion_performed": false
+  }
+}
