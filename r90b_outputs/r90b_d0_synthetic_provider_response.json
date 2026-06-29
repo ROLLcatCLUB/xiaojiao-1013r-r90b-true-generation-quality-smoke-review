@@ -1,0 +1,198 @@
+{
+  "response_stage": "1013R_R90B_D0_SYNTHETIC_CANDIDATE_STRICT_GATE_DRY_RUN",
+  "request_id": "r90b_d0_synthetic_001",
+  "lesson_design_mode": "profile_targeted_smoke",
+  "intent_summary": "用虚拟 provider 响应验证 R90B strict gate 能放行正确候选并拒绝越界候选。",
+  "lesson_logic_brief": {
+    "inherited_unit_context_summary": "三年级色彩单元从观察自然与作品中的色彩变化进入渐变表达。",
+    "core_learning_problem": "学生能感觉颜色有变化，但未必能说清渐变层次和过渡方向。",
+    "student_starting_point": "学生能辨认颜色深浅差异，但需要把直观感受转成观察证据。",
+    "target_shift": "从看见颜色变化，转向用明度、层次、过渡描述并表达渐变。",
+    "lesson_focus_question": "颜色怎样一步步从浅到深变化？",
+    "visual_language_use": "明度渐变、层次、过渡、同一色相深浅变化。",
+    "teaching_route": [
+      "观察色块变化",
+      "圈出渐变层次",
+      "说出过渡方向",
+      "用作品证据自查"
+    ],
+    "evidence_plan": [
+      "学生圈出的渐变顺序",
+      "学生口头描述的变化方向",
+      "作品中的连续渐变层次"
+    ],
+    "risk_points": [
+      "学生只说好看不好看",
+      "作品颜色跳变明显但缺少过渡"
+    ],
+    "source_basis": [
+      "active_profile",
+      "R90B_revised_plan",
+      "synthetic_fixture"
+    ],
+    "material_gaps": []
+  },
+  "target_resolution": [
+    {
+      "schema_key": "classroom_flow",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_field": "observation_inquiry_active_step_fields",
+      "reason": "R90B-D0 只验证 observation_inquiry 环节的四个 active profile step fields。",
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0"
+      ]
+    }
+  ],
+  "step_reasoning_updates": [],
+  "field_patch_candidates": [
+    {
+      "field_patch_id": "r90b_d0_candidate_001",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.teacher_probe_question",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_probe_question",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "观察问题较泛",
+      "after_candidate": "你从浅到深能找到几个过渡台阶？哪个变化最明显？",
+      "xiaojiao_suggestion": "把观察聚焦到渐变层次和变化方向。",
+      "impact_scope": [
+        "classroom_flow",
+        "observation",
+        "visual_language"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:三年级美术《色彩的渐变》",
+        "step_type:observation_inquiry"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "观察探究先用追问把学生注意力拉到渐变证据。"
+    },
+    {
+      "field_patch_id": "r90b_d0_candidate_002",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.student_observation",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_observation",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "观察任务不够具体",
+      "after_candidate": "学生圈出色块由浅到深的顺序，并说出变化方向。",
+      "xiaojiao_suggestion": "把学生观察动作写成圈出、排序、说明。",
+      "impact_scope": [
+        "classroom_flow",
+        "student_action",
+        "evidence_note"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:三年级美术《色彩的渐变》",
+        "step_type:observation_inquiry"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "学生需要有可见动作，才能留下观察证据。"
+    },
+    {
+      "field_patch_id": "r90b_d0_candidate_003",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.visual_language_focus",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.visual_language_focus",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "美术语言不显性",
+      "after_candidate": "关注明度渐变：同一色相由浅到深逐步变化。",
+      "xiaojiao_suggestion": "让美术语言落到明度、层次和过渡。",
+      "impact_scope": [
+        "classroom_flow",
+        "visual_language",
+        "teacher_prompt"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:三年级美术《色彩的渐变》",
+        "step_type:observation_inquiry"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "美术课的生成候选必须把观察转成可说清的视觉语言。"
+    },
+    {
+      "field_patch_id": "r90b_d0_candidate_004",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.success_criteria",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.success_criteria",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "评价标准偏空",
+      "after_candidate": "作品至少出现3个连续渐变层次，过渡清楚。",
+      "xiaojiao_suggestion": "把成功标准写成学生能自查的作品证据。",
+      "impact_scope": [
+        "classroom_flow",
+        "assessment",
+        "work_evidence"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:三年级美术《色彩的渐变》",
+        "step_type:observation_inquiry"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "成功标准要能回指学生作品中的渐变层次。"
+    }
+  ],
+  "quality_gate_update": {
+    "level": "basic_usable",
+    "passed_items": [
+      "四个候选分别覆盖教师追问、学生观察、美术语言焦点、成功标准",
+      "候选均定位到 active profile 的 R88 step field"
+    ],
+    "missing_items": [
+      "真实 provider 内容质量尚未验证"
+    ],
+    "risk_items": [
+      "D0 是 synthetic dry run，不能替代 R90B provider smoke"
+    ],
+    "next_best_action": "D0 通过后再进行真实 provider 窄切生成。"
+  },
+  "material_requests": [],
+  "teacher_questions": [],
+  "ui_binding_hint": {
+    "should_enter_edit_mode": true,
+    "edit_target": "teaching_process/observation_inquiry_01",
+    "candidate_display_position": "existing_edit_card_before_after_suggestion_panel",
+    "right_tray_updates": [],
+    "view_mode_summary": "D0 只生成教师审核卡预览，不写 R21，不 formal apply。"
+  },
+  "boundary_flags": {
+    "teacher_review_required": true,
+    "formal_apply_performed": false,
+    "database_written": false,
+    "memory_written": false,
+    "feishu_written": false,
+    "formal_export_created": false,
+    "official_archive_created": false
+  }
+}
