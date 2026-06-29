@@ -47,3 +47,29 @@ quality_smoke_result = BASIC_USABLE
 - no database/Feishu/memory write
 - no new fields
 - no full lesson generation
+## R90B-P1 Quality Sentinel v0 + Lineage Repair
+
+R90B-P1 has completed Quality Sentinel v0 and generation lineage repair.
+
+Boundary:
+
+```text
+provider_called_in_this_round=false
+new_fields_added=false
+r21_modified=false
+formal_apply=false
+database_written=false
+feishu_written=false
+memory_written=false
+r90c_executed=false
+r91_executed=false
+```
+
+R90B-P1 only reuses the existing R90B provider outputs to add a lightweight quality sentinel and generation lineage. It does not replace R90B, does not expand to R90C/R91, and does not claim full lesson quality.
+
+Review entry points:
+
+- `r90b_p1_outputs/README.md`
+- `r90b_p1_outputs/quality_sentinel_v0_result.json`
+- `r90b_p1_outputs/generation_lineage_1013R_R90B.json`
+- `r90b_p1_outputs/validate_1013R_R90B_P1_quality_sentinel_v0_and_lineage_result.json`
