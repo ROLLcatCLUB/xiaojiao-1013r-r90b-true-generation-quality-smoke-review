@@ -73,3 +73,16 @@ Review entry points:
 - `r90b_p1_outputs/quality_sentinel_v0_result.json`
 - `r90b_p1_outputs/generation_lineage_1013R_R90B.json`
 - `r90b_p1_outputs/validate_1013R_R90B_P1_quality_sentinel_v0_and_lineage_result.json`
+
+## 1013R_R91A Shell ViewModel Fixture Preflight
+
+R91A has been added as a fixture-only shell/ViewModel preflight after R90B-P1.
+
+Boundary:
+
+```text
+R91A verifies that R90B provider candidates can be represented as TeacherReviewCard payloads in the current Shiwei prep-room shell contract.
+No provider call, no page/UI binding, no R36/R21 modification, no new fields, no formal apply, no database/Feishu/memory write, and no R91B provider expansion were performed.
+```
+
+Review files live under `r91a_outputs/`.
