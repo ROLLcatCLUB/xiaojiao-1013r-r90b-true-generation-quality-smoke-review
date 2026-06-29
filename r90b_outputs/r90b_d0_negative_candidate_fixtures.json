@@ -1,0 +1,89 @@
+[
+  {
+    "field_patch_id": "r90b_d0_negative_target_field_key_equals_schema_key",
+    "schema_key": "classroom_flow",
+    "canonical_field_key": "classroom_flow",
+    "target_field_key": "classroom_flow",
+    "target_section": "teaching_process",
+    "target_step_id": "observation_inquiry_01",
+    "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_probe_question",
+    "target_destination": "existing_edit_card_before_after_suggestion_panel",
+    "before_summary": "观察问题较泛",
+    "after_candidate": "你从浅到深能找到几个过渡台阶？哪个变化最明显？",
+    "xiaojiao_suggestion": "把观察聚焦到渐变层次和变化方向。",
+    "impact_scope": [
+      "classroom_flow",
+      "observation",
+      "visual_language"
+    ],
+    "source_refs": [
+      "active_profile:art_lesson_design_profile_v1@1.0.0",
+      "lesson_case:三年级美术《色彩的渐变》",
+      "step_type:observation_inquiry"
+    ],
+    "teacher_review_required": true,
+    "preview_only": true,
+    "formal_apply_allowed": false,
+    "applied": false,
+    "patch_type": "profile_targeted_field_candidate",
+    "reasoning_basis": "观察探究先用追问把学生注意力拉到渐变证据。"
+  },
+  {
+    "field_patch_id": "r90b_d0_negative_line_contract_id_mismatch",
+    "schema_key": "classroom_flow",
+    "canonical_field_key": "classroom_flow",
+    "target_field_key": "lesson.classroom_flow.step.student_observation",
+    "target_section": "teaching_process",
+    "target_step_id": "observation_inquiry_01",
+    "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.wrong",
+    "target_destination": "existing_edit_card_before_after_suggestion_panel",
+    "before_summary": "观察任务不够具体",
+    "after_candidate": "学生圈出色块由浅到深的顺序，并说出变化方向。",
+    "xiaojiao_suggestion": "把学生观察动作写成圈出、排序、说明。",
+    "impact_scope": [
+      "classroom_flow",
+      "student_action",
+      "evidence_note"
+    ],
+    "source_refs": [
+      "active_profile:art_lesson_design_profile_v1@1.0.0",
+      "lesson_case:三年级美术《色彩的渐变》",
+      "step_type:observation_inquiry"
+    ],
+    "teacher_review_required": true,
+    "preview_only": true,
+    "formal_apply_allowed": false,
+    "applied": false,
+    "patch_type": "profile_targeted_field_candidate",
+    "reasoning_basis": "学生需要有可见动作，才能留下观察证据。"
+  },
+  {
+    "field_patch_id": "r90b_d0_negative_formal_apply_allowed_true",
+    "schema_key": "classroom_flow",
+    "canonical_field_key": "classroom_flow",
+    "target_field_key": "lesson.classroom_flow.step.visual_language_focus",
+    "target_section": "teaching_process",
+    "target_step_id": "observation_inquiry_01",
+    "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.visual_language_focus",
+    "target_destination": "existing_edit_card_before_after_suggestion_panel",
+    "before_summary": "美术语言不显性",
+    "after_candidate": "关注明度渐变：同一色相由浅到深逐步变化。",
+    "xiaojiao_suggestion": "让美术语言落到明度、层次和过渡。",
+    "impact_scope": [
+      "classroom_flow",
+      "visual_language",
+      "teacher_prompt"
+    ],
+    "source_refs": [
+      "active_profile:art_lesson_design_profile_v1@1.0.0",
+      "lesson_case:三年级美术《色彩的渐变》",
+      "step_type:observation_inquiry"
+    ],
+    "teacher_review_required": true,
+    "preview_only": true,
+    "formal_apply_allowed": true,
+    "applied": false,
+    "patch_type": "profile_targeted_field_candidate",
+    "reasoning_basis": "美术课的生成候选必须把观察转成可说清的视觉语言。"
+  }
+]
