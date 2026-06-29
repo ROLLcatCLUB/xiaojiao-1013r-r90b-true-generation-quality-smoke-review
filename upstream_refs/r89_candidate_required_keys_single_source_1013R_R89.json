@@ -1,0 +1,155 @@
+{
+  "schema_id": "r89_candidate_required_keys_single_source_1013R_R89",
+  "stage": "1013R_R89_FIELD_CONTRACT_CONVERGENCE_AND_CAUSAL_CHAIN_GATE",
+  "single_source_name": "candidate_required_keys_v1",
+  "single_source_policy": "R82 response schema 19-key candidate contract is authoritative for R89.",
+  "candidate_required_keys_v1": [
+    "field_patch_id",
+    "schema_key",
+    "canonical_field_key",
+    "target_field_key",
+    "target_section",
+    "target_step_id",
+    "target_line_contract_id",
+    "target_destination",
+    "before_summary",
+    "after_candidate",
+    "xiaojiao_suggestion",
+    "impact_scope",
+    "source_refs",
+    "teacher_review_required",
+    "preview_only",
+    "formal_apply_allowed",
+    "applied",
+    "patch_type",
+    "reasoning_basis"
+  ],
+  "target_step_id_policy": "key required; may be empty string for non-classroom-flow fields",
+  "future_extension_policy": "do not add target_r88_step_field_keys in R89; resolve via target_line_contract_id and R81->R88 adapter.",
+  "source_diffs": [
+    {
+      "source": "R82_response_schema",
+      "keys": [
+        "field_patch_id",
+        "schema_key",
+        "canonical_field_key",
+        "target_field_key",
+        "target_section",
+        "target_step_id",
+        "target_line_contract_id",
+        "target_destination",
+        "before_summary",
+        "after_candidate",
+        "xiaojiao_suggestion",
+        "impact_scope",
+        "source_refs",
+        "teacher_review_required",
+        "preview_only",
+        "formal_apply_allowed",
+        "applied",
+        "patch_type",
+        "reasoning_basis"
+      ],
+      "matches_single_source": true,
+      "missing_from_source": [],
+      "extra_in_source": [],
+      "difference_declared": false
+    },
+    {
+      "source": "R82_normalizer_contract",
+      "keys": [
+        "field_patch_id",
+        "schema_key",
+        "canonical_field_key",
+        "target_field_key",
+        "target_section",
+        "target_step_id",
+        "target_line_contract_id",
+        "target_destination",
+        "before_summary",
+        "after_candidate",
+        "xiaojiao_suggestion",
+        "impact_scope",
+        "source_refs",
+        "teacher_review_required",
+        "preview_only",
+        "formal_apply_allowed",
+        "applied"
+      ],
+      "matches_single_source": false,
+      "missing_from_source": [
+        "patch_type",
+        "reasoning_basis"
+      ],
+      "extra_in_source": [],
+      "difference_declared": true
+    },
+    {
+      "source": "R81_step_candidate_slot_policy",
+      "keys": [
+        "field_patch_id",
+        "canonical_field_key",
+        "target_field_key",
+        "target_section",
+        "target_step_id",
+        "target_line_contract_id",
+        "target_field",
+        "before_summary",
+        "after_candidate",
+        "xiaojiao_suggestion",
+        "impact_scope",
+        "teacher_review_required",
+        "formal_apply_allowed",
+        "applied"
+      ],
+      "matches_single_source": false,
+      "missing_from_source": [
+        "schema_key",
+        "target_destination",
+        "source_refs",
+        "preview_only",
+        "patch_type",
+        "reasoning_basis"
+      ],
+      "extra_in_source": [
+        "target_field"
+      ],
+      "difference_declared": true
+    },
+    {
+      "source": "R83_R87_script_REQUIRED_CANDIDATE_KEYS",
+      "keys": [
+        "field_patch_id",
+        "schema_key",
+        "canonical_field_key",
+        "target_field_key",
+        "target_section",
+        "target_line_contract_id",
+        "target_destination",
+        "before_summary",
+        "after_candidate",
+        "xiaojiao_suggestion",
+        "impact_scope",
+        "source_refs",
+        "teacher_review_required",
+        "preview_only",
+        "formal_apply_allowed",
+        "applied",
+        "patch_type"
+      ],
+      "matches_single_source": false,
+      "missing_from_source": [
+        "target_step_id",
+        "reasoning_basis"
+      ],
+      "extra_in_source": [],
+      "difference_declared": true
+    }
+  ],
+  "summary": {
+    "single_source_key_count": 19,
+    "sources_checked": 4,
+    "sources_matching_now": 1,
+    "sources_with_declared_drift": 3
+  }
+}
