@@ -95,3 +95,19 @@ Boundary:
 ```text
 R39 source not modified; R36/R21 not modified; no provider call; no runtime/page binding; no formal apply; no database/Feishu/memory write; R91B not executed.
 ```
+## 1013R_R91A R88 Field Lab Current Backfill
+
+Corrected static-page backfill target: the R88 field generation quality static lab has been copied and adapted under `r91a_r88_field_lab_current_backfill/`.
+
+Result:
+
+```text
+R88 page structurally matches the current frozen field system: 22 big-unit fields + 14 lesson fields + 47 step contract fields = 83 slots.
+The new copied page fills the 4 R90B candidates into their exact R88-GEN slots and adds R90B-P1 quality sentinel plus R91A TeacherReviewCard mapping.
+```
+
+Boundary:
+
+```text
+Source R88 page not modified; R36/R21 not modified; no provider call; no runtime/page binding; no formal apply; no database/Feishu/memory write; R91B not executed.
+```
