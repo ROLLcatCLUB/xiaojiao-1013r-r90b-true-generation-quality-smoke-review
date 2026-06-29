@@ -1,0 +1,109 @@
+{
+  "round": "1013R_R90B_D0_SYNTHETIC_CANDIDATE_STRICT_GATE_DRY_RUN",
+  "parent_round": "1013R_R90B_TRUE_GENERATION_QUALITY_SMOKE_V1",
+  "generated_at": "2026-06-30T03:32:30",
+  "result": "PASS",
+  "active_profile": {
+    "profile_id": "art_lesson_design_profile_v1",
+    "profile_version": "1.0.0",
+    "candidate_contract_version": "candidate_required_keys_v1"
+  },
+  "scope": {
+    "synthetic_only": true,
+    "provider_runtime_connected": false,
+    "r21_modified": false,
+    "formal_apply_allowed": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "new_fields_added": false,
+    "full_lesson_generation": false
+  },
+  "strict_positive_validation": {
+    "result": "PASS",
+    "details": {
+      "candidate_count": 4,
+      "candidate_results": [
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.teacher_probe_question",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_probe_question"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.student_observation",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_observation"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.visual_language_focus",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.visual_language_focus"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.success_criteria",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.success_criteria"
+          }
+        }
+      ]
+    }
+  },
+  "negative_candidate_validation": [
+    {
+      "field_patch_id": "r90b_d0_negative_target_field_key_equals_schema_key",
+      "validation": {
+        "result": "FAIL",
+        "reason": "target_field_key_not_active_profile_step_field",
+        "details": {
+          "target_field_key": "classroom_flow"
+        }
+      },
+      "expected": "FAIL"
+    },
+    {
+      "field_patch_id": "r90b_d0_negative_line_contract_id_mismatch",
+      "validation": {
+        "result": "FAIL",
+        "reason": "target_line_contract_id_mismatch",
+        "details": {
+          "target_field_key": "lesson.classroom_flow.step.student_observation",
+          "expected": "R88-GEN/lesson.classroom_flow.step.student_observation",
+          "actual": "R88-GEN/lesson.classroom_flow.step.wrong"
+        }
+      },
+      "expected": "FAIL"
+    },
+    {
+      "field_patch_id": "r90b_d0_negative_formal_apply_allowed_true",
+      "validation": {
+        "result": "FAIL",
+        "reason": "candidate_boundary_flag_mismatch",
+        "details": {
+          "key": "formal_apply_allowed",
+          "expected": false,
+          "actual": true
+        }
+      },
+      "expected": "FAIL"
+    }
+  ],
+  "summary": {
+    "strict_valid_candidates": 4,
+    "expected_rejected_negative_candidates": 3,
+    "candidate_required_key_count": 19,
+    "target_fields": [
+      "lesson.classroom_flow.step.teacher_probe_question",
+      "lesson.classroom_flow.step.student_observation",
+      "lesson.classroom_flow.step.visual_language_focus",
+      "lesson.classroom_flow.step.success_criteria"
+    ]
+  },
+  "next_recommended_round": "1013R_R90B_PROVIDER_SMOKE_SAME_TARGETS"
+}
