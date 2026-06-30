@@ -1,0 +1,17 @@
+{
+  "stage": "1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE",
+  "r93_p6_result": "PASS_WITH_NOTES",
+  "teacher_default_reading_page_ready": true,
+  "reading_hierarchy_accepted": true,
+  "quality": "BASIC_USABLE",
+  "formal_ready": false,
+  "r95_allowed_now": false,
+  "r95_authorization_status": "PENDING_USER_AUTHORIZATION",
+  "next": "R95_STATIC_ARTIFACT_EXPORT_PREVIEW_AFTER_USER_AUTHORIZATION",
+  "notes": [
+    "P6 can be accepted as the current teacher default reading surface.",
+    "Do not keep looping on reading hierarchy before R95.",
+    "Some teacher-three-step summaries should be polished during R95 preview preparation.",
+    "R95 remains locked until user authorization."
+  ]
+}
