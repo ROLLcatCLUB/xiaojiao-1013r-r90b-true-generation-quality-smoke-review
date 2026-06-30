@@ -259,3 +259,16 @@ R94 smoke acceptance and R94-P1 quality gate has been added under r94_smoke_acce
 - Next: R94-P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH
 - Notes: courseware still text-outline-like; worksheet too full; rubric needs teacher/student split
 - Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no UI binding, no formal apply, no database/Feishu/memory write, no PPTX, no print-ready material, no R94-P1 execution, no R95
+## R94-P1 Derived Artifacts Teacher Review Polish
+
+R94-P1 teacher-review polish has been added under r94_p1_derived_artifacts_teacher_review_polish/.
+
+- Stage: 1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH
+- Result: PASS
+- Quality Sentinel v0: BASIC_USABLE
+- blocking: false
+- Generated teacher-review drafts: slide storyboard, one-page student worksheet, worksheet teacher notes, teacher observation rubric, student self-assessment
+- artifact_formal_ready: false
+- formal_apply: false
+- Not generated: formal PPTX, print final, database/Feishu/memory write, UI binding, R95
+- Boundary: no provider/model call, no new fields, no profile/R21/R36 changes

@@ -1,0 +1,23 @@
+{
+  "artifact": "r94_p1_assessment",
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "score_system": "none",
+  "levels": [
+    "已做到",
+    "基本做到",
+    "还要再试"
+  ],
+  "teacher_observation_dimensions": [
+    "看得见：能发现渐变",
+    "试得出：能做出连续变化",
+    "用得上：能把渐变用到作品里",
+    "说得清：能说明颜色怎么变化",
+    "改得动：能根据建议修一处"
+  ],
+  "student_self_assessment_items": [
+    "我看见颜色慢慢变了",
+    "我试出了三层颜色变化",
+    "我能说出颜色从哪里变到哪里"
+  ]
+}

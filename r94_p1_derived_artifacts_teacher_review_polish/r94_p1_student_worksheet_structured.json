@@ -1,0 +1,51 @@
+{
+  "artifact": "r94_p1_student_worksheet",
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "printed_final_material_generated": false,
+  "student_version": {
+    "page_count_target": "one_page_draft",
+    "tasks": [
+      {
+        "task_id": "task_1_find",
+        "title": "找一找",
+        "student_language": "我看到颜色从___慢慢变到___。",
+        "concept_bridge": [
+          "渐变观察",
+          "变化方向"
+        ]
+      },
+      {
+        "task_id": "task_2_try",
+        "title": "试一试",
+        "student_language": "选一种颜色，画三格，让它慢慢变。",
+        "concept_bridge": [
+          "明度或纯度小样",
+          "连续变化"
+        ]
+      },
+      {
+        "task_id": "task_3_check",
+        "title": "查一查",
+        "student_language": "我能说出颜色从哪里变到哪里。",
+        "concept_bridge": [
+          "自查",
+          "表达",
+          "微修订"
+        ]
+      }
+    ]
+  },
+  "teacher_notes": {
+    "concepts": [
+      "明度",
+      "纯度",
+      "渐变规律"
+    ],
+    "use_cases": [
+      "课堂观察",
+      "小样练习",
+      "作品自查"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "stage": "1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH",
+  "quality_sentinel_version": "v0",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "allowed_conclusion": "TEACHER_REVIEW_MATERIAL_READY",
+  "preview_only": true,
+  "checks": {
+    "artifact_alignment": "PASS",
+    "student_language_fit": "PASS",
+    "teacher_adoptability": "PASS",
+    "source_consistency": "PASS",
+    "scope_control": "PASS",
+    "print_readiness_preview": "PASS_WITH_NOTES"
+  },
+  "not_claimed": [
+    "正式 PPTX",
+    "打印定稿",
+    "正式材料通过",
+    "可直接发布"
+  ]
+}

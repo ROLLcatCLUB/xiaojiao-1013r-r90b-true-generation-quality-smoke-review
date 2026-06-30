@@ -1,0 +1,108 @@
+{
+  "stage": "1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH",
+  "created_at": "2026-06-30T23:08:18",
+  "source_round": "R94_DERIVED_ARTIFACTS_SMOKE",
+  "source_lesson_round": "R93-P2",
+  "source_textbook_anchor_status": "CLOSED",
+  "source_artifact_files": {
+    "courseware": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\r94_courseware_outline_draft.md",
+    "worksheet": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\r94_student_worksheet_draft.md",
+    "rubric": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\r94_assessment_rubric_draft.md",
+    "lesson_draft": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\r93_p2_final_preview_lesson_draft.md",
+    "quality_notes": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\r94_quality_notes_for_p1.md"
+  },
+  "derived_artifact_count": 3,
+  "slide_storyboard_created": true,
+  "student_worksheet_one_page_created": true,
+  "student_worksheet_teacher_notes_created": true,
+  "teacher_observation_rubric_created": true,
+  "student_self_assessment_created": true,
+  "provider_called": false,
+  "model_called": false,
+  "profile_modified": false,
+  "new_fields_added": false,
+  "formal_apply": false,
+  "r21_modified": false,
+  "r36_modified": false,
+  "ui_connected": false,
+  "r95_executed": false,
+  "source_records": [
+    {
+      "source_key": "r93_p2_final_preview_lesson_draft",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\r93_p2_final_preview_lesson_draft.md",
+      "exists": true,
+      "size": 9974,
+      "sha256": "89cb4fc3d4aa075805465f96d8f3b5ffcef66af430952ada09ced0c954f260a7"
+    },
+    {
+      "source_key": "r93_p2_textbook_anchor_closure",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\textbook_anchor_closure.md",
+      "exists": true,
+      "size": 4790,
+      "sha256": "56a4c49d97cf4a233c52368c07e262a9e489d77629ba14283a6143871a995476"
+    },
+    {
+      "source_key": "r93_p2_validator",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\validate_1013R_R93_P2_textbook_anchor_closure_final_preview_draft_result.json",
+      "exists": true,
+      "size": 6490,
+      "sha256": "fb2f10bb8cd2042a0da70bc71b653557dc2cd729b17818cfba457ce49855ac71"
+    },
+    {
+      "source_key": "r94_courseware_outline_draft",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\r94_courseware_outline_draft.md",
+      "exists": true,
+      "size": 5262,
+      "sha256": "a279a3faa04fcc90a9738a33544d5ecff2d8f72775c1b02f93fd8a1fa9b5bff1"
+    },
+    {
+      "source_key": "r94_student_worksheet_draft",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\r94_student_worksheet_draft.md",
+      "exists": true,
+      "size": 2679,
+      "sha256": "ebf7dd5d9d2de35c1e6bcc6213dd137d00e5b79480bc231c7325fea635ce1e5f"
+    },
+    {
+      "source_key": "r94_assessment_rubric_draft",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\r94_assessment_rubric_draft.md",
+      "exists": true,
+      "size": 1795,
+      "sha256": "68cd34526e419567f59ba8e379ae57b0c88b7a873192015ddc1010451a57cc1f"
+    },
+    {
+      "source_key": "r94_trace",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\r94_derived_artifacts_trace.json",
+      "exists": true,
+      "size": 4603,
+      "sha256": "d270f0d5b4e536989b2c5722f24a3fc217e1ce9af4417521e21727be003b9268"
+    },
+    {
+      "source_key": "r94_validator",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\validate_1013R_R94_derived_artifacts_smoke_result.json",
+      "exists": true,
+      "size": 1661,
+      "sha256": "43676ca94f693974d4c01560ac24b4a921d40cc83eb966462f0c2ed306a6f31a"
+    },
+    {
+      "source_key": "r94_manifest",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_DERIVED_ARTIFACTS_SMOKE\\REVIEW_PACKAGE_MANIFEST.json",
+      "exists": true,
+      "size": 5822,
+      "sha256": "8d129a7fa0755fdeff98015201cfe84b6a6757f935ba118e0e064fe4bb624496"
+    },
+    {
+      "source_key": "r94_quality_notes_for_p1",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\r94_quality_notes_for_p1.md",
+      "exists": true,
+      "size": 783,
+      "sha256": "adafc13f1a2633407229f79b04f449cb4578969a4946989ad06b92a0424b234c"
+    },
+    {
+      "source_key": "r94_p1_gate_validator",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\validate_1013R_R94_smoke_acceptance_and_R94_P1_quality_gate_result.json",
+      "exists": true,
+      "size": 1197,
+      "sha256": "8180dd5da30b429e23cc95df809e7a9bc40100e5bf0a0db06554f4d4227be869"
+    }
+  ]
+}
