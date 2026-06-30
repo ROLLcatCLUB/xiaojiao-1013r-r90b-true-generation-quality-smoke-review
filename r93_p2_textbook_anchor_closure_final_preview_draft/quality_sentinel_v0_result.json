@@ -1,0 +1,23 @@
+{
+  "stage": "1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT",
+  "quality_sentinel_version": "v0",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "teacher_review_required": true,
+  "textbook_anchor_closed": true,
+  "final_preview_draft_ready": true,
+  "final_formal_lesson_ready": false,
+  "reasons": [
+    "teacher-provided textbook page images close the lesson anchor",
+    "knowledge-base textbook image package and local lesson plans were scanned and attached as lineage/reference evidence",
+    "concept focus now matches textbook pages: 明度与纯度、明度渐变、纯度渐变",
+    "teacher-readable draft has been narrowed to the confirmed textbook page",
+    "formal apply and R94 derivation remain blocked"
+  ],
+  "not_claimed": [
+    "formal lesson approval",
+    "R21/R36 write",
+    "UI binding",
+    "courseware/worksheet/rubric readiness"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "anchor_status": "TEXTBOOK_ANCHOR_CLOSED_WITH_TEACHER_PAGE_IMAGES_AND_KB_LINEAGE",
+  "anchor_evidence_basis": [
+    "teacher_provided_page_images_are_primary_textbook_anchor",
+    "knowledge_base_textbook_image_index_confirms_existing_local_textbook_image_package",
+    "teacher_local_lesson_plans_are_pedagogical_references_not_current_textbook_anchor"
+  ],
+  "unit": "第二单元《多彩的世界》",
+  "lesson_sequence": "第1课",
+  "lesson_title": "色彩的渐变",
+  "page_range": "6-7",
+  "following_lessons": [
+    {
+      "lesson_sequence": "第2课",
+      "lesson_title": "渐变的节奏",
+      "page_range": "8-9"
+    },
+    {
+      "lesson_sequence": "第3课",
+      "lesson_title": "多彩的生活",
+      "page_range": "10-11"
+    }
+  ],
+  "confirmed_core_concepts": [
+    "色彩的明度",
+    "色彩的纯度",
+    "明度渐变",
+    "纯度渐变",
+    "渐变规律",
+    "秩序美",
+    "节奏美",
+    "层次丰富"
+  ],
+  "confirmed_material_modes": [
+    "调色",
+    "拼摆",
+    "绘画",
+    "按规律排列"
+  ],
+  "classroom_material_choice": "TEXTBOOK_CONFIRMS_MIXED_METHODS_TEACHER_SELECTS_LOCAL_TOOLS"
+}

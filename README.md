@@ -206,3 +206,14 @@ Next stage is allowed only after teacher provides textbook anchor evidence:
 ```text
 R93-P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT
 ```
+## R93-P2 Textbook Anchor Closure And Final Preview Draft
+
+R93-P2 has closed the textbook anchor for 第1课《色彩的渐变》 using teacher-provided textbook page images plus local knowledge-base lineage.
+
+- Stage: 1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT
+- Directory: 93_p2_textbook_anchor_closure_final_preview_draft/
+- Anchor: 第二单元《多彩的世界》, 第1课《色彩的渐变》, pages 6-7
+- Following lessons: 第2课《渐变的节奏》 pages 8-9; 第3课《多彩的生活》 pages 10-11
+- Quality: BASIC_USABLE
+- Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no UI binding, no formal apply, no database/Feishu/memory write, no R94, no courseware/worksheet/rubric derivation
+- Status: final_preview_draft_ready=true; final_formal_lesson_ready=false; r94_allowed=false
