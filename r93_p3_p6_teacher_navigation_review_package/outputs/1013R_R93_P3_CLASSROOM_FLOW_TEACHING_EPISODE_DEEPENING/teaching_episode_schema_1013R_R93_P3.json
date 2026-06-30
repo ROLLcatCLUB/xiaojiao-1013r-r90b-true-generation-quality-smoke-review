@@ -1,0 +1,42 @@
+{
+  "schema_id": "teaching_episode_schema_1013R_R93_P3",
+  "status": "preview_only",
+  "profile_id": "art_lesson_design_profile_v1",
+  "profile_modified": false,
+  "description": "A teacher-facing intermediate object that reorganizes existing lesson fields and derived artifacts into classroom episodes.",
+  "required_episode_keys": [
+    "episode_id",
+    "title",
+    "duration",
+    "episode_goal",
+    "design_intent",
+    "screen_plan",
+    "teacher_moves",
+    "student_moves",
+    "student_scaffolds",
+    "xiaojiao_support",
+    "common_misconceptions",
+    "fallback_strategies",
+    "evidence",
+    "transition"
+  ],
+  "boundary": {
+    "teacher_review_required": true,
+    "preview_only": true,
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added_to_profile": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "printed_final_material_generated": false,
+    "r95_executed": false,
+    "multi_case_regression_executed": false
+  }
+}

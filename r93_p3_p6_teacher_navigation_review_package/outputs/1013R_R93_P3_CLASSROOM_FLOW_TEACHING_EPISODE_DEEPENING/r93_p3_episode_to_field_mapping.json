@@ -1,0 +1,247 @@
+{
+  "stage": "1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING",
+  "mapping_type": "episode_to_existing_field_reorganization",
+  "new_profile_fields_added": false,
+  "episodes": [
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "title": "看见渐变",
+      "mapped_field_groups": {
+        "screen_plan": [
+          "lesson.courseware_plan",
+          "lesson.classroom_flow.step.visual_object",
+          "lesson.classroom_flow.step.visual_language_focus"
+        ],
+        "teacher_moves": [
+          "lesson.classroom_flow.step.teacher_instruction",
+          "lesson.classroom_flow.step.teacher_core_question",
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.teacher_modeling_language"
+        ],
+        "student_moves": [
+          "lesson.classroom_flow.step.student_observation",
+          "lesson.classroom_flow.step.student_try",
+          "lesson.classroom_flow.step.student_creation",
+          "lesson.classroom_flow.step.student_recording",
+          "lesson.classroom_flow.step.student_revision"
+        ],
+        "student_scaffolds": [
+          "lesson.classroom_flow.step.language_scaffold",
+          "lesson.classroom_flow.step.material_scaffold",
+          "lesson.classroom_flow.step.peer_scaffold",
+          "lesson.classroom_flow.step.differentiation_scaffold"
+        ],
+        "xiaojiao_support": [
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.common_misconception",
+          "lesson.classroom_flow.step.fallback_strategy"
+        ],
+        "evidence": [
+          "lesson.classroom_flow.step.process_evidence",
+          "lesson.classroom_flow.step.work_evidence",
+          "lesson.classroom_flow.step.expression_evidence",
+          "lesson.classroom_flow.step.teacher_observation_point",
+          "lesson.classroom_flow.step.success_criteria"
+        ]
+      },
+      "derived_materials_embedded": [
+        "courseware storyboard",
+        "student worksheet",
+        "teacher observation rubric",
+        "student self-assessment"
+      ]
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "title": "分清亮暗与鲜灰",
+      "mapped_field_groups": {
+        "screen_plan": [
+          "lesson.courseware_plan",
+          "lesson.classroom_flow.step.visual_object",
+          "lesson.classroom_flow.step.visual_language_focus"
+        ],
+        "teacher_moves": [
+          "lesson.classroom_flow.step.teacher_instruction",
+          "lesson.classroom_flow.step.teacher_core_question",
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.teacher_modeling_language"
+        ],
+        "student_moves": [
+          "lesson.classroom_flow.step.student_observation",
+          "lesson.classroom_flow.step.student_try",
+          "lesson.classroom_flow.step.student_creation",
+          "lesson.classroom_flow.step.student_recording",
+          "lesson.classroom_flow.step.student_revision"
+        ],
+        "student_scaffolds": [
+          "lesson.classroom_flow.step.language_scaffold",
+          "lesson.classroom_flow.step.material_scaffold",
+          "lesson.classroom_flow.step.peer_scaffold",
+          "lesson.classroom_flow.step.differentiation_scaffold"
+        ],
+        "xiaojiao_support": [
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.common_misconception",
+          "lesson.classroom_flow.step.fallback_strategy"
+        ],
+        "evidence": [
+          "lesson.classroom_flow.step.process_evidence",
+          "lesson.classroom_flow.step.work_evidence",
+          "lesson.classroom_flow.step.expression_evidence",
+          "lesson.classroom_flow.step.teacher_observation_point",
+          "lesson.classroom_flow.step.success_criteria"
+        ]
+      },
+      "derived_materials_embedded": [
+        "courseware storyboard",
+        "student worksheet",
+        "teacher observation rubric",
+        "student self-assessment"
+      ]
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "title": "三格试色",
+      "mapped_field_groups": {
+        "screen_plan": [
+          "lesson.courseware_plan",
+          "lesson.classroom_flow.step.visual_object",
+          "lesson.classroom_flow.step.visual_language_focus"
+        ],
+        "teacher_moves": [
+          "lesson.classroom_flow.step.teacher_instruction",
+          "lesson.classroom_flow.step.teacher_core_question",
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.teacher_modeling_language"
+        ],
+        "student_moves": [
+          "lesson.classroom_flow.step.student_observation",
+          "lesson.classroom_flow.step.student_try",
+          "lesson.classroom_flow.step.student_creation",
+          "lesson.classroom_flow.step.student_recording",
+          "lesson.classroom_flow.step.student_revision"
+        ],
+        "student_scaffolds": [
+          "lesson.classroom_flow.step.language_scaffold",
+          "lesson.classroom_flow.step.material_scaffold",
+          "lesson.classroom_flow.step.peer_scaffold",
+          "lesson.classroom_flow.step.differentiation_scaffold"
+        ],
+        "xiaojiao_support": [
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.common_misconception",
+          "lesson.classroom_flow.step.fallback_strategy"
+        ],
+        "evidence": [
+          "lesson.classroom_flow.step.process_evidence",
+          "lesson.classroom_flow.step.work_evidence",
+          "lesson.classroom_flow.step.expression_evidence",
+          "lesson.classroom_flow.step.teacher_observation_point",
+          "lesson.classroom_flow.step.success_criteria"
+        ]
+      },
+      "derived_materials_embedded": [
+        "courseware storyboard",
+        "student worksheet",
+        "teacher observation rubric",
+        "student self-assessment"
+      ]
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "title": "放进作品",
+      "mapped_field_groups": {
+        "screen_plan": [
+          "lesson.courseware_plan",
+          "lesson.classroom_flow.step.visual_object",
+          "lesson.classroom_flow.step.visual_language_focus"
+        ],
+        "teacher_moves": [
+          "lesson.classroom_flow.step.teacher_instruction",
+          "lesson.classroom_flow.step.teacher_core_question",
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.teacher_modeling_language"
+        ],
+        "student_moves": [
+          "lesson.classroom_flow.step.student_observation",
+          "lesson.classroom_flow.step.student_try",
+          "lesson.classroom_flow.step.student_creation",
+          "lesson.classroom_flow.step.student_recording",
+          "lesson.classroom_flow.step.student_revision"
+        ],
+        "student_scaffolds": [
+          "lesson.classroom_flow.step.language_scaffold",
+          "lesson.classroom_flow.step.material_scaffold",
+          "lesson.classroom_flow.step.peer_scaffold",
+          "lesson.classroom_flow.step.differentiation_scaffold"
+        ],
+        "xiaojiao_support": [
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.common_misconception",
+          "lesson.classroom_flow.step.fallback_strategy"
+        ],
+        "evidence": [
+          "lesson.classroom_flow.step.process_evidence",
+          "lesson.classroom_flow.step.work_evidence",
+          "lesson.classroom_flow.step.expression_evidence",
+          "lesson.classroom_flow.step.teacher_observation_point",
+          "lesson.classroom_flow.step.success_criteria"
+        ]
+      },
+      "derived_materials_embedded": [
+        "courseware storyboard",
+        "student worksheet",
+        "teacher observation rubric",
+        "student self-assessment"
+      ]
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "title": "自查与微修订",
+      "mapped_field_groups": {
+        "screen_plan": [
+          "lesson.courseware_plan",
+          "lesson.classroom_flow.step.visual_object",
+          "lesson.classroom_flow.step.visual_language_focus"
+        ],
+        "teacher_moves": [
+          "lesson.classroom_flow.step.teacher_instruction",
+          "lesson.classroom_flow.step.teacher_core_question",
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.teacher_modeling_language"
+        ],
+        "student_moves": [
+          "lesson.classroom_flow.step.student_observation",
+          "lesson.classroom_flow.step.student_try",
+          "lesson.classroom_flow.step.student_creation",
+          "lesson.classroom_flow.step.student_recording",
+          "lesson.classroom_flow.step.student_revision"
+        ],
+        "student_scaffolds": [
+          "lesson.classroom_flow.step.language_scaffold",
+          "lesson.classroom_flow.step.material_scaffold",
+          "lesson.classroom_flow.step.peer_scaffold",
+          "lesson.classroom_flow.step.differentiation_scaffold"
+        ],
+        "xiaojiao_support": [
+          "lesson.classroom_flow.step.teacher_probe_question",
+          "lesson.classroom_flow.step.common_misconception",
+          "lesson.classroom_flow.step.fallback_strategy"
+        ],
+        "evidence": [
+          "lesson.classroom_flow.step.process_evidence",
+          "lesson.classroom_flow.step.work_evidence",
+          "lesson.classroom_flow.step.expression_evidence",
+          "lesson.classroom_flow.step.teacher_observation_point",
+          "lesson.classroom_flow.step.success_criteria"
+        ]
+      },
+      "derived_materials_embedded": [
+        "courseware storyboard",
+        "student worksheet",
+        "teacher observation rubric",
+        "student self-assessment"
+      ]
+    }
+  ]
+}

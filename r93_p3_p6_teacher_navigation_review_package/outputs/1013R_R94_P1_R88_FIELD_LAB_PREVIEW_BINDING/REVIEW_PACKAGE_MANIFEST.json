@@ -1,0 +1,83 @@
+{
+  "stage": "1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING",
+  "output_html": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\field_generation_quality_static_lab_1013R_R88_r94_p1_preview.html",
+  "output_html_sha256": "7ee72f837c56823aa4564acb4d6b2fb0b2aeed70cc1ebbc526b79a6ac427f55e",
+  "source_r88_modified": false,
+  "files": [
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\field_generation_quality_static_lab_1013R_R88_r94_p1_preview.html",
+      "size": 132188,
+      "sha256": "7ee72f837c56823aa4564acb4d6b2fb0b2aeed70cc1ebbc526b79a6ac427f55e"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\README.md",
+      "size": 737,
+      "sha256": "083f395065c7364ccb4cea9e15a1407d9af1ec2d692adad80e563e3acbbd3960"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\REVIEW_PACKAGE_MANIFEST.json",
+      "size": 4176,
+      "sha256": "9b4c0ecb1f3992b1b033e632a1153ef222e96ddba153c48605151d8d96d46b2c"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\field_generation_quality_static_lab_1013R_R88.html",
+      "size": 98970,
+      "sha256": "fb616b320e79b576ba04f62bb1389cafd0eb873a02b1f5412f37aea0983f6907"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\field_generation_quality_static_lab_ledger_1013R_R88.json",
+      "size": 111222,
+      "sha256": "08328186dc95b38209a2f93bf72c1b2be9957f6cac393f836ca4edb15fee06be"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\r93_p2_final_preview_lesson_draft.md",
+      "size": 9974,
+      "sha256": "89cb4fc3d4aa075805465f96d8f3b5ffcef66af430952ada09ced0c954f260a7"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\r94_p1_slide_storyboard.md",
+      "size": 6743,
+      "sha256": "e9bf213e951f1c8b0ec74f9993fa2d75d370ed35ff6d4ed5ff3c5cae9d996052"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\r94_p1_student_worksheet_one_page.md",
+      "size": 922,
+      "sha256": "fcf8239ba123da7736b82c4266e3b15d029ec60f5dda40b6a6027c386968bd0e"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\r94_p1_teacher_observation_rubric.md",
+      "size": 1355,
+      "sha256": "af20d1680fd40f6e5a4deeba46812147910611a80aa431c70fc930083f5613f5"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\textbook_anchor_closure.md",
+      "size": 4790,
+      "sha256": "56a4c49d97cf4a233c52368c07e262a9e489d77629ba14283a6143871a995476"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\source_snapshots\\validate_1013R_R94_P1_derived_artifacts_teacher_review_polish_result.json",
+      "size": 1597,
+      "sha256": "30a80e44e5b97257ca6c4c276e423f3181119f126b7a0c45fecfe6f731d4cf83"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\validate_1013R_R94_P1_R88_field_lab_preview_binding_result.json",
+      "size": 5004,
+      "sha256": "f4dd310d6c381824aaa5138f84dec235194e6d30cf90e05e4ffcabba3d62d7de"
+    }
+  ],
+  "boundary": {
+    "static_preview_only": true,
+    "source_r88_modified": false,
+    "provider_called": false,
+    "model_called": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "r95_executed": false
+  }
+}

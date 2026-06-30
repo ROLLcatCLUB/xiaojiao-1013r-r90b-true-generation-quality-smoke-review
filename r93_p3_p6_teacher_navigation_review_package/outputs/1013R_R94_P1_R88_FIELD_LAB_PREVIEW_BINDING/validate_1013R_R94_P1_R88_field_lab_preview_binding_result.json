@@ -1,0 +1,100 @@
+{
+  "stage": "1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING",
+  "created_at": "2026-07-01T05:07:25",
+  "status": "PASS",
+  "source_r88_html": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R88_FIELD_GENERATION_QUALITY_STATIC_LAB\\field_generation_quality_static_lab_1013R_R88.html",
+  "output_html": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\field_generation_quality_static_lab_1013R_R88_r94_p1_preview.html",
+  "r88_slot_count": 83,
+  "filled_r88_slot_count": 83,
+  "extra_r94_p1_artifact_blocks": 6,
+  "r94_p1_validator_pass": true,
+  "boundary": {
+    "static_preview_only": true,
+    "source_r88_modified": false,
+    "provider_called": false,
+    "model_called": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "r95_executed": false
+  },
+  "source_records": [
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R88_FIELD_GENERATION_QUALITY_STATIC_LAB\\field_generation_quality_static_lab_1013R_R88.html",
+      "size": 98970,
+      "sha256": "fb616b320e79b576ba04f62bb1389cafd0eb873a02b1f5412f37aea0983f6907"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R88_FIELD_GENERATION_QUALITY_STATIC_LAB\\field_generation_quality_static_lab_ledger_1013R_R88.json",
+      "size": 111222,
+      "sha256": "08328186dc95b38209a2f93bf72c1b2be9957f6cac393f836ca4edb15fee06be"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\r93_p2_final_preview_lesson_draft.md",
+      "size": 9974,
+      "sha256": "89cb4fc3d4aa075805465f96d8f3b5ffcef66af430952ada09ced0c954f260a7"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\textbook_anchor_closure.md",
+      "size": 4790,
+      "sha256": "56a4c49d97cf4a233c52368c07e262a9e489d77629ba14283a6143871a995476"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\validate_1013R_R93_P2_textbook_anchor_closure_final_preview_draft_result.json",
+      "size": 6490,
+      "sha256": "fb2f10bb8cd2042a0da70bc71b653557dc2cd729b17818cfba457ce49855ac71"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_slide_storyboard.md",
+      "size": 6743,
+      "sha256": "e9bf213e951f1c8b0ec74f9993fa2d75d370ed35ff6d4ed5ff3c5cae9d996052"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_slide_storyboard.json",
+      "size": 8041,
+      "sha256": "7acb9070b1c7045863c4ffb1ab6d005eb8427d45fa7fa001985b9606ed097e53"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_student_worksheet_one_page.md",
+      "size": 922,
+      "sha256": "fcf8239ba123da7736b82c4266e3b15d029ec60f5dda40b6a6027c386968bd0e"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_student_worksheet_teacher_notes.md",
+      "size": 1388,
+      "sha256": "d425070311a16bd427954efd7d27363024e526399a023da5619350729b5269ad"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_teacher_observation_rubric.md",
+      "size": 1355,
+      "sha256": "af20d1680fd40f6e5a4deeba46812147910611a80aa431c70fc930083f5613f5"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_student_self_assessment.md",
+      "size": 528,
+      "sha256": "cae7372c837efe07bd6a64ff2bb6e7549ee0d00ab8a0de4b4d0a60e5e3362219"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_derived_artifacts_trace.json",
+      "size": 5866,
+      "sha256": "6fbfd8e04fcb7a826f1beda3119f7b421cbf6b540f87338baa23fd71fed0e5d7"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\quality_sentinel_v0_result.json",
+      "size": 668,
+      "sha256": "a0392dd752f18a34634bcfc9176dee30203adb1dab6a7c272ef1fd56f8d062cb"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\validate_1013R_R94_P1_derived_artifacts_teacher_review_polish_result.json",
+      "size": 1597,
+      "sha256": "30a80e44e5b97257ca6c4c276e423f3181119f126b7a0c45fecfe6f731d4cf83"
+    }
+  ],
+  "failed_checks": [],
+  "validator_pass": true
+}

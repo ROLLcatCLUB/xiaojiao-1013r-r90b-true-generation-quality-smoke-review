@@ -1,0 +1,46 @@
+{
+  "schema_id": "teacher_execution_map_schema_1013R_R93_P5",
+  "status": "preview_only",
+  "description": "A teacher-facing execution map that decomposes teaching episodes into classroom micro-steps with child-friendly teacher talk.",
+  "micro_step_required_keys": [
+    "step_order",
+    "step_name",
+    "teacher_action",
+    "teacher_say",
+    "child_friendly_language_level",
+    "screen_state",
+    "student_action",
+    "expected_student_response",
+    "student_scaffold",
+    "xiaojiao_support",
+    "evidence_check",
+    "if_student_stuck",
+    "next_step_trigger"
+  ],
+  "language_layers": [
+    "学生听得懂的话",
+    "教师补充专业词",
+    "教案书面表达"
+  ],
+  "boundary": {
+    "teacher_review_required": true,
+    "preview_only": true,
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added_to_profile": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "pdf_generated": false,
+    "docx_generated": false,
+    "printed_final_material_generated": false,
+    "r95_executed": false,
+    "multi_case_regression_executed": false
+  }
+}

@@ -1,0 +1,2802 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>字段生成质量静态预览页</title>
+  <style>
+    :root {
+      --ink: #1f2f2b;
+      --muted: #60736c;
+      --green: #2d7f72;
+      --green-dark: #1b5d52;
+      --line: #d9e7df;
+      --paper: #fffdf7;
+      --warm: #fff6e8;
+      --orange: #c97519;
+      --blue: #eaf3ff;
+      --blue-line: #9bbfe8;
+      --grid: rgba(45, 127, 114, .12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 14px/1.65 "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        #f8fbf7;
+      background-size: 28px 28px;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: rgba(255, 255, 255, .92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--green-dark);
+      font-weight: 800;
+      font-size: 24px;
+    }
+    .brand span { color: var(--muted); font-size: 12px; font-weight: 500; }
+    .stage-chip {
+      border: 1px solid #b7ded3;
+      background: #eef9f5;
+      color: var(--green-dark);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr) 320px;
+      gap: 18px;
+      padding: 18px;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    aside, main {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 250, .94);
+      box-shadow: 0 16px 40px rgba(31, 47, 43, .08);
+    }
+    aside {
+      border-radius: 8px;
+      padding: 16px;
+      align-self: start;
+      position: sticky;
+      top: 90px;
+      max-height: calc(100vh - 110px);
+      overflow: auto;
+    }
+    main {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .hero {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fffef8, #f5fbf5);
+    }
+    .hero h1 {
+      margin: 0;
+      color: #14231f;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    .hero p {
+      max-width: 880px;
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+    .section {
+      padding: 26px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    .nav-title {
+      margin: 0 0 10px;
+      color: var(--green-dark);
+      font-weight: 800;
+    }
+    .nav-link {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+    .nav-link:hover {
+      border-color: #b7ded3;
+      background: #eef9f5;
+    }
+    .counts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .count-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .count-card strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 20px;
+    }
+    .layer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .layer-card {
+      border: 1px solid #cfe0d8;
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px;
+    }
+    .layer-card span {
+      display: inline-block;
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .layer-card strong {
+      display: block;
+      margin-top: 4px;
+      color: var(--green-dark);
+    }
+    .layer-card p { margin: 6px 0 0; color: var(--muted); }
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .field-card {
+      border: 1px solid #f0cb96;
+      background: #fffaf1;
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .field-card.lesson {
+      border-color: #bcd8f3;
+      background: #f5faff;
+    }
+    .field-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .field-kicker {
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 11px;
+    }
+    h3 {
+      margin: 2px 0 8px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    .order-pill {
+      min-width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--orange);
+      font-weight: 800;
+    }
+    .order-pill.lesson { background: #2f75b5; }
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      border: 1px solid #e4d4b8;
+      border-radius: 999px;
+      padding: 2px 8px;
+      background: #fff;
+      color: #7b4b10;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: normal;
+    }
+    .chip.visible { color: #1f6f63; border-color: #b7ded3; background: #f2fbf8; }
+    .chip.engineering { color: #255f96; border-color: #bcd8f3; background: #eef6ff; }
+    .chip.canonical { color: #83540c; border-color: #f0cb96; background: #fff8ea; }
+    .chip.quality { color: #754b10; background: #fff; }
+    .chip.inherit { color: #315f7e; border-color: #bcd8f3; background: #f5faff; }
+    .chip.warn { color: #a34825; border-color: #efb9aa; background: #fff4f0; }
+    .role-text, .inherit-block {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .placeholder {
+      margin-top: 12px;
+      border: 1px dashed #d89843;
+      background: rgba(255, 255, 255, .72);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .placeholder-title {
+      color: var(--orange);
+      font-weight: 800;
+    }
+    .placeholder-desc {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+    .placeholder-empty {
+      margin-top: 8px;
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      border-radius: 6px;
+      padding: 8px;
+      background: #fff;
+      color: #a56b20;
+      font-size: 12px;
+    }
+    .step-group {
+      border: 1px solid #cfe0d8;
+      background: #f9fcf8;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+    .step-group-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .step-group-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+    .step-row {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .step-row div:first-child {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--green-dark);
+    }
+    .step-row span {
+      color: #2f75b5;
+      font-size: 12px;
+    }
+    .step-row p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+    .quality-panel {
+      display: grid;
+      gap: 10px;
+    }
+    .quality-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fff;
+    }
+    .quality-item strong {
+      color: var(--green-dark);
+    }
+    .warning {
+      border-color: #efb9aa;
+      background: #fff7f4;
+      color: #8b3525;
+    }
+    @media (max-width: 1200px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; max-height: none; }
+      .field-grid, .layer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <style id="shiwei-r94p1-r88-preview-style">
+    .r94p1-filled {
+      border-color: #8bbddf;
+      background: linear-gradient(180deg, #ffffff, #f3f9ff);
+    }
+    .r94p1-source {
+      margin: 6px 0 8px;
+      color: #42677d;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .r94p1-body {
+      border: 1px solid #d7e8f5;
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #fff;
+      color: #20333f;
+    }
+    .r94p1-body p { margin: 0; }
+    .r94p1-body ul { margin: 0; padding-left: 18px; }
+    .r94p1-foot {
+      margin-top: 8px;
+      display: grid;
+      gap: 6px;
+    }
+    .r94p1-foot p {
+      margin: 0;
+      color: #526a75;
+      font-size: 12px;
+    }
+    .r94p1-foot b {
+      display: inline-block;
+      margin-right: 8px;
+      color: #2f75b5;
+    }
+    .r94p1-extra {
+      background: linear-gradient(180deg, #fbfdff, #eef7ff);
+    }
+    .r94p1-note {
+      color: #526a75;
+      margin-top: -6px;
+    }
+    .r94p1-extra-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .r94p1-extra-grid article {
+      border: 1px solid #c6dded;
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .r94p1-extra-grid h3 { margin-top: 0; color: #245d83; }
+    .r94p1-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .r94p1-table th,
+    .r94p1-table td {
+      border: 1px solid #d7e8f5;
+      padding: 6px 8px;
+      vertical-align: top;
+    }
+    .r94p1-table th {
+      background: #eef7ff;
+      color: #245d83;
+    }
+    .r94p1-banner {
+      padding: 10px 32px;
+      border-bottom: 1px solid #bcd8f3;
+      background: #eef7ff;
+      color: #245d83;
+      font-weight: 800;
+    }
+    @media (max-width: 1100px) {
+      .r94p1-extra-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="brand">师维 <span>字段生成质量静态验证页</span></div>
+    <div class="stage-chip">派生材料预览 · 静态副本 · 不调用模型</div>
+  </header>
+  <div class="layout">
+    <aside>
+      <div class="nav-title">验证导航</div>
+      <a class="nav-link" href="#layers">生成层级</a>
+      <a class="nav-link" href="#big-unit">大单元 22 字段</a>
+      <a class="nav-link" href="#lesson">单课 14 字段</a>
+      <a class="nav-link" href="#step-contract">教学过程行级契约</a>
+      <a class="nav-link" href="#r94-p1-extra">新增派生物</a>
+      <a class="nav-link" href="#quality">质量观察</a>
+      <div class="counts">
+        <div class="count-card"><strong>22</strong>大单元</div>
+        <div class="count-card"><strong>14</strong>单课</div>
+        <div class="count-card"><strong>47</strong>行级</div>
+      </div>
+    </aside>
+    <main>
+      <div class="r94p1-banner">本页为静态预览副本 · 原页面未修改 · 仅预览，非正式定稿</div>
+      <section class="hero">
+        <h1>底层字段与内容生成质量验证样板</h1>
+        <p>这是一页独立静态页，用来验证“大单元主线 → 单课切片 → 字段内部结构 → 派生物”的生成质量。页面只标注外显字段、工程字段、模型生成内容占位，不展示提示词，不调用模型，不写入正式备课本。</p>
+      </section>
+      <section class="section" id="layers">
+        <h2>一、生成层级</h2>
+        <div class="layer-grid">
+        <div class="layer-card">
+          <span>unit_spine</span>
+          <strong>大单元主线</strong>
+          <p>先确定单元主题、大观念、基本问题和任务证据，不直接从空白写单课。</p>
+        </div>
+        
+
+        <div class="layer-card">
+          <span>lesson_slice</span>
+          <strong>单课切片</strong>
+          <p>把大单元主线切到当前课时，形成本课依据、目标、任务和证据。</p>
+        </div>
+        
+
+        <div class="layer-card">
+          <span>field_internal</span>
+          <strong>字段内部结构</strong>
+          <p>每个字段内部继续拆成可观察、可上课、可评价的子结构。</p>
+        </div>
+        
+
+        <div class="layer-card">
+          <span>derived_objects</span>
+          <strong>派生物</strong>
+          <p>大屏、学习单、评价表只从已确认的教学过程和证据派生。</p>
+        </div>
+        </div>
+      </section>
+      <section class="section" id="big-unit">
+        <h2>二、大单元 22 字段</h2>
+        <div class="field-grid">
+      <article class="field-card" id="big-unit-1" data-visible-field="单元信息" data-engineering-key="big_unit.unit_basic_info">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 1</div>
+            <h3>单元信息</h3>
+          </div>
+          <div class="order-pill">1</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元信息</span>
+          <span class="chip engineering">工程字段: big_unit.unit_basic_info</span>
+          <span class="chip canonical">canonical: unit_basic_info</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">事实锚定</span><span class="chip quality">年级教材清楚</span><span class="chip quality">课时范围清楚</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.unit_basic_info" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">教材锚点回填</div>
+        <div class="r94p1-source">来源：教材锚点证据 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>第二单元《多彩的世界》</li><li>第1课《色彩的渐变》</li><li>页码 6-7</li><li>后续课：第2课《渐变的节奏》；第3课《多彩的生活》</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>事实锚定已由教师页图闭合。</p>
+          <p><b>教师动作</b>核对教材实物页后继续作为本课母稿来源。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-2" data-visible-field="单元主题" data-engineering-key="big_unit.unit_theme">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 2</div>
+            <h3>单元主题</h3>
+          </div>
+          <div class="order-pill">2</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元主题</span>
+          <span class="chip engineering">工程字段: big_unit.unit_theme</span>
+          <span class="chip canonical">canonical: unit_theme</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">主题可统领</span><span class="chip quality">不是口号</span><span class="chip quality">能连到作品表达</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.unit_theme" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">单元主题预览</div>
+        <div class="r94p1-source">来源：教案母稿 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>多彩的世界：通过色彩的明度、纯度和渐变规律，感受色彩如何丰富生活、作品和空间。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>能统领本课和后续《渐变的节奏》《多彩的生活》。</p>
+          <p><b>教师动作</b>确认是否采用该主题语言作为本单元对学生说明。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-3" data-visible-field="大观念" data-engineering-key="big_unit.big_idea">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 3</div>
+            <h3>大观念</h3>
+          </div>
+          <div class="order-pill">3</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 大观念</span>
+          <span class="chip engineering">工程字段: big_unit.big_idea</span>
+          <span class="chip canonical">canonical: big_idea</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">可迁移理解</span><span class="chip quality">不写成步骤</span><span class="chip quality">能统领单课</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.big_idea" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">大观念预览</div>
+        <div class="r94p1-source">来源：教案母稿与派生草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>色彩不是孤立存在的，颜色的亮暗、鲜灰和有序变化能带来秩序、节奏和层次，并影响我们对生活环境的感受。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>从色彩知识迁移到生活与作品表达。</p>
+          <p><b>教师动作</b>可作为教师备课理解，不必完整呈现给学生。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-4" data-visible-field="基本问题" data-engineering-key="big_unit.essential_question">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 4</div>
+            <h3>基本问题</h3>
+          </div>
+          <div class="order-pill">4</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 基本问题</span>
+          <span class="chip engineering">工程字段: big_unit.essential_question</span>
+          <span class="chip canonical">canonical: unit_questions</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">可持续追问</span><span class="chip quality">贴近儿童</span><span class="chip quality">能落到课堂活动</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.essential_question" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">基本问题预览</div>
+        <div class="r94p1-source">来源：教案母稿与派生草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>变化多样的色彩是如何丰富我们的生活的？颜色怎样慢慢变化才会让画面更有秩序和层次？</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>来自教材问题并压缩为课堂可追问问题。</p>
+          <p><b>教师动作</b>选择其中一句作为课堂主问题。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-5" data-visible-field="单元学习目标" data-engineering-key="big_unit.learning_goals">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 5</div>
+            <h3>单元学习目标</h3>
+          </div>
+          <div class="order-pill">5</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元学习目标</span>
+          <span class="chip engineering">工程字段: big_unit.learning_goals</span>
+          <span class="chip canonical">canonical: core_literacy_goals</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">可观察行为</span><span class="chip quality">学科语言适度</span><span class="chip quality">目标不过满</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.learning_goals" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">单元学习目标预览</div>
+        <div class="r94p1-source">来源：教案母稿 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>能发现生活和教材图中的渐变。</li><li>能区分亮暗变化与鲜灰变化。</li><li>能尝试三到五格渐变小样。</li><li>能把渐变用于小作品并说明变化规律。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>目标可观察，适合三年级。</p>
+          <p><b>教师动作</b>按本班材料条件删减目标表述。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-6" data-visible-field="单元内容分析" data-engineering-key="big_unit.content_analysis">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 6</div>
+            <h3>单元内容分析</h3>
+          </div>
+          <div class="order-pill">6</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 单元内容分析</span>
+          <span class="chip engineering">工程字段: big_unit.content_analysis</span>
+          <span class="chip canonical">canonical: knowledge_and_skills</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">教材线索</span><span class="chip quality">美术语言隐性支撑</span><span class="chip quality">活动关系清楚</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.content_analysis" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">内容分析预览</div>
+        <div class="r94p1-source">来源：教材锚点证据 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>教材围绕“色彩的明度与纯度”和“渐变的调色游戏”展开，通过自然图像、花卉作品、调色和拼摆活动，建立明度/纯度渐变与秩序美、节奏美的联系。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>教材线索清楚，不再混写旧版课题。</p>
+          <p><b>教师动作</b>可用于教案教材分析段落的精简版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-7" data-visible-field="学情分析" data-engineering-key="big_unit.student_context">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 7</div>
+            <h3>学情分析</h3>
+          </div>
+          <div class="order-pill">7</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学情分析</span>
+          <span class="chip engineering">工程字段: big_unit.student_context</span>
+          <span class="chip canonical">canonical: student_starting_point</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">不伪造班情</span><span class="chip quality">儿童经验具体</span><span class="chip quality">困难可转支架</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.student_context" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学情分析预览</div>
+        <div class="r94p1-source">来源：教案母稿 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>三年级学生能直观看出颜色更亮、更深或更鲜艳，但容易混淆明度和纯度，也容易把渐变做成无规律色块并列。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>不伪造班情，聚焦本课常见困难。</p>
+          <p><b>教师动作</b>补充本班材料经验后再用于正式教案。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-8" data-visible-field="学习重难点" data-engineering-key="big_unit.key_difficult_points">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 8</div>
+            <h3>学习重难点</h3>
+          </div>
+          <div class="order-pill">8</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习重难点</span>
+          <span class="chip engineering">工程字段: big_unit.key_difficult_points</span>
+          <span class="chip canonical">canonical: knowledge_and_skills</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">重点难点分开</span><span class="chip quality">不重复目标</span><span class="chip quality">能指导活动</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.key_difficult_points" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">重难点预览</div>
+        <div class="r94p1-source">来源：教案母稿 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>重点：理解明度和纯度，能做有规律的渐变。</li><li>难点：控制变化幅度，避免突然跳色。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>重点难点分开，并能指导活动设计。</p>
+          <p><b>教师动作</b>保留“不要跳太快”作为课堂儿童化提醒。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-9" data-visible-field="表现性任务" data-engineering-key="big_unit.performance_task">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 9</div>
+            <h3>表现性任务</h3>
+          </div>
+          <div class="order-pill">9</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 表现性任务</span>
+          <span class="chip engineering">工程字段: big_unit.performance_task</span>
+          <span class="chip canonical">canonical: performance_task</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">学生产出明确</span><span class="chip quality">证据可见</span><span class="chip quality">不空泛</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.performance_task" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">表现性任务预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>完成三格或五格颜色慢慢变化小样，并把变化规律放进一个色条、图形或小作品；能说明颜色从哪里变到哪里。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>学生产出清楚，证据可见。</p>
+          <p><b>教师动作</b>决定基础/进阶/挑战任务是否全部开放。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-10" data-visible-field="任务评估要点" data-engineering-key="big_unit.task_assessment_points">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 10</div>
+            <h3>任务评估要点</h3>
+          </div>
+          <div class="order-pill">10</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 任务评估要点</span>
+          <span class="chip engineering">工程字段: big_unit.task_assessment_points</span>
+          <span class="chip canonical">canonical: assessment_evidence</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">和任务对应</span><span class="chip quality">标准可判断</span><span class="chip quality">不只看好看</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.task_assessment_points" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">任务评估要点预览</div>
+        <div class="r94p1-source">来源：评价草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>看得见：能发现渐变。</li><li>试得出：能做连续变化。</li><li>用得上：能用到作品。</li><li>说得清：能说明变化。</li><li>改得动：能修一处。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>评价与任务对应，不使用复杂分数。</p>
+          <p><b>教师动作</b>教师可选择 2-3 项作为课堂重点观察。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-11" data-visible-field="学习阶段" data-engineering-key="big_unit.learning_stages">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 11</div>
+            <h3>学习阶段</h3>
+          </div>
+          <div class="order-pill">11</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习阶段</span>
+          <span class="chip engineering">工程字段: big_unit.learning_stages</span>
+          <span class="chip canonical">canonical: learning_progression</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">阶段递进</span><span class="chip quality">不是课时流水账</span><span class="chip quality">承接大观念</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.learning_stages" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学习阶段预览</div>
+        <div class="r94p1-source">来源：课件故事板草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>观察生活和教材图。</li><li>辨析亮暗/鲜灰。</li><li>三格调色或排列小样。</li><li>迁移到小作品。</li><li>自查、互评、微修订。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>阶段递进清楚。</p>
+          <p><b>教师动作</b>根据课时长度压缩展示交流环节。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-12" data-visible-field="学习任务" data-engineering-key="big_unit.learning_tasks">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 12</div>
+            <h3>学习任务</h3>
+          </div>
+          <div class="order-pill">12</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习任务</span>
+          <span class="chip engineering">工程字段: big_unit.learning_tasks</span>
+          <span class="chip canonical">canonical: lesson_task_chain</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">任务链清楚</span><span class="chip quality">每课有责任</span><span class="chip quality">能切到单课</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.learning_tasks" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学习任务预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>任务一：找一找颜色从哪里变到哪里。</li><li>任务二：试一试三格颜色慢慢变。</li><li>任务三：查一查作品能否说清变化。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>任务链由观察到操作再到表达。</p>
+          <p><b>教师动作</b>可作为学习单三项任务草案，后续再按课堂时间删减。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-13" data-visible-field="小问题" data-engineering-key="big_unit.micro_questions">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 13</div>
+            <h3>小问题</h3>
+          </div>
+          <div class="order-pill">13</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 小问题</span>
+          <span class="chip engineering">工程字段: big_unit.micro_questions</span>
+          <span class="chip canonical">canonical: unit_questions</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">问题能驱动活动</span><span class="chip quality">儿童能回答</span><span class="chip quality">层级不乱</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.micro_questions" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">小问题预览</div>
+        <div class="r94p1-source">来源：课件故事板草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>颜色从哪里开始变？</li><li>它是亮一点/暗一点，还是鲜一点/灰一点？</li><li>中间有没有跳太快？</li><li>你能改哪一处让它更自然？</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>问题贴近儿童，可驱动观察与修订。</p>
+          <p><b>教师动作</b>课堂提问按顺序使用，不必一次全问。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-14" data-visible-field="学习活动" data-engineering-key="big_unit.learning_activities">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 14</div>
+            <h3>学习活动</h3>
+          </div>
+          <div class="order-pill">14</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习活动</span>
+          <span class="chip engineering">工程字段: big_unit.learning_activities</span>
+          <span class="chip canonical">canonical: lesson_task_chain</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">活动服务任务</span><span class="chip quality">可上课</span><span class="chip quality">有观察点</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.learning_activities" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学习活动预览</div>
+        <div class="r94p1-source">来源：课件故事板草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>观察教材图并圈画变化方向。</li><li>做三格颜色小样。</li><li>选择基础/进阶/挑战任务。</li><li>用自查表检查作品。</li><li>展示交流并微修订。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>活动服务任务，避免只讲概念。</p>
+          <p><b>教师动作</b>准备色卡或小样纸以降低材料风险。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-15" data-visible-field="学习评价" data-engineering-key="big_unit.learning_assessment">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 15</div>
+            <h3>学习评价</h3>
+          </div>
+          <div class="order-pill">15</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习评价</span>
+          <span class="chip engineering">工程字段: big_unit.learning_assessment</span>
+          <span class="chip canonical">canonical: assessment_evidence</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">过程证据</span><span class="chip quality">作品证据</span><span class="chip quality">表达证据</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.learning_assessment" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学习评价预览</div>
+        <div class="r94p1-source">来源：评价草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>采用教师观察版和学生自评版双轨：教师看“看得见、试得出、用得上、说得清、改得动”，学生只做三项自查。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>评价证据清楚，学生端负担较轻。</p>
+          <p><b>教师动作</b>确认是否打印学生自评三项，教师观察表可不发给学生。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-16" data-visible-field="情境支架" data-engineering-key="big_unit.scaffold.context">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 16</div>
+            <h3>情境支架</h3>
+          </div>
+          <div class="order-pill">16</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 情境支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.context</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">情境贴近儿童</span><span class="chip quality">不喧宾夺主</span><span class="chip quality">能引出任务</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.scaffold.context" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">情境支架预览</div>
+        <div class="r94p1-source">来源：课件故事板草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>从生活中的天空、山峦、花朵或教材图进入，让学生先找“颜色慢慢变过去”的现象。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>情境贴近儿童，不喧宾夺主。</p>
+          <p><b>教师动作</b>选 2-3 张图即可，避免图片过多拖慢课堂。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-17" data-visible-field="任务支架" data-engineering-key="big_unit.scaffold.task">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 17</div>
+            <h3>任务支架</h3>
+          </div>
+          <div class="order-pill">17</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 任务支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.task</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">步骤清楚</span><span class="chip quality">降低难度</span><span class="chip quality">不替学生完成</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.scaffold.task" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">任务支架预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>学习单把任务压缩为找一找、试一试、查一查；先三格小样，再迁移到作品。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>步骤清楚，降低操作门槛。</p>
+          <p><b>教师动作</b>基础学生只做三格，进阶学生再做五格。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-18" data-visible-field="资源支架" data-engineering-key="big_unit.scaffold.resource">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 18</div>
+            <h3>资源支架</h3>
+          </div>
+          <div class="order-pill">18</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 资源支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.resource</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">材料真实</span><span class="chip quality">来源可补</span><span class="chip quality">不虚构教材图</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.scaffold.resource" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">资源支架预览</div>
+        <div class="r94p1-source">来源：教材锚点证据 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>教材第6-7页图片。</li><li>教师自制三格小样。</li><li>小样纸或学习单。</li><li>水粉、水彩笔、彩铅、油画棒或色卡任选。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>资源真实，不虚构教材图。</p>
+          <p><b>教师动作</b>根据班级材料条件确认最终工具。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-19" data-visible-field="策略支架" data-engineering-key="big_unit.scaffold.strategy">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 19</div>
+            <h3>策略支架</h3>
+          </div>
+          <div class="order-pill">19</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 策略支架</span>
+          <span class="chip engineering">工程字段: big_unit.scaffold.strategy</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">方法可操作</span><span class="chip quality">语言可教</span><span class="chip quality">能迁移到单课</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.scaffold.strategy" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">策略支架预览</div>
+        <div class="r94p1-source">来源：教师说明草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>亮暗看亮不亮。</li><li>鲜灰看鲜不鲜。</li><li>每次只变一点点。</li><li>用“从___到___”表达变化。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>方法语言可教，可迁移到单课。</p>
+          <p><b>教师动作</b>示范时同步板书儿童化关键词。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-20" data-visible-field="学习单" data-engineering-key="big_unit.handout_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 20</div>
+            <h3>学习单</h3>
+          </div>
+          <div class="order-pill">20</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习单</span>
+          <span class="chip engineering">工程字段: big_unit.handout_plan</span>
+          <span class="chip canonical">canonical: skills_materials_scaffolds</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">不堆文字</span><span class="chip quality">任务辅助</span><span class="chip quality">能记录证据</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.handout_plan" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学习单计划预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>一页学生版只保留三项：找一找、试一试、查一查；教师说明另列，不挤入学生纸面。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>较上一版已明显减负，但仍是预览草案。</p>
+          <p><b>教师动作</b>排版前确认纸张大小和留白。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-21" data-visible-field="评价支架" data-engineering-key="big_unit.assessment_scaffold">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 21</div>
+            <h3>评价支架</h3>
+          </div>
+          <div class="order-pill">21</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 评价支架</span>
+          <span class="chip engineering">工程字段: big_unit.assessment_scaffold</span>
+          <span class="chip canonical">canonical: assessment_evidence</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">评价语言儿童化</span><span class="chip quality">标准可判断</span><span class="chip quality">能反馈改进</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.assessment_scaffold" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">评价支架预览</div>
+        <div class="r94p1-source">来源：评价草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>教师观察版保留 5 维，学生自评版压缩为 3 项；均使用“已做到 / 基本做到 / 还要再试”。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>教师版与学生版已拆分。</p>
+          <p><b>教师动作</b>课堂可只使用学生自评三项，教师观察表课后整理。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card" id="big-unit-22" data-visible-field="资料补充" data-engineering-key="big_unit.material_requests">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">大单元字段 22</div>
+            <h3>资料补充</h3>
+          </div>
+          <div class="order-pill">22</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 资料补充</span>
+          <span class="chip engineering">工程字段: big_unit.material_requests</span>
+          <span class="chip canonical">canonical: material_requests</span>
+        </div>
+        <div class="meta-row"><span class="chip quality">只提示补资料</span><span class="chip quality">不写正式课包</span><span class="chip quality">来源缺口清楚</span></div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/big_unit.material_requests" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">资料补充预览</div>
+        <div class="r94p1-source">来源：教师说明草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>需教师确认本班最终材料：水粉、水彩笔、彩铅、油画棒或混合材料；确认是否需要教材页实物投影。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>只提示补资料，不写成正式课包。</p>
+          <p><b>教师动作</b>课前确定材料并调整学习单用语。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    </div>
+      </section>
+      <section class="section" id="lesson">
+        <h2>三、单课 14 字段</h2>
+        <div class="field-grid">
+      <article class="field-card lesson" data-visible-field="课时身份" data-engineering-key="lesson.lesson_identity">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 1 · lesson_header</div>
+            <h3>课时身份</h3>
+          </div>
+          <div class="order-pill lesson">1</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 课时身份</span>
+          <span class="chip engineering">工程字段: lesson.lesson_identity</span>
+          <span class="chip canonical">target: lesson_header</span>
+        </div>
+        <div class="role-text">确认年级、单元、课题、课时、教材页码和课时序号。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.unit_basic_info</span><span class="chip inherit">big_unit.learning_tasks</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.lesson_identity" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">课时身份预览</div>
+        <div class="r94p1-source">来源：教案母稿与派生草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>三年级美术</li><li>第二单元《多彩的世界》</li><li>第1课《色彩的渐变》</li><li>建议 40 分钟</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>课时身份明确。</p>
+          <p><b>教师动作</b>确认册次和班级课时长度。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="继承单元主线" data-engineering-key="lesson.inherited_unit_context">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 2 · 本课依据</div>
+            <h3>继承单元主线</h3>
+          </div>
+          <div class="order-pill lesson">2</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 继承单元主线</span>
+          <span class="chip engineering">工程字段: lesson.inherited_unit_context</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">把单元主题、大观念、基本问题、表现性任务带入本课依据。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.unit_theme</span><span class="chip inherit">big_unit.big_idea</span><span class="chip inherit">big_unit.essential_question</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.inherited_unit_context" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">继承单元主线预览</div>
+        <div class="r94p1-source">来源：教材锚点证据 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>本课是第二单元色彩渐变学习的起点，后续《渐变的节奏》推进到节奏表现，《多彩的生活》迁移到生活空间。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>单课和后续课关系清楚。</p>
+          <p><b>教师动作</b>可在课堂结尾提示下一课，不展开讲。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="教材锚点" data-engineering-key="lesson.textbook_anchor">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 3 · 本课依据</div>
+            <h3>教材锚点</h3>
+          </div>
+          <div class="order-pill lesson">3</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 教材锚点</span>
+          <span class="chip engineering">工程字段: lesson.textbook_anchor</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">定位教材页、图例、练习、材料来源；缺失时转入资料补充。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.material_requests</span><span class="chip inherit">big_unit.content_analysis</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.textbook_anchor" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">教材锚点预览</div>
+        <div class="r94p1-source">来源：教材锚点证据 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>教材页图闭合：第二单元《多彩的世界》第1课《色彩的渐变》，页码 6-7，核心板块为“色彩的明度与纯度”和“渐变的调色游戏”。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>source gap 已关闭。</p>
+          <p><b>教师动作</b>正式上课前再核实教材实物页。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="本课概念切片" data-engineering-key="lesson.lesson_concept_slice">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 4 · 本课依据</div>
+            <h3>本课概念切片</h3>
+          </div>
+          <div class="order-pill lesson">4</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 本课概念切片</span>
+          <span class="chip engineering">工程字段: lesson.lesson_concept_slice</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">说明本课从单元大观念中切出哪一块可教、可观察的内容。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.big_idea</span><span class="chip inherit">big_unit.learning_stages</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.lesson_concept_slice" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">概念切片预览</div>
+        <div class="r94p1-source">来源：教案母稿与派生草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>明度：亮一点 / 暗一点。</li><li>纯度：鲜一点 / 灰一点。</li><li>渐变：颜色慢慢变过去。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>儿童化语言明确。</p>
+          <p><b>教师动作</b>屏幕端优先用儿童话，教师口头补专业词。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="本课驱动问题" data-engineering-key="lesson.lesson_focus_question">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 5 · 本课依据</div>
+            <h3>本课驱动问题</h3>
+          </div>
+          <div class="order-pill lesson">5</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 本课驱动问题</span>
+          <span class="chip engineering">工程字段: lesson.lesson_focus_question</span>
+          <span class="chip canonical">target: basis</span>
+        </div>
+        <div class="role-text">把单元基本问题转成这一课能展开的驱动问题。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.essential_question</span><span class="chip inherit">big_unit.micro_questions</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.lesson_focus_question" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">本课驱动问题预览</div>
+        <div class="r94p1-source">来源：课件故事板草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>颜色怎样慢慢变化，才能让画面更有秩序、更有层次？</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>问题收敛到本课核心活动。</p>
+          <p><b>教师动作</b>课堂可以改成更口语的“颜色怎么慢慢变才好看又清楚？”</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="课时目标" data-engineering-key="lesson.lesson_objectives">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 6 · 教学目标</div>
+            <h3>课时目标</h3>
+          </div>
+          <div class="order-pill lesson">6</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 课时目标</span>
+          <span class="chip engineering">工程字段: lesson.lesson_objectives</span>
+          <span class="chip canonical">target: goals</span>
+        </div>
+        <div class="role-text">把课标、单元学习目标和本课任务转成可观察目标。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.learning_goals</span><span class="chip inherit">big_unit.task_assessment_points</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.lesson_objectives" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">课时目标预览</div>
+        <div class="r94p1-source">来源：教案母稿 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>发现渐变。</li><li>区分亮暗与鲜灰。</li><li>完成三格或五格渐变小样。</li><li>在作品中说明颜色变化。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>可观察可评价。</p>
+          <p><b>教师动作</b>正式稿可压缩为三条目标。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="学生起点" data-engineering-key="lesson.student_starting_point">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 7 · 学情分析</div>
+            <h3>学生起点</h3>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学生起点</span>
+          <span class="chip engineering">工程字段: lesson.student_starting_point</span>
+          <span class="chip canonical">target: analysis</span>
+        </div>
+        <div class="role-text">写清学生已有经验、常见困难和进入本课的可用支架。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.student_context</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.student_starting_point" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生起点预览</div>
+        <div class="r94p1-source">来源：教案母稿与派生草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>学生对颜色变化有生活经验，但容易只说“好看”，难以说清变化方向，也可能把明度、纯度混在一起。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>困难能转成教学支架。</p>
+          <p><b>教师动作</b>根据班级实际补充材料使用经验。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="重难点" data-engineering-key="lesson.key_difficult_points">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 8 · 教学重难点</div>
+            <h3>重难点</h3>
+          </div>
+          <div class="order-pill lesson">8</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 重难点</span>
+          <span class="chip engineering">工程字段: lesson.key_difficult_points</span>
+          <span class="chip canonical">target: keypoints</span>
+        </div>
+        <div class="role-text">区分本课学习重点和理解/表现难点。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.key_difficult_points</span><span class="chip inherit">big_unit.content_analysis</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.key_difficult_points" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">单课重难点预览</div>
+        <div class="r94p1-source">来源：教案母稿与派生草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>重点：理解亮暗、鲜灰和慢慢变化。</li><li>难点：让变化连续，不突然跳色。</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>服务教学过程设计。</p>
+          <p><b>教师动作</b>示范时突出“每次只变一点点”。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="本课任务与证据" data-engineering-key="lesson.lesson_task_evidence">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 9 · 学习单与评价</div>
+            <h3>本课任务与证据</h3>
+          </div>
+          <div class="order-pill lesson">9</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 本课任务与证据</span>
+          <span class="chip engineering">工程字段: lesson.lesson_task_evidence</span>
+          <span class="chip canonical">target: assessment</span>
+        </div>
+        <div class="role-text">定义学生产出、说明、互评或课堂观察证据。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.performance_task</span><span class="chip inherit">big_unit.learning_assessment</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.lesson_task_evidence" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">任务与证据预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>证据来自三格小样、作品中的渐变规律、学生一句话说明和一处微修订。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>过程、作品、表达和修订证据都可见。</p>
+          <p><b>教师动作</b>决定是否收学习单作为证据留存。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="教学过程" data-engineering-key="lesson.classroom_flow">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 10 · 教学过程</div>
+            <h3>教学过程</h3>
+          </div>
+          <div class="order-pill lesson">10</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 教学过程</span>
+          <span class="chip engineering">工程字段: lesson.classroom_flow</span>
+          <span class="chip canonical">target: teaching_process</span>
+        </div>
+        <div class="role-text">生成步骤级教学过程，并拆成教师动作、学生活动、材料/屏幕、评价证据。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.learning_activities</span><span class="chip inherit">big_unit.scaffold.strategy</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">教学过程预览</div>
+        <div class="r94p1-source">来源：课件故事板草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><ul><li>第1页：封面：色彩的渐变</li><li>第2页：生活中的渐变</li><li>第3页：教材图观察：明度与纯度</li><li>第4页：核心词：亮暗 / 鲜灰 / 慢慢变化</li><li>第5页：调色游戏</li><li>第6页：教师示范</li><li>第7页：学生创作任务</li><li>第8页：作品自查</li><li>第9页：展示交流</li><li>第10页：微修订</li></ul></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已从文字大纲转为 storyboard 结构。</p>
+          <p><b>教师动作</b>下一轮若要深化教学过程，可在 A/B 版本中重排这些环节。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="课件/大屏计划" data-engineering-key="lesson.courseware_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 11 · 右栏大屏/课件预览</div>
+            <h3>课件/大屏计划</h3>
+          </div>
+          <div class="order-pill lesson">11</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 课件/大屏计划</span>
+          <span class="chip engineering">工程字段: lesson.courseware_plan</span>
+          <span class="chip canonical">target: courseware_plan</span>
+        </div>
+        <div class="role-text">从教学过程派生每个环节的大屏/课件屏幕意图。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.scaffold.resource</span><span class="chip inherit">big_unit.learning_activities</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.courseware_plan" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">课件/大屏计划预览</div>
+        <div class="r94p1-source">来源：课件故事板草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>只做 10 页 storyboard：每页一个核心任务，明确主视觉、屏幕文字、教师提示、学生动作和板书/圈画提示。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>不是 PPTX，不含正式图片素材。</p>
+          <p><b>教师动作</b>教师审核后再决定是否进入真实课件制作。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="学习单/学生任务单计划" data-engineering-key="lesson.handout_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 12 · 学习单与评价 / 右栏学习单</div>
+            <h3>学习单/学生任务单计划</h3>
+          </div>
+          <div class="order-pill lesson">12</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 学习单/学生任务单计划</span>
+          <span class="chip engineering">工程字段: lesson.handout_plan</span>
+          <span class="chip canonical">target: handout_plan</span>
+        </div>
+        <div class="role-text">从学习活动和证据要求派生轻量学习单。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.handout_plan</span><span class="chip inherit">big_unit.learning_assessment</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.handout_plan" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学习单计划预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>学生一页版：找一找、试一试、查一查；教师说明版单独承接明度、纯度、材料准备和常见问题。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>解决了上一版内容偏满的问题。</p>
+          <p><b>教师动作</b>排版为一页前仍需教师确认留白。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="评价计划" data-engineering-key="lesson.assessment_plan">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 13 · 学习单与评价 / 右栏评价表</div>
+            <h3>评价计划</h3>
+          </div>
+          <div class="order-pill lesson">13</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 评价计划</span>
+          <span class="chip engineering">工程字段: lesson.assessment_plan</span>
+          <span class="chip canonical">target: assessment</span>
+        </div>
+        <div class="role-text">把本课任务证据转成过程评价、作品评价和反馈语言。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.assessment_scaffold</span><span class="chip inherit">big_unit.task_assessment_points</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.assessment_plan" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">评价计划预览</div>
+        <div class="r94p1-source">来源：评价草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>评价拆为教师观察版和学生自评版，教师版 5 维，学生版 3 项，不使用复杂分数。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>评价表已拆分，适合教师审核。</p>
+          <p><b>教师动作</b>选择课堂当场使用的最小评价项。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="field-card lesson" data-visible-field="资料补充" data-engineering-key="lesson.material_requests">
+        <div class="field-card-head">
+          <div>
+            <div class="field-kicker">单课字段 14 · 资料补充提示位</div>
+            <h3>资料补充</h3>
+          </div>
+          <div class="order-pill lesson">14</div>
+        </div>
+        <div class="meta-row">
+          <span class="chip visible">外显字段: 资料补充</span>
+          <span class="chip engineering">工程字段: lesson.material_requests</span>
+          <span class="chip canonical">target: material_requests</span>
+        </div>
+        <div class="role-text">缺教材、课时安排、示范图、学生作品、真实学情时只提示补资料。</div>
+        <div class="inherit-block">
+          <strong>继承来源</strong>
+          <div class="meta-row"><span class="chip inherit">big_unit.material_requests</span></div>
+        </div>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.material_requests" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">资料补充预览</div>
+        <div class="r94p1-source">来源：教师说明草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>仍需教师确认材料和图像来源：是否用水粉、彩铅、油画棒、水彩笔或色卡；是否展示教材页图。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>不把未确认材料写死。</p>
+          <p><b>教师动作</b>课前 1 天确定材料通知。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    </div>
+      </section>
+      <section class="section" id="step-contract">
+        <h2>四、教学过程行级契约</h2>
+        
+      <section class="step-group" data-step-group-id="step_frame">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · step_frame</div>
+            <h3>环节骨架</h3>
+            <p>确定这一环节在整堂课中的位置、时长和推进责任。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>1. 环节ID</strong>
+          <span>lesson.classroom_flow.step.step_id</span>
+        </div>
+        <p>稳定定位环节，便于局部重生和追踪。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.step_id" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">环节编号预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>这里对应课件故事板中的“第1页—第10页”。编号只用于页面排序，不是正式教案里的课堂环节名称。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>2. 环节顺序</strong>
+          <span>lesson.classroom_flow.step.step_order</span>
+        </div>
+        <p>明确课堂推进先后，避免候选串位。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.step_order" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">环节顺序预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>封面、生活观察、教材观察、核心词、调色游戏、教师示范、学生创作、自查、展示、微修订。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>3. 环节名称</strong>
+          <span>lesson.classroom_flow.step.step_name</span>
+        </div>
+        <p>教师能一眼识别当前环节任务。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.step_name" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">环节名称预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>生活中的渐变 / 教材图观察 / 调色游戏 / 学生创作 / 作品自查 / 展示交流。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>4. 时间分配</strong>
+          <span>lesson.classroom_flow.step.duration</span>
+        </div>
+        <p>控制课堂节奏，暴露时间风险。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.duration" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">时间分配预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>教案母稿按一节 40 分钟课设计；当前只是把课件、学习单、评价表拆成可预览结构，还没有把每一页或每一环节的分钟正式锁定。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>5. 环节功能</strong>
+          <span>lesson.classroom_flow.step.phase_role</span>
+        </div>
+        <p>说明本环节是导入、探究、创作、展示还是评价。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.phase_role" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">环节功能预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>发现现象、建立概念、操作小样、迁移创作、评价修订。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>6. 承接上一环节</strong>
+          <span>lesson.classroom_flow.step.prior_connection</span>
+        </div>
+        <p>说明学生从哪里来，不做断裂活动。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.prior_connection" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">承接上一环节预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>每页从上一页动作延续：看见变化 -&gt; 判断变化 -&gt; 试出变化 -&gt; 用到作品。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>7. 引出下一环节</strong>
+          <span>lesson.classroom_flow.step.next_connection</span>
+        </div>
+        <p>说明本环节如何推动后续任务。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.next_connection" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">引出下一环节预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>每个活动都引向下一步可观察产出，避免孤立讲解。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="teacher_moves">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · teacher_moves</div>
+            <h3>教师行为</h3>
+            <p>把教师在课堂中的语言、示范、巡视和反馈拆开生成。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>8. 教师指令</strong>
+          <span>lesson.classroom_flow.step.teacher_instruction</span>
+        </div>
+        <p>学生听完知道马上要做什么。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_instruction" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">教师指令预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>请用手指一指颜色从哪里开始变，又变到了哪里。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>9. 核心提问</strong>
+          <span>lesson.classroom_flow.step.teacher_core_question</span>
+        </div>
+        <p>推动观察、比较、表达或判断。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_core_question" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">核心提问预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>颜色怎样慢慢变化，才能让画面更有秩序、更有层次？</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>10. 追问</strong>
+          <span>lesson.classroom_flow.step.teacher_probe_question</span>
+        </div>
+        <p>当学生回答浅时继续推进思考。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_probe_question" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">追问预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>它是亮一点/暗一点，还是鲜一点/灰一点？中间有没有跳太快？</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>11. 教师示范</strong>
+          <span>lesson.classroom_flow.step.teacher_demo</span>
+        </div>
+        <p>示范材料、技法、观察或表达方式。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_demo" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">教师示范预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>选颜色 -&gt; 做三格小样 -&gt; 标方向 -&gt; 放进作品。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>12. 教师示范语言</strong>
+          <span>lesson.classroom_flow.step.teacher_modeling_language</span>
+        </div>
+        <p>给教师可直接说出口的课堂话术。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_modeling_language" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">教师示范语言预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>先把颜色排好队，再放进你的图形里；每次只变一点点。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>13. 巡视观察</strong>
+          <span>lesson.classroom_flow.step.teacher_patrol_observation</span>
+        </div>
+        <p>教师走动时看什么、记什么、提醒什么。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_patrol_observation" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">巡视观察预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>看学生是否有起点、方向、三格变化和表达句式。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>14. 即时反馈动作</strong>
+          <span>lesson.classroom_flow.step.teacher_feedback_move</span>
+        </div>
+        <p>教师如何肯定、纠偏、追问或调整。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_feedback_move" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">即时反馈动作预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>圈出跳色处，提醒第二格更接近第一格；让学生只微修一处。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="student_moves">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · student_moves</div>
+            <h3>学生行为</h3>
+            <p>明确学生在每个环节的真实学习动作和可见产出。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>15. 学生观察</strong>
+          <span>lesson.classroom_flow.step.student_observation</span>
+        </div>
+        <p>学生观察什么对象、特征或差异。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_observation" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生观察预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>观察生活图或教材图，指出颜色从哪里变到哪里。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>16. 学生讨论</strong>
+          <span>lesson.classroom_flow.step.student_discussion</span>
+        </div>
+        <p>学生和同伴交流什么问题或判断。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_discussion" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生讨论预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>同桌判断一组色卡属于亮暗变化还是鲜灰变化。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>17. 学生尝试</strong>
+          <span>lesson.classroom_flow.step.student_try</span>
+        </div>
+        <p>学生短时试验什么方法或材料。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_try" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生尝试预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>选择一种颜色画三格，让颜色慢慢变。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>18. 学生创作</strong>
+          <span>lesson.classroom_flow.step.student_creation</span>
+        </div>
+        <p>学生正式完成什么作品或局部任务。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_creation" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生创作预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>把三格小样规律放进色条、图形或小作品。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>19. 学生记录</strong>
+          <span>lesson.classroom_flow.step.student_recording</span>
+        </div>
+        <p>学生留下词语、选择、草图或学习单记录。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_recording" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生记录预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>在学习单上写：我的颜色从___变到___。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>20. 学生展示</strong>
+          <span>lesson.classroom_flow.step.student_display</span>
+        </div>
+        <p>学生展示什么、以何种方式展示。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_display" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生展示预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>展示一处颜色变化，并说明变化方向。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>21. 学生修订</strong>
+          <span>lesson.classroom_flow.step.student_revision</span>
+        </div>
+        <p>学生基于反馈做什么调整。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.student_revision" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">学生修订预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>根据自查或同伴建议，只改一处让颜色更自然。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="art_learning_content">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · art_learning_content</div>
+            <h3>美术学习内容</h3>
+            <p>保证教学过程不是泛泛活动，而是有美术学科判断和材料经验。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>22. 观察对象</strong>
+          <span>lesson.classroom_flow.step.visual_object</span>
+        </div>
+        <p>教材图、生活图、作品图或学生作品样例。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.visual_object" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">观察对象预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>教材第6-7页图像、教师自制色条、学生三格小样。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>23. 美术语言焦点</strong>
+          <span>lesson.classroom_flow.step.visual_language_focus</span>
+        </div>
+        <p>色彩、线条、形状、构图等隐性支撑点。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.visual_language_focus" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">美术语言焦点预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>明度、纯度、渐变规律，用学生话表达为亮暗、鲜灰、慢慢变化。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>24. 技法要点</strong>
+          <span>lesson.classroom_flow.step.technique_focus</span>
+        </div>
+        <p>学生需要掌握或体验的操作方法。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.technique_focus" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">技法要点预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>逐步加白/黑或加灰，或用相邻色块/色卡形成连续变化。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>25. 材料使用</strong>
+          <span>lesson.classroom_flow.step.material_use</span>
+        </div>
+        <p>纸、笔、颜料、色卡、剪贴等材料怎么用。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.material_use" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">材料使用预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>水粉、水彩笔、彩铅、油画棒或色卡任选；当前预览稿不锁定材料。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>26. 造型/构图/色彩关注点</strong>
+          <span>lesson.classroom_flow.step.composition_or_color_focus</span>
+        </div>
+        <p>这一环节主要看的视觉关系。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.composition_or_color_focus" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">色彩关注点预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>起点、终点、方向、中间过渡是否自然。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>27. 作品或生活例证</strong>
+          <span>lesson.classroom_flow.step.artwork_or_life_example</span>
+        </div>
+        <p>支撑理解的图像或生活经验来源。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.artwork_or_life_example" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">生活/作品例证预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>天空、山峦、花朵、衣服颜色或教材学生作品。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>28. 正反例</strong>
+          <span>lesson.classroom_flow.step.positive_negative_example</span>
+        </div>
+        <p>帮助学生分辨有效与无效表现。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.positive_negative_example" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">正反例预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>自然三格渐变 vs 中间跳太快的三格；用于微修订。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="scaffolds">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · scaffolds</div>
+            <h3>学习支架</h3>
+            <p>把学生做得出来所需要的支架拆清楚，避免教师替学生完成。</p>
+          </div>
+          <div class="order-pill lesson">6</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>29. 情境支架</strong>
+          <span>lesson.classroom_flow.step.context_scaffold</span>
+        </div>
+        <p>用什么情境让学生愿意进入任务。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.context_scaffold" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">情境支架预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>先从生活中的颜色慢慢变化进入。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>30. 任务支架</strong>
+          <span>lesson.classroom_flow.step.task_scaffold</span>
+        </div>
+        <p>把复杂任务拆成学生可执行步骤。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.task_scaffold" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">任务支架预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>找一找、试一试、查一查三步完成。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>31. 语言支架</strong>
+          <span>lesson.classroom_flow.step.language_scaffold</span>
+        </div>
+        <p>给学生观察、表达、互评的句式或词语。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.language_scaffold" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">语言支架预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>我的颜色从___变到___；它变得更亮/暗/鲜/灰。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>32. 材料支架</strong>
+          <span>lesson.classroom_flow.step.material_scaffold</span>
+        </div>
+        <p>通过材料或模板降低操作门槛。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.material_scaffold" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">材料支架预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>三格空框、小样纸、色卡或教师示范样本。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>33. 同伴支架</strong>
+          <span>lesson.classroom_flow.step.peer_scaffold</span>
+        </div>
+        <p>安排同桌互看、互说、互评或合作。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.peer_scaffold" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">同伴支架预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>同桌帮看是否有起点、方向和自然过渡。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>34. 差异化支架</strong>
+          <span>lesson.classroom_flow.step.differentiation_scaffold</span>
+        </div>
+        <p>给不同速度和能力学生不同入口。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.differentiation_scaffold" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">差异化支架预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>基础三格，进阶五格，挑战放进小作品。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="assessment_evidence">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · assessment_evidence</div>
+            <h3>评价与证据</h3>
+            <p>让课堂不是只完成作品，而是留下能判断学习发生的证据。</p>
+          </div>
+          <div class="order-pill lesson">7</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>35. 过程证据</strong>
+          <span>lesson.classroom_flow.step.process_evidence</span>
+        </div>
+        <p>学生观察、试验、讨论或修订过程的证据。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.process_evidence" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">过程证据预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>学生圈画起点终点、完成三格小样、自查勾选。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>36. 作品证据</strong>
+          <span>lesson.classroom_flow.step.work_evidence</span>
+        </div>
+        <p>作品中哪些部分能证明学习目标。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.work_evidence" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">作品证据预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>作品或小样中能看出连续颜色变化。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>37. 表达证据</strong>
+          <span>lesson.classroom_flow.step.expression_evidence</span>
+        </div>
+        <p>学生用语言说明选择、感受或理由。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.expression_evidence" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">表达证据预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>学生能说出从什么颜色变到什么颜色。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>38. 同伴评价</strong>
+          <span>lesson.classroom_flow.step.peer_assessment</span>
+        </div>
+        <p>同伴如何给出可用反馈。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.peer_assessment" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">同伴评价预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>我看到... 我建议...，只提一处可修改点。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>39. 教师观察点</strong>
+          <span>lesson.classroom_flow.step.teacher_observation_point</span>
+        </div>
+        <p>教师重点记录哪些学生表现。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.teacher_observation_point" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">教师观察点预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>是否发现渐变、是否试出三层、是否能说明变化。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>40. 成功标准</strong>
+          <span>lesson.classroom_flow.step.success_criteria</span>
+        </div>
+        <p>学生怎样知道自己完成得有效。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.success_criteria" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">成功标准预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>看得出起点、方向、慢慢变化，并能说一句。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>41. 证据留存</strong>
+          <span>lesson.classroom_flow.step.evidence_storage</span>
+        </div>
+        <p>照片、学习单、板贴、评价卡如何保存。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.evidence_storage" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">证据留存预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>保留学生学习单、三格小样或作品照片；本轮不写库。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+      </section>
+    
+
+      <section class="step-group" data-step-group-id="risk_and_orchestration">
+        <div class="step-group-head">
+          <div>
+            <div class="field-kicker">教学过程分组 · risk_and_orchestration</div>
+            <h3>风险与调度</h3>
+            <p>提前暴露课堂风险，给出可替换、可补救的调度方案。</p>
+          </div>
+          <div class="order-pill lesson">6</div>
+        </div>
+        
+      <article class="step-row">
+        <div>
+          <strong>42. 常见误区</strong>
+          <span>lesson.classroom_flow.step.common_misconception</span>
+        </div>
+        <p>学生最可能误解或做偏的地方。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.common_misconception" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">常见误区预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>把渐变理解成随便排色；混淆亮暗和鲜灰；颜色跳太快。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>43. 时间风险</strong>
+          <span>lesson.classroom_flow.step.time_risk</span>
+        </div>
+        <p>本环节可能超时或被压缩的点。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.time_risk" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">时间风险预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>创作环节可能偏紧；可压缩展示数量，保留微修订。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>44. 材料风险</strong>
+          <span>lesson.classroom_flow.step.material_risk</span>
+        </div>
+        <p>材料不足、弄脏、难操作时怎么办。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.material_risk" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">材料风险预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>颜料材料可能弄脏或准备不足；可改用彩铅、油画棒或色卡。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>45. 课堂秩序风险</strong>
+          <span>lesson.classroom_flow.step.class_management_risk</span>
+        </div>
+        <p>活动组织可能失控的点。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.class_management_risk" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">课堂秩序风险预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>调色和材料分发可能拖慢节奏；先演示再分发。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>46. 补救策略</strong>
+          <span>lesson.classroom_flow.step.fallback_strategy</span>
+        </div>
+        <p>出现问题时教师如何快速补救。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.fallback_strategy" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">补救策略预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>时间不足时只做三格小样和一句表达，不做完整作品。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+
+      <article class="step-row">
+        <div>
+          <strong>47. 替代方案</strong>
+          <span>lesson.classroom_flow.step.alternative_plan</span>
+        </div>
+        <p>没有某些材料或时间不足时如何替换。</p>
+        
+      
+      <div class="placeholder r94p1-filled" data-generation-slot-id="R88-GEN/lesson.classroom_flow.step.alternative_plan" data-r94-p1-preview="true" data-preview-only="true" data-formal-apply-allowed="false">
+        <div class="placeholder-title">替代方案预览</div>
+        <div class="r94p1-source">来源：学习单草案 · 仅预览 · 非正式定稿</div>
+        <div class="r94p1-body"><p>不用颜料时，可用彩铅/油画棒/色卡做亮暗或鲜灰排列。</p></div>
+        <div class="r94p1-foot">
+          <p><b>质量观察</b>已映射到教学过程内部字段；预览草案，不作为正式定稿。</p>
+          <p><b>教师动作</b>教师选择是否保留为本课教学过程母版。</p>
+        </div>
+      </div>
+
+    
+      </article>
+    
+      </section>
+    
+      </section>
+
+      <section class="section r94p1-extra" id="r94-p1-extra">
+        <h2>新增派生物结构 · 超出原字段槽位</h2>
+        <p class="r94p1-note">原静态页有课件计划、学习单计划、评价计划，但没有独立承接课件故事板、学生一页版、教师说明版、教师观察版和学生自评版的细槽位。这里作为新增预览区，不写入正式字段，不接真实页面。</p>
+        <div class="r94p1-extra-grid">
+          <article>
+            <h3>课件故事板结构</h3>
+            <table class="r94p1-table">
+              <thead><tr><th>页序</th><th>页面标题</th><th>屏幕文字</th><th>学生动作</th></tr></thead>
+              <tbody><tr><td>第1页</td><td>封面：色彩的渐变</td><td>色彩的渐变
+颜色慢慢变过去</td><td>读课题，说一说屏幕上的颜色有没有慢慢变化。</td></tr><tr><td>第2页</td><td>生活中的渐变</td><td>找一找：颜色从哪里变到哪里？</td><td>用“从___到___”说出一处生活或教材图中的渐变。</td></tr><tr><td>第3页</td><td>教材图观察：明度与纯度</td><td>亮一点 / 暗一点
+鲜一点 / 灰一点</td><td>判断一组颜色是在变亮/变暗，还是变鲜/变灰。</td></tr><tr><td>第4页</td><td>核心词：亮暗 / 鲜灰 / 慢慢变化</td><td>亮暗：明度
+鲜灰：纯度
+慢慢变化：渐变</td><td>把教师出示的色卡贴到“亮暗”或“鲜灰”类别。</td></tr><tr><td>第5页</td><td>调色游戏</td><td>每次只变一点点</td><td>选择一条路线，做三格颜色慢慢变化的小样。</td></tr><tr><td>第6页</td><td>教师示范</td><td>选颜色 -&gt; 做小样 -&gt; 标方向 -&gt; 放进作品</td><td>观察示范，并在学习单上勾选自己要做亮暗还是鲜灰变化。</td></tr><tr><td>第7页</td><td>学生创作任务</td><td>基础：三格
+进阶：五格
+挑战：放进小作品</td><td>选择一个层级完成渐变小样或小作品。</td></tr><tr><td>第8页</td><td>作品自查</td><td>我看得出起点
+我看得出方向
+中间没有跳太快
+我能说一句</td><td>用自查句检查作品，圈出一处可调整地方。</td></tr><tr><td>第9页</td><td>展示交流</td><td>我看到...
+我觉得...
+我建议...</td><td>说出同伴作品的一处优点和一处建议。</td></tr><tr><td>第10页</td><td>微修订</td><td>只改一处，让颜色更自然</td><td>根据自查或同伴建议微修订一处。</td></tr></tbody>
+            </table>
+          </article>
+          <article>
+            <h3>一页学生版学习单</h3>
+            <ul><li>找一找: 我看到颜色从___慢慢变到___。</li><li>试一试: 选一种颜色，画三格，让它慢慢变。</li><li>查一查: 我能说出颜色从哪里变到哪里。</li></ul>
+            <p><b>边界</b> 一页可打印草案，但不是打印定稿。</p>
+          </article>
+          <article>
+            <h3>评价拆分</h3>
+            <p><b>教师观察版</b></p>
+            <ul><li>看得见：能发现渐变</li><li>试得出：能做出连续变化</li><li>用得上：能把渐变用到作品里</li><li>说得清：能说明颜色怎么变化</li><li>改得动：能根据建议修一处</li></ul>
+            <p><b>学生自评版</b></p>
+            <ul><li>我看见颜色慢慢变了</li><li>我试出了三层颜色变化</li><li>我能说出颜色从哪里变到哪里</li></ul>
+          </article>
+          <article>
+            <h3>质量与边界</h3>
+            <ul><li>质量结论：BASIC_USABLE</li><li>阻塞状态：false</li><li>教材锚点：CLOSED</li><li>边界：仅预览，不作为正式定稿</li><li>边界：未接真实页面，未进入下一阶段</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="quality">
+        <h2>五、质量观察</h2>
+        <div class="quality-panel">
+          <div class="quality-item"><strong>大单元先行</strong><br>生成单课前，必须能看见单元主题、大观念、基本问题、表现性任务和评价证据的传递关系。</div>
+          <div class="quality-item"><strong>字段内拆解</strong><br>不是每个字段生成一段大文本，而是按字段内部结构生成候选，再由教师采纳、删除或重试。</div>
+          <div class="quality-item"><strong>派生物后置</strong><br>大屏、学习单、评价表从已确认的教学过程和证据派生，不抢在主教案之前。</div>
+          <div class="quality-item warning"><strong>边界</strong><br>本页不含提示词、不接 provider、不保存、不导出、不 formal apply。所有占位都是待生成容器。</div>
+        </div>
+      </section>
+    </main>
+    <aside>
+      <div class="nav-title">当前边界</div>
+      <div class="quality-panel">
+        <div class="quality-item"><strong>页面类型</strong><br>独立静态验证页</div>
+        <div class="quality-item"><strong>主线保护</strong><br>不修改 R21 / R87 页面</div>
+        <div class="quality-item"><strong>提示词</strong><br>本版隐藏，后续按需单独展开</div>
+        <div class="quality-item"><strong>模型内容</strong><br>仅有占位，不执行生成</div>
+      </div>
+    </aside>
+  </div>
+
+<!-- 1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING: filled=83; missing=0; generated=2026-07-01T05:07:25 -->
+</body>
+</html>

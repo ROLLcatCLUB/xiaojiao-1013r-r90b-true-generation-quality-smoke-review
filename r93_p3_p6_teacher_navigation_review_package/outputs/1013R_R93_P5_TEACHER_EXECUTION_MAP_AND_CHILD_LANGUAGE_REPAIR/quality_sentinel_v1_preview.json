@@ -1,0 +1,19 @@
+{
+  "stage": "1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR",
+  "quality_sentinel_version": "v1_preview",
+  "result": "BASIC_USABLE",
+  "allowed_conclusion": "TEACHER_EXECUTION_MAP_READY",
+  "teacher_review_required": true,
+  "preview_only": true,
+  "formal_apply": false,
+  "checks": {
+    "episode_count": "PASS",
+    "micro_steps_each_episode": "PASS",
+    "child_language_layers": "PASS",
+    "xiaojiao_embedded": "PASS",
+    "teacher_action_each_step": "PASS",
+    "student_action_each_step": "PASS",
+    "screen_state_each_step": "PASS",
+    "evidence_each_step": "PASS"
+  }
+}

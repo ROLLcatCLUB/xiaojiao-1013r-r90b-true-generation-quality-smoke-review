@@ -1,0 +1,27 @@
+{
+  "stage": "1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING",
+  "quality_sentinel_version": "v1_preview",
+  "result": "BASIC_USABLE",
+  "allowed_conclusion": "TEACHING_EPISODE_RUNBOOK_READY",
+  "teacher_review_required": true,
+  "preview_only": true,
+  "formal_apply": false,
+  "checks": {
+    "episode_goal": "PASS",
+    "design_intent": "PASS",
+    "screen_plan": "PASS",
+    "teacher_moves": "PASS",
+    "student_moves": "PASS",
+    "student_scaffolds": "PASS",
+    "xiaojiao_support": "PASS",
+    "common_misconceptions": "PASS",
+    "fallback_strategies": "PASS",
+    "evidence": "PASS",
+    "transition": "PASS"
+  },
+  "notes": [
+    "Episodes are expanded enough for teacher review.",
+    "This is not a formal lesson approval.",
+    "No PPTX, print final, UI binding, database, Feishu, or memory write was performed."
+  ]
+}

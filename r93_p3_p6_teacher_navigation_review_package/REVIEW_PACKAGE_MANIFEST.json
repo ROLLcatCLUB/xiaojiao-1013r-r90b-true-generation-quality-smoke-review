@@ -1,0 +1,227 @@
+﻿{
+    "package":  "1013R_R93_P3_P6_TEACHER_NAVIGATION_REVIEW_PACKAGE",
+    "created_at":  "2026-07-01T07:12:11",
+    "source_root":  "D:\\Documents\\SmartEdu\\xiaobei-core",
+    "upload_target_repo":  "ROLLcatCLUB/xiaojiao-1013r-r90b-true-generation-quality-smoke-review",
+    "zip_file":  "1013R_R93_P3_P6_TEACHER_NAVIGATION_REVIEW_PACKAGE.zip",
+    "zip_sha256":  "7dfcd77730b35bcc2c0c6c77615e750f600e828521864b8ecbcab17b57d5281d",
+    "boundaries":  {
+                       "provider_called":  false,
+                       "model_called":  false,
+                       "r21_modified":  false,
+                       "r36_modified":  false,
+                       "ui_page_connected":  false,
+                       "formal_apply":  false,
+                       "database_written":  false,
+                       "feishu_written":  false,
+                       "memory_written":  false,
+                       "pptx_generated":  false,
+                       "pdf_generated":  false,
+                       "docx_generated":  false,
+                       "r95_executed":  false
+                   },
+    "included_stages":  [
+                            "1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING",
+                            "1013R_R94_P2_TEACHER_FACING_LESSON_PACKAGE_OVERVIEW",
+                            "1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING",
+                            "1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR",
+                            "1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW"
+                        ],
+    "files":  [
+                  {
+                      "path":  "README.md",
+                      "size":  1180,
+                      "sha256":  "c642cb449a7fe0d2b229b59ee6c629c52944cc37a541717f591e84cfea784bf4"
+                  },
+                  {
+                      "path":  "REVIEW_PACKAGE_MANIFEST.md",
+                      "size":  407,
+                      "sha256":  "003cfc6b82bd2f31a40ad4f92fd8a2aedd226987babcfff6f0698c15011dcdd8"
+                  },
+                  {
+                      "path":  "ZIP_SHA256.txt",
+                      "size":  66,
+                      "sha256":  "29cb6c8f328232ec2adde44426f08d7d3358504cbe277c649634b4f139fec2f6"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/quality_sentinel_v1_preview.json",
+                      "size":  868,
+                      "sha256":  "ac0c063469cc3e4d361aed9126e6f2f05ba936593d6678d16bd6a05925b27fc6"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/r93_p3_episode_to_field_mapping.json",
+                      "size":  10148,
+                      "sha256":  "0e96f6dfdad2027b45db9caa234a9c7201aa651f9bedd3e61bea58f8da061263"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/r93_p3_teacher_facing_episode_preview.html",
+                      "size":  24246,
+                      "sha256":  "4608094d69de1c56aeb07faaa89c245c2a0ec995b60b0ba964ae64c5ebeddc20"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/r93_p3_teacher_reading_hierarchy_notes.md",
+                      "size":  1158,
+                      "sha256":  "b643ed64ba95825286c4a604f09b5ad6ac1d46886847e6635613cb1e50291fe6"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/r93_p3_teaching_episode_runbook.json",
+                      "size":  15716,
+                      "sha256":  "6378fdba7381a643bdbcf4d8831f1d0ac8afa8d5107bc91c2d901a0d982ea8b1"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/r93_p3_teaching_episode_runbook.md",
+                      "size":  9856,
+                      "sha256":  "e9469f3caf38a77dd4b3d5119eaed0803c56d3c5a9317513f6d800618c52e1bc"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/r93_p3_xiaojiao_support_plan.md",
+                      "size":  1649,
+                      "sha256":  "84173fc998ffbb86345948f72be04ba79ff5b6c99d0d6ae837cfdbbf1d52713d"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/teaching_episode_schema_1013R_R93_P3.json",
+                      "size":  1233,
+                      "sha256":  "05edba957e393c81752f82ecf234139927ab50387270220a7724bad123beadab"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING/validate_1013R_R93_P3_classroom_flow_teaching_episode_deepening_result.json",
+                      "size":  2274,
+                      "sha256":  "6641947c804c895e6ee62e5cfc06711cafddbef4b22ea8eb0ecc316368bebf78"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/quality_sentinel_v1_preview.json",
+                      "size":  617,
+                      "sha256":  "4d1a037f85ca6c8f373f86acaee7987ef089a7a07e9257308caff2f1368d8aa2"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/r93_p5_child_language_teacher_talk_bank.md",
+                      "size":  4122,
+                      "sha256":  "9c9dc77aa01b289edbc2008469cd59360800a9ff9705d658b322dacc2b7a994d"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/r93_p5_episode_micro_step_mapping.json",
+                      "size":  14567,
+                      "sha256":  "9733f427cd9bc2033d9817b32740c6128ed1372a33cb25dfaed2951ccddcdb84"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/r93_p5_teacher_execution_map.json",
+                      "size":  34003,
+                      "sha256":  "de11e5248c525aa369c7a62abe67c7acd8d62e0ba9a99f39956ece786a4660e7"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/r93_p5_teacher_execution_map.md",
+                      "size":  20780,
+                      "sha256":  "c7956945e8e0560e28b8745b56a9d168080e91586e882fa9fa34ee94bd4c40fd"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/r93_p5_teacher_facing_execution_preview.html",
+                      "size":  49772,
+                      "sha256":  "a7375ceccfdbf2aacf4afddc089fd5b445a3d03c44cac090c52b2a4f42086454"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/r93_p5_xiaojiao_in_class_support_cards.md",
+                      "size":  1673,
+                      "sha256":  "3fb58d3c4450b5f81133ddfa25f7a55f39a19bb5173d9c90a92ef8bd79d377d4"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/teacher_execution_map_schema_1013R_R93_P5.json",
+                      "size":  1357,
+                      "sha256":  "7ef2345b14cb5b05a34fbd26ce814b234581ef260e9d4cd849cf81b109a605d0"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR/validate_1013R_R93_P5_teacher_execution_map_child_language_result.json",
+                      "size":  2356,
+                      "sha256":  "880d1146b4d1c454ce2e84997a9bb7ad688a59453deb377847b9c6239750facb"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW/r93_p6_reading_experience_notes.md",
+                      "size":  821,
+                      "sha256":  "dfb73c42535fc1488ddabbe8ca2fd0a3e3df39573167c751e32593bc8ea5c4b0"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW/r93_p6_talk_flow_summary.md",
+                      "size":  1096,
+                      "sha256":  "16062c41aa7335cb1a040aef736c85d857d4e360e5d68d4ce5688f4146eb6078"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW/r93_p6_teacher_navigation_view.html",
+                      "size":  44974,
+                      "sha256":  "07564066d74c9ec7305956cfcbf1d97e18b47b361aeb9290eee1db3071a4bbba"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW/r93_p6_teacher_navigation_viewmodel.json",
+                      "size":  38026,
+                      "sha256":  "7cb8d1c6d395e2e89d44ac455e8763210b08931383456afc8e846c404104d78d"
+                  },
+                  {
+                      "path":  "outputs/1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW/validate_1013R_R93_P6_teacher_navigation_view_result.json",
+                      "size":  1166,
+                      "sha256":  "bedc41c7a08609c07e565fd29a8e1501c800ef3c3cfb81420cc69c38e30aeca1"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING/field_generation_quality_static_lab_1013R_R88_r94_p1_preview.html",
+                      "size":  132188,
+                      "sha256":  "7ee72f837c56823aa4564acb4d6b2fb0b2aeed70cc1ebbc526b79a6ac427f55e"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING/README.md",
+                      "size":  737,
+                      "sha256":  "083f395065c7364ccb4cea9e15a1407d9af1ec2d692adad80e563e3acbbd3960"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING/REVIEW_PACKAGE_MANIFEST.json",
+                      "size":  4176,
+                      "sha256":  "868d04e3cbf76541c4a4edfd23f0b7097134314b5d8e6196e4716ff468dd0a52"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING/validate_1013R_R94_P1_R88_field_lab_preview_binding_result.json",
+                      "size":  5004,
+                      "sha256":  "f4dd310d6c381824aaa5138f84dec235194e6d30cf90e05e4ffcabba3d62d7de"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P2_TEACHER_FACING_LESSON_PACKAGE_OVERVIEW/r94_p2_field_lab_demote_decision.md",
+                      "size":  873,
+                      "sha256":  "475ff1fefce52c2d34582ad0ec5473d6d115082276ae39696e22f9263ffd8e07"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P2_TEACHER_FACING_LESSON_PACKAGE_OVERVIEW/r94_p2_teacher_facing_lesson_package_overview.html",
+                      "size":  17868,
+                      "sha256":  "28cf3886eb8b5dde5bdb7fda7a87899b1b2751c5d82f58f7a93a1a3036c9e2e5"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P2_TEACHER_FACING_LESSON_PACKAGE_OVERVIEW/r94_p2_teacher_facing_viewmodel.json",
+                      "size":  10544,
+                      "sha256":  "8cb03cc0b61cae60689f63f66293198baf427d013806f8d5f908c8b64342994f"
+                  },
+                  {
+                      "path":  "outputs/1013R_R94_P2_TEACHER_FACING_LESSON_PACKAGE_OVERVIEW/validate_1013R_R94_P2_teacher_facing_overview_result.json",
+                      "size":  1192,
+                      "sha256":  "0d2cca9e9ec25530c31bb3655c6d5d4961443038f93fe67f45cc4e83e3645396"
+                  },
+                  {
+                      "path":  "scripts/build_1013r_r93_p3_classroom_flow_teaching_episode_deepening.py",
+                      "size":  42069,
+                      "sha256":  "31c9d36aae55d4fd3f5c28ab965b37a46627d0ad4bd2c49f5e0160a6cf393ff7"
+                  },
+                  {
+                      "path":  "scripts/build_1013r_r93_p5_teacher_execution_map_child_language.py",
+                      "size":  43682,
+                      "sha256":  "0a5e5a13a8a37ea14656ce2fd6232686d6d9b90493a6091e3f2e34950f772217"
+                  },
+                  {
+                      "path":  "scripts/build_1013r_r93_p6_teacher_navigation_view.py",
+                      "size":  18633,
+                      "sha256":  "01994f0dfe527afb82250da751d7d5c190695b1fb1150a77b47dcba336bf7908"
+                  },
+                  {
+                      "path":  "scripts/build_1013r_r94_p1_r88_field_lab_preview_binding.py",
+                      "size":  41590,
+                      "sha256":  "c545ed5e6917acc564dc48da20081d7d4eb2347bbc1832b119bb38d6756f7b24"
+                  },
+                  {
+                      "path":  "scripts/build_1013r_r94_p2_teacher_facing_lesson_package_overview.py",
+                      "size":  27936,
+                      "sha256":  "a5073e217ef0f244d2621895cc9afad53b01724c990a965fb3c5fd8a2f84d4d2"
+                  }
+              ]
+}

@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>《色彩的渐变》教学过程操作稿</title>
+  <style>
+    :root {
+      --ink: #263238;
+      --muted: #66737c;
+      --line: #d8e2dd;
+      --paper: #fbfcfa;
+      --green: #3e6f5c;
+      --mint: #e0f0ea;
+      --blue: #e1edf6;
+      --sun: #f6e8b7;
+      --coral: #f5ded6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    header {
+      padding: 26px 28px 16px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .topbar {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .subtitle { color: var(--muted); margin: 10px 0 0; font-size: 17px; }
+    .status {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 10px;
+      min-width: 420px;
+    }
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--mint);
+      padding: 12px;
+    }
+    .chip:nth-child(2) { background: var(--blue); }
+    .chip:nth-child(3) { background: var(--sun); }
+    .chip b { display: block; color: var(--muted); font-size: 12px; margin-bottom: 3px; }
+    nav {
+      max-width: 1180px;
+      margin: 18px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    nav a {
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 2px solid #bdd7ce;
+      padding: 4px 2px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    main { max-width: 980px; margin: 0 auto; padding: 28px 28px 76px; }
+    .spine {
+      border-top: 2px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+      margin-bottom: 26px;
+    }
+    .spine h2 { margin: 0 0 10px; }
+    .spine ul { margin: 0; padding-left: 20px; }
+    .flow-map {
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      padding: 0 0 20px;
+    }
+    .flow-map h2 { margin: 0 0 12px; }
+    .flow-map ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .flow-map a {
+      display: block;
+      border: 1px solid #cddbd6;
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 8px 10px;
+      min-width: 150px;
+    }
+    .flow-map b {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 22px;
+      margin-bottom: 8px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+    }
+    .episode-section {
+      border-top: 1px solid var(--line);
+      padding: 34px 0 30px;
+    }
+    .episode-meta {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .episode-section h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+    .episode-section h2 span {
+      display: inline-block;
+      color: var(--green);
+      margin-right: 12px;
+    }
+    .episode-goal {
+      margin: 10px 0 22px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .numbered-block {
+      margin: 18px 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--line);
+    }
+    .numbered-block h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+    .numbered-block p {
+      margin: 8px 0;
+      color: var(--ink);
+    }
+    .secondary-text p,
+    .evidence-text p {
+      color: var(--muted);
+    }
+    .episode-details {
+      margin: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #fbfdfc;
+    }
+    .episode-details summary {
+      cursor: pointer;
+      padding: 14px 0;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .detail-section {
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .detail-section h4 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+    .detail-section p, .detail-section li { color: var(--muted); }
+    .detail-section ul { margin: 0; padding-left: 20px; }
+    blockquote {
+      margin: 10px 0;
+      padding: 10px 12px;
+      border-left: 4px solid var(--green);
+      background: #f6fbf9;
+      color: var(--ink);
+    }
+    .transition {
+      margin: 22px 0 0;
+      padding: 12px 0 0;
+      border-top: 1px dashed #cbb7b0;
+      color: var(--muted);
+    }
+    @media (max-width: 920px) {
+      .topbar { flex-direction: column; }
+      .status { min-width: 0; width: 100%; }
+    }
+    @media (max-width: 620px) {
+      header, main { padding-left: 16px; padding-right: 16px; }
+      .status { grid-template-columns: 1fr; }
+      .flow-map a { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div>
+        <h1>《色彩的渐变》教学过程操作稿</h1>
+        <p class="subtitle">把教案、课件故事板、学习单、评价表和小教支持压回课堂环节里。</p>
+      </div>
+      <div class="status">
+        <div class="chip"><b>状态</b>教师审核草案</div>
+        <div class="chip"><b>质量</b>BASIC_USABLE</div>
+        <div class="chip"><b>正式应用</b>未开放</div>
+      </div>
+    </div>
+    <nav><a href="#episode_01_notice_gradient">1. 看见渐变</a><a href="#episode_02_distinguish_brightness_saturation">2. 分清亮暗与鲜灰</a><a href="#episode_03_three_step_color_trial">3. 三格试色</a><a href="#episode_04_apply_to_artwork">4. 放进作品</a><a href="#episode_05_self_check_revision">5. 自查与微修订</a></nav>
+  </header>
+  <main>
+    <section class="flow-map">
+      <h2>0. 先看课堂怎么走</h2>
+      <ol><li><a href="#episode_01_notice_gradient"><b>1</b>看见渐变</a></li><li><a href="#episode_02_distinguish_brightness_saturation"><b>2</b>分清亮暗与鲜灰</a></li><li><a href="#episode_03_three_step_color_trial"><b>3</b>三格试色</a></li><li><a href="#episode_04_apply_to_artwork"><b>4</b>放进作品</a></li><li><a href="#episode_05_self_check_revision"><b>5</b>自查与微修订</a></li></ol>
+    </section>
+    <section class="spine">
+      <h2>0.1 这节课的主线</h2>
+      <ul><li>先让学生看见颜色慢慢变化。</li><li>再把变化分成亮暗与鲜灰两类。</li><li>接着通过三格试色把规律做出来。</li><li>然后把试色规律迁移到作品。</li><li>最后用自查和微修订把评价落到作品改进上。</li></ul>
+    </section>
+    
+        <section class="episode-section" id="episode_01_notice_gradient">
+          <p class="episode-meta">第1个环节 · 约5分钟</p>
+          <h2><span>1</span>看见渐变</h2>
+          <p class="episode-goal"><b>环节目标：</b>学生能从生活图或教材图中指出颜色从哪里开始、变到哪里。</p>
+
+          <section class="numbered-block">
+            <h3>1.1 老师先做</h3>
+            <p>出示图片，先请学生安静观察，再邀请学生用手指出颜色变化方向。</p>
+            <blockquote>先不急着说专业词。你只要找到：颜色从哪里开始，慢慢变到了哪里。</blockquote>
+          </section>
+
+          <section class="numbered-block secondary-text">
+            <h3>1.2 学生跟着做</h3>
+            <p><b>先看：</b>观察图片中的颜色层次。</p>
+            <p><b>再做：</b>用手指从颜色起点滑到终点。</p>
+            <p><b>表达：</b>我看到颜色从___变到___。</p>
+          </section>
+
+          <section class="numbered-block evidence-text">
+            <h3>1.3 这一环节看什么</h3>
+            <p>学生能圈出或指出起点与终点。</p>
+            <p>学生能说出一句“从___到___”。</p>
+          </section>
+
+          <details class="episode-details">
+            <summary>展开 1.4-1.9 支架、大屏、追问和设计意图</summary>
+            <section class="detail-section">
+              <h4>1.4 大屏与视觉材料</h4>
+              <p>天空、山峦、花朵或教材页局部三图并排，每张图只保留一个箭头。</p>
+              <ul><li>找一找：颜色从哪里变到哪里？</li><li>用手指一指变化方向。</li><li>圈出起点和终点，用箭头标出变化方向。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>1.5 教师追问</h4>
+              <ul><li>你是从哪里看出它在慢慢变的？</li><li>它是一下一下跳过去，还是一层一层变过去？</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>1.6 学生支架</h4>
+              <ul><li>从___到___</li><li>颜色慢慢变过去</li><li>图片箭头、起点终点标记。</li><li>同桌先互相指一处，再全班分享。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>1.7 小教支持</h4>
+              <ul><li>如果学生只说“好看”，提示他说清起点和终点。</li><li>它中间有没有一层一层的变化？</li><li>学生可能把颜色多误认为渐变。</li><li>记录能说出“从___到___”的学生。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>1.8 误区与补救</h4>
+              <ul><li>把颜色丰富等同于渐变。</li><li>只说好看，不说变化方向。</li><li>减少图片数量，只保留一张最清楚的图。</li><li>让学生先用手指，不急着口头表达。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>1.9 设计意图</h4>
+              <p>先用直观观察建立“慢慢变”的经验，避免一上来讲明度、纯度造成负担。</p>
+            </section>
+          </details>
+
+          <p class="transition"><b>过渡：</b>既然能看见颜色慢慢变，接下来要分一分：它是在变亮变暗，还是变鲜变灰。</p>
+        </section>
+        
+        <section class="episode-section" id="episode_02_distinguish_brightness_saturation">
+          <p class="episode-meta">第2个环节 · 约7分钟</p>
+          <h2><span>2</span>分清亮暗与鲜灰</h2>
+          <p class="episode-goal"><b>环节目标：</b>学生能用儿童化语言初步区分亮暗变化和鲜灰变化。</p>
+
+          <section class="numbered-block">
+            <h3>2.1 老师先做</h3>
+            <p>先指左侧色条问亮暗，再指右侧色条问鲜灰，最后组织分类。</p>
+            <blockquote>我们先不用急着记词。你只要先看出来：它是变亮了，还是变灰了？</blockquote>
+          </section>
+
+          <section class="numbered-block secondary-text">
+            <h3>2.2 学生跟着做</h3>
+            <p><b>先看：</b>观察两组色条。</p>
+            <p><b>再做：</b>把色条或色卡放到“亮暗”或“鲜灰”类别。</p>
+            <p><b>表达：</b>这一组颜色从___变得更___。</p>
+          </section>
+
+          <section class="numbered-block evidence-text">
+            <h3>2.3 这一环节看什么</h3>
+            <p>学生能把色条放入正确类别。</p>
+            <p>学生能用“越来越___”说明变化。</p>
+          </section>
+
+          <details class="episode-details">
+            <summary>展开 2.4-2.9 支架、大屏、追问和设计意图</summary>
+            <section class="detail-section">
+              <h4>2.4 大屏与视觉材料</h4>
+              <p>左侧一组由深到浅的色条，右侧一组由鲜到灰的色条。</p>
+              <ul><li>亮一点 / 暗一点</li><li>鲜一点 / 灰一点</li><li>板书两列：亮暗；鲜灰。教师可在旁边小字写明度、纯度。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>2.5 教师追问</h4>
+              <ul><li>你看的是颜色亮不亮，还是鲜不鲜？</li><li>这组颜色越来越亮，还是越来越灰？</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>2.6 学生支架</h4>
+              <ul><li>越来越亮</li><li>越来越暗</li><li>越来越鲜</li><li>越来越灰</li><li>两组对比色条、分类卡。</li><li>同桌先判断，再举卡表达。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>2.7 小教支持</h4>
+              <ul><li>先问学生看的是亮不亮，还是鲜不鲜。</li><li>如果只能选一个词，你会选亮、暗、鲜、灰里的哪一个？</li><li>学生可能把变浅和变灰混为一谈。</li><li>记录能完成分类并说出理由的学生。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>2.8 误区与补救</h4>
+              <ul><li>把颜色变浅都说成变灰。</li><li>只记明度、纯度词语，不会判断。</li><li>暂时不要求说专业词，只要求分到亮暗或鲜灰。</li><li>用更夸张的两组色条降低判断难度。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>2.9 设计意图</h4>
+              <p>教材页同时出现明度与纯度，先用“亮暗、鲜灰”建立直观判断，再轻轻对应专业词。</p>
+            </section>
+          </details>
+
+          <p class="transition"><b>过渡：</b>能看出来还不够，下一步我们试着自己做出三格慢慢变化。</p>
+        </section>
+        
+        <section class="episode-section" id="episode_03_three_step_color_trial">
+          <p class="episode-meta">第3个环节 · 约8分钟</p>
+          <h2><span>3</span>三格试色</h2>
+          <p class="episode-goal"><b>环节目标：</b>学生能完成三格或五格连续变化小样，知道每次只变一点点。</p>
+
+          <section class="numbered-block">
+            <h3>3.1 老师先做</h3>
+            <p>现场示范三格小样，展示一个自然例和一个跳色反例。</p>
+            <blockquote>先把颜色排好队，再放进你的作品里。第二格不要跑太远，它要像第一格的朋友。</blockquote>
+          </section>
+
+          <section class="numbered-block secondary-text">
+            <h3>3.2 学生跟着做</h3>
+            <p><b>先看：</b>观察教师示范和反例。</p>
+            <p><b>再做：</b>选择亮暗或鲜灰路线，完成三格小样。</p>
+            <p><b>表达：</b>我的颜色从___变到___，中间越来越___。</p>
+          </section>
+
+          <section class="numbered-block evidence-text">
+            <h3>3.3 这一环节看什么</h3>
+            <p>学生完成三格小样。</p>
+            <p>小样能看出连续变化。</p>
+          </section>
+
+          <details class="episode-details">
+            <summary>展开 3.4-3.9 支架、大屏、追问和设计意图</summary>
+            <section class="detail-section">
+              <h4>3.4 大屏与视觉材料</h4>
+              <p>三格小样示范：第一格原色，第二格轻微变化，第三格继续变化。</p>
+              <ul><li>每次只变一点点</li><li>第1格 -&gt; 第2格 -&gt; 第3格</li><li>标出变化箭头，圈出跳色太快的反例。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>3.5 教师追问</h4>
+              <ul><li>第二格更像第一格，还是一下子跳到第三格？</li><li>如果太突然，你准备把哪一格改一改？</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>3.6 学生支架</h4>
+              <ul><li>第一格是___</li><li>第二格更___</li><li>第三格更___</li><li>三格空框、小样纸、色卡或颜料。</li><li>同桌帮看中间有没有跳太快。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>3.7 小教支持</h4>
+              <ul><li>提醒学生先做三格，不急着画完整作品。</li><li>中间这一格能不能再靠近第一格一点？</li><li>学生可能把三种不同颜色并排当成渐变。</li><li>保留三格小样作为过程证据。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>3.8 误区与补救</h4>
+              <ul><li>颜色跳太快。</li><li>只换颜色，不形成连续变化。</li><li>水分或力度不均导致颜色脏。</li><li>材料复杂时改用彩铅、油画棒或色卡排列。</li><li>只要求三格，不要求五格。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>3.9 设计意图</h4>
+              <p>把概念转成可操作的小任务，降低完整创作前的风险。</p>
+            </section>
+          </details>
+
+          <p class="transition"><b>过渡：</b>小样做好了，接下来把这条变化规律放进你的图形或小作品里。</p>
+        </section>
+        
+        <section class="episode-section" id="episode_04_apply_to_artwork">
+          <p class="episode-meta">第4个环节 · 约14分钟</p>
+          <h2><span>4</span>放进作品</h2>
+          <p class="episode-goal"><b>环节目标：</b>学生能把试色规律迁移到色条、图形或小作品中。</p>
+
+          <section class="numbered-block">
+            <h3>4.1 老师先做</h3>
+            <p>发布分层任务，巡视时只抓起点、方向、过渡三个点。</p>
+            <blockquote>你不需要画很复杂。今天最重要的是让别人看出颜色是怎样慢慢变过去的。</blockquote>
+          </section>
+
+          <section class="numbered-block secondary-text">
+            <h3>4.2 学生跟着做</h3>
+            <p><b>先看：</b>看任务选择和示例。</p>
+            <p><b>再做：</b>选择基础、进阶或挑战任务完成作品。</p>
+            <p><b>表达：</b>我把渐变放在___，颜色从___变到___。</p>
+          </section>
+
+          <section class="numbered-block evidence-text">
+            <h3>4.3 这一环节看什么</h3>
+            <p>作品或局部设计中有明确渐变方向。</p>
+            <p>学生能说出渐变放在哪里。</p>
+          </section>
+
+          <details class="episode-details">
+            <summary>展开 4.4-4.9 支架、大屏、追问和设计意图</summary>
+            <section class="detail-section">
+              <h4>4.4 大屏与视觉材料</h4>
+              <p>展示三类任务：基础色条、进阶图形、挑战小作品。</p>
+              <ul><li>基础：三格色条</li><li>进阶：放进图形</li><li>挑战：放进小作品</li><li>提示起点、方向、中间过渡三个检查点。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>4.5 教师追问</h4>
+              <ul><li>你的颜色从哪里开始变？</li><li>别人一眼能看出变化方向吗？</li><li>你最想让哪一处颜色变得更自然？</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>4.6 学生支架</h4>
+              <ul><li>我选择___任务</li><li>我的变化方向是___</li><li>色条模板、图形轮廓、小样纸、学习单。</li><li>同桌先看方向是否清楚。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>4.7 小教支持</h4>
+              <ul><li>如果学生画面太复杂，提醒先保证一条清楚的渐变。</li><li>这幅作品里最清楚的一段渐变在哪里？</li><li>学生可能追求复杂图案，忽略渐变规律。</li><li>记录作品中能看出明确变化方向的例子。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>4.8 误区与补救</h4>
+              <ul><li>图案太复杂，渐变看不出来。</li><li>只涂满颜色，没有方向。</li><li>时间不足时只完成一个色条或局部。</li><li>让学生把小样直接贴入作品作为局部设计。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>4.9 设计意图</h4>
+              <p>让渐变从练习变成艺术表现，避免停留在色卡层面。</p>
+            </section>
+          </details>
+
+          <p class="transition"><b>过渡：</b>作品有了变化方向，最后我们用自查表看一看：哪里已经清楚，哪里还可以微修。</p>
+        </section>
+        
+        <section class="episode-section" id="episode_05_self_check_revision">
+          <p class="episode-meta">第5个环节 · 约6分钟</p>
+          <h2><span>5</span>自查与微修订</h2>
+          <p class="episode-goal"><b>环节目标：</b>学生能依据自查或同伴建议，完成一处小修改并说清变化。</p>
+
+          <section class="numbered-block">
+            <h3>5.1 老师先做</h3>
+            <p>组织学生用三项自查看作品，再请同桌给一条可修改建议。</p>
+            <blockquote>今天不比谁画得最多。我们只看：你能不能让一处颜色变化更清楚。</blockquote>
+          </section>
+
+          <section class="numbered-block secondary-text">
+            <h3>5.2 学生跟着做</h3>
+            <p><b>先看：</b>对照自查项看自己的小样或作品。</p>
+            <p><b>再做：</b>选择一处进行微修订。</p>
+            <p><b>表达：</b>我改了___，因为这里原来___，现在___。</p>
+          </section>
+
+          <section class="numbered-block evidence-text">
+            <h3>5.3 这一环节看什么</h3>
+            <p>学生完成自查或同伴建议。</p>
+            <p>作品中有一处可见微修。</p>
+          </section>
+
+          <details class="episode-details">
+            <summary>展开 5.4-5.9 支架、大屏、追问和设计意图</summary>
+            <section class="detail-section">
+              <h4>5.4 大屏与视觉材料</h4>
+              <p>一张作品局部，旁边显示修改前后小箭头。</p>
+              <ul><li>看得出方向吗？</li><li>中间跳太快了吗？</li><li>我能改一处吗？</li><li>只改一处即可，不要求重画。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>5.5 教师追问</h4>
+              <ul><li>你准备改哪一处？</li><li>改完以后，颜色变化会更清楚吗？</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>5.6 学生支架</h4>
+              <ul><li>我发现___</li><li>我准备改___</li><li>改完以后___</li><li>学生自评三项、同伴建议句式。</li><li>同伴只提一处建议，避免学生重画。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>5.7 小教支持</h4>
+              <ul><li>提醒教师把评价压缩为一处微修，不展开大评比。</li><li>这一处改完以后，起点和终点更清楚了吗？</li><li>学生可能把评价理解为重新画一遍。</li><li>保留修改前后局部照片或学习单勾选。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>5.8 误区与补救</h4>
+              <ul><li>评价变成只说好不好看。</li><li>学生想重画导致时间不够。</li><li>时间不足时只做口头说明，不强制完成完整修改。</li><li>只选2-3件作品全班看一处修改。</li></ul>
+            </section>
+            <section class="detail-section">
+              <h4>5.9 设计意图</h4>
+              <p>把评价落到作品改进上，而不是只停留在展示和表扬。</p>
+            </section>
+          </details>
+
+          <p class="transition"><b>过渡：</b>课后可以继续在生活中找渐变，下节课再看渐变怎样形成节奏。</p>
+        </section>
+        
+  </main>
+</body>
+</html>

@@ -1,0 +1,338 @@
+{
+  "stage": "1013R_R93_P3_CLASSROOM_FLOW_TEACHING_EPISODE_DEEPENING",
+  "created_at": "2026-07-01T06:18:30",
+  "lesson": {
+    "title": "色彩的渐变",
+    "unit": "第二单元《多彩的世界》",
+    "grade": "三年级",
+    "textbook_anchor": "教材第6-7页，核心板块为色彩的明度与纯度、渐变的调色游戏。",
+    "status": "TEACHING_EPISODE_RUNBOOK_READY",
+    "teacher_review_required": true,
+    "preview_only": true,
+    "formal_apply": false
+  },
+  "classroom_spine": [
+    "先让学生看见颜色慢慢变化。",
+    "再把变化分成亮暗与鲜灰两类。",
+    "接着通过三格试色把规律做出来。",
+    "然后把试色规律迁移到作品。",
+    "最后用自查和微修订把评价落到作品改进上。"
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "title": "看见渐变",
+      "duration": "约5分钟",
+      "episode_goal": "学生能从生活图或教材图中指出颜色从哪里开始、变到哪里。",
+      "design_intent": "先用直观观察建立“慢慢变”的经验，避免一上来讲明度、纯度造成负担。",
+      "screen_plan": {
+        "main_visual": "天空、山峦、花朵或教材页局部三图并排，每张图只保留一个箭头。",
+        "screen_text": [
+          "找一找：颜色从哪里变到哪里？",
+          "用手指一指变化方向。"
+        ],
+        "board_or_annotation": "圈出起点和终点，用箭头标出变化方向。"
+      },
+      "teacher_moves": {
+        "action": "出示图片，先请学生安静观察，再邀请学生用手指出颜色变化方向。",
+        "talk": "先不急着说专业词。你只要找到：颜色从哪里开始，慢慢变到了哪里。",
+        "probe": [
+          "你是从哪里看出它在慢慢变的？",
+          "它是一下一下跳过去，还是一层一层变过去？"
+        ]
+      },
+      "student_moves": {
+        "look": "观察图片中的颜色层次。",
+        "do": "用手指从颜色起点滑到终点。",
+        "say": "我看到颜色从___变到___。"
+      },
+      "student_scaffolds": {
+        "language": [
+          "从___到___",
+          "颜色慢慢变过去"
+        ],
+        "material": "图片箭头、起点终点标记。",
+        "peer": "同桌先互相指一处，再全班分享。"
+      },
+      "xiaojiao_support": {
+        "hint_card": "如果学生只说“好看”，提示他说清起点和终点。",
+        "probe_card": "它中间有没有一层一层的变化？",
+        "misconception_alert": "学生可能把颜色多误认为渐变。",
+        "evidence_note": "记录能说出“从___到___”的学生。"
+      },
+      "common_misconceptions": [
+        "把颜色丰富等同于渐变。",
+        "只说好看，不说变化方向。"
+      ],
+      "fallback_strategies": [
+        "减少图片数量，只保留一张最清楚的图。",
+        "让学生先用手指，不急着口头表达。"
+      ],
+      "evidence": {
+        "process": "学生能圈出或指出起点与终点。",
+        "expression": "学生能说出一句“从___到___”。",
+        "teacher_observation": "看学生是否能发现连续变化，而不是只看见多个颜色。"
+      },
+      "transition": "既然能看见颜色慢慢变，接下来要分一分：它是在变亮变暗，还是变鲜变灰。"
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "title": "分清亮暗与鲜灰",
+      "duration": "约7分钟",
+      "episode_goal": "学生能用儿童化语言初步区分亮暗变化和鲜灰变化。",
+      "design_intent": "教材页同时出现明度与纯度，先用“亮暗、鲜灰”建立直观判断，再轻轻对应专业词。",
+      "screen_plan": {
+        "main_visual": "左侧一组由深到浅的色条，右侧一组由鲜到灰的色条。",
+        "screen_text": [
+          "亮一点 / 暗一点",
+          "鲜一点 / 灰一点"
+        ],
+        "board_or_annotation": "板书两列：亮暗；鲜灰。教师可在旁边小字写明度、纯度。"
+      },
+      "teacher_moves": {
+        "action": "先指左侧色条问亮暗，再指右侧色条问鲜灰，最后组织分类。",
+        "talk": "我们先不用急着记词。你只要先看出来：它是变亮了，还是变灰了？",
+        "probe": [
+          "你看的是颜色亮不亮，还是鲜不鲜？",
+          "这组颜色越来越亮，还是越来越灰？"
+        ]
+      },
+      "student_moves": {
+        "look": "观察两组色条。",
+        "do": "把色条或色卡放到“亮暗”或“鲜灰”类别。",
+        "say": "这一组颜色从___变得更___。"
+      },
+      "student_scaffolds": {
+        "language": [
+          "越来越亮",
+          "越来越暗",
+          "越来越鲜",
+          "越来越灰"
+        ],
+        "material": "两组对比色条、分类卡。",
+        "peer": "同桌先判断，再举卡表达。"
+      },
+      "xiaojiao_support": {
+        "hint_card": "先问学生看的是亮不亮，还是鲜不鲜。",
+        "probe_card": "如果只能选一个词，你会选亮、暗、鲜、灰里的哪一个？",
+        "misconception_alert": "学生可能把变浅和变灰混为一谈。",
+        "evidence_note": "记录能完成分类并说出理由的学生。"
+      },
+      "common_misconceptions": [
+        "把颜色变浅都说成变灰。",
+        "只记明度、纯度词语，不会判断。"
+      ],
+      "fallback_strategies": [
+        "暂时不要求说专业词，只要求分到亮暗或鲜灰。",
+        "用更夸张的两组色条降低判断难度。"
+      ],
+      "evidence": {
+        "process": "学生能把色条放入正确类别。",
+        "expression": "学生能用“越来越___”说明变化。",
+        "teacher_observation": "看学生是否能区分亮暗与鲜灰，而不是只说颜色名称。"
+      },
+      "transition": "能看出来还不够，下一步我们试着自己做出三格慢慢变化。"
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "title": "三格试色",
+      "duration": "约8分钟",
+      "episode_goal": "学生能完成三格或五格连续变化小样，知道每次只变一点点。",
+      "design_intent": "把概念转成可操作的小任务，降低完整创作前的风险。",
+      "screen_plan": {
+        "main_visual": "三格小样示范：第一格原色，第二格轻微变化，第三格继续变化。",
+        "screen_text": [
+          "每次只变一点点",
+          "第1格 -> 第2格 -> 第3格"
+        ],
+        "board_or_annotation": "标出变化箭头，圈出跳色太快的反例。"
+      },
+      "teacher_moves": {
+        "action": "现场示范三格小样，展示一个自然例和一个跳色反例。",
+        "talk": "先把颜色排好队，再放进你的作品里。第二格不要跑太远，它要像第一格的朋友。",
+        "probe": [
+          "第二格更像第一格，还是一下子跳到第三格？",
+          "如果太突然，你准备把哪一格改一改？"
+        ]
+      },
+      "student_moves": {
+        "look": "观察教师示范和反例。",
+        "do": "选择亮暗或鲜灰路线，完成三格小样。",
+        "say": "我的颜色从___变到___，中间越来越___。"
+      },
+      "student_scaffolds": {
+        "language": [
+          "第一格是___",
+          "第二格更___",
+          "第三格更___"
+        ],
+        "material": "三格空框、小样纸、色卡或颜料。",
+        "peer": "同桌帮看中间有没有跳太快。"
+      },
+      "xiaojiao_support": {
+        "hint_card": "提醒学生先做三格，不急着画完整作品。",
+        "probe_card": "中间这一格能不能再靠近第一格一点？",
+        "misconception_alert": "学生可能把三种不同颜色并排当成渐变。",
+        "evidence_note": "保留三格小样作为过程证据。"
+      },
+      "common_misconceptions": [
+        "颜色跳太快。",
+        "只换颜色，不形成连续变化。",
+        "水分或力度不均导致颜色脏。"
+      ],
+      "fallback_strategies": [
+        "材料复杂时改用彩铅、油画棒或色卡排列。",
+        "只要求三格，不要求五格。"
+      ],
+      "evidence": {
+        "process": "学生完成三格小样。",
+        "work": "小样能看出连续变化。",
+        "teacher_observation": "看学生是否能控制中间色，不让变化突然断开。"
+      },
+      "transition": "小样做好了，接下来把这条变化规律放进你的图形或小作品里。"
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "title": "放进作品",
+      "duration": "约14分钟",
+      "episode_goal": "学生能把试色规律迁移到色条、图形或小作品中。",
+      "design_intent": "让渐变从练习变成艺术表现，避免停留在色卡层面。",
+      "screen_plan": {
+        "main_visual": "展示三类任务：基础色条、进阶图形、挑战小作品。",
+        "screen_text": [
+          "基础：三格色条",
+          "进阶：放进图形",
+          "挑战：放进小作品"
+        ],
+        "board_or_annotation": "提示起点、方向、中间过渡三个检查点。"
+      },
+      "teacher_moves": {
+        "action": "发布分层任务，巡视时只抓起点、方向、过渡三个点。",
+        "talk": "你不需要画很复杂。今天最重要的是让别人看出颜色是怎样慢慢变过去的。",
+        "probe": [
+          "你的颜色从哪里开始变？",
+          "别人一眼能看出变化方向吗？",
+          "你最想让哪一处颜色变得更自然？"
+        ]
+      },
+      "student_moves": {
+        "look": "看任务选择和示例。",
+        "do": "选择基础、进阶或挑战任务完成作品。",
+        "say": "我把渐变放在___，颜色从___变到___。"
+      },
+      "student_scaffolds": {
+        "language": [
+          "我选择___任务",
+          "我的变化方向是___"
+        ],
+        "material": "色条模板、图形轮廓、小样纸、学习单。",
+        "peer": "同桌先看方向是否清楚。"
+      },
+      "xiaojiao_support": {
+        "hint_card": "如果学生画面太复杂，提醒先保证一条清楚的渐变。",
+        "probe_card": "这幅作品里最清楚的一段渐变在哪里？",
+        "misconception_alert": "学生可能追求复杂图案，忽略渐变规律。",
+        "evidence_note": "记录作品中能看出明确变化方向的例子。"
+      },
+      "common_misconceptions": [
+        "图案太复杂，渐变看不出来。",
+        "只涂满颜色，没有方向。"
+      ],
+      "fallback_strategies": [
+        "时间不足时只完成一个色条或局部。",
+        "让学生把小样直接贴入作品作为局部设计。"
+      ],
+      "evidence": {
+        "work": "作品或局部设计中有明确渐变方向。",
+        "expression": "学生能说出渐变放在哪里。",
+        "teacher_observation": "看学生是否把试色规律迁移到作品中。"
+      },
+      "transition": "作品有了变化方向，最后我们用自查表看一看：哪里已经清楚，哪里还可以微修。"
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "title": "自查与微修订",
+      "duration": "约6分钟",
+      "episode_goal": "学生能依据自查或同伴建议，完成一处小修改并说清变化。",
+      "design_intent": "把评价落到作品改进上，而不是只停留在展示和表扬。",
+      "screen_plan": {
+        "main_visual": "一张作品局部，旁边显示修改前后小箭头。",
+        "screen_text": [
+          "看得出方向吗？",
+          "中间跳太快了吗？",
+          "我能改一处吗？"
+        ],
+        "board_or_annotation": "只改一处即可，不要求重画。"
+      },
+      "teacher_moves": {
+        "action": "组织学生用三项自查看作品，再请同桌给一条可修改建议。",
+        "talk": "今天不比谁画得最多。我们只看：你能不能让一处颜色变化更清楚。",
+        "probe": [
+          "你准备改哪一处？",
+          "改完以后，颜色变化会更清楚吗？"
+        ]
+      },
+      "student_moves": {
+        "look": "对照自查项看自己的小样或作品。",
+        "do": "选择一处进行微修订。",
+        "say": "我改了___，因为这里原来___，现在___。"
+      },
+      "student_scaffolds": {
+        "language": [
+          "我发现___",
+          "我准备改___",
+          "改完以后___"
+        ],
+        "material": "学生自评三项、同伴建议句式。",
+        "peer": "同伴只提一处建议，避免学生重画。"
+      },
+      "xiaojiao_support": {
+        "hint_card": "提醒教师把评价压缩为一处微修，不展开大评比。",
+        "probe_card": "这一处改完以后，起点和终点更清楚了吗？",
+        "misconception_alert": "学生可能把评价理解为重新画一遍。",
+        "evidence_note": "保留修改前后局部照片或学习单勾选。"
+      },
+      "common_misconceptions": [
+        "评价变成只说好不好看。",
+        "学生想重画导致时间不够。"
+      ],
+      "fallback_strategies": [
+        "时间不足时只做口头说明，不强制完成完整修改。",
+        "只选2-3件作品全班看一处修改。"
+      ],
+      "evidence": {
+        "process": "学生完成自查或同伴建议。",
+        "work": "作品中有一处可见微修。",
+        "expression": "学生能说明自己改了哪里、为什么改。"
+      },
+      "transition": "课后可以继续在生活中找渐变，下节课再看渐变怎样形成节奏。"
+    }
+  ],
+  "boundary": {
+    "teacher_review_required": true,
+    "preview_only": true,
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added_to_profile": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "printed_final_material_generated": false,
+    "r95_executed": false,
+    "multi_case_regression_executed": false
+  },
+  "source_inputs": [
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\r93_p2_final_preview_lesson_draft.md",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\textbook_anchor_closure.md",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_slide_storyboard.json",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_student_worksheet_structured.json",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_assessment_structured.json",
+    "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P2_TEACHER_FACING_LESSON_PACKAGE_OVERVIEW\\r94_p2_teacher_facing_viewmodel.json"
+  ]
+}

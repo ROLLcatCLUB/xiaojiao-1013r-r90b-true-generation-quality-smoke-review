@@ -1,0 +1,502 @@
+{
+  "stage": "1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR",
+  "mapping_type": "episode_to_micro_step_execution_map",
+  "micro_step_count": 29,
+  "episode_count": 5,
+  "profile_modified": false,
+  "rows": [
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "episode_title": "看见渐变",
+      "episode_type": "观察比较型",
+      "micro_step_order": 1,
+      "micro_step_name": "打开图片，先静静看",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "episode_title": "看见渐变",
+      "episode_type": "观察比较型",
+      "micro_step_order": 2,
+      "micro_step_name": "用手指出方向",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "episode_title": "看见渐变",
+      "episode_type": "观察比较型",
+      "micro_step_order": 3,
+      "micro_step_name": "说一句从哪里到哪里",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "episode_title": "看见渐变",
+      "episode_type": "观察比较型",
+      "micro_step_order": 4,
+      "micro_step_name": "判断是不是慢慢变",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "episode_title": "看见渐变",
+      "episode_type": "观察比较型",
+      "micro_step_order": 5,
+      "micro_step_name": "轻轻引出渐变",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "episode_title": "分清亮暗与鲜灰",
+      "episode_type": "概念辨析型",
+      "micro_step_order": 1,
+      "micro_step_name": "出示两组色条",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "episode_title": "分清亮暗与鲜灰",
+      "episode_type": "概念辨析型",
+      "micro_step_order": 2,
+      "micro_step_name": "先判断亮暗",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "episode_title": "分清亮暗与鲜灰",
+      "episode_type": "概念辨析型",
+      "micro_step_order": 3,
+      "micro_step_name": "再判断鲜灰",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "episode_title": "分清亮暗与鲜灰",
+      "episode_type": "概念辨析型",
+      "micro_step_order": 4,
+      "micro_step_name": "把色卡放进篮子",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "episode_title": "分清亮暗与鲜灰",
+      "episode_type": "概念辨析型",
+      "micro_step_order": 5,
+      "micro_step_name": "补专业词并收束",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_title": "三格试色",
+      "episode_type": "示范试做型",
+      "micro_step_order": 1,
+      "micro_step_name": "拿出三格小样纸",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_title": "三格试色",
+      "episode_type": "示范试做型",
+      "micro_step_order": 2,
+      "micro_step_name": "画第一格",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_title": "三格试色",
+      "episode_type": "示范试做型",
+      "micro_step_order": 3,
+      "micro_step_name": "画第二格",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_title": "三格试色",
+      "episode_type": "示范试做型",
+      "micro_step_order": 4,
+      "micro_step_name": "画第三格",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_title": "三格试色",
+      "episode_type": "示范试做型",
+      "micro_step_order": 5,
+      "micro_step_name": "对比跳色反例",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_title": "三格试色",
+      "episode_type": "示范试做型",
+      "micro_step_order": 6,
+      "micro_step_name": "学生试做自己的三格",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_title": "三格试色",
+      "episode_type": "示范试做型",
+      "micro_step_order": 7,
+      "micro_step_name": "巡视并点拨",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_title": "放进作品",
+      "episode_type": "创作实践型",
+      "micro_step_order": 1,
+      "micro_step_name": "选择任务层级",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_title": "放进作品",
+      "episode_type": "创作实践型",
+      "micro_step_order": 2,
+      "micro_step_name": "先标变化方向",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_title": "放进作品",
+      "episode_type": "创作实践型",
+      "micro_step_order": 3,
+      "micro_step_name": "把三格小样放进图形",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_title": "放进作品",
+      "episode_type": "创作实践型",
+      "micro_step_order": 4,
+      "micro_step_name": "开始创作",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_title": "放进作品",
+      "episode_type": "创作实践型",
+      "micro_step_order": 5,
+      "micro_step_name": "巡视抓三个点",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_title": "放进作品",
+      "episode_type": "创作实践型",
+      "micro_step_order": 6,
+      "micro_step_name": "同桌快看",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_title": "放进作品",
+      "episode_type": "创作实践型",
+      "micro_step_order": 7,
+      "micro_step_name": "收束到可展示样本",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "episode_title": "自查与微修订",
+      "episode_type": "展示修订型",
+      "micro_step_order": 1,
+      "micro_step_name": "打开三项自查",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "episode_title": "自查与微修订",
+      "episode_type": "展示修订型",
+      "micro_step_order": 2,
+      "micro_step_name": "同伴只提一处建议",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "episode_title": "自查与微修订",
+      "episode_type": "展示修订型",
+      "micro_step_order": 3,
+      "micro_step_name": "选择一处微修",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "episode_title": "自查与微修订",
+      "episode_type": "展示修订型",
+      "micro_step_order": 4,
+      "micro_step_name": "完成小修改",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "episode_title": "自查与微修订",
+      "episode_type": "展示修订型",
+      "micro_step_order": 5,
+      "micro_step_name": "说清修改并收课",
+      "source_episode_fields": [
+        "teacher_moves",
+        "student_moves",
+        "screen_plan",
+        "student_scaffolds",
+        "xiaojiao_support",
+        "evidence",
+        "transition"
+      ],
+      "profile_fields_added": false
+    }
+  ]
+}

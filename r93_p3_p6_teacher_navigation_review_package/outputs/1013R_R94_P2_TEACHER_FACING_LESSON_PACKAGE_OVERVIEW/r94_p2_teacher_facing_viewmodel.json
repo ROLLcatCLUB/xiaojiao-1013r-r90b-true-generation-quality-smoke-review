@@ -1,0 +1,264 @@
+{
+  "stage": "1013R_R94_P2_TEACHER_FACING_LESSON_PACKAGE_OVERVIEW",
+  "created_at": "2026-07-01T05:23:57",
+  "lesson": {
+    "title": "色彩的渐变",
+    "subject": "美术",
+    "grade": "三年级",
+    "unit": "第二单元《多彩的世界》",
+    "lesson_position": "第1课",
+    "suggested_duration": "40分钟",
+    "textbook_anchor_status": "已闭合"
+  },
+  "status": {
+    "package_status": "教师审核草案",
+    "quality": "BASIC_USABLE",
+    "formal_apply": false,
+    "formal_apply_label": "未开放",
+    "teacher_review_required": true
+  },
+  "package_materials": [
+    {
+      "name": "教案预览稿",
+      "state": "可审阅",
+      "summary": "围绕亮暗、鲜灰和颜色慢慢变化组织教学。",
+      "primary_action": "查看教学流程"
+    },
+    {
+      "name": "课件故事板",
+      "state": "10页草案",
+      "summary": "每页对应一个课堂动作，尚未生成正式PPT。",
+      "primary_action": "预览页序"
+    },
+    {
+      "name": "一页学生学习单",
+      "state": "草案",
+      "summary": "找一找、试一试、查一查三项任务。",
+      "primary_action": "检查是否打印"
+    },
+    {
+      "name": "教师说明",
+      "state": "草案",
+      "summary": "材料准备、课堂提醒和常见问题处理。",
+      "primary_action": "确认材料"
+    },
+    {
+      "name": "课堂环节",
+      "state": "5段流程",
+      "summary": "看见渐变、分清变化、三格试色、放进作品、自查修订。",
+      "primary_action": "查看怎么上"
+    },
+    {
+      "name": "评价表",
+      "state": "教师版 + 学生版",
+      "summary": "教师观察五维，学生自评三项。",
+      "primary_action": "选择课堂用项"
+    }
+  ],
+  "teacher_confirmations": [
+    "本班使用什么材料：水粉、水彩笔、彩铅、油画棒、色卡或混合材料",
+    "课堂时长是否按40分钟执行",
+    "学习单是否打印，以及是否需要留出绘画空白",
+    "评价表是学生课堂自评，还是教师课后观察",
+    "是否继续打磨教学过程后再生成正式文件"
+  ],
+  "next_actions": [
+    {
+      "label": "继续打磨教学过程",
+      "tone": "primary",
+      "note": "适合进入同课双版本教学过程实验。"
+    },
+    {
+      "label": "预览课堂材料",
+      "tone": "secondary",
+      "note": "只看课件故事板、学习单、评价表。"
+    },
+    {
+      "label": "暂不生成正式文件",
+      "tone": "quiet",
+      "note": "当前仍是教师审核草案。"
+    }
+  ],
+  "lesson_summary": {
+    "focus_question": "颜色怎样慢慢变化，才能让画面更有秩序、更有层次？",
+    "objectives": [
+      "能发现生活和教材图中的渐变。",
+      "能区分亮暗变化与鲜灰变化。",
+      "能做出三格或五格颜色慢慢变化的小样。",
+      "能把渐变用到作品里，并说清颜色怎么变。"
+    ],
+    "flow": [
+      "观察生活和教材图中的颜色变化。",
+      "用学生话辨析亮暗、鲜灰、慢慢变化。",
+      "做三格颜色小样，避免颜色跳太快。",
+      "把渐变规律放进色条、图形或小作品。",
+      "用自查和同伴建议完成一处微修订。"
+    ],
+    "risks": [
+      "创作时间可能偏紧。",
+      "材料准备会影响课堂节奏。",
+      "学生可能把渐变理解成随便排色。"
+    ]
+  },
+  "classroom_flow": [
+    {
+      "phase": "1. 看见渐变",
+      "time": "约5分钟",
+      "teacher_move": "出示生活图和教材图，引导学生指出颜色从哪里变到哪里。",
+      "student_action": "用“从___到___”说出一处颜色慢慢变化。",
+      "evidence": "能指出起点、终点和变化方向。"
+    },
+    {
+      "phase": "2. 分清亮暗与鲜灰",
+      "time": "约7分钟",
+      "teacher_move": "用色条或教材图对比亮暗变化、鲜灰变化。",
+      "student_action": "判断一组颜色是在变亮/变暗，还是变鲜/变灰。",
+      "evidence": "能用儿童化语言说出亮暗或鲜灰。"
+    },
+    {
+      "phase": "3. 三格试色",
+      "time": "约8分钟",
+      "teacher_move": "示范三格颜色慢慢变化，提醒每次只变一点点。",
+      "student_action": "完成一组三格或五格渐变小样。",
+      "evidence": "小样中有连续变化，不是突然跳色。"
+    },
+    {
+      "phase": "4. 放进作品",
+      "time": "约14分钟",
+      "teacher_move": "提示学生把试色规律放进色条、图形或小作品。",
+      "student_action": "完成一个带有渐变方向的小作品或局部设计。",
+      "evidence": "作品中能看出明确的颜色变化方向。"
+    },
+    {
+      "phase": "5. 自查与微修订",
+      "time": "约6分钟",
+      "teacher_move": "组织学生按自查项看一看，并选择一处微修订。",
+      "student_action": "说清自己的颜色怎么变，并根据建议改一处。",
+      "evidence": "能表达变化，并完成一处可见修改。"
+    }
+  ],
+  "artifact_preview": {
+    "courseware_pages": [
+      {
+        "page": "第1页",
+        "title": "封面：色彩的渐变",
+        "screen_text": "色彩的渐变\n颜色慢慢变过去",
+        "student_action": "读课题，说一说屏幕上的颜色有没有慢慢变化。"
+      },
+      {
+        "page": "第2页",
+        "title": "生活中的渐变",
+        "screen_text": "找一找：颜色从哪里变到哪里？",
+        "student_action": "用“从___到___”说出一处生活或教材图中的渐变。"
+      },
+      {
+        "page": "第3页",
+        "title": "教材图观察：明度与纯度",
+        "screen_text": "亮一点 / 暗一点\n鲜一点 / 灰一点",
+        "student_action": "判断一组颜色是在变亮/变暗，还是变鲜/变灰。"
+      },
+      {
+        "page": "第4页",
+        "title": "核心词：亮暗 / 鲜灰 / 慢慢变化",
+        "screen_text": "亮暗：明度\n鲜灰：纯度\n慢慢变化：渐变",
+        "student_action": "把教师出示的色卡贴到“亮暗”或“鲜灰”类别。"
+      },
+      {
+        "page": "第5页",
+        "title": "调色游戏",
+        "screen_text": "每次只变一点点",
+        "student_action": "选择一条路线，做三格颜色慢慢变化的小样。"
+      },
+      {
+        "page": "第6页",
+        "title": "教师示范",
+        "screen_text": "选颜色 -> 做小样 -> 标方向 -> 放进作品",
+        "student_action": "观察示范，并在学习单上勾选自己要做亮暗还是鲜灰变化。"
+      },
+      {
+        "page": "第7页",
+        "title": "学生创作任务",
+        "screen_text": "基础：三格\n进阶：五格\n挑战：放进小作品",
+        "student_action": "选择一个层级完成渐变小样或小作品。"
+      },
+      {
+        "page": "第8页",
+        "title": "作品自查",
+        "screen_text": "我看得出起点\n我看得出方向\n中间没有跳太快\n我能说一句",
+        "student_action": "用自查句检查作品，圈出一处可调整地方。"
+      },
+      {
+        "page": "第9页",
+        "title": "展示交流",
+        "screen_text": "我看到...\n我觉得...\n我建议...",
+        "student_action": "说出同伴作品的一处优点和一处建议。"
+      },
+      {
+        "page": "第10页",
+        "title": "微修订",
+        "screen_text": "只改一处，让颜色更自然",
+        "student_action": "根据自查或同伴建议微修订一处。"
+      }
+    ],
+    "worksheet_tasks": [
+      {
+        "title": "找一找",
+        "student_language": "我看到颜色从___慢慢变到___。"
+      },
+      {
+        "title": "试一试",
+        "student_language": "选一种颜色，画三格，让它慢慢变。"
+      },
+      {
+        "title": "查一查",
+        "student_language": "我能说出颜色从哪里变到哪里。"
+      }
+    ],
+    "assessment": {
+      "teacher_dimensions": [
+        "看得见：能发现渐变",
+        "试得出：能做出连续变化",
+        "用得上：能把渐变用到作品里",
+        "说得清：能说明颜色怎么变化",
+        "改得动：能根据建议修一处"
+      ],
+      "student_items": [
+        "我看见颜色慢慢变了",
+        "我试出了三层颜色变化",
+        "我能说出颜色从哪里变到哪里"
+      ]
+    }
+  },
+  "developer_evidence": {
+    "source_lesson_round": "R93-P2",
+    "source_textbook_anchor_status": "CLOSED",
+    "p2_validator_pass": true,
+    "r94_p1_validator_pass": true,
+    "field_lab_page": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\\field_generation_quality_static_lab_1013R_R88_r94_p1_preview.html",
+    "source_files": [
+      "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\r93_p2_final_preview_lesson_draft.md",
+      "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\textbook_anchor_closure.md",
+      "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_slide_storyboard.json",
+      "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_student_worksheet_structured.json",
+      "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_assessment_structured.json",
+      "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\quality_sentinel_v0_result.json",
+      "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\\r94_p1_derived_artifacts_trace.json"
+    ]
+  },
+  "boundary": {
+    "teacher_facing_preview_only": true,
+    "field_lab_demoted_to_audit_page": true,
+    "provider_called": false,
+    "model_called": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "printed_final_material_generated": false,
+    "r95_executed": false
+  }
+}

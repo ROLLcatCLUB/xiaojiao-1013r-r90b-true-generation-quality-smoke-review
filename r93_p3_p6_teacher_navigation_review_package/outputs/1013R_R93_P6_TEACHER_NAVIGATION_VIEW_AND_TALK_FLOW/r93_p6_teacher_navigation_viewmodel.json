@@ -1,0 +1,664 @@
+{
+  "stage": "1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW",
+  "created_at": "2026-07-01T07:09:42",
+  "lesson": {
+    "title": "色彩的渐变",
+    "unit": "第二单元《多彩的世界》",
+    "grade": "三年级",
+    "status": "教师审核草案",
+    "quality": "BASIC_USABLE",
+    "formal_apply": false
+  },
+  "source": {
+    "from": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P5_TEACHER_EXECUTION_MAP_AND_CHILD_LANGUAGE_REPAIR\\r93_p5_teacher_execution_map.json",
+    "p5_validator_pass": true,
+    "micro_step_count": 29
+  },
+  "reading_model": {
+    "default_layer": "5 teaching rhythm blocks",
+    "folded_layer": "29 micro-steps plus screen/scaffold/xiaojiao/evidence",
+    "teacher_priority": true,
+    "student_secondary": true,
+    "xiaojiao_low_presence": true
+  },
+  "episodes": [
+    {
+      "index": 1,
+      "episode_id": "episode_01_notice_gradient",
+      "title": "看见渐变",
+      "episode_type": "观察比较型",
+      "duration": "约5分钟",
+      "goal": "引导学生观察生活和教材图中的色彩连续变化，初步建立渐变感知。",
+      "teacher_three_steps": [
+        "先打开图片，先静静看",
+        "再用手指出方向、说一句从哪里到哪里、判断是不是慢慢变",
+        "最后轻轻引出渐变"
+      ],
+      "student_output": "能指出颜色变化方向，并用“从___到___”说一句。",
+      "key_talk": "先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。",
+      "talk_flow": [
+        "先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。",
+        "请你用手指滑一滑，颜色从哪里开始，滑到哪里结束？"
+      ],
+      "xiaojiao_key_reminder": "先让学生指出起点和终点，不急着讲术语。",
+      "micro_steps": [
+        {
+          "step_order": 1,
+          "step_name": "打开图片，先静静看",
+          "teacher_action": "打开生活渐变图或教材图，给学生5秒安静观察。",
+          "teacher_say": "先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示三张图，每张图只保留一个箭头。",
+          "student_action": "安静看图，找一处颜色慢慢变化。",
+          "expected_student_response": "学生能指出天空、山峦或花朵中的一处变化。",
+          "student_scaffold": "不会说时先用手指，不要求完整句。",
+          "xiaojiao_support": "提醒教师先看方向，不讲概念。",
+          "evidence_check": "学生眼睛能跟随箭头看变化。",
+          "if_student_stuck": "把图片减少到一张最明显的图。",
+          "next_step_trigger": "多数学生能找到一处变化后进入下一步。"
+        },
+        {
+          "step_order": 2,
+          "step_name": "用手指出方向",
+          "teacher_action": "请学生用手指从起点滑到终点。",
+          "teacher_say": "请你用手指滑一滑，颜色从哪里开始，滑到哪里结束？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏保留箭头，教师可圈起点和终点。",
+          "student_action": "用手指比划颜色变化方向。",
+          "expected_student_response": "从深色滑到浅色；从蓝色滑到粉色。",
+          "student_scaffold": "给起点贴一个小圆点，终点贴一个小旗。",
+          "xiaojiao_support": "如果学生只说好看，提示追问从哪里到哪里。",
+          "evidence_check": "能指出起点和终点。",
+          "if_student_stuck": "教师示范一次手指滑动。",
+          "next_step_trigger": "至少2名学生能指出方向后进入表达。"
+        },
+        {
+          "step_order": 3,
+          "step_name": "说一句从哪里到哪里",
+          "teacher_action": "让学生套用句式说一句。",
+          "teacher_say": "你可以这样说：我看到颜色从___变到___。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示句式：从___到___。",
+          "student_action": "用句式说出一处变化。",
+          "expected_student_response": "我看到颜色从蓝色变到粉色。",
+          "student_scaffold": "句式板书保留在屏幕边角。",
+          "xiaojiao_support": "给教师提示：不要纠结颜色名称是否精确。",
+          "evidence_check": "学生能说出完整或半完整句。",
+          "if_student_stuck": "让同桌先说，再请一名学生说。",
+          "next_step_trigger": "有学生能说出变化方向后进入比较。"
+        },
+        {
+          "step_order": 4,
+          "step_name": "判断是不是慢慢变",
+          "teacher_action": "教师追问变化是否连续。",
+          "teacher_say": "它是一下子跳过去，还是中间一层一层慢慢变？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏放大一处连续色带。",
+          "student_action": "判断“慢慢变”还是“跳过去”。",
+          "expected_student_response": "它是一层一层变过去的。",
+          "student_scaffold": "用“一层一层”替代“连续”术语。",
+          "xiaojiao_support": "提醒教师把“颜色多”和“慢慢变”分开。",
+          "evidence_check": "学生能说出慢慢变的理由。",
+          "if_student_stuck": "对比一张颜色跳得很快的例子。",
+          "next_step_trigger": "学生能说慢慢变后进入概念桥接。"
+        },
+        {
+          "step_order": 5,
+          "step_name": "轻轻引出渐变",
+          "teacher_action": "教师用学生语言引出“渐变”。",
+          "teacher_say": "这种颜色慢慢变过去，美术里可以叫渐变。今天我们就研究它。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏出现课题：色彩的渐变。",
+          "student_action": "读课题，回到“颜色慢慢变过去”。",
+          "expected_student_response": "渐变就是颜色慢慢变。",
+          "student_scaffold": "课题旁写：渐变=慢慢变。",
+          "xiaojiao_support": "提醒教师术语只出现一次，不展开理论。",
+          "evidence_check": "学生能把渐变和慢慢变联系起来。",
+          "if_student_stuck": "若学生记不住术语，保留慢慢变即可。",
+          "next_step_trigger": "学生理解课堂主题后进入亮暗/鲜灰辨析。"
+        }
+      ],
+      "language_layers": {
+        "student_friendly": [
+          "颜色从哪里开始？",
+          "慢慢变到哪里？",
+          "用手指滑一滑。"
+        ],
+        "teacher_professional_bridge": "这种颜色一层一层慢慢变化，在美术里可以叫渐变。",
+        "lesson_plan_expression": "引导学生观察生活和教材图中的色彩连续变化，初步建立渐变感知。"
+      },
+      "xiaojiao_cards": {
+        "reminder": "先让学生指出起点和终点，不急着讲术语。",
+        "probe": "它是一下子跳过去，还是一层一层变过去？",
+        "misconception": "学生可能把颜色多当成渐变。",
+        "evidence": "记录能用“从___到___”表达变化方向的学生。"
+      }
+    },
+    {
+      "index": 2,
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "title": "分清亮暗与鲜灰",
+      "episode_type": "概念辨析型",
+      "duration": "约7分钟",
+      "goal": "引导学生用儿童化语言辨析明度与纯度变化，降低概念负荷。",
+      "teacher_three_steps": [
+        "先出示两组色条",
+        "再先判断亮暗、再判断鲜灰、把色卡放进篮子",
+        "最后补专业词并收束"
+      ],
+      "student_output": "能把色条分到亮暗或鲜灰，并说出理由。",
+      "key_talk": "这一页只看两件事：亮不亮，鲜不鲜。",
+      "talk_flow": [
+        "这一页只看两件事：亮不亮，鲜不鲜。",
+        "美术里，亮不亮叫明度；鲜不鲜和纯度有关。我们先会看、会说就很好。"
+      ],
+      "xiaojiao_key_reminder": "先让学生分亮暗/鲜灰，再补明度/纯度。",
+      "micro_steps": [
+        {
+          "step_order": 1,
+          "step_name": "出示两组色条",
+          "teacher_action": "左边放深浅色条，右边放鲜灰色条。",
+          "teacher_say": "这一页只看两件事：亮不亮，鲜不鲜。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏左右两组色条，文字为亮暗/鲜灰。",
+          "student_action": "观察左右两组色条。",
+          "expected_student_response": "左边越来越亮，右边越来越灰。",
+          "student_scaffold": "用左右分区降低判断难度。",
+          "xiaojiao_support": "提醒教师不要先讲定义。",
+          "evidence_check": "学生能看出两组不同。",
+          "if_student_stuck": "只保留一组色条先看亮暗。",
+          "next_step_trigger": "学生能说左右不同后进入分类。"
+        },
+        {
+          "step_order": 2,
+          "step_name": "先判断亮暗",
+          "teacher_action": "指左侧色条，只问亮暗。",
+          "teacher_say": "这一组是越来越亮，还是越来越暗？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "左侧色条放大。",
+          "student_action": "举手或口头判断亮暗。",
+          "expected_student_response": "越来越亮/越来越暗。",
+          "student_scaffold": "给学生两个选项，不开放太多词。",
+          "xiaojiao_support": "小教提示教师让学生先二选一。",
+          "evidence_check": "学生能用亮/暗判断。",
+          "if_student_stuck": "用黑白深浅卡替代彩色色条。",
+          "next_step_trigger": "大多数学生能判断后看鲜灰。"
+        },
+        {
+          "step_order": 3,
+          "step_name": "再判断鲜灰",
+          "teacher_action": "指右侧色条，只问鲜灰。",
+          "teacher_say": "这一组是越来越鲜艳，还是越来越灰？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "右侧色条放大。",
+          "student_action": "判断鲜灰变化。",
+          "expected_student_response": "越来越灰；没有那么鲜了。",
+          "student_scaffold": "允许学生说“不鲜了”。",
+          "xiaojiao_support": "提示教师接纳儿童话。",
+          "evidence_check": "学生能说鲜或灰。",
+          "if_student_stuck": "拿鲜艳色和灰色实物对比。",
+          "next_step_trigger": "学生能判断后进入分类活动。"
+        },
+        {
+          "step_order": 4,
+          "step_name": "把色卡放进篮子",
+          "teacher_action": "请学生把色卡放到亮暗篮子或鲜灰篮子。",
+          "teacher_say": "这张卡更像亮暗变化，还是鲜灰变化？放到对应篮子里。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示两个篮子：亮暗、鲜灰。",
+          "student_action": "拖动/贴卡/口头选择类别。",
+          "expected_student_response": "这张是亮暗；这张是鲜灰。",
+          "student_scaffold": "同桌先讨论再放。",
+          "xiaojiao_support": "小教提醒教师追问选择理由。",
+          "evidence_check": "学生能分类并说出理由。",
+          "if_student_stuck": "不会分类时先问亮不亮，再问鲜不鲜。",
+          "next_step_trigger": "完成2-3张分类后桥接专业词。"
+        },
+        {
+          "step_order": 5,
+          "step_name": "补专业词并收束",
+          "teacher_action": "教师将儿童话对应到美术词。",
+          "teacher_say": "美术里，亮不亮叫明度；鲜不鲜和纯度有关。我们先会看、会说就很好。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "板书：明度=亮暗；纯度=鲜灰。",
+          "student_action": "跟读关键词，不背定义。",
+          "expected_student_response": "明度是亮暗，纯度和鲜灰有关。",
+          "student_scaffold": "只保留等号式板书。",
+          "xiaojiao_support": "提醒教师不要扩展色相等额外概念。",
+          "evidence_check": "学生能把专业词和儿童话连起来。",
+          "if_student_stuck": "如果学生负担大，只保留亮暗/鲜灰。",
+          "next_step_trigger": "学生会看会说后进入三格试色。"
+        }
+      ],
+      "language_layers": {
+        "student_friendly": [
+          "越来越亮",
+          "越来越暗",
+          "越来越鲜",
+          "越来越灰"
+        ],
+        "teacher_professional_bridge": "亮不亮叫明度，鲜不鲜和纯度有关。",
+        "lesson_plan_expression": "引导学生用儿童化语言辨析明度与纯度变化，降低概念负荷。"
+      },
+      "xiaojiao_cards": {
+        "reminder": "先让学生分亮暗/鲜灰，再补明度/纯度。",
+        "probe": "你看的是亮不亮，还是鲜不鲜？",
+        "misconception": "学生可能把变浅和变灰混为一谈。",
+        "evidence": "记录能分类并说明理由的学生。"
+      }
+    },
+    {
+      "index": 3,
+      "episode_id": "episode_03_three_step_color_trial",
+      "title": "三格试色",
+      "episode_type": "示范试做型",
+      "duration": "约8分钟",
+      "goal": "通过三格小样训练学生控制渐变幅度，形成可迁移的色彩操作经验。",
+      "teacher_three_steps": [
+        "先拿出三格小样纸",
+        "再画第三格",
+        "最后巡视并点拨"
+      ],
+      "student_output": "完成一组三格渐变小样，并能说明变化方向。",
+      "key_talk": "第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。",
+      "talk_flow": [
+        "第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。",
+        "现在你也试一条三格路，只要三格，先别急着画完整作品。"
+      ],
+      "xiaojiao_key_reminder": "先做三格小样，不急着画完整作品。",
+      "micro_steps": [
+        {
+          "step_order": 1,
+          "step_name": "拿出三格小样纸",
+          "teacher_action": "展示三格空框，说明今天先试一条小路。",
+          "teacher_say": "今天我们先不画大作品，先让颜色排好队。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示三格空框和箭头。",
+          "student_action": "拿出三格小样纸或在学习单上找到三格。",
+          "expected_student_response": "知道先做小样。",
+          "student_scaffold": "三格框已印好，减少画框负担。",
+          "xiaojiao_support": "提醒教师先控任务范围。",
+          "evidence_check": "学生找到三格位置。",
+          "if_student_stuck": "教师帮学生指认第1、2、3格。",
+          "next_step_trigger": "全班找到三格后开始第一格。"
+        },
+        {
+          "step_order": 2,
+          "step_name": "画第一格",
+          "teacher_action": "示范把选好的颜色放入第一格。",
+          "teacher_say": "第一格先放一个你选好的颜色，别涂太厚，也别着急。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "第1格被涂上原色。",
+          "student_action": "在第一格涂色。",
+          "expected_student_response": "第一格颜色比较稳定。",
+          "student_scaffold": "可用彩铅/油画棒降低水分风险。",
+          "xiaojiao_support": "提示教师关注材料控制。",
+          "evidence_check": "学生完成第一格。",
+          "if_student_stuck": "材料慢的学生可直接用色卡。",
+          "next_step_trigger": "大多数学生有第一格后进入第二格。"
+        },
+        {
+          "step_order": 3,
+          "step_name": "画第二格",
+          "teacher_action": "示范第二格只做轻微变化。",
+          "teacher_say": "第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "第2格显示轻微变化，旁边写只变一点点。",
+          "student_action": "调出或选出第二格颜色。",
+          "expected_student_response": "第二格比第一格略亮/略灰。",
+          "student_scaffold": "给学生一句判断：像不像第一格的朋友？",
+          "xiaojiao_support": "小教提醒教师看第二格是否跳太远。",
+          "evidence_check": "第二格与第一格关系接近。",
+          "if_student_stuck": "让学生把第二格调回接近第一格。",
+          "next_step_trigger": "第二格基本完成后进入第三格。"
+        },
+        {
+          "step_order": 4,
+          "step_name": "画第三格",
+          "teacher_action": "示范第三格继续沿同方向变化。",
+          "teacher_say": "第三格继续慢慢变，不要一下子跳过去。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "第3格显示继续变化，箭头连起三格。",
+          "student_action": "完成第三格。",
+          "expected_student_response": "三格能看出方向。",
+          "student_scaffold": "保留箭头提醒变化方向。",
+          "xiaojiao_support": "提示教师要求方向一致。",
+          "evidence_check": "学生三格有方向。",
+          "if_student_stuck": "让学生先说方向再改色。",
+          "next_step_trigger": "多数学生完成三格后看反例。"
+        },
+        {
+          "step_order": 5,
+          "step_name": "对比跳色反例",
+          "teacher_action": "展示一组中间跳太快的三格。",
+          "teacher_say": "你看这一组第二格一下子跳太远了，像不像中间少了一步？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示自然三格和跳色三格对比。",
+          "student_action": "判断哪一组更自然。",
+          "expected_student_response": "左边更自然，右边跳太快。",
+          "student_scaffold": "用“少了一步”解释断层。",
+          "xiaojiao_support": "小教提示教师别批评学生，只说可以补一步。",
+          "evidence_check": "学生能识别跳色。",
+          "if_student_stuck": "让学生找哪一格需要靠近前一格。",
+          "next_step_trigger": "学生能说出问题后进入自查。"
+        },
+        {
+          "step_order": 6,
+          "step_name": "学生试做自己的三格",
+          "teacher_action": "让学生独立完成一条三格路。",
+          "teacher_say": "现在你也试一条三格路，只要三格，先别急着画完整作品。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏保留步骤：选颜色、三格、箭头。",
+          "student_action": "完成自己的三格小样。",
+          "expected_student_response": "我做的是从___到___。",
+          "student_scaffold": "基础做三格，进阶做五格。",
+          "xiaojiao_support": "小教提示教师巡视起点、方向、中间格。",
+          "evidence_check": "学生有一组三格小样。",
+          "if_student_stuck": "卡住学生可用色卡排一排。",
+          "next_step_trigger": "学生完成小样后进入巡视判断。"
+        },
+        {
+          "step_order": 7,
+          "step_name": "巡视并点拨",
+          "teacher_action": "教师巡视，只看三个点：起点、方向、中间是否跳。",
+          "teacher_say": "我先看三件事：从哪里开始，往哪里变，中间有没有跳太快。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示三点自查。",
+          "student_action": "按三点检查自己的小样。",
+          "expected_student_response": "能说起点、方向、中间格。",
+          "student_scaffold": "用手指沿三格滑动检查。",
+          "xiaojiao_support": "小教记录典型问题和可展示样本。",
+          "evidence_check": "教师能看到过程证据。",
+          "if_student_stuck": "时间不足时只保留三格和一句话。",
+          "next_step_trigger": "有可用小样后进入作品迁移。"
+        }
+      ],
+      "language_layers": {
+        "student_friendly": [
+          "让颜色排好队",
+          "每次只变一点点",
+          "第二格像第一格的朋友"
+        ],
+        "teacher_professional_bridge": "这种一格一格有规律的变化，可以形成明度或纯度渐变。",
+        "lesson_plan_expression": "通过三格小样训练学生控制渐变幅度，形成可迁移的色彩操作经验。"
+      },
+      "xiaojiao_cards": {
+        "reminder": "先做三格小样，不急着画完整作品。",
+        "probe": "第二格是不是一下子跑太远了？",
+        "misconception": "学生可能把三种不同颜色并排当成渐变。",
+        "evidence": "保存三格小样作为过程证据。"
+      }
+    },
+    {
+      "index": 4,
+      "episode_id": "episode_04_apply_to_artwork",
+      "title": "放进作品",
+      "episode_type": "创作实践型",
+      "duration": "约14分钟",
+      "goal": "引导学生将试色规律迁移到图形或小作品中，形成可见的渐变表达。",
+      "teacher_three_steps": [
+        "先选择任务层级",
+        "再开始创作",
+        "最后收束到可展示样本"
+      ],
+      "student_output": "把渐变放进色条、图形或小作品，别人能看出方向。",
+      "key_talk": "你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。",
+      "talk_flow": [
+        "你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。",
+        "现在给你一段安静时间。记住：不用画很多，先把一处渐变做清楚。"
+      ],
+      "xiaojiao_key_reminder": "提醒教师分层发布任务，避免所有学生做复杂作品。",
+      "micro_steps": [
+        {
+          "step_order": 1,
+          "step_name": "选择任务层级",
+          "teacher_action": "发布基础、进阶、挑战三类任务。",
+          "teacher_say": "你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示基础/进阶/挑战三栏。",
+          "student_action": "选择一个任务层级。",
+          "expected_student_response": "我选基础/进阶/挑战。",
+          "student_scaffold": "允许学生从基础做起。",
+          "xiaojiao_support": "小教提醒教师不要让复杂图案抢走目标。",
+          "evidence_check": "学生能选定任务。",
+          "if_student_stuck": "选择困难时统一做基础色条。",
+          "next_step_trigger": "学生选定任务后标方向。"
+        },
+        {
+          "step_order": 2,
+          "step_name": "先标变化方向",
+          "teacher_action": "要求学生先画箭头或心里确定方向。",
+          "teacher_say": "先别急着涂。你要先想：颜色从哪里开始，往哪里走？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示起点、箭头、终点。",
+          "student_action": "在纸上轻轻标方向或口头说方向。",
+          "expected_student_response": "从左到右；从里到外；从上到下。",
+          "student_scaffold": "用箭头提示方向。",
+          "xiaojiao_support": "小教提示教师先问方向再看颜色。",
+          "evidence_check": "学生能说出方向。",
+          "if_student_stuck": "让学生用手指在画面上滑一次。",
+          "next_step_trigger": "方向明确后迁移小样。"
+        },
+        {
+          "step_order": 3,
+          "step_name": "把三格小样放进图形",
+          "teacher_action": "示范把小样规律放到一个形状里。",
+          "teacher_say": "刚才的小样不是结束，它是一条颜色小路。现在把这条小路放进你的图形里。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示小样到图形的迁移箭头。",
+          "student_action": "把三格规律迁移到作品局部。",
+          "expected_student_response": "我把渐变放在花瓣/山/圆形里。",
+          "student_scaffold": "先放一小块，不要求整张画满。",
+          "xiaojiao_support": "小教提醒教师看是否迁移了规律。",
+          "evidence_check": "作品中出现渐变局部。",
+          "if_student_stuck": "学生不会迁移时让他照着三格画一条色带。",
+          "next_step_trigger": "能迁移后进入创作。"
+        },
+        {
+          "step_order": 4,
+          "step_name": "开始创作",
+          "teacher_action": "给学生安静创作时间，教师不频繁打断。",
+          "teacher_say": "现在给你一段安静时间。记住：不用画很多，先把一处渐变做清楚。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏保留三点提醒：起点、方向、慢慢变。",
+          "student_action": "完成作品或局部设计。",
+          "expected_student_response": "作品中有一处颜色慢慢变化。",
+          "student_scaffold": "大屏提醒替代教师反复口头提醒。",
+          "xiaojiao_support": "小教提示教师减少打断，保留巡视。",
+          "evidence_check": "学生进入持续创作。",
+          "if_student_stuck": "慢学生只完成局部即可。",
+          "next_step_trigger": "创作进行一段后巡视点拨。"
+        },
+        {
+          "step_order": 5,
+          "step_name": "巡视抓三个点",
+          "teacher_action": "巡视时只看起点、方向、过渡。",
+          "teacher_say": "我来看看你的颜色从哪里开始，往哪里变，中间是不是太突然。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示巡视三点。",
+          "student_action": "向教师说明自己的变化方向。",
+          "expected_student_response": "从这里开始，往这里变。",
+          "student_scaffold": "让学生用手指解释作品。",
+          "xiaojiao_support": "小教生成个别追问：中间是不是跳太快？",
+          "evidence_check": "教师获得过程判断。",
+          "if_student_stuck": "如果方向不清，让学生加箭头或补一格。",
+          "next_step_trigger": "大部分作品有方向后同伴快看。"
+        },
+        {
+          "step_order": 6,
+          "step_name": "同桌快看",
+          "teacher_action": "安排同桌只看一件事：方向清不清。",
+          "teacher_say": "同桌只帮看一件事：你能不能看出颜色往哪里变？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示同桌提示句。",
+          "student_action": "同桌互看并指出方向。",
+          "expected_student_response": "我看到它从___变到___。",
+          "student_scaffold": "同伴只提一个点，避免干扰创作。",
+          "xiaojiao_support": "小教提醒教师控制互评时间。",
+          "evidence_check": "同伴能指出或指出不清。",
+          "if_student_stuck": "看不出时让作者补一处过渡。",
+          "next_step_trigger": "同伴反馈后进入收束。"
+        },
+        {
+          "step_order": 7,
+          "step_name": "收束到可展示样本",
+          "teacher_action": "选2-3个样本，不做大范围展示。",
+          "teacher_say": "我们先看几处颜色变化，不比谁画得最多，只看哪里变得清楚。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏或实物投影展示局部。",
+          "student_action": "看样本，说出变化方向。",
+          "expected_student_response": "这一处从___变到___。",
+          "student_scaffold": "只展示局部，减少比较压力。",
+          "xiaojiao_support": "小教记录可作为评价样本的作品。",
+          "evidence_check": "学生能从作品中看出渐变。",
+          "if_student_stuck": "时间不足时跳过全班展示，直接自查。",
+          "next_step_trigger": "选好样本后进入自查微修订。"
+        }
+      ],
+      "language_layers": {
+        "student_friendly": [
+          "把颜色小路放进作品",
+          "别人能看出方向",
+          "不用画很复杂"
+        ],
+        "teacher_professional_bridge": "把渐变规律迁移到画面局部，形成有方向、有层次的色彩表现。",
+        "lesson_plan_expression": "引导学生将试色规律迁移到图形或小作品中，形成可见的渐变表达。"
+      },
+      "xiaojiao_cards": {
+        "reminder": "提醒教师分层发布任务，避免所有学生做复杂作品。",
+        "probe": "别人一眼能看出你的颜色往哪里变吗？",
+        "misconception": "学生可能追求复杂图案，忽略渐变规律。",
+        "evidence": "记录作品中能看出明确变化方向的学生样本。"
+      }
+    },
+    {
+      "index": 5,
+      "episode_id": "episode_05_self_check_revision",
+      "title": "自查与微修订",
+      "episode_type": "展示修订型",
+      "duration": "约6分钟",
+      "goal": "组织学生依据评价要点进行自查、表达和局部修订，强化学习证据。",
+      "teacher_three_steps": [
+        "先打开三项自查",
+        "再同伴只提一处建议、选择一处微修、完成小修改",
+        "最后说清修改并收课"
+      ],
+      "student_output": "完成一处微修订，并说清自己改了哪里。",
+      "key_talk": "最后我们不急着评谁最好，先看自己有没有做到三件事。",
+      "talk_flow": [
+        "最后我们不急着评谁最好，先看自己有没有做到三件事。",
+        "你只需要改一处，不用重画。让颜色变化更清楚就可以。"
+      ],
+      "xiaojiao_key_reminder": "评价只抓一处微修，不做大评比。",
+      "micro_steps": [
+        {
+          "step_order": 1,
+          "step_name": "打开三项自查",
+          "teacher_action": "出示自查三问。",
+          "teacher_say": "最后我们不急着评谁最好，先看自己有没有做到三件事。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示：方向、慢慢变、能说清。",
+          "student_action": "看自己的小样或作品。",
+          "expected_student_response": "能找到一处渐变。",
+          "student_scaffold": "自查项不超过三条。",
+          "xiaojiao_support": "小教提醒教师压缩评价维度。",
+          "evidence_check": "学生能进入自查。",
+          "if_student_stuck": "教师带全班一起读三问。",
+          "next_step_trigger": "学生知道查什么后进入同伴建议。"
+        },
+        {
+          "step_order": 2,
+          "step_name": "同伴只提一处建议",
+          "teacher_action": "安排同伴用固定句式给建议。",
+          "teacher_say": "同桌只说一处：我看到___，我建议___。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示同伴句式。",
+          "student_action": "给同伴一条建议。",
+          "expected_student_response": "我看到这里变得清楚，我建议中间再浅一点。",
+          "student_scaffold": "句式帮助学生避免泛泛说好看。",
+          "xiaojiao_support": "小教提示教师控制为一条建议。",
+          "evidence_check": "学生能获得一条可改建议。",
+          "if_student_stuck": "如果不会说，只指出看不清的位置。",
+          "next_step_trigger": "每人收到一条建议后微修。"
+        },
+        {
+          "step_order": 3,
+          "step_name": "选择一处微修",
+          "teacher_action": "要求学生只改一处。",
+          "teacher_say": "你只需要改一处，不用重画。让颜色变化更清楚就可以。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示只改一处。",
+          "student_action": "选择一处修改。",
+          "expected_student_response": "我改第二格/中间过渡/方向不清的地方。",
+          "student_scaffold": "用圈画标出要改的位置。",
+          "xiaojiao_support": "小教提醒教师防止学生重画。",
+          "evidence_check": "学生明确修改点。",
+          "if_student_stuck": "时间不足只口头说明要改哪里。",
+          "next_step_trigger": "学生确定修改点后动手。"
+        },
+        {
+          "step_order": 4,
+          "step_name": "完成小修改",
+          "teacher_action": "给1-2分钟完成局部修改。",
+          "teacher_say": "改的时候想一想：它现在是不是更像慢慢变了？",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏保留自查三问。",
+          "student_action": "完成局部修订。",
+          "expected_student_response": "颜色过渡更自然。",
+          "student_scaffold": "允许很小的修改。",
+          "xiaojiao_support": "小教记录典型微修案例。",
+          "evidence_check": "有可见修改或口头修改方案。",
+          "if_student_stuck": "材料不便时用铅笔箭头或文字说明替代。",
+          "next_step_trigger": "完成后说一说。"
+        },
+        {
+          "step_order": 5,
+          "step_name": "说清修改并收课",
+          "teacher_action": "请学生说一处修改，教师连接下一课。",
+          "teacher_say": "你可以这样说：我改了___，因为原来___，现在___。",
+          "child_friendly_language_level": "三年级：短句、具体、先动作后概念",
+          "screen_state": "大屏显示表达句式和下节课提示。",
+          "student_action": "说出修改原因。",
+          "expected_student_response": "我改了中间一格，因为原来跳太快，现在更慢慢变了。",
+          "student_scaffold": "用句式保护表达困难学生。",
+          "xiaojiao_support": "小教记录能说清修改的学生。",
+          "evidence_check": "学生能说明修改与渐变有关。",
+          "if_student_stuck": "不会说完整句时只说改哪里。",
+          "next_step_trigger": "完成表达后收束到下节课“渐变的节奏”。"
+        }
+      ],
+      "language_layers": {
+        "student_friendly": [
+          "看一看",
+          "说一说",
+          "只改一处"
+        ],
+        "teacher_professional_bridge": "通过自评、同伴建议和微修订形成作品改进证据。",
+        "lesson_plan_expression": "组织学生依据评价要点进行自查、表达和局部修订，强化学习证据。"
+      },
+      "xiaojiao_cards": {
+        "reminder": "评价只抓一处微修，不做大评比。",
+        "probe": "改完以后，颜色变化更清楚了吗？",
+        "misconception": "学生可能以为评价就是重画一遍。",
+        "evidence": "记录修改前后或学习单自查勾选。"
+      }
+    }
+  ],
+  "boundary": {
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added_to_profile": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "pdf_generated": false,
+    "docx_generated": false,
+    "r95_executed": false
+  }
+}

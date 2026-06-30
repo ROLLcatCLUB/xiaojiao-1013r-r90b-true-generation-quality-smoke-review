@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>《色彩的渐变》备课包总览</title>
+  <style>
+    :root {
+      --ink: #263238;
+      --muted: #66737c;
+      --line: #d9e2df;
+      --paper: #fbfcfa;
+      --mint: #dceee8;
+      --coral: #f6ded6;
+      --sun: #f5e7b8;
+      --blue: #dce8f3;
+      --green: #426f5d;
+      --accent: #b85c46;
+      --shadow: 0 18px 50px rgba(38, 50, 56, .10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.62;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 252, 250, .92);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+    .nav strong { font-size: 16px; }
+    .nav span { color: var(--muted); font-size: 13px; }
+    main { max-width: 1180px; margin: 0 auto; padding: 26px 24px 64px; }
+    .hero {
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+    .hero-panel, .side-panel, .section-panel, .material-card, .action-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .hero-panel {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .eyebrow {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 18px 0 0;
+    }
+    .status-strip {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .status-chip {
+      background: var(--mint);
+      border: 1px solid #bfd9cf;
+      padding: 14px;
+      min-height: 82px;
+    }
+    .status-chip:nth-child(2) { background: var(--blue); border-color: #c5d9ea; }
+    .status-chip:nth-child(3) { background: var(--sun); border-color: #e4d18d; }
+    .status-chip:nth-child(4) { background: var(--coral); border-color: #e7beb2; }
+    .status-chip b { display: block; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
+    .status-chip span { font-weight: 700; }
+    .side-panel { padding: 24px; }
+    .side-panel h2, .section-panel h2 { margin: 0 0 14px; font-size: 22px; }
+    .check-list { margin: 0; padding-left: 20px; }
+    .check-list li { margin: 9px 0; }
+    .material-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .material-card { padding: 18px; min-height: 188px; }
+    .material-topline { color: var(--accent); font-weight: 700; font-size: 13px; }
+    .material-card h3 { margin: 8px 0; font-size: 18px; }
+    .material-card p { color: var(--muted); margin: 0 0 14px; }
+    .material-card span { display: inline-block; color: var(--green); font-weight: 700; }
+    .section-panel { margin-top: 24px; padding: 26px; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .summary-grid h3 { margin: 0 0 10px; }
+    .summary-grid ul { margin: 0; padding-left: 20px; }
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .action-card { padding: 18px; }
+    .action-card.primary { background: var(--mint); }
+    .action-card.secondary { background: var(--blue); }
+    .action-card.quiet { background: #fff; }
+    .action-card p { margin: 8px 0 0; color: var(--muted); }
+    .flow-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .flow-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 16px;
+      min-height: 260px;
+    }
+    .flow-time {
+      display: inline-block;
+      background: var(--sun);
+      border: 1px solid #e4d18d;
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .flow-card h3 { margin: 0 0 8px; font-size: 17px; }
+    .flow-card p { margin: 8px 0; color: var(--muted); font-size: 14px; }
+    .flow-card b { color: var(--ink); }
+    details {
+      margin-top: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 16px 18px;
+    }
+    summary { cursor: pointer; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+    th, td { border: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #edf4f1; }
+    .dev-note { color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) {
+      .hero, .summary-grid, .action-grid { grid-template-columns: 1fr; }
+      .status-strip, .material-grid, .flow-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      main, .nav { padding-left: 16px; padding-right: 16px; }
+      .hero-panel, .side-panel, .section-panel { padding: 20px; }
+      .status-strip, .material-grid, .flow-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <strong>备课包总览</strong>
+      <span>静态预览副本，不是正式应用页</span>
+    </div>
+  </header>
+  <main>
+    <!-- FIRST_SCREEN_START -->
+    <section class="hero" id="overview">
+      <div class="hero-panel">
+        <div>
+          <p class="eyebrow">美术 · 三年级 · 第二单元《多彩的世界》</p>
+          <h1>《色彩的渐变》备课包</h1>
+          <p class="hero-copy">这是一份教师审核草案。当前已经整理出教案预览稿、课件故事板、学生学习单、教师说明和评价表；正式生成文件前，还需要你确认材料、时长和是否打印。</p>
+          <div class="status-strip">
+            <div class="status-chip"><b>状态</b><span>教师审核草案</span></div>
+            <div class="status-chip"><b>教材锚点</b><span>已闭合</span></div>
+            <div class="status-chip"><b>质量</b><span>BASIC_USABLE</span></div>
+            <div class="status-chip"><b>正式应用</b><span>未开放</span></div>
+          </div>
+        </div>
+        <div class="material-grid">
+          
+          <article class="material-card">
+            <div class="material-topline">可审阅</div>
+            <h3>教案预览稿</h3>
+            <p>围绕亮暗、鲜灰和颜色慢慢变化组织教学。</p>
+            <span>查看教学流程</span>
+          </article>
+        
+
+          <article class="material-card">
+            <div class="material-topline">10页草案</div>
+            <h3>课件故事板</h3>
+            <p>每页对应一个课堂动作，尚未生成正式PPT。</p>
+            <span>预览页序</span>
+          </article>
+        
+
+          <article class="material-card">
+            <div class="material-topline">草案</div>
+            <h3>一页学生学习单</h3>
+            <p>找一找、试一试、查一查三项任务。</p>
+            <span>检查是否打印</span>
+          </article>
+        
+
+          <article class="material-card">
+            <div class="material-topline">草案</div>
+            <h3>教师说明</h3>
+            <p>材料准备、课堂提醒和常见问题处理。</p>
+            <span>确认材料</span>
+          </article>
+        
+
+          <article class="material-card">
+            <div class="material-topline">5段流程</div>
+            <h3>课堂环节</h3>
+            <p>看见渐变、分清变化、三格试色、放进作品、自查修订。</p>
+            <span>查看怎么上</span>
+          </article>
+        
+
+          <article class="material-card">
+            <div class="material-topline">教师版 + 学生版</div>
+            <h3>评价表</h3>
+            <p>教师观察五维，学生自评三项。</p>
+            <span>选择课堂用项</span>
+          </article>
+        
+        </div>
+      </div>
+      <aside class="side-panel">
+        <h2>需要你确认</h2>
+        <ul class="check-list">
+          <li>本班使用什么材料：水粉、水彩笔、彩铅、油画棒、色卡或混合材料</li><li>课堂时长是否按40分钟执行</li><li>学习单是否打印，以及是否需要留出绘画空白</li><li>评价表是学生课堂自评，还是教师课后观察</li><li>是否继续打磨教学过程后再生成正式文件</li>
+        </ul>
+      </aside>
+    </section>
+    <!-- FIRST_SCREEN_END -->
+
+    <section class="section-panel" id="lesson-summary">
+      <h2>教学设计摘要</h2>
+      <div class="summary-grid">
+        <section>
+          <h3>核心问题</h3>
+          <p>颜色怎样慢慢变化，才能让画面更有秩序、更有层次？</p>
+        </section>
+        <section>
+          <h3>学生要做到</h3>
+          <ul><li>能发现生活和教材图中的渐变。</li><li>能区分亮暗变化与鲜灰变化。</li><li>能做出三格或五格颜色慢慢变化的小样。</li><li>能把渐变用到作品里，并说清颜色怎么变。</li></ul>
+        </section>
+        <section>
+          <h3>课堂主线</h3>
+          <ul><li>观察生活和教材图中的颜色变化。</li><li>用学生话辨析亮暗、鲜灰、慢慢变化。</li><li>做三格颜色小样，避免颜色跳太快。</li><li>把渐变规律放进色条、图形或小作品。</li><li>用自查和同伴建议完成一处微修订。</li></ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="section-panel" id="actions">
+      <h2>下一步可以做什么</h2>
+      <div class="action-grid">
+        
+          <article class="action-card primary">
+            <strong>继续打磨教学过程</strong>
+            <p>适合进入同课双版本教学过程实验。</p>
+          </article>
+        
+
+          <article class="action-card secondary">
+            <strong>预览课堂材料</strong>
+            <p>只看课件故事板、学习单、评价表。</p>
+          </article>
+        
+
+          <article class="action-card quiet">
+            <strong>暂不生成正式文件</strong>
+            <p>当前仍是教师审核草案。</p>
+          </article>
+        
+      </div>
+    </section>
+
+    <section class="section-panel" id="classroom-flow">
+      <h2>课堂环节</h2>
+      <div class="flow-list">
+        
+          <article class="flow-card">
+            <div class="flow-time">约5分钟</div>
+            <h3>1. 看见渐变</h3>
+            <p><b>教师做什么：</b>出示生活图和教材图，引导学生指出颜色从哪里变到哪里。</p>
+            <p><b>学生做什么：</b>用“从___到___”说出一处颜色慢慢变化。</p>
+            <p><b>看什么证据：</b>能指出起点、终点和变化方向。</p>
+          </article>
+        
+
+          <article class="flow-card">
+            <div class="flow-time">约7分钟</div>
+            <h3>2. 分清亮暗与鲜灰</h3>
+            <p><b>教师做什么：</b>用色条或教材图对比亮暗变化、鲜灰变化。</p>
+            <p><b>学生做什么：</b>判断一组颜色是在变亮/变暗，还是变鲜/变灰。</p>
+            <p><b>看什么证据：</b>能用儿童化语言说出亮暗或鲜灰。</p>
+          </article>
+        
+
+          <article class="flow-card">
+            <div class="flow-time">约8分钟</div>
+            <h3>3. 三格试色</h3>
+            <p><b>教师做什么：</b>示范三格颜色慢慢变化，提醒每次只变一点点。</p>
+            <p><b>学生做什么：</b>完成一组三格或五格渐变小样。</p>
+            <p><b>看什么证据：</b>小样中有连续变化，不是突然跳色。</p>
+          </article>
+        
+
+          <article class="flow-card">
+            <div class="flow-time">约14分钟</div>
+            <h3>4. 放进作品</h3>
+            <p><b>教师做什么：</b>提示学生把试色规律放进色条、图形或小作品。</p>
+            <p><b>学生做什么：</b>完成一个带有渐变方向的小作品或局部设计。</p>
+            <p><b>看什么证据：</b>作品中能看出明确的颜色变化方向。</p>
+          </article>
+        
+
+          <article class="flow-card">
+            <div class="flow-time">约6分钟</div>
+            <h3>5. 自查与微修订</h3>
+            <p><b>教师做什么：</b>组织学生按自查项看一看，并选择一处微修订。</p>
+            <p><b>学生做什么：</b>说清自己的颜色怎么变，并根据建议改一处。</p>
+            <p><b>看什么证据：</b>能表达变化，并完成一处可见修改。</p>
+          </article>
+        
+      </div>
+    </section>
+
+    <section class="section-panel" id="materials">
+      <h2>课堂材料快速预览</h2>
+      <details open>
+        <summary>查看课件故事板页序</summary>
+        <table>
+          <thead><tr><th>页序</th><th>页面标题</th><th>屏幕文字</th><th>学生动作</th></tr></thead>
+          <tbody><tr><td>第1页</td><td>封面：色彩的渐变</td><td>色彩的渐变
+颜色慢慢变过去</td><td>读课题，说一说屏幕上的颜色有没有慢慢变化。</td></tr>
+<tr><td>第2页</td><td>生活中的渐变</td><td>找一找：颜色从哪里变到哪里？</td><td>用“从___到___”说出一处生活或教材图中的渐变。</td></tr>
+<tr><td>第3页</td><td>教材图观察：明度与纯度</td><td>亮一点 / 暗一点
+鲜一点 / 灰一点</td><td>判断一组颜色是在变亮/变暗，还是变鲜/变灰。</td></tr>
+<tr><td>第4页</td><td>核心词：亮暗 / 鲜灰 / 慢慢变化</td><td>亮暗：明度
+鲜灰：纯度
+慢慢变化：渐变</td><td>把教师出示的色卡贴到“亮暗”或“鲜灰”类别。</td></tr>
+<tr><td>第5页</td><td>调色游戏</td><td>每次只变一点点</td><td>选择一条路线，做三格颜色慢慢变化的小样。</td></tr>
+<tr><td>第6页</td><td>教师示范</td><td>选颜色 -&gt; 做小样 -&gt; 标方向 -&gt; 放进作品</td><td>观察示范，并在学习单上勾选自己要做亮暗还是鲜灰变化。</td></tr>
+<tr><td>第7页</td><td>学生创作任务</td><td>基础：三格
+进阶：五格
+挑战：放进小作品</td><td>选择一个层级完成渐变小样或小作品。</td></tr>
+<tr><td>第8页</td><td>作品自查</td><td>我看得出起点
+我看得出方向
+中间没有跳太快
+我能说一句</td><td>用自查句检查作品，圈出一处可调整地方。</td></tr>
+<tr><td>第9页</td><td>展示交流</td><td>我看到...
+我觉得...
+我建议...</td><td>说出同伴作品的一处优点和一处建议。</td></tr>
+<tr><td>第10页</td><td>微修订</td><td>只改一处，让颜色更自然</td><td>根据自查或同伴建议微修订一处。</td></tr></tbody>
+        </table>
+      </details>
+      <details>
+        <summary>查看学习单与评价表</summary>
+        <h3>学习单任务</h3>
+        <ul><li>找一找：我看到颜色从___慢慢变到___。</li><li>试一试：选一种颜色，画三格，让它慢慢变。</li><li>查一查：我能说出颜色从哪里变到哪里。</li></ul>
+        <h3>教师观察维度</h3>
+        <ul><li>看得见：能发现渐变</li><li>试得出：能做出连续变化</li><li>用得上：能把渐变用到作品里</li><li>说得清：能说明颜色怎么变化</li><li>改得动：能根据建议修一处</li></ul>
+        <h3>学生自评项</h3>
+        <ul><li>我看见颜色慢慢变了</li><li>我试出了三层颜色变化</li><li>我能说出颜色从哪里变到哪里</li></ul>
+      </details>
+      <details>
+        <summary>查看依据 / 字段详情 / 开发者模式</summary>
+        <p class="dev-note">以下内容只用于开发复核和证据链追溯，不作为教师备课主界面。</p>
+        <ul>
+          <li>教材锚点状态：CLOSED</li>
+          <li>教案母稿校验：True</li>
+          <li>派生材料校验：True</li>
+          <li>字段审计页：outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R94_P1_R88_FIELD_LAB_PREVIEW_BINDING\field_generation_quality_static_lab_1013R_R88_r94_p1_preview.html</li>
+        </ul>
+        <h3>源文件</h3>
+        <ul><li>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\r93_p2_final_preview_lesson_draft.md</li><li>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\textbook_anchor_closure.md</li><li>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\r94_p1_slide_storyboard.json</li><li>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\r94_p1_student_worksheet_structured.json</li><li>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\r94_p1_assessment_structured.json</li><li>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\quality_sentinel_v0_result.json</li><li>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R94_P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH\r94_p1_derived_artifacts_trace.json</li></ul>
+      </details>
+    </section>
+  </main>
+</body>
+</html>
