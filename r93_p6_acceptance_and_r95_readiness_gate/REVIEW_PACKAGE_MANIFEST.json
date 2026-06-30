@@ -2,7 +2,7 @@
   "stage": "1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE",
   "final_status": "PASS_1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE",
   "zip_path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE.zip",
-  "zip_sha256": "8dc8a24f86c4260e81793b8b1b78ffffe3d6d82b34ab44f0b1537251e560bdb8",
+  "zip_sha256": "bbc68c95ab2b60e21bed99c8e24687fb2525e95ef0e2c41078338f1d7db20a15",
   "files": [
     {
       "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\build_1013r_r93_p6_acceptance_and_r95_readiness_gate.py",
@@ -45,6 +45,16 @@
       "sha256": "55e1c542e13ac28eaa38ddd90c4b6c1491a7919612dc6cc158ac6e1039fe610e"
     },
     {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\REVIEW_PACKAGE_MANIFEST.json",
+      "size": 5327,
+      "sha256": "ffb8f8b5065d0fffbaa398015a60ee7f852635837fd54eb8dca32dd68175db9c"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\REVIEW_PACKAGE_MANIFEST.md",
+      "size": 3545,
+      "sha256": "dada49433be50f0dd7cb9db5941835fafecbe61ed244970c3f3e8234a82cc1b7"
+    },
+    {
       "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\source_snapshots\\r93_p5_teacher_execution_map.json",
       "size": 34003,
       "sha256": "de11e5248c525aa369c7a62abe67c7acd8d62e0ba9a99f39956ece786a4660e7"
@@ -61,13 +71,13 @@
     },
     {
       "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\source_snapshots\\r93_p6_teacher_navigation_view.html",
-      "size": 44974,
-      "sha256": "07564066d74c9ec7305956cfcbf1d97e18b47b361aeb9290eee1db3071a4bbba"
+      "size": 45106,
+      "sha256": "6ae6e393d72e82a4da62a40e55e3e2e357ed08cb10c41d044fb5b7d28bc0fd4d"
     },
     {
       "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\source_snapshots\\r93_p6_teacher_navigation_viewmodel.json",
-      "size": 38026,
-      "sha256": "7cb8d1c6d395e2e89d44ac455e8763210b08931383456afc8e846c404104d78d"
+      "size": 38158,
+      "sha256": "568afc2e6fa0fcbdabb317176a3b6ccc56bac7eb5fc8e8b817b600a029d0e621"
     },
     {
       "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\source_snapshots\\validate_1013R_R93_P5_teacher_execution_map_child_language_result.json",
@@ -77,12 +87,12 @@
     {
       "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\source_snapshots\\validate_1013R_R93_P6_teacher_navigation_view_result.json",
       "size": 1166,
-      "sha256": "bedc41c7a08609c07e565fd29a8e1501c800ef3c3cfb81420cc69c38e30aeca1"
+      "sha256": "8a21331bba02c6c70b9ec3f3c6fb36cb9119a260d171788e685fdb2d35b6d74a"
     },
     {
       "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_ACCEPTANCE_AND_R95_READINESS_GATE\\validate_1013R_R93_P6_acceptance_and_R95_readiness_gate_result.json",
       "size": 1941,
-      "sha256": "940e790e1d492803e1c275ab0771412bfbdea27b7109eee28fff1161861205ef"
+      "sha256": "8b311fab24560b3fca80fb441258afa8601f74d516fb3168eec458814754c10e"
     }
   ],
   "boundary": {

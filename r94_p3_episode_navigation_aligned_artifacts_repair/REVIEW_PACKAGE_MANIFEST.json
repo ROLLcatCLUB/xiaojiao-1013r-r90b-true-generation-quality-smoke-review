@@ -1,0 +1,152 @@
+{
+  "stage": "1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR",
+  "final_status": "PASS_1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR",
+  "zip_path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR.zip",
+  "zip_sha256": "ebbd2964265499be1ef20c9f04e8c776399a7db040e48a3e605d5429746d0623",
+  "files": [
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\build_1013r_r94_p3_episode_navigation_aligned_artifacts_repair.py",
+      "size": 25864,
+      "sha256": "8f0b18f5095cfc6fffba98b3bfa1c26a2238d1f322fae616fff4c8b9ee79bbdf"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\quality_sentinel_v1_preview.json",
+      "size": 675,
+      "sha256": "d1b8ade1305d8986c1c8b7467f1dbfa66e5b77ce933b41c4cb999f678b65dbeb"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_derived_artifacts_trace.json",
+      "size": 1624,
+      "sha256": "8e18d736cf3d7e8ebda9edbe28ab75b701dca64542e282a8e662a4b0109e5df5"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_episode_aligned_slide_storyboard.json",
+      "size": 8697,
+      "sha256": "42dcf3bffad91fbbc0858a81aa1ac35c79b63735020aa80a32b723cf8e4ee276"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_episode_aligned_slide_storyboard.md",
+      "size": 5129,
+      "sha256": "bc53935909ad1102d3bf8758692143c0d070e8eadc3b2b0ed59633628ecee699"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_episode_artifact_alignment_matrix.json",
+      "size": 4279,
+      "sha256": "845b2a74b94886b028d921217076275a54c82ba8405c61afae6c1c31fbf83967"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_repair_notes.md",
+      "size": 848,
+      "sha256": "858be3db17b2123d3233cbb5f3cb82def3e55345e3a331aba34b0e27b0838509"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_student_self_check_episode_aligned.md",
+      "size": 734,
+      "sha256": "799ce9bc36109d3b9252d2ac5b1c9262d1bae820cb479c1b54324be7452be67a"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_student_worksheet_episode_aligned_one_page.md",
+      "size": 947,
+      "sha256": "24c732b8bd6b930cfbcf91138fa6ef3517515ba5f5fa51df7b0499566673ce7b"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_teacher_instruction_notes.md",
+      "size": 900,
+      "sha256": "f8eec8458378dadd4a877cadc5cb3f4ebc2ed7718bbec4f91882b6a49f48dff2"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\r94_p3_teacher_observation_rubric_episode_aligned.md",
+      "size": 1253,
+      "sha256": "82cb0e5d497a2b4cf5a1a2591ee4f08bd3d32030a108fb7f8b9f953fc87bcdee"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\README.md",
+      "size": 589,
+      "sha256": "2be1affc9d21a4dba17113f7ddf845d8f119a631a8a8bbffe45aa406bd022def"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\REVIEW_PACKAGE_MANIFEST.json",
+      "size": 7663,
+      "sha256": "0d0d5661d5f49d62aa016b8bc130d00541782b19f888bddd9649353e480d6887"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\REVIEW_PACKAGE_MANIFEST.md",
+      "size": 5371,
+      "sha256": "d612247dce6830c66c2d1e85154a8bb32fd22ecc82b222b65f6ffdaa5fe1bf21"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\r93_p6_teacher_navigation_view.html",
+      "size": 45106,
+      "sha256": "6ae6e393d72e82a4da62a40e55e3e2e357ed08cb10c41d044fb5b7d28bc0fd4d"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\r93_p6_teacher_navigation_viewmodel.json",
+      "size": 38158,
+      "sha256": "568afc2e6fa0fcbdabb317176a3b6ccc56bac7eb5fc8e8b817b600a029d0e621"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\r94_p1_slide_storyboard.json",
+      "size": 8041,
+      "sha256": "7acb9070b1c7045863c4ffb1ab6d005eb8427d45fa7fa001985b9606ed097e53"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\r94_p1_student_self_assessment.md",
+      "size": 528,
+      "sha256": "cae7372c837efe07bd6a64ff2bb6e7549ee0d00ab8a0de4b4d0a60e5e3362219"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\r94_p1_student_worksheet_one_page.md",
+      "size": 922,
+      "sha256": "fcf8239ba123da7736b82c4266e3b15d029ec60f5dda40b6a6027c386968bd0e"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\r94_p1_student_worksheet_teacher_notes.md",
+      "size": 1388,
+      "sha256": "d425070311a16bd427954efd7d27363024e526399a023da5619350729b5269ad"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\r94_p1_teacher_observation_rubric.md",
+      "size": 1355,
+      "sha256": "af20d1680fd40f6e5a4deeba46812147910611a80aa431c70fc930083f5613f5"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\validate_1013R_R93_P6_acceptance_and_R95_readiness_gate_result.json",
+      "size": 1941,
+      "sha256": "8b311fab24560b3fca80fb441258afa8601f74d516fb3168eec458814754c10e"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\validate_1013R_R93_P6_teacher_navigation_view_result.json",
+      "size": 1166,
+      "sha256": "8a21331bba02c6c70b9ec3f3c6fb36cb9119a260d171788e685fdb2d35b6d74a"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\source_snapshots\\validate_1013R_R94_P1_derived_artifacts_teacher_review_polish_result.json",
+      "size": 1597,
+      "sha256": "30a80e44e5b97257ca6c4c276e423f3181119f126b7a0c45fecfe6f731d4cf83"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR\\validate_1013R_R94_P3_episode_navigation_aligned_artifacts_repair_result.json",
+      "size": 1682,
+      "sha256": "7b4d69e8ffaa1b772bdb6a0656c6e5326a69d763cd1a90767429db56a8dcb9a1"
+    }
+  ],
+  "boundary": {
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "pdf_generated": false,
+    "docx_generated": false,
+    "printed_final_material_generated": false,
+    "r95_executed": false,
+    "formal_material_ready": false
+  }
+}

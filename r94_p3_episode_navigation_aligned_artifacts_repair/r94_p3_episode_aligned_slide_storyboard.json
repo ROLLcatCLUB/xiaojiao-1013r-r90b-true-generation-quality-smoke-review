@@ -1,0 +1,191 @@
+{
+  "artifact": "r94_p3_episode_aligned_slide_storyboard",
+  "source_round": "R93-P6",
+  "source_viewmodel": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW\\r93_p6_teacher_navigation_viewmodel.json",
+  "slide_count": 10,
+  "episode_count": 5,
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "pptx_generated": false,
+  "slides": [
+    {
+      "slide_id": "S01",
+      "belongs_to_episode_id": "episode_01_notice_gradient",
+      "belongs_to_episode_title": "看见渐变",
+      "episode_index": 1,
+      "slide_title": "静看图片，找到颜色慢慢变",
+      "screen_content": "大屏放一张最明显的生活或教材渐变图，只保留起点、终点和一条箭头。",
+      "teacher_talk_hint": "先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。",
+      "student_action": "学生安静观察，用手指找颜色从哪里变到哪里。",
+      "served_classroom_action": "启动观察，不急着讲术语。",
+      "source_p6_micro_steps": [
+        "打开图片，先静静看",
+        "用手指出方向"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S02",
+      "belongs_to_episode_id": "episode_01_notice_gradient",
+      "belongs_to_episode_title": "看见渐变",
+      "episode_index": 1,
+      "slide_title": "从哪里到哪里，说一句",
+      "screen_content": "屏幕保留句式：我看到颜色从___变到___。",
+      "teacher_talk_hint": "请你用手指滑一滑，颜色从哪里开始，滑到哪里结束？",
+      "student_action": "学生用句式说出一处变化，再判断是不是慢慢变。",
+      "served_classroom_action": "把观察变成可听见的表达证据。",
+      "source_p6_micro_steps": [
+        "说一句从哪里到哪里",
+        "判断是不是慢慢变",
+        "轻轻引出渐变"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S03",
+      "belongs_to_episode_id": "episode_02_distinguish_brightness_saturation",
+      "belongs_to_episode_title": "分清亮暗与鲜灰",
+      "episode_index": 2,
+      "slide_title": "只看两件事：亮暗、鲜灰",
+      "screen_content": "左右两组色条：左边亮暗，右边鲜灰；文字只写亮/暗、鲜/灰。",
+      "teacher_talk_hint": "这一页只看两件事：亮不亮，鲜不鲜。",
+      "student_action": "学生先判断亮暗，再判断鲜灰。",
+      "served_classroom_action": "降低概念负荷，先会看再补词。",
+      "source_p6_micro_steps": [
+        "出示两组色条",
+        "先判断亮暗",
+        "再判断鲜灰"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S04",
+      "belongs_to_episode_id": "episode_02_distinguish_brightness_saturation",
+      "belongs_to_episode_title": "分清亮暗与鲜灰",
+      "episode_index": 2,
+      "slide_title": "把色卡放进篮子",
+      "screen_content": "大屏显示两个篮子：亮暗、鲜灰，旁边放2-3张候选色卡。",
+      "teacher_talk_hint": "美术里，亮不亮叫明度；鲜不鲜和纯度有关。我们先会看、会说就很好。",
+      "student_action": "学生把色卡放进对应类别，并说理由。",
+      "served_classroom_action": "确认学生能分清变化类型。",
+      "source_p6_micro_steps": [
+        "把色卡放进篮子",
+        "补专业词并收束"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S05",
+      "belongs_to_episode_id": "episode_03_three_step_color_trial",
+      "belongs_to_episode_title": "三格试色",
+      "episode_index": 3,
+      "slide_title": "示范三格渐变小样",
+      "screen_content": "屏幕显示三格空框和箭头：第1格 -> 第2格 -> 第3格。",
+      "teacher_talk_hint": "第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。",
+      "student_action": "学生看教师示范，明白第二格不能跑太远。",
+      "served_classroom_action": "把渐变操作压成可控的小任务。",
+      "source_p6_micro_steps": [
+        "拿出三格小样纸",
+        "画第一格",
+        "画第二格",
+        "画第三格"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S06",
+      "belongs_to_episode_id": "episode_03_three_step_color_trial",
+      "belongs_to_episode_title": "三格试色",
+      "episode_index": 3,
+      "slide_title": "自然渐变 vs 跳色反例",
+      "screen_content": "两组三格并排：一组慢慢变，一组第二格跳太远。",
+      "teacher_talk_hint": "现在你也试一条三格路，只要三格，先别急着画完整作品。",
+      "student_action": "学生判断哪一组更自然，再完成自己的三格小样。",
+      "served_classroom_action": "用反例帮助学生控制中间格。",
+      "source_p6_micro_steps": [
+        "对比跳色反例",
+        "学生试做自己的三格",
+        "巡视并点拨"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S07",
+      "belongs_to_episode_id": "episode_04_apply_to_artwork",
+      "belongs_to_episode_title": "放进作品",
+      "episode_index": 4,
+      "slide_title": "选择任务，先标方向",
+      "screen_content": "三栏任务：色条、图形、小作品；旁边固定起点、箭头、终点。",
+      "teacher_talk_hint": "你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。",
+      "student_action": "学生选择任务层级，并先说或标出变化方向。",
+      "served_classroom_action": "避免复杂图案抢走渐变目标。",
+      "source_p6_micro_steps": [
+        "选择任务层级",
+        "先标变化方向"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S08",
+      "belongs_to_episode_id": "episode_04_apply_to_artwork",
+      "belongs_to_episode_title": "放进作品",
+      "episode_index": 4,
+      "slide_title": "把颜色小路放进作品",
+      "screen_content": "屏幕显示小样到图形的迁移箭头，并保留三点：起点、方向、慢慢变。",
+      "teacher_talk_hint": "现在给你一段安静时间。记住：不用画很多，先把一处渐变做清楚。",
+      "student_action": "学生把三格规律放进色条、图形或小作品。",
+      "served_classroom_action": "完成从试色到作品的迁移。",
+      "source_p6_micro_steps": [
+        "把三格小样放进图形",
+        "开始创作",
+        "巡视抓三个点",
+        "同桌快看",
+        "收束到可展示样本"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S09",
+      "belongs_to_episode_id": "episode_05_self_check_revision",
+      "belongs_to_episode_title": "自查与微修订",
+      "episode_index": 5,
+      "slide_title": "三项自查，只提一处建议",
+      "screen_content": "大屏显示：方向清楚吗？慢慢变了吗？能说清吗？",
+      "teacher_talk_hint": "最后我们不急着评谁最好，先看自己有没有做到三件事。",
+      "student_action": "学生自查，同伴只提一处建议。",
+      "served_classroom_action": "把评价压成能执行的小动作。",
+      "source_p6_micro_steps": [
+        "打开三项自查",
+        "同伴只提一处建议"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "slide_id": "S10",
+      "belongs_to_episode_id": "episode_05_self_check_revision",
+      "belongs_to_episode_title": "自查与微修订",
+      "episode_index": 5,
+      "slide_title": "只改一处，说清修改",
+      "screen_content": "大屏显示句式：我改了___，因为原来___，现在___。",
+      "teacher_talk_hint": "你只需要改一处，不用重画。让颜色变化更清楚就可以。",
+      "student_action": "学生完成一处微修订，并说清自己改了哪里。",
+      "served_classroom_action": "形成可见的改进证据。",
+      "source_p6_micro_steps": [
+        "选择一处微修",
+        "完成小修改",
+        "说清修改并收课"
+      ],
+      "teacher_review_required": true,
+      "formal_apply": false
+    }
+  ]
+}

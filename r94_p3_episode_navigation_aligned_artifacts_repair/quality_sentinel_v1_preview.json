@@ -1,0 +1,21 @@
+{
+  "stage": "1013R_R94_P3_EPISODE_NAVIGATION_ALIGNED_ARTIFACTS_REPAIR",
+  "quality_sentinel_version": "v1_preview",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "artifact_formal_ready": false,
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "checks": {
+    "episode_alignment": "PASS",
+    "student_language_fit": "PASS",
+    "teacher_adoptability": "PASS_WITH_NOTES",
+    "source_consistency": "PASS",
+    "scope_control": "PASS"
+  },
+  "notes": [
+    "Derived artifacts now follow the five P6 teaching rhythm blocks.",
+    "R95 may generate preview files after explicit user authorization.",
+    "Formal use remains locked."
+  ]
+}
