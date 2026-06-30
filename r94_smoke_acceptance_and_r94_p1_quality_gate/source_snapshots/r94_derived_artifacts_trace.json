@@ -1,0 +1,95 @@
+{
+  "stage": "1013R_R94_DERIVED_ARTIFACTS_SMOKE",
+  "created_at": "2026-06-30T22:21:01",
+  "source_round": "R93-P2",
+  "source_lesson_draft_file": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\r93_p2_final_preview_lesson_draft.md",
+  "source_textbook_anchor_status": "CLOSED",
+  "source_anchor_status": "TEXTBOOK_ANCHOR_CLOSED_WITH_TEACHER_PAGE_IMAGES_AND_KB_LINEAGE",
+  "source_unit": "第二单元《多彩的世界》",
+  "source_lesson_sequence": "第1课",
+  "source_lesson_title": "色彩的渐变",
+  "source_page_range": "6-7",
+  "source_zip_sha256": "17ee481bbcb0f6667b9e762904eba715881d66d5a611f160d8966510368277d3",
+  "derived_artifact_count": 3,
+  "courseware_outline_source_sections": [
+    "一、基本信息",
+    "二、教材分析",
+    "七、教学过程",
+    "八、评价设计"
+  ],
+  "worksheet_source_sections": [
+    "三、学情分析",
+    "四、教学目标",
+    "七、教学过程",
+    "八、评价设计"
+  ],
+  "rubric_source_sections": [
+    "四、教学目标",
+    "七、教学过程 5-6",
+    "八、评价设计"
+  ],
+  "profile_id": "art_lesson_design_profile_v1",
+  "profile_version": "1.0.0",
+  "provider_called": false,
+  "model_called": false,
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "source_records": [
+    {
+      "source_key": "r93_p2_final_preview_lesson_draft",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\r93_p2_final_preview_lesson_draft.md",
+      "exists": true,
+      "size": 9974,
+      "sha256": "89cb4fc3d4aa075805465f96d8f3b5ffcef66af430952ada09ced0c954f260a7"
+    },
+    {
+      "source_key": "r93_p2_textbook_anchor_closure",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\textbook_anchor_closure.md",
+      "exists": true,
+      "size": 4790,
+      "sha256": "56a4c49d97cf4a233c52368c07e262a9e489d77629ba14283a6143871a995476"
+    },
+    {
+      "source_key": "r93_p2_kb_evidence_notes",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\kb_evidence_notes.md",
+      "exists": true,
+      "size": 2320,
+      "sha256": "cc72df99eabe71b93de54d60d79476fb274eb91a400ef36171ca831cdcb02d8a"
+    },
+    {
+      "source_key": "r93_p2_validator",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\validate_1013R_R93_P2_textbook_anchor_closure_final_preview_draft_result.json",
+      "exists": true,
+      "size": 6490,
+      "sha256": "fb2f10bb8cd2042a0da70bc71b653557dc2cd729b17818cfba457ce49855ac71"
+    },
+    {
+      "source_key": "r93_p2_manifest",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT\\REVIEW_PACKAGE_MANIFEST.json",
+      "exists": true,
+      "size": 7075,
+      "sha256": "85693df17f46623eaf079b1993abeb0555d084e36ad37dce49a8c9b59957d55d"
+    },
+    {
+      "source_key": "r93_p2_acceptance_gate_validator",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P2_ACCEPTANCE_AND_R94_READINESS_GATE\\validate_1013R_R93_P2_acceptance_and_R94_readiness_gate_result.json",
+      "exists": true,
+      "size": 1722,
+      "sha256": "36c2cc10d4adbbcf7094dfcee0bf21d8545561a795cd9ad50ac83bf6afc195b3"
+    },
+    {
+      "source_key": "r93_p1_source_gap_teacher_confirm_list",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_TEACHING_LOGIC_AND_TEACHER_READABLE_DRAFT_REPAIR\\r93_p1_source_gap_teacher_confirm_list.md",
+      "exists": true,
+      "size": 1624,
+      "sha256": "353d9b21228134c23acebbc5863f41ccdc84b213123b60a11f8e07342a46f36a"
+    },
+    {
+      "source_key": "r93_p1_concept_focus_decision",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_TEACHING_LOGIC_AND_TEACHER_READABLE_DRAFT_REPAIR\\concept_focus_decision.md",
+      "exists": true,
+      "size": 1945,
+      "sha256": "e5cb3a798272084b1b23789aa2c35ff62fc3ed5e22449b014f26964b428370cb"
+    }
+  ]
+}

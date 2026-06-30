@@ -1,0 +1,109 @@
+{
+  "stage": "1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE",
+  "final_status": "PASS_1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE",
+  "zip_path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE.zip",
+  "zip_sha256": "e6e2b0439b55c35580a4d10e12f26a2d6a46d8726edebeb594f3324d3358e652",
+  "files": [
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\build_1013r_r94_smoke_acceptance_and_r94_p1_quality_gate.py",
+      "size": 14305,
+      "sha256": "493b7712670a504595b9bae52da170a830e0150947e33d3a5ede07d186c11174"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\formal_material_lock.md",
+      "size": 505,
+      "sha256": "536cb289a678df551823240ea0da3f56f2f85b6c729612ad0057946177c36799"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\quality_sentinel_v0_result.json",
+      "size": 520,
+      "sha256": "30c65bf99ccc74bdb195e9920e51ad67cac13d6a2ce95e7f941c0e15b83bdd6e"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\r94_p1_teacher_review_polish_gate.md",
+      "size": 558,
+      "sha256": "2b7052cf87f4633d46418cc6e2471d6265c0b6b51b2fa3086602ce5329ad4b62"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\r94_quality_notes_for_p1.md",
+      "size": 783,
+      "sha256": "adafc13f1a2633407229f79b04f449cb4578969a4946989ad06b92a0424b234c"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\r94_smoke_acceptance_decision.json",
+      "size": 615,
+      "sha256": "8f645a7d9d7d101876b4099f0e41772f9c73c645633ece8c13b63de7f38eb3e0"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\r94_smoke_acceptance_decision.md",
+      "size": 934,
+      "sha256": "1036463ac4d7d08d3369f42a37ca229934447e3ec14d0ebb6ba136e8c4f43c26"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\README.md",
+      "size": 679,
+      "sha256": "99e44b7d632470063ee966dd86863654410b6fde508ee686dd8169da0bdb18c5"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\source_snapshots\\quality_sentinel_v0_result.json",
+      "size": 704,
+      "sha256": "22bf026e622e6e319674e2d5eeac4416c412f6e312b5e1129787a1be2846c3cb"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\source_snapshots\\r94_assessment_rubric_draft.md",
+      "size": 1795,
+      "sha256": "68cd34526e419567f59ba8e379ae57b0c88b7a873192015ddc1010451a57cc1f"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\source_snapshots\\r94_courseware_outline_draft.md",
+      "size": 5262,
+      "sha256": "a279a3faa04fcc90a9738a33544d5ecff2d8f72775c1b02f93fd8a1fa9b5bff1"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\source_snapshots\\r94_derived_artifacts_trace.json",
+      "size": 4603,
+      "sha256": "d270f0d5b4e536989b2c5722f24a3fc217e1ce9af4417521e21727be003b9268"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\source_snapshots\\r94_student_worksheet_draft.md",
+      "size": 2679,
+      "sha256": "ebf7dd5d9d2de35c1e6bcc6213dd137d00e5b79480bc231c7325fea635ce1e5f"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\source_snapshots\\REVIEW_PACKAGE_MANIFEST.json",
+      "size": 5822,
+      "sha256": "8d129a7fa0755fdeff98015201cfe84b6a6757f935ba118e0e064fe4bb624496"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\source_snapshots\\validate_1013R_R94_derived_artifacts_smoke_result.json",
+      "size": 1661,
+      "sha256": "43676ca94f693974d4c01560ac24b4a921d40cc83eb966462f0c2ed306a6f31a"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE\\validate_1013R_R94_smoke_acceptance_and_R94_P1_quality_gate_result.json",
+      "size": 1197,
+      "sha256": "8180dd5da30b429e23cc95df809e7a9bc40100e5bf0a0db06554f4d4227be869"
+    }
+  ],
+  "boundary": {
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "pptx_generated": false,
+    "printed_final_material_generated": false,
+    "formal_courseware_ready": false,
+    "formal_worksheet_ready": false,
+    "formal_rubric_ready": false,
+    "r94_p1_executed": false,
+    "r95_executed": false,
+    "teacher_review_required": true
+  }
+}

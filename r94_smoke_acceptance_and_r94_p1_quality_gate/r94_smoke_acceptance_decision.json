@@ -1,0 +1,16 @@
+{
+  "stage": "1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE",
+  "r94_smoke_result": "PASS_WITH_NOTES",
+  "quality": "BASIC_USABLE",
+  "artifact_formal_ready": false,
+  "teacher_review_required": true,
+  "formal_ready": false,
+  "r95_allowed": false,
+  "bottom_governance_reopen_required": false,
+  "next": "R94-P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH",
+  "quality_notes": [
+    "课件还像文字大纲，需要改为 slide storyboard。",
+    "学习单内容偏满，需要拆成一页学生版和教师说明版。",
+    "评价表需要拆成教师观察版和学生自评版。"
+  ]
+}

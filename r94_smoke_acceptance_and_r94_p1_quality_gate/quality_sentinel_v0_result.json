@@ -1,0 +1,17 @@
+{
+  "stage": "1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE",
+  "quality_sentinel_version": "v0",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "r94_smoke_result": "PASS_WITH_NOTES",
+  "artifact_formal_ready": false,
+  "teacher_review_required": true,
+  "bottom_governance_reopen_required": false,
+  "checks": {
+    "bottom_chain_stable": "PASS",
+    "smoke_goal_completed": "PASS",
+    "formal_material_lock": "PASS",
+    "p1_quality_notes_present": "PASS",
+    "scope_control": "PASS"
+  }
+}

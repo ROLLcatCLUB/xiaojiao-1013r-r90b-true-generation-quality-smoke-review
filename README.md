@@ -244,3 +244,18 @@ R94 derived-artifacts smoke has been added under r94_derived_artifacts_smoke/.
 - Generated smoke drafts: courseware outline draft, student worksheet draft, assessment rubric draft
 - Not generated: formal PPTX, print-ready worksheet, database rubric, UI binding, formal apply
 - Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no database/Feishu/memory write, no R95
+## R94 Smoke Acceptance And R94-P1 Quality Gate
+
+R94 smoke acceptance and R94-P1 quality gate has been added under r94_smoke_acceptance_and_r94_p1_quality_gate/.
+
+- Stage: 1013R_R94_SMOKE_ACCEPTANCE_AND_R94_P1_QUALITY_GATE
+- R94 smoke result: PASS_WITH_NOTES
+- Quality: BASIC_USABLE
+- artifact_formal_ready: false
+- teacher_review_required: true
+- formal_ready: false
+- R95_allowed: false
+- bottom_governance_reopen_required: false
+- Next: R94-P1_DERIVED_ARTIFACTS_TEACHER_REVIEW_POLISH
+- Notes: courseware still text-outline-like; worksheet too full; rubric needs teacher/student split
+- Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no UI binding, no formal apply, no database/Feishu/memory write, no PPTX, no print-ready material, no R94-P1 execution, no R95
