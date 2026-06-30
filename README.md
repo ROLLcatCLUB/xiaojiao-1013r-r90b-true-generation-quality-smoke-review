@@ -232,3 +232,15 @@ R93-P2 acceptance and R94 readiness gate has been added under r93_p2_acceptance_
 - R94 future scope after user authorization: DERIVED_ARTIFACTS_SMOKE_ONLY
 - Allowed future R94 smoke outputs: courseware outline draft, worksheet draft, rubric draft
 - Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no UI binding, no formal apply, no database/Feishu/memory write, no R94 execution, no courseware/worksheet/rubric generation in this gate
+## R94 Derived Artifacts Smoke
+
+R94 derived-artifacts smoke has been added under r94_derived_artifacts_smoke/.
+
+- Stage: 1013R_R94_DERIVED_ARTIFACTS_SMOKE
+- R94_authorization_status: USER_AUTHORIZED
+- Result: PASS
+- Quality Sentinel v0: BASIC_USABLE
+- blocking: false
+- Generated smoke drafts: courseware outline draft, student worksheet draft, assessment rubric draft
+- Not generated: formal PPTX, print-ready worksheet, database rubric, UI binding, formal apply
+- Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no database/Feishu/memory write, no R95
