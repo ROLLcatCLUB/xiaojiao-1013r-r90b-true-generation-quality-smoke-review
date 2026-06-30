@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>《色彩的渐变》备课室壳层预览</title>
+  <style>
+    :root {
+      --bg: #f5f7f5;
+      --paper: #fbfcfa;
+      --panel: #ffffff;
+      --ink: #25312d;
+      --muted: #63716c;
+      --line: #d7e0dc;
+      --green: #3d705f;
+      --green-soft: #e5f2ee;
+      --amber: #a16b27;
+      --blue: #355f85;
+      --blue-soft: #e6eef5;
+      --radius: 8px;
+      --shadow: 0 14px 34px rgba(37, 49, 45, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", Arial, sans-serif;
+      line-height: 1.58;
+      letter-spacing: 0;
+    }
+    button, input { font: inherit; letter-spacing: 0; }
+    .top-shell {
+      height: 64px;
+      display: grid;
+      grid-template-columns: minmax(170px, .8fr) minmax(420px, 1.4fr) minmax(260px, .8fr);
+      align-items: center;
+      gap: 16px;
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      min-width: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+    .brand strong { font-size: 25px; }
+    .brand span { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .top-title {
+      min-width: 0;
+      text-align: center;
+    }
+    .top-title b { display: block; font-size: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .top-title span { color: var(--muted); font-size: 12px; }
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .top-actions button,
+    .action-btn {
+      min-height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--green);
+      padding: 0 12px;
+      font-weight: 700;
+    }
+    .context-strip {
+      height: 46px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfdfb;
+      overflow: hidden;
+    }
+    .crumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 28px;
+      padding: 0 10px;
+      border: 1px solid #c9ddd5;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .crumb.light {
+      background: #fff;
+      color: var(--muted);
+    }
+    .workspace {
+      height: calc(100vh - 64px - 46px - 76px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      overflow: hidden;
+    }
+    .main-stage {
+      min-width: 0;
+      overflow: auto;
+      padding: 20px 26px 42px;
+      background:
+        linear-gradient(90deg, rgba(215, 224, 220, .42) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(215, 224, 220, .42) 1px, transparent 1px),
+        #f9fbfa;
+      background-size: 28px 28px;
+    }
+    .stage-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      background: rgba(255,255,255,.94);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 28px 34px;
+    }
+    .lesson-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: start;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+    .eyebrow { margin: 0 0 6px; color: var(--green); font-weight: 800; }
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 4.2vw, 54px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .head-meta {
+      display: grid;
+      gap: 8px;
+      min-width: 230px;
+    }
+    .meta-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border-bottom: 1px solid var(--line);
+      padding: 4px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .meta-line b { color: var(--ink); }
+    .stage-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 0;
+    }
+    .stage-nav a {
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 2px solid #bdd8ce;
+      font-weight: 800;
+    }
+    .talk-overview {
+      margin-top: 22px;
+      padding: 18px 0;
+      border-top: 2px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+    }
+    .talk-overview h2, .episode h3 { margin: 0; }
+    .talk-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .talk-grid section {
+      border-left: 3px solid var(--line);
+      padding-left: 10px;
+    }
+    .talk-grid p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+    .episode {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .episode-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .kicker { margin: 0 0 4px; color: var(--green); font-weight: 800; }
+    .episode-tag {
+      height: 28px;
+      padding: 3px 9px;
+      border: 1px solid #c9ddd5;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .goal { color: var(--muted); margin: 8px 0 16px; }
+    .episode-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+      gap: 16px 22px;
+    }
+    .episode-grid section {
+      border-left: 3px solid var(--line);
+      padding-left: 12px;
+    }
+    .episode-grid h4, .micro-row h4 { margin: 0 0 6px; }
+    .episode-grid p, .episode-grid li { color: var(--muted); }
+    blockquote {
+      margin: 6px 0;
+      padding: 9px 11px;
+      border-left: 4px solid var(--green);
+      background: #fffdf4;
+    }
+    details {
+      margin-top: 14px;
+      border-top: 1px dashed #cbd9d3;
+      padding-top: 10px;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--green);
+      font-weight: 800;
+    }
+    .micro-row {
+      margin: 10px 0;
+      padding: 8px 0 8px 12px;
+      border-left: 2px solid var(--line);
+    }
+    .micro-row p { margin: 4px 0; color: var(--muted); }
+    .right-rail {
+      min-width: 0;
+      overflow: auto;
+      border-left: 1px solid var(--line);
+      background: #fff;
+      padding: 18px 16px 32px;
+    }
+    .rail-section {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+    .rail-section:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .rail-section h2 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+    .rail-section ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .rail-section li { margin: 7px 0; }
+    .material-list {
+      display: grid;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+    }
+    .material-list li {
+      display: grid;
+      gap: 2px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .material-list span { color: var(--muted); font-size: 13px; }
+    .rail-actions {
+      display: grid;
+      gap: 8px;
+    }
+    .rail-actions .requires_authorization {
+      border-color: #dfc98b;
+      color: var(--amber);
+      background: #fff8e6;
+    }
+    .rail-actions .no_op {
+      color: var(--muted);
+    }
+    .bottom-composer {
+      height: 76px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.97);
+    }
+    .assistant-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--green);
+      color: #fff;
+      font-weight: 900;
+    }
+    .composer-input {
+      min-width: 0;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      padding: 0 16px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+    }
+    .send-btn {
+      height: 42px;
+      border: 1px solid var(--green);
+      border-radius: 999px;
+      background: var(--green);
+      color: #fff;
+      padding: 0 18px;
+      font-weight: 800;
+    }
+    .dev-fold {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    @media (max-width: 1080px) {
+      .workspace { grid-template-columns: 1fr; }
+      .right-rail { display: none; }
+      .top-shell { grid-template-columns: 1fr; height: auto; }
+      .top-title { text-align: left; }
+      .top-actions { justify-content: flex-start; }
+    }
+    @media (max-width: 760px) {
+      .lesson-head, .episode-grid, .talk-grid { grid-template-columns: 1fr; }
+      .stage-inner { padding: 18px; }
+      .head-meta { min-width: 0; }
+      .bottom-composer { grid-template-columns: auto 1fr; }
+      .send-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-shell" aria-label="备课室壳层">
+    <div class="brand"><strong>师维智教</strong><span>备课室</span></div>
+    <div class="top-title">
+      <b>色彩的渐变 · 单课预览闭环</b>
+      <span>静态壳层绑定预览，不接真实保存</span>
+    </div>
+    <div class="top-actions">
+      <button type="button" data-noop="true">预览</button>
+      <button type="button" data-noop="true">审核</button>
+      <button type="button" data-noop="true">导出预览</button>
+    </div>
+  </header>
+  <div class="context-strip" aria-label="轻量上下文">
+    <span class="crumb">第二单元《多彩的世界》</span>
+    <span class="crumb">第1课《色彩的渐变》</span>
+    <span class="crumb light">后续：第2课《渐变的节奏》、第3课《多彩的生活》</span>
+  </div>
+  <main class="workspace">
+    <section class="main-stage">
+      <div class="stage-inner">
+        <!-- FIRST_SCREEN_START -->
+        <section class="lesson-head">
+          <div>
+            <p class="eyebrow">美术 · 三年级 · 第二单元《多彩的世界》</p>
+            <h1>《色彩的渐变》备课包</h1>
+            <nav class="stage-nav" aria-label="教学节奏导航"><a href="#episode_01_notice_gradient">1. 看见渐变</a><a href="#episode_02_distinguish_brightness_saturation">2. 分清亮暗与鲜灰</a><a href="#episode_03_three_step_color_trial">3. 三格试色</a><a href="#episode_04_apply_to_artwork">4. 放进作品</a><a href="#episode_05_self_check_revision">5. 自查与微修订</a></nav>
+          </div>
+          <div class="head-meta">
+            <div class="meta-line"><span>状态</span><b>教师审核草案</b></div>
+            <div class="meta-line"><span>教材锚点</span><b>已闭合</b></div>
+            <div class="meta-line"><span>当前主稿</span><b>教师课堂导航版 P6</b></div>
+            <div class="meta-line"><span>正式应用</span><b>未开放</b></div>
+          </div>
+        </section>
+        <section class="talk-overview">
+          <h2>本课教师话术总览</h2>
+          <div class="talk-grid">
+        <section>
+          <b>1. 看见渐变</b>
+          <p>先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。</p>
+        </section>
+        
+        <section>
+          <b>2. 分清亮暗与鲜灰</b>
+          <p>这一页只看两件事：亮不亮，鲜不鲜。</p>
+        </section>
+        
+        <section>
+          <b>3. 三格试色</b>
+          <p>第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。</p>
+        </section>
+        
+        <section>
+          <b>4. 放进作品</b>
+          <p>你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。</p>
+        </section>
+        
+        <section>
+          <b>5. 自查与微修订</b>
+          <p>最后我们不急着评谁最好，先看自己有没有做到三件事。</p>
+        </section>
+        </div>
+        </section>
+        <!-- FIRST_SCREEN_END -->
+        
+    <section class="episode" id="episode_01_notice_gradient">
+      <div class="episode-heading">
+        <div>
+          <p class="kicker">观察比较型 · 约5分钟</p>
+          <h3>1. 看见渐变</h3>
+        </div>
+        <span class="episode-tag">P6</span>
+      </div>
+      <p class="goal">引导学生观察生活和教材图中的色彩连续变化，初步建立渐变感知。</p>
+      <div class="episode-grid">
+        <section class="teacher-main">
+          <h4>老师三步</h4>
+          <ol><li>静看图片，先找颜色从哪里变到哪里</li><li>用手指出方向，再用一句话说出来</li><li>用“慢慢变”引出本课的渐变</li></ol>
+        </section>
+        <section>
+          <h4>学生产出</h4>
+          <p>能指出颜色变化方向，并用“从___到___”说一句。</p>
+        </section>
+        <section>
+          <h4>关键话术</h4>
+          <blockquote>先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。</blockquote>
+        </section>
+        <section>
+          <h4>小教提醒</h4>
+          <p>先让学生指出起点和终点，不急着讲术语。</p>
+        </section>
+      </div>
+      <details class="episode-detail">
+        <summary>展开 micro-step、支架、小教更多建议和证据</summary>
+        <div class="micro-list">
+        <section class="micro-row">
+          <h4>1.1 打开图片，先静静看</h4>
+          <p><b>教师：</b>打开生活渐变图或教材图，给学生5秒安静观察。</p>
+          <p><b>学生：</b>安静看图，找一处颜色慢慢变化。</p>
+          <p><b>话术：</b>先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示三张图，每张图只保留一个箭头。</p>
+            <p><b>支架：</b>不会说时先用手指，不要求完整句。</p>
+            <p><b>小教：</b>提醒教师先看方向，不讲概念。</p>
+            <p><b>证据：</b>学生眼睛能跟随箭头看变化。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>1.2 用手指出方向</h4>
+          <p><b>教师：</b>请学生用手指从起点滑到终点。</p>
+          <p><b>学生：</b>用手指比划颜色变化方向。</p>
+          <p><b>话术：</b>请你用手指滑一滑，颜色从哪里开始，滑到哪里结束？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏保留箭头，教师可圈起点和终点。</p>
+            <p><b>支架：</b>给起点贴一个小圆点，终点贴一个小旗。</p>
+            <p><b>小教：</b>如果学生只说好看，提示追问从哪里到哪里。</p>
+            <p><b>证据：</b>能指出起点和终点。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>1.3 说一句从哪里到哪里</h4>
+          <p><b>教师：</b>让学生套用句式说一句。</p>
+          <p><b>学生：</b>用句式说出一处变化。</p>
+          <p><b>话术：</b>你可以这样说：我看到颜色从___变到___。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示句式：从___到___。</p>
+            <p><b>支架：</b>句式板书保留在屏幕边角。</p>
+            <p><b>小教：</b>给教师提示：不要纠结颜色名称是否精确。</p>
+            <p><b>证据：</b>学生能说出完整或半完整句。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>1.4 判断是不是慢慢变</h4>
+          <p><b>教师：</b>教师追问变化是否连续。</p>
+          <p><b>学生：</b>判断“慢慢变”还是“跳过去”。</p>
+          <p><b>话术：</b>它是一下子跳过去，还是中间一层一层慢慢变？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏放大一处连续色带。</p>
+            <p><b>支架：</b>用“一层一层”替代“连续”术语。</p>
+            <p><b>小教：</b>提醒教师把“颜色多”和“慢慢变”分开。</p>
+            <p><b>证据：</b>学生能说出慢慢变的理由。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>1.5 轻轻引出渐变</h4>
+          <p><b>教师：</b>教师用学生语言引出“渐变”。</p>
+          <p><b>学生：</b>读课题，回到“颜色慢慢变过去”。</p>
+          <p><b>话术：</b>这种颜色慢慢变过去，美术里可以叫渐变。今天我们就研究它。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏出现课题：色彩的渐变。</p>
+            <p><b>支架：</b>课题旁写：渐变=慢慢变。</p>
+            <p><b>小教：</b>提醒教师术语只出现一次，不展开理论。</p>
+            <p><b>证据：</b>学生能把渐变和慢慢变联系起来。</p>
+          </details>
+        </section>
+        </div>
+      </details>
+    </section>
+    
+    <section class="episode" id="episode_02_distinguish_brightness_saturation">
+      <div class="episode-heading">
+        <div>
+          <p class="kicker">概念辨析型 · 约7分钟</p>
+          <h3>2. 分清亮暗与鲜灰</h3>
+        </div>
+        <span class="episode-tag">P6</span>
+      </div>
+      <p class="goal">引导学生用儿童化语言辨析明度与纯度变化，降低概念负荷。</p>
+      <div class="episode-grid">
+        <section class="teacher-main">
+          <h4>老师三步</h4>
+          <ol><li>出示两组色条，只看亮暗和鲜灰</li><li>先分亮暗，再分鲜灰，并说理由</li><li>补上明度、纯度两个美术词</li></ol>
+        </section>
+        <section>
+          <h4>学生产出</h4>
+          <p>能把色条分到亮暗或鲜灰，并说出理由。</p>
+        </section>
+        <section>
+          <h4>关键话术</h4>
+          <blockquote>这一页只看两件事：亮不亮，鲜不鲜。</blockquote>
+        </section>
+        <section>
+          <h4>小教提醒</h4>
+          <p>先让学生分亮暗/鲜灰，再补明度/纯度。</p>
+        </section>
+      </div>
+      <details class="episode-detail">
+        <summary>展开 micro-step、支架、小教更多建议和证据</summary>
+        <div class="micro-list">
+        <section class="micro-row">
+          <h4>2.1 出示两组色条</h4>
+          <p><b>教师：</b>左边放深浅色条，右边放鲜灰色条。</p>
+          <p><b>学生：</b>观察左右两组色条。</p>
+          <p><b>话术：</b>这一页只看两件事：亮不亮，鲜不鲜。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏左右两组色条，文字为亮暗/鲜灰。</p>
+            <p><b>支架：</b>用左右分区降低判断难度。</p>
+            <p><b>小教：</b>提醒教师不要先讲定义。</p>
+            <p><b>证据：</b>学生能看出两组不同。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>2.2 先判断亮暗</h4>
+          <p><b>教师：</b>指左侧色条，只问亮暗。</p>
+          <p><b>学生：</b>举手或口头判断亮暗。</p>
+          <p><b>话术：</b>这一组是越来越亮，还是越来越暗？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>左侧色条放大。</p>
+            <p><b>支架：</b>给学生两个选项，不开放太多词。</p>
+            <p><b>小教：</b>小教提示教师让学生先二选一。</p>
+            <p><b>证据：</b>学生能用亮/暗判断。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>2.3 再判断鲜灰</h4>
+          <p><b>教师：</b>指右侧色条，只问鲜灰。</p>
+          <p><b>学生：</b>判断鲜灰变化。</p>
+          <p><b>话术：</b>这一组是越来越鲜艳，还是越来越灰？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>右侧色条放大。</p>
+            <p><b>支架：</b>允许学生说“不鲜了”。</p>
+            <p><b>小教：</b>提示教师接纳儿童话。</p>
+            <p><b>证据：</b>学生能说鲜或灰。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>2.4 把色卡放进篮子</h4>
+          <p><b>教师：</b>请学生把色卡放到亮暗篮子或鲜灰篮子。</p>
+          <p><b>学生：</b>拖动/贴卡/口头选择类别。</p>
+          <p><b>话术：</b>这张卡更像亮暗变化，还是鲜灰变化？放到对应篮子里。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示两个篮子：亮暗、鲜灰。</p>
+            <p><b>支架：</b>同桌先讨论再放。</p>
+            <p><b>小教：</b>小教提醒教师追问选择理由。</p>
+            <p><b>证据：</b>学生能分类并说出理由。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>2.5 补专业词并收束</h4>
+          <p><b>教师：</b>教师将儿童话对应到美术词。</p>
+          <p><b>学生：</b>跟读关键词，不背定义。</p>
+          <p><b>话术：</b>美术里，亮不亮叫明度；鲜不鲜和纯度有关。我们先会看、会说就很好。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>板书：明度=亮暗；纯度=鲜灰。</p>
+            <p><b>支架：</b>只保留等号式板书。</p>
+            <p><b>小教：</b>提醒教师不要扩展色相等额外概念。</p>
+            <p><b>证据：</b>学生能把专业词和儿童话连起来。</p>
+          </details>
+        </section>
+        </div>
+      </details>
+    </section>
+    
+    <section class="episode" id="episode_03_three_step_color_trial">
+      <div class="episode-heading">
+        <div>
+          <p class="kicker">示范试做型 · 约8分钟</p>
+          <h3>3. 三格试色</h3>
+        </div>
+        <span class="episode-tag">P6</span>
+      </div>
+      <p class="goal">通过三格小样训练学生控制渐变幅度，形成可迁移的色彩操作经验。</p>
+      <div class="episode-grid">
+        <section class="teacher-main">
+          <h4>老师三步</h4>
+          <ol><li>示范三格渐变小样</li><li>对比自然渐变和跳色反例</li><li>学生试做，并巡视点拨起点、方向和中间格</li></ol>
+        </section>
+        <section>
+          <h4>学生产出</h4>
+          <p>完成一组三格渐变小样，并能说明变化方向。</p>
+        </section>
+        <section>
+          <h4>关键话术</h4>
+          <blockquote>第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。</blockquote>
+        </section>
+        <section>
+          <h4>小教提醒</h4>
+          <p>先做三格小样，不急着画完整作品。</p>
+        </section>
+      </div>
+      <details class="episode-detail">
+        <summary>展开 micro-step、支架、小教更多建议和证据</summary>
+        <div class="micro-list">
+        <section class="micro-row">
+          <h4>3.1 拿出三格小样纸</h4>
+          <p><b>教师：</b>展示三格空框，说明今天先试一条小路。</p>
+          <p><b>学生：</b>拿出三格小样纸或在学习单上找到三格。</p>
+          <p><b>话术：</b>今天我们先不画大作品，先让颜色排好队。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示三格空框和箭头。</p>
+            <p><b>支架：</b>三格框已印好，减少画框负担。</p>
+            <p><b>小教：</b>提醒教师先控任务范围。</p>
+            <p><b>证据：</b>学生找到三格位置。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>3.2 画第一格</h4>
+          <p><b>教师：</b>示范把选好的颜色放入第一格。</p>
+          <p><b>学生：</b>在第一格涂色。</p>
+          <p><b>话术：</b>第一格先放一个你选好的颜色，别涂太厚，也别着急。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>第1格被涂上原色。</p>
+            <p><b>支架：</b>可用彩铅/油画棒降低水分风险。</p>
+            <p><b>小教：</b>提示教师关注材料控制。</p>
+            <p><b>证据：</b>学生完成第一格。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>3.3 画第二格</h4>
+          <p><b>教师：</b>示范第二格只做轻微变化。</p>
+          <p><b>学生：</b>调出或选出第二格颜色。</p>
+          <p><b>话术：</b>第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>第2格显示轻微变化，旁边写只变一点点。</p>
+            <p><b>支架：</b>给学生一句判断：像不像第一格的朋友？</p>
+            <p><b>小教：</b>小教提醒教师看第二格是否跳太远。</p>
+            <p><b>证据：</b>第二格与第一格关系接近。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>3.4 画第三格</h4>
+          <p><b>教师：</b>示范第三格继续沿同方向变化。</p>
+          <p><b>学生：</b>完成第三格。</p>
+          <p><b>话术：</b>第三格继续慢慢变，不要一下子跳过去。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>第3格显示继续变化，箭头连起三格。</p>
+            <p><b>支架：</b>保留箭头提醒变化方向。</p>
+            <p><b>小教：</b>提示教师要求方向一致。</p>
+            <p><b>证据：</b>学生三格有方向。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>3.5 对比跳色反例</h4>
+          <p><b>教师：</b>展示一组中间跳太快的三格。</p>
+          <p><b>学生：</b>判断哪一组更自然。</p>
+          <p><b>话术：</b>你看这一组第二格一下子跳太远了，像不像中间少了一步？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示自然三格和跳色三格对比。</p>
+            <p><b>支架：</b>用“少了一步”解释断层。</p>
+            <p><b>小教：</b>小教提示教师别批评学生，只说可以补一步。</p>
+            <p><b>证据：</b>学生能识别跳色。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>3.6 学生试做自己的三格</h4>
+          <p><b>教师：</b>让学生独立完成一条三格路。</p>
+          <p><b>学生：</b>完成自己的三格小样。</p>
+          <p><b>话术：</b>现在你也试一条三格路，只要三格，先别急着画完整作品。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏保留步骤：选颜色、三格、箭头。</p>
+            <p><b>支架：</b>基础做三格，进阶做五格。</p>
+            <p><b>小教：</b>小教提示教师巡视起点、方向、中间格。</p>
+            <p><b>证据：</b>学生有一组三格小样。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>3.7 巡视并点拨</h4>
+          <p><b>教师：</b>教师巡视，只看三个点：起点、方向、中间是否跳。</p>
+          <p><b>学生：</b>按三点检查自己的小样。</p>
+          <p><b>话术：</b>我先看三件事：从哪里开始，往哪里变，中间有没有跳太快。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示三点自查。</p>
+            <p><b>支架：</b>用手指沿三格滑动检查。</p>
+            <p><b>小教：</b>小教记录典型问题和可展示样本。</p>
+            <p><b>证据：</b>教师能看到过程证据。</p>
+          </details>
+        </section>
+        </div>
+      </details>
+    </section>
+    
+    <section class="episode" id="episode_04_apply_to_artwork">
+      <div class="episode-heading">
+        <div>
+          <p class="kicker">创作实践型 · 约14分钟</p>
+          <h3>4. 放进作品</h3>
+        </div>
+        <span class="episode-tag">P6</span>
+      </div>
+      <p class="goal">引导学生将试色规律迁移到图形或小作品中，形成可见的渐变表达。</p>
+      <div class="episode-grid">
+        <section class="teacher-main">
+          <h4>老师三步</h4>
+          <ol><li>选择适合自己的任务层级</li><li>先标变化方向，再把三格小样放进作品</li><li>安静创作，巡视时只抓起点、方向和过渡</li></ol>
+        </section>
+        <section>
+          <h4>学生产出</h4>
+          <p>把渐变放进色条、图形或小作品，别人能看出方向。</p>
+        </section>
+        <section>
+          <h4>关键话术</h4>
+          <blockquote>你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。</blockquote>
+        </section>
+        <section>
+          <h4>小教提醒</h4>
+          <p>提醒教师分层发布任务，避免所有学生做复杂作品。</p>
+        </section>
+      </div>
+      <details class="episode-detail">
+        <summary>展开 micro-step、支架、小教更多建议和证据</summary>
+        <div class="micro-list">
+        <section class="micro-row">
+          <h4>4.1 选择任务层级</h4>
+          <p><b>教师：</b>发布基础、进阶、挑战三类任务。</p>
+          <p><b>学生：</b>选择一个任务层级。</p>
+          <p><b>话术：</b>你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示基础/进阶/挑战三栏。</p>
+            <p><b>支架：</b>允许学生从基础做起。</p>
+            <p><b>小教：</b>小教提醒教师不要让复杂图案抢走目标。</p>
+            <p><b>证据：</b>学生能选定任务。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>4.2 先标变化方向</h4>
+          <p><b>教师：</b>要求学生先画箭头或心里确定方向。</p>
+          <p><b>学生：</b>在纸上轻轻标方向或口头说方向。</p>
+          <p><b>话术：</b>先别急着涂。你要先想：颜色从哪里开始，往哪里走？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示起点、箭头、终点。</p>
+            <p><b>支架：</b>用箭头提示方向。</p>
+            <p><b>小教：</b>小教提示教师先问方向再看颜色。</p>
+            <p><b>证据：</b>学生能说出方向。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>4.3 把三格小样放进图形</h4>
+          <p><b>教师：</b>示范把小样规律放到一个形状里。</p>
+          <p><b>学生：</b>把三格规律迁移到作品局部。</p>
+          <p><b>话术：</b>刚才的小样不是结束，它是一条颜色小路。现在把这条小路放进你的图形里。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示小样到图形的迁移箭头。</p>
+            <p><b>支架：</b>先放一小块，不要求整张画满。</p>
+            <p><b>小教：</b>小教提醒教师看是否迁移了规律。</p>
+            <p><b>证据：</b>作品中出现渐变局部。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>4.4 开始创作</h4>
+          <p><b>教师：</b>给学生安静创作时间，教师不频繁打断。</p>
+          <p><b>学生：</b>完成作品或局部设计。</p>
+          <p><b>话术：</b>现在给你一段安静时间。记住：不用画很多，先把一处渐变做清楚。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏保留三点提醒：起点、方向、慢慢变。</p>
+            <p><b>支架：</b>大屏提醒替代教师反复口头提醒。</p>
+            <p><b>小教：</b>小教提示教师减少打断，保留巡视。</p>
+            <p><b>证据：</b>学生进入持续创作。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>4.5 巡视抓三个点</h4>
+          <p><b>教师：</b>巡视时只看起点、方向、过渡。</p>
+          <p><b>学生：</b>向教师说明自己的变化方向。</p>
+          <p><b>话术：</b>我来看看你的颜色从哪里开始，往哪里变，中间是不是太突然。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示巡视三点。</p>
+            <p><b>支架：</b>让学生用手指解释作品。</p>
+            <p><b>小教：</b>小教生成个别追问：中间是不是跳太快？</p>
+            <p><b>证据：</b>教师获得过程判断。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>4.6 同桌快看</h4>
+          <p><b>教师：</b>安排同桌只看一件事：方向清不清。</p>
+          <p><b>学生：</b>同桌互看并指出方向。</p>
+          <p><b>话术：</b>同桌只帮看一件事：你能不能看出颜色往哪里变？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示同桌提示句。</p>
+            <p><b>支架：</b>同伴只提一个点，避免干扰创作。</p>
+            <p><b>小教：</b>小教提醒教师控制互评时间。</p>
+            <p><b>证据：</b>同伴能指出或指出不清。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>4.7 收束到可展示样本</h4>
+          <p><b>教师：</b>选2-3个样本，不做大范围展示。</p>
+          <p><b>学生：</b>看样本，说出变化方向。</p>
+          <p><b>话术：</b>我们先看几处颜色变化，不比谁画得最多，只看哪里变得清楚。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏或实物投影展示局部。</p>
+            <p><b>支架：</b>只展示局部，减少比较压力。</p>
+            <p><b>小教：</b>小教记录可作为评价样本的作品。</p>
+            <p><b>证据：</b>学生能从作品中看出渐变。</p>
+          </details>
+        </section>
+        </div>
+      </details>
+    </section>
+    
+    <section class="episode" id="episode_05_self_check_revision">
+      <div class="episode-heading">
+        <div>
+          <p class="kicker">展示修订型 · 约6分钟</p>
+          <h3>5. 自查与微修订</h3>
+        </div>
+        <span class="episode-tag">P6</span>
+      </div>
+      <p class="goal">组织学生依据评价要点进行自查、表达和局部修订，强化学习证据。</p>
+      <div class="episode-grid">
+        <section class="teacher-main">
+          <h4>老师三步</h4>
+          <ol><li>用三项自查先看自己的作品</li><li>同伴只提一处建议</li><li>完成一处微修，并说清自己改了哪里</li></ol>
+        </section>
+        <section>
+          <h4>学生产出</h4>
+          <p>完成一处微修订，并说清自己改了哪里。</p>
+        </section>
+        <section>
+          <h4>关键话术</h4>
+          <blockquote>最后我们不急着评谁最好，先看自己有没有做到三件事。</blockquote>
+        </section>
+        <section>
+          <h4>小教提醒</h4>
+          <p>评价只抓一处微修，不做大评比。</p>
+        </section>
+      </div>
+      <details class="episode-detail">
+        <summary>展开 micro-step、支架、小教更多建议和证据</summary>
+        <div class="micro-list">
+        <section class="micro-row">
+          <h4>5.1 打开三项自查</h4>
+          <p><b>教师：</b>出示自查三问。</p>
+          <p><b>学生：</b>看自己的小样或作品。</p>
+          <p><b>话术：</b>最后我们不急着评谁最好，先看自己有没有做到三件事。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示：方向、慢慢变、能说清。</p>
+            <p><b>支架：</b>自查项不超过三条。</p>
+            <p><b>小教：</b>小教提醒教师压缩评价维度。</p>
+            <p><b>证据：</b>学生能进入自查。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>5.2 同伴只提一处建议</h4>
+          <p><b>教师：</b>安排同伴用固定句式给建议。</p>
+          <p><b>学生：</b>给同伴一条建议。</p>
+          <p><b>话术：</b>同桌只说一处：我看到___，我建议___。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示同伴句式。</p>
+            <p><b>支架：</b>句式帮助学生避免泛泛说好看。</p>
+            <p><b>小教：</b>小教提示教师控制为一条建议。</p>
+            <p><b>证据：</b>学生能获得一条可改建议。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>5.3 选择一处微修</h4>
+          <p><b>教师：</b>要求学生只改一处。</p>
+          <p><b>学生：</b>选择一处修改。</p>
+          <p><b>话术：</b>你只需要改一处，不用重画。让颜色变化更清楚就可以。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示只改一处。</p>
+            <p><b>支架：</b>用圈画标出要改的位置。</p>
+            <p><b>小教：</b>小教提醒教师防止学生重画。</p>
+            <p><b>证据：</b>学生明确修改点。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>5.4 完成小修改</h4>
+          <p><b>教师：</b>给1-2分钟完成局部修改。</p>
+          <p><b>学生：</b>完成局部修订。</p>
+          <p><b>话术：</b>改的时候想一想：它现在是不是更像慢慢变了？</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏保留自查三问。</p>
+            <p><b>支架：</b>允许很小的修改。</p>
+            <p><b>小教：</b>小教记录典型微修案例。</p>
+            <p><b>证据：</b>有可见修改或口头修改方案。</p>
+          </details>
+        </section>
+        
+        <section class="micro-row">
+          <h4>5.5 说清修改并收课</h4>
+          <p><b>教师：</b>请学生说一处修改，教师连接下一课。</p>
+          <p><b>学生：</b>说出修改原因。</p>
+          <p><b>话术：</b>你可以这样说：我改了___，因为原来___，现在___。</p>
+          <details>
+            <summary>大屏 / 支架 / 小教 / 证据</summary>
+            <p><b>大屏：</b>大屏显示表达句式和下节课提示。</p>
+            <p><b>支架：</b>用句式保护表达困难学生。</p>
+            <p><b>小教：</b>小教记录能说清修改的学生。</p>
+            <p><b>证据：</b>学生能说明修改与渐变有关。</p>
+          </details>
+        </section>
+        </div>
+      </details>
+    </section>
+    
+      </div>
+    </section>
+    <aside class="right-rail" aria-label="小教侧栏">
+      <section class="rail-section">
+        <h2>当前需要你确认</h2>
+        <ul><li>材料用什么</li><li>是否按40分钟</li><li>学习单是否打印</li><li>是否进入材料预览导出</li></ul>
+      </section>
+      <section class="rail-section">
+        <h2>下一步动作</h2>
+        <div class="rail-actions"><button class="action-btn preview_only" type="button" aria-label="继续打磨教学过程" data-noop="true">继续打磨教学过程</button><button class="action-btn preview_only" type="button" aria-label="预览课堂材料" data-noop="true">预览课堂材料</button><button class="action-btn requires_authorization" type="button" aria-label="准备导出预览文件" data-noop="true">准备导出预览文件</button><button class="action-btn no_op" type="button" aria-label="暂不采用" data-noop="true">暂不采用</button></div>
+      </section>
+      <section class="rail-section">
+        <h2>课堂材料包</h2>
+        <ul class="material-list"><li><b>slide_storyboard</b><span>10页，按5个教学节奏块对齐</span></li><li><b>worksheet</b><span>一页学生版：找一找、试一试、用一用、查一查/改一改</span></li><li><b>rubric</b><span>教师观察表 + 学生自查表，按5个 episode 对齐</span></li></ul>
+      </section>
+      <section class="rail-section">
+        <details>
+          <summary>本课在单元中</summary>
+          <ul>
+            <li>第二单元《多彩的世界》</li>
+            <li>第1课《色彩的渐变》，页码 6-7</li>
+            <li>第2课《渐变的节奏》</li><li>第3课《多彩的生活》</li>
+          </ul>
+        </details>
+      </section>
+      <section class="rail-section dev-fold">
+        <details>
+          <summary>查看依据 / 开发者模式</summary>
+          <p>仅供复核：本页是静态壳层绑定预览，未接真实 runtime。</p>
+          <p>outputs\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\1013R_R93_P6_TEACHER_NAVIGATION_VIEW_AND_TALK_FLOW\r93_p6_teacher_navigation_viewmodel.json</p>
+        </details>
+      </section>
+    </aside>
+  </main>
+  <footer class="bottom-composer" aria-label="小教输入壳层">
+    <div class="assistant-mark">小教</div>
+    <div class="composer-input">和小教说：帮我把第3环节再压缩一点，或准备材料预览导出。</div>
+    <button class="send-btn" type="button" data-noop="true">发送</button>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+{
+  "stage": "1013R_R93_P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT",
+  "created_at": "2026-06-30T13:43:13",
+  "status": "PASS",
+  "textbook_anchor_closed": true,
+  "anchor_status": "TEXTBOOK_ANCHOR_CLOSED_WITH_TEACHER_PAGE_IMAGES_AND_KB_LINEAGE",
+  "unit": "第二单元《多彩的世界》",
+  "lesson_sequence": "第1课",
+  "lesson_title": "色彩的渐变",
+  "page_range": "6-7",
+  "core_concepts": [
+    "色彩的明度",
+    "色彩的纯度",
+    "明度渐变",
+    "纯度渐变",
+    "渐变规律",
+    "秩序美",
+    "节奏美",
+    "层次丰富"
+  ],
+  "classroom_material_choice": "TEXTBOOK_CONFIRMS_MIXED_METHODS_TEACHER_SELECTS_LOCAL_TOOLS",
+  "quality_sentinel_v0_result": "BASIC_USABLE",
+  "final_preview_draft_ready": true,
+  "final_formal_lesson_ready": false,
+  "r94_allowed": false,
+  "boundary": {
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "r94_executed": false,
+    "derived_courseware_generated": false,
+    "derived_worksheet_generated": false,
+    "derived_rubric_generated": false,
+    "teacher_review_required": true,
+    "final_preview_draft_ready": true,
+    "final_formal_lesson_ready": false
+  },
+  "textbook_image_records": [
+    {
+      "source_path": "E:\\学校工作\\教学\\教学资料\\教材图片资料\\三年级教材内容 - 图片\\3.jpg",
+      "file_name": "3.jpg",
+      "size": 2411279,
+      "sha256": "765a471035ecb73951d2e7c550e32e45697e19539448345cda4af26b5631da82"
+    },
+    {
+      "source_path": "E:\\学校工作\\教学\\教学资料\\教材图片资料\\三年级教材内容 - 图片\\4.jpg",
+      "file_name": "4.jpg",
+      "size": 2155566,
+      "sha256": "b68b725eddbc3fd19f1d3c9a5fa95216bde0502a7df6667ae83b3d78272d0361"
+    },
+    {
+      "source_path": "E:\\学校工作\\教学\\教学资料\\教材图片资料\\三年级教材内容 - 图片\\5.jpg",
+      "file_name": "5.jpg",
+      "size": 2572350,
+      "sha256": "4d1aa7cdb49773d695cb8d15c8e866ac6becfe74cf7a2f568a2f101ceb96f556"
+    }
+  ],
+  "kb_evidence_records": [
+    {
+      "evidence_id": "kb_art_g3_textbook_images_20260427",
+      "kind": "knowledge_base_textbook_image_index",
+      "role": "anchor_supporting_index_not_ocr",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\knowledge-base\\_parsed\\kb_art_g3_textbook_images_20260427.txt",
+      "exists": true,
+      "size": 4546,
+      "sha256": "8ec8de4b61feb4beeeeeeb3781e990223f4048b50a36522518e65a991b1fd924",
+      "status_note": "教材图片包已入库登记；该文件明示尚未完成 OCR，不能单独作为教材原文引用。"
+    },
+    {
+      "evidence_id": "kb_art_g3_lesson_case_lesson_8974535734",
+      "kind": "teacher_local_lesson_plan",
+      "role": "pedagogical_reference_not_current_textbook_anchor",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\knowledge-base\\_parsed\\kb_art_g3_lesson_case_lesson_8974535734.txt",
+      "exists": true,
+      "size": 9262,
+      "sha256": "562f8c78fbefedd919c440e1e54eb03c2d099f43473503a6df72346abb7dc123",
+      "status_note": "三年级下册本地备课资料，含渐变单元目标、材料与评价维度；单元名为第一单元《多变的色彩》，与当前教材页锚点不一致，只作教学组织参考。"
+    },
+    {
+      "evidence_id": "kb_art_g3_lesson_case_1_fd1b5bdf60",
+      "kind": "teacher_local_lesson_plan",
+      "role": "pedagogical_reference_not_current_textbook_anchor",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\knowledge-base\\_parsed\\kb_art_g3_lesson_case_1_fd1b5bdf60.txt",
+      "exists": true,
+      "size": 10787,
+      "sha256": "58ac9768bf8eeba9fd7b0573d659bcc7cf8febf903222671dbff950a4ee386e4",
+      "status_note": "课时1《渐变的魅力》本地教案，提供导入、工具示范、学习单和评价参考；不覆盖当前第1课《色彩的渐变》教材事实。"
+    },
+    {
+      "evidence_id": "kb_art_g3_lesson_case_2_07e719a809",
+      "kind": "teacher_local_lesson_plan",
+      "role": "pedagogical_reference_not_current_textbook_anchor",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\knowledge-base\\_parsed\\kb_art_g3_lesson_case_2_07e719a809.txt",
+      "exists": true,
+      "size": 10427,
+      "sha256": "fd1c5cab5155a015101ae1b3234dd3932a9b745f94a635b8f3ef63fa0acd479e",
+      "status_note": "课时2《颜料的渐变》本地教案，提供水粉调色与材料组织参考；不覆盖当前教材锚点。"
+    },
+    {
+      "evidence_id": "kb_art_g3_lesson_case_3_2eaf570678",
+      "kind": "teacher_local_lesson_plan",
+      "role": "pedagogical_reference_not_current_textbook_anchor",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\knowledge-base\\_parsed\\kb_art_g3_lesson_case_3_2eaf570678.txt",
+      "exists": true,
+      "size": 11554,
+      "sha256": "2e1bb3b0913a229fe4ed34a9d58c7cc3de59553253fb272d27174615a47c72c9",
+      "status_note": "课时3《渐变的节奏》本地教案，提供后续课衔接参考；当前教材页显示《渐变的节奏》为第二单元第2课。"
+    },
+    {
+      "evidence_id": "lesson_plan_import_20260427",
+      "kind": "knowledge_base_import_index",
+      "role": "lineage_index",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\knowledge-base\\_indexes\\lesson_plan_import_20260427.json",
+      "exists": true,
+      "size": 50761,
+      "sha256": "b8fea57a1b0e1d318b0682e22b1856e6d88eb276ce7bff2555d0293af47e92bb",
+      "status_note": "知识库导入索引，记录三年级下册本地教案来源和复制路径；用于 lineage，不作为教材正文证据。"
+    },
+    {
+      "evidence_id": "knowledge_base_items_manifest",
+      "kind": "knowledge_base_manifest",
+      "role": "lineage_manifest",
+      "path": "D:\\Documents\\SmartEdu\\xiaobei-core\\knowledge-base\\_manifests\\items.csv",
+      "exists": true,
+      "size": 43300,
+      "sha256": "c9b738d31641b2b8f212d0ff2f9a74b38ead517f14664f1ba74d3ff29d21adae",
+      "status_note": "知识库条目清单，记录教材图片包与本地教案条目状态；用于 source lineage。"
+    }
+  ],
+  "failed_checks": [],
+  "validator_pass": true
+}

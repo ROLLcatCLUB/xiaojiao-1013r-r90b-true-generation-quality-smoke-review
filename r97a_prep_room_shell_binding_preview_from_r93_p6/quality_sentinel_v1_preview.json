@@ -1,0 +1,15 @@
+{
+  "stage": "1013R_R97A_PREP_ROOM_SHELL_BINDING_PREVIEW_FROM_R93_P6",
+  "quality_sentinel_version": "v1_preview",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "checks": {
+    "shell_binding_preview": "PASS",
+    "teacher_first_screen": "PASS",
+    "p6_reading_hierarchy_preserved": "PASS",
+    "unit_context_lightweight": "PASS",
+    "scope_control": "PASS"
+  }
+}
