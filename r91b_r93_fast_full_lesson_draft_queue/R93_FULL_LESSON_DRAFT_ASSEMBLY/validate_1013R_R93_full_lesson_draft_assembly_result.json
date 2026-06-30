@@ -1,0 +1,22 @@
+{
+    "stage":  "1013R_R93_FULL_LESSON_DRAFT_ASSEMBLY",
+    "status":  "FULL_LESSON_DRAFT_PREVIEW_READY",
+    "teacher_review_required":  true,
+    "formal_apply":  false,
+    "quality_sentinel_v0_result":  "BASIC_USABLE",
+    "blocking":  false,
+    "draft_path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft.md",
+    "structured_path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft_structured.json",
+    "boundary":  {
+                     "r21_modified":  false,
+                     "r36_modified":  false,
+                     "formal_apply":  false,
+                     "database_written":  false,
+                     "feishu_written":  false,
+                     "memory_written":  false,
+                     "new_fields_added":  false,
+                     "preview_lesson_draft_generated":  true,
+                     "formal_lesson_generated":  false,
+                     "ui_page_connected":  false
+                 }
+}

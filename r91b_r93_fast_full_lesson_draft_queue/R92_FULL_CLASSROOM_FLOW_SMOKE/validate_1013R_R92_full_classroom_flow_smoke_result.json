@@ -1,0 +1,38 @@
+{
+    "stage":  "1013R_R92_FULL_CLASSROOM_FLOW_SMOKE",
+    "status":  "PASS",
+    "candidate_count":  21,
+    "provider_chunk_count":  3,
+    "strict_results":  [
+                           {
+                               "chunk_id":  "chunk_01_opening_to_demo",
+                               "candidate_count":  9,
+                               "strict_result":  "PASS"
+                           },
+                           {
+                               "chunk_id":  "chunk_02_try_to_creation",
+                               "candidate_count":  6,
+                               "strict_result":  "PASS"
+                           },
+                           {
+                               "chunk_id":  "chunk_03_display_to_revision",
+                               "candidate_count":  6,
+                               "strict_result":  "PASS"
+                           }
+                       ],
+    "quality_sentinel_v0_result":  "BASIC_USABLE",
+    "blocking":  false,
+    "boundary":  {
+                     "r21_modified":  false,
+                     "r36_modified":  false,
+                     "formal_apply":  false,
+                     "database_written":  false,
+                     "feishu_written":  false,
+                     "memory_written":  false,
+                     "new_fields_added":  false,
+                     "preview_lesson_draft_generated":  false,
+                     "formal_lesson_generated":  false,
+                     "ui_page_connected":  false
+                 },
+    "next_stage":  "1013R_R93_FULL_LESSON_DRAFT_ASSEMBLY"
+}

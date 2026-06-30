@@ -111,3 +111,33 @@ Boundary:
 ```text
 Source R88 page not modified; R36/R21 not modified; no provider call; no runtime/page binding; no formal apply; no database/Feishu/memory write; R91B not executed.
 ```
+## 1013R_R91B_R93 Fast Full Lesson Draft Queue
+
+R91B-R93 has been added under `r91b_r93_fast_full_lesson_draft_queue/` as a continuous review package after R90B-P1 and R91A.
+
+Result:
+
+```text
+R91B=PASS (9 candidates; strict PASS; Quality Sentinel v0=BASIC_USABLE)
+R92=PASS (21 candidates; 3 chunks strict PASS; Quality Sentinel v0=BASIC_USABLE)
+R93=FULL_LESSON_DRAFT_PREVIEW_READY (teacher review required)
+```
+
+Boundary:
+
+```text
+R93 is a preview lesson draft only.
+preview_lesson_draft_generated=true
+formal_lesson_generated=false
+r21_modified=false
+r36_modified=false
+ui_page_connected=false
+formal_apply=false
+database_written=false
+feishu_written=false
+memory_written=false
+new_fields_added=false
+profile_modified=false
+derived_courseware_worksheet_assessment_generated=false
+r94_executed=false
+```

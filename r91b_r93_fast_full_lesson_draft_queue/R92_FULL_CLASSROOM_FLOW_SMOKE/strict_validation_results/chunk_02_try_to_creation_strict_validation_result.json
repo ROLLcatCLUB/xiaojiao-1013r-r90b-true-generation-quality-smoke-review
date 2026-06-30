@@ -1,0 +1,72 @@
+{
+  "stage": "1013R_R92_FULL_CLASSROOM_FLOW_SMOKE_chunk_02_try_to_creation",
+  "chunk_id": "chunk_02_try_to_creation",
+  "result": "PASS",
+  "raw_provider_json_parse_ok": true,
+  "strict_provider_raw_validation": {
+    "result": "PASS",
+    "details": {
+      "candidate_count": 6,
+      "candidate_results": [
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.student_try",
+            "target_step_id": "student_try_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_try"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.material_scaffold",
+            "target_step_id": "student_try_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.material_scaffold"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.process_evidence",
+            "target_step_id": "student_try_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.process_evidence"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.student_creation",
+            "target_step_id": "student_creation_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_creation"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.task_scaffold",
+            "target_step_id": "student_creation_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.task_scaffold"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.success_criteria",
+            "target_step_id": "student_creation_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.success_criteria"
+          }
+        }
+      ]
+    }
+  },
+  "salvage_used": false,
+  "fallback_used": false,
+  "provider_meta": {
+    "provider": "openai_compatible",
+    "model": "MiniMax-M3",
+    "base_url": "https://api.minimaxi.com/v1",
+    "credential_source": "env",
+    "reasoning_split": false,
+    "latency_ms": 26734
+  }
+}

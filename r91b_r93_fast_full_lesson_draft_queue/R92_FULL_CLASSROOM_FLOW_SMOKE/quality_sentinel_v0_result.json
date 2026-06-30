@@ -1,0 +1,92 @@
+{
+  "stage": "1013R_R92_FULL_CLASSROOM_FLOW_SMOKE",
+  "created_at": "2026-06-30T08:33:52",
+  "quality_sentinel_v0": {
+    "result": "BASIC_USABLE",
+    "blocking": false,
+    "allowed_overall_results": [
+      "BASIC_USABLE",
+      "NEEDS_RETRY",
+      "NOT_USABLE"
+    ],
+    "dimensions": {
+      "subject_specificity": {
+        "label": "学科性",
+        "result": "PASS",
+        "evidence": [
+          "渐变",
+          "层次",
+          "过渡",
+          "端色",
+          "中间色",
+          "作品"
+        ]
+      },
+      "student_actionability": {
+        "label": "动作性",
+        "result": "PASS_WITH_NOTES",
+        "evidence": [
+          "圈出",
+          "说明",
+          "修订"
+        ]
+      },
+      "evidence_visibility": {
+        "label": "证据性",
+        "result": "PASS",
+        "evidence": [
+          "作品",
+          "层次",
+          "方向",
+          "说明"
+        ]
+      },
+      "teacher_adoptability": {
+        "label": "可采纳性",
+        "result": "PASS",
+        "evidence": [
+          "可让两三人先指再全班说。",
+          "可让学生贴一条彩条表示从上到下的变化。",
+          "可让一两个学生举出自己见过的色彩变化。",
+          "可补一句：让两三个人先指再全班说。",
+          "可提醒：端色是离你最远的两种颜色。"
+        ]
+      },
+      "grade_fit": {
+        "label": "年段适配",
+        "result": "PASS_WITH_NOTES",
+        "evidence": [
+          "三年级",
+          "圈画/试色/说明适合教师审阅后调整为学生语言"
+        ]
+      },
+      "classroom_flow_coherence": {
+        "label": "课堂片段连贯性",
+        "result": "PASS",
+        "evidence": [
+          "assessment_revision",
+          "display_exchange",
+          "lead_in",
+          "observation_inquiry",
+          "student_creation",
+          "student_try",
+          "teacher_demo"
+        ],
+        "required_step_types": [
+          "lead_in",
+          "observation_inquiry",
+          "teacher_demo",
+          "student_try",
+          "student_creation",
+          "display_exchange",
+          "assessment_revision"
+        ]
+      }
+    }
+  },
+  "claim_limits": {
+    "full_lesson_quality_passed": false,
+    "public_lesson_quality_passed": false,
+    "formal_apply_allowed": false
+  }
+}

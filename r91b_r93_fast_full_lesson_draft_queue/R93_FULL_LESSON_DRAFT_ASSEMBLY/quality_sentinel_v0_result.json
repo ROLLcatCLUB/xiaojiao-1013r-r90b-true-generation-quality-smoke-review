@@ -1,0 +1,61 @@
+{
+  "stage": "1013R_R93_FULL_LESSON_DRAFT_ASSEMBLY",
+  "created_at": "2026-06-30T08:33:52",
+  "quality_sentinel_v0": {
+    "result": "BASIC_USABLE",
+    "blocking": false,
+    "allowed_overall_results": [
+      "BASIC_USABLE",
+      "NEEDS_RETRY",
+      "NOT_USABLE"
+    ],
+    "dimensions": {
+      "draft_structure_complete": {
+        "result": "PASS",
+        "evidence": [
+          "title",
+          "grade",
+          "subject",
+          "unit",
+          "positioning",
+          "student_analysis",
+          "objectives",
+          "key_points",
+          "difficult_points",
+          "preparation",
+          "classroom_flow",
+          "assessment_design",
+          "blackboard_design",
+          "extension",
+          "xiaojiao_notes"
+        ]
+      },
+      "teacher_review_boundary": {
+        "result": "PASS",
+        "evidence": [
+          "teacher_review_required=true",
+          "formal_apply=false"
+        ]
+      },
+      "classroom_flow_present": {
+        "result": "PASS",
+        "evidence": [
+          "lead_in_01",
+          "observation_inquiry_01",
+          "teacher_demo_01",
+          "student_try_01",
+          "student_creation_01",
+          "display_exchange_01",
+          "assessment_revision_01"
+        ]
+      },
+      "claim_limits": {
+        "result": "PASS",
+        "evidence": [
+          "preview draft only",
+          "not formal lesson"
+        ]
+      }
+    }
+  }
+}

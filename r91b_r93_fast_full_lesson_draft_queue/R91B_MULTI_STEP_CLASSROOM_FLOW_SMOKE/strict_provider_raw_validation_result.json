@@ -1,0 +1,95 @@
+{
+  "stage": "1013R_R91B_MULTI_STEP_CLASSROOM_FLOW_PROVIDER_SMOKE",
+  "result": "PASS",
+  "raw_provider_json_parse_ok": true,
+  "strict_provider_raw_validation": {
+    "result": "PASS",
+    "details": {
+      "candidate_count": 9,
+      "candidate_results": [
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.teacher_probe_question",
+            "target_step_id": "observation_inquiry_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_probe_question"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.student_observation",
+            "target_step_id": "observation_inquiry_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_observation"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.visual_language_focus",
+            "target_step_id": "observation_inquiry_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.visual_language_focus"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.teacher_demo",
+            "target_step_id": "teacher_demo_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_demo"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.teacher_modeling_language",
+            "target_step_id": "teacher_demo_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_modeling_language"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.technique_focus",
+            "target_step_id": "teacher_demo_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.technique_focus"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.student_creation",
+            "target_step_id": "student_creation_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_creation"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.task_scaffold",
+            "target_step_id": "student_creation_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.task_scaffold"
+          }
+        },
+        {
+          "result": "PASS",
+          "details": {
+            "target_field_key": "lesson.classroom_flow.step.success_criteria",
+            "target_step_id": "student_creation_01",
+            "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.success_criteria"
+          }
+        }
+      ]
+    }
+  },
+  "salvage_used": false,
+  "fallback_used": false,
+  "provider_meta": {
+    "provider": "openai_compatible",
+    "model": "MiniMax-M3",
+    "base_url": "https://api.minimaxi.com/v1",
+    "credential_source": "env",
+    "reasoning_split": false,
+    "latency_ms": 37329
+  }
+}

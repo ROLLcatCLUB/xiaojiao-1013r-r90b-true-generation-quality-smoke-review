@@ -1,0 +1,21 @@
+{
+    "stage":  "1013R_R91B_MULTI_STEP_CLASSROOM_FLOW_PROVIDER_SMOKE",
+    "status":  "PASS",
+    "candidate_count":  9,
+    "strict_result":  "PASS",
+    "quality_sentinel_v0_result":  "BASIC_USABLE",
+    "blocking":  false,
+    "boundary":  {
+                     "r21_modified":  false,
+                     "r36_modified":  false,
+                     "formal_apply":  false,
+                     "database_written":  false,
+                     "feishu_written":  false,
+                     "memory_written":  false,
+                     "new_fields_added":  false,
+                     "preview_lesson_draft_generated":  false,
+                     "formal_lesson_generated":  false,
+                     "ui_page_connected":  false
+                 },
+    "next_stage":  "1013R_R92_FULL_CLASSROOM_FLOW_SMOKE"
+}

@@ -1,0 +1,41 @@
+{
+    "stage":  "1013R_R93_FULL_LESSON_DRAFT_ASSEMBLY",
+    "status":  "FULL_LESSON_DRAFT_PREVIEW_READY",
+    "files":  [
+                  {
+                      "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\generation_lineage_1013R_R93.json",
+                      "size":  3381,
+                      "sha256":  "9c0417d44ee0933b3c61339431b4223170903d465a0d4ee3c044df95ca63f14c"
+                  },
+                  {
+                      "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\quality_sentinel_v0_result.json",
+                      "size":  1491,
+                      "sha256":  "08fb7d3b5884b6580c37cb6a31fab651b073d55582a590015e1209882b53e618"
+                  },
+                  {
+                      "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft.md",
+                      "size":  4779,
+                      "sha256":  "6005d64d45387a51a9176834be606f65187e8edd5a495038dcf2f917fe45ed52"
+                  },
+                  {
+                      "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft_structured.json",
+                      "size":  7413,
+                      "sha256":  "ffc873fae0aee66c5d41f285404dd89ccd780ef3d0814a73aad831f190a29b6b"
+                  },
+                  {
+                      "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_teacher_review_summary.md",
+                      "size":  216,
+                      "sha256":  "13b0276d8c25ae4cab13a54d7d5f32a0a43b311742e59904cd6821eed1296450"
+                  },
+                  {
+                      "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\README.md",
+                      "size":  111,
+                      "sha256":  "208649ce32abd391a1e8e19fe3ae81a9e14702091a797f7c7b4cbd9e0776fa51"
+                  },
+                  {
+                      "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\validate_1013R_R93_full_lesson_draft_assembly_result.json",
+                      "size":  1157,
+                      "sha256":  "e6ce95e9c680f2b5808fbd75a9a776d3c059e21624f09e8c5331e36e8a70cbd2"
+                  }
+              ]
+}

@@ -1,0 +1,81 @@
+{
+  "stage": "1013R_R91B_MULTI_STEP_CLASSROOM_FLOW_PROVIDER_SMOKE",
+  "created_at": "2026-06-30T08:32:13",
+  "quality_sentinel_v0": {
+    "result": "BASIC_USABLE",
+    "blocking": false,
+    "allowed_overall_results": [
+      "BASIC_USABLE",
+      "NEEDS_RETRY",
+      "NOT_USABLE"
+    ],
+    "dimensions": {
+      "subject_specificity": {
+        "label": "学科性",
+        "result": "PASS",
+        "evidence": [
+          "渐变",
+          "层次",
+          "过渡",
+          "端色",
+          "中间色",
+          "作品"
+        ]
+      },
+      "student_actionability": {
+        "label": "动作性",
+        "result": "PASS_WITH_NOTES",
+        "evidence": [
+          "圈出"
+        ]
+      },
+      "evidence_visibility": {
+        "label": "证据性",
+        "result": "PASS_WITH_NOTES",
+        "evidence": [
+          "作品",
+          "层次",
+          "方向"
+        ]
+      },
+      "teacher_adoptability": {
+        "label": "可采纳性",
+        "result": "PASS",
+        "evidence": [
+          "可补一句：让两三个人先指再全班说。",
+          "可提醒：端色是离你最远的两种颜色。",
+          "在板书把四个词圈成一组，箭头标方向。",
+          "可让学生报色名，教师再上色。",
+          "语速放慢，关键词重复两遍。"
+        ]
+      },
+      "grade_fit": {
+        "label": "年段适配",
+        "result": "PASS_WITH_NOTES",
+        "evidence": [
+          "三年级",
+          "圈画/试色/说明适合教师审阅后调整为学生语言"
+        ]
+      },
+      "classroom_flow_coherence": {
+        "label": "课堂片段连贯性",
+        "result": "PASS",
+        "evidence": [
+          "observation_inquiry",
+          "student_creation",
+          "teacher_demo"
+        ],
+        "required_step_types": [
+          "observation_inquiry",
+          "teacher_demo",
+          "student_creation"
+        ]
+      }
+    }
+  },
+  "claim_limits": {
+    "full_lesson_quality_passed": false,
+    "public_lesson_quality_passed": false,
+    "formal_apply_allowed": false
+  }
+}

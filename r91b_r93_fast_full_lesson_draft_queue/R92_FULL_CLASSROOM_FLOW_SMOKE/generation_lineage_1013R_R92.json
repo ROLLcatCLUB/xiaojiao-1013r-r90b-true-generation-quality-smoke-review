@@ -1,0 +1,68 @@
+{
+    "stage":  "1013R_R92_FULL_CLASSROOM_FLOW_SMOKE",
+    "created_at":  "2026-06-30T08:33:52",
+    "active_profile":  {
+                           "profile_id":  "art_lesson_design_profile_v1",
+                           "profile_version":  "1.0.0",
+                           "candidate_contract_version":  "candidate_required_keys_v1"
+                       },
+    "provider":  {
+                     "provider":  "openai_compatible",
+                     "model":  "MiniMax-M3",
+                     "base_url":  "https://api.minimaxi.com/v1",
+                     "credential_source":  "env"
+                 },
+    "input_files":  {
+                        "normalized_candidates":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R92_FULL_CLASSROOM_FLOW_SMOKE\\normalized_candidates.json",
+                        "preview":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R92_FULL_CLASSROOM_FLOW_SMOKE\\r92_full_classroom_flow_preview.md",
+                        "quality_sentinel":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R92_FULL_CLASSROOM_FLOW_SMOKE\\quality_sentinel_v0_result.json"
+                    },
+    "hashes":  {
+                   "normalized_candidates":  {
+                                                 "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R92_FULL_CLASSROOM_FLOW_SMOKE\\normalized_candidates.json",
+                                                 "size":  28962,
+                                                 "sha256":  "5a1a4ff67f72b057b7091b13487afdb16aea421204d582b36e8e548f2c256ff8"
+                                             },
+                   "preview":  {
+                                   "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R92_FULL_CLASSROOM_FLOW_SMOKE\\r92_full_classroom_flow_preview.md",
+                                   "size":  7947,
+                                   "sha256":  "e43871e5fe33fb623d050e085c67aa5cd8eb7c06e1eed2829f018161ac32a32d"
+                               },
+                   "quality_sentinel":  {
+                                            "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R92_FULL_CLASSROOM_FLOW_SMOKE\\quality_sentinel_v0_result.json",
+                                            "size":  2462,
+                                            "sha256":  "57e6fefc13ec7eed6a37bb50c9d797f2ce7e31a9e0239ed790aa0ccc97f0b130"
+                                        }
+               },
+    "candidate_count":  21,
+    "boundary_flags":  {
+                           "r21_modified":  false,
+                           "r36_modified":  false,
+                           "formal_apply":  false,
+                           "database_written":  false,
+                           "feishu_written":  false,
+                           "memory_written":  false,
+                           "new_fields_added":  false,
+                           "preview_lesson_draft_generated":  false,
+                           "formal_lesson_generated":  false,
+                           "ui_page_connected":  false
+                       },
+    "chunks":  [
+                   {
+                       "chunk_id":  "chunk_01_opening_to_demo",
+                       "candidate_count":  9,
+                       "strict_result":  "PASS"
+                   },
+                   {
+                       "chunk_id":  "chunk_02_try_to_creation",
+                       "candidate_count":  6,
+                       "strict_result":  "PASS"
+                   },
+                   {
+                       "chunk_id":  "chunk_03_display_to_revision",
+                       "candidate_count":  6,
+                       "strict_result":  "PASS"
+                   }
+               ],
+    "provider_chunk_count":  3
+}

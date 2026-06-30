@@ -1,0 +1,164 @@
+{
+  "stage": "1013R_R93_FULL_LESSON_DRAFT_ASSEMBLY",
+  "status": "FULL_LESSON_DRAFT_PREVIEW_READY",
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "lesson": {
+    "title": "2-1《色彩的渐变》",
+    "grade": "三年级",
+    "subject": "美术",
+    "unit": "第二单元《多彩的世界》",
+    "positioning": "本课从生活和教材中的色彩变化进入渐变观察与表现，帮助学生把直观感受转化为明度、色相、层次和过渡方向的表达。",
+    "student_analysis": "三年级学生能直观看到颜色深浅和浓淡变化，但容易把渐变理解为多种颜色并列，需要通过观察、试色和作品证据理解连续过渡。",
+    "objectives": [
+      "能观察并说明色彩由浅到深、由一色到另一色的渐变方向。",
+      "能通过试色和排列形成较清楚的渐变层次。",
+      "能用作品和语言说明自己的渐变处理是否连续、清晰。"
+    ],
+    "key_points": "理解明度、色相、层次和过渡方向，并能迁移到作品表现。",
+    "difficult_points": "控制颜色变化的连续性，避免颜色跳变或只做简单并列。",
+    "preparation": [
+      "教材第6-7页图像或等效观察材料",
+      "色卡或色块示例",
+      "试色纸",
+      "彩铅/水粉/油画棒等可选材料",
+      "学生作品证据拍照或展示位置"
+    ],
+    "classroom_flow": [
+      {
+        "step_id": "lead_in_01",
+        "title": "导入：看见渐变",
+        "items": [
+          {
+            "field": "teacher_core_question",
+            "text": "出示两张天空图：清晨天空从上到下颜色有什么不同？傍晚又有什么变化？哪一种变化能连成一条线？"
+          },
+          {
+            "field": "visual_object",
+            "text": "两张A4天空图：一张正午湛蓝，一张傍晚橙红，贴黑板左右两侧便于学生走看。"
+          },
+          {
+            "field": "context_scaffold",
+            "text": "先回顾单元主题多彩的世界，再联系日落、湖水、课本里的小鸟羽毛三处色彩变化。"
+          }
+        ]
+      },
+      {
+        "step_id": "observation_inquiry_01",
+        "title": "观察探究：说清渐变",
+        "items": [
+          {
+            "field": "teacher_probe_question",
+            "text": "出示天空与教材色环图：天空上端是什么色？下端是什么色？中间哪一段让两端自然连起来？"
+          },
+          {
+            "field": "student_observation",
+            "text": "四人一组，每人用铅笔在天空图上圈出端色、端色和中间色各一处，再向同伴指读。"
+          },
+          {
+            "field": "visual_language_focus",
+            "text": "本环节只学四个词：端色、中间色、过渡、层次；过渡要写出方向。"
+          }
+        ]
+      },
+      {
+        "step_id": "teacher_demo_01",
+        "title": "教师示范：试出层次",
+        "items": [
+          {
+            "field": "teacher_demo",
+            "text": "教师在白纸上先点两个端色，再在中间调出三种中间色，做出五条渐变色阶纸条。"
+          },
+          {
+            "field": "teacher_modeling_language",
+            "text": "边画边说：这是深蓝端色，加白变浅蓝，再加一点点紫得中间色，方向是从深到浅。"
+          },
+          {
+            "field": "technique_focus",
+            "text": "只练两招：端色到中间色的湿接过渡，纸半干时再叠一笔让中间色更柔。"
+          }
+        ]
+      },
+      {
+        "step_id": "student_try_01",
+        "title": "学生尝试：小样试色",
+        "items": [
+          {
+            "field": "student_try",
+            "text": "每人在纸条上选两个端色，湿接做出至少三段中间色，并用箭头标出从深到浅的过渡方向。"
+          },
+          {
+            "field": "material_scaffold",
+            "text": "每组发 2 厘米纸条六条、两张端色卡、小调色盘和一支半干标记笔，纸条底边印有过渡方向箭头。"
+          },
+          {
+            "field": "process_evidence",
+            "text": "收三样：完成的三段渐变纸条、底边方向箭头、纸条背面的端色和中间色各一的口头说明。"
+          }
+        ]
+      },
+      {
+        "step_id": "student_creation_01",
+        "title": "学生创作：完成渐变作品",
+        "items": [
+          {
+            "field": "student_creation",
+            "text": "在指定 10 厘米圆形内选两个端色，做出至少三段层次和一次湿接过渡，背面写出端色与中间色各一。"
+          },
+          {
+            "field": "task_scaffold",
+            "text": "每人发分层小稿：圆形内预标端色位、中间色位和方向箭头，桌面摆端色卡和湿干提示卡。"
+          },
+          {
+            "field": "success_criteria",
+            "text": "看四项：作品里能指出两个端色吗？中间色到端色过渡自然吗？至少有三段层次吗？背面能说清吗？"
+          }
+        ]
+      },
+      {
+        "step_id": "display_exchange_01",
+        "title": "展示交流：说明变化",
+        "items": [
+          {
+            "field": "student_display",
+            "text": "四人一组围看作品，作者用手指端色、中间色、过渡方向各一处，再向同伴说一遍。"
+          },
+          {
+            "field": "expression_evidence",
+            "text": "每件作品背面贴色卡小条：端色一格、中间色一格、方向箭头一格。"
+          },
+          {
+            "field": "peer_assessment",
+            "text": "同伴按三问打分：看到端色了吗？中间色到端色自然吗？方向说得清吗？"
+          }
+        ]
+      },
+      {
+        "step_id": "assessment_revision_01",
+        "title": "评价修订：回到证据",
+        "items": [
+          {
+            "field": "student_revision",
+            "text": "挑互评里一项，只做一种修订：加一段中间色或把方向箭头改一致。"
+          },
+          {
+            "field": "teacher_observation_point",
+            "text": "巡视时盯两处：相邻中间色是否相融，方向箭头是否一致，及时记下三人。"
+          },
+          {
+            "field": "work_evidence",
+            "text": "修订后把原图与改图并贴，背面补一行字：这次我让哪一段更柔。"
+          }
+        ]
+      }
+    ],
+    "assessment_design": [
+      "能否圈出或说明至少三处渐变层次。",
+      "作品中是否有连续过渡而非突兀跳变。",
+      "能否用明度、色相、层次、过渡方向等词说明自己的处理。"
+    ],
+    "blackboard_design": "色彩的渐变：端色 - 中间色 - 过渡方向；明度渐变 / 色相渐变；作品自查：层次清楚、过渡连续、能说理由。",
+    "extension": "可观察晚霞、海水、树叶等生活中的渐变，把发现带回作品展示或后续色彩练习。",
+    "xiaojiao_notes": "本 draft 由 R92 classroom_flow preview candidates 组装，仅用于教师审阅，不写入 R21，不 formal apply。"
+  }
+}

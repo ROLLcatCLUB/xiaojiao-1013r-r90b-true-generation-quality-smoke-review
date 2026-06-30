@@ -1,0 +1,62 @@
+{
+    "stage":  "1013R_R91B_MULTI_STEP_CLASSROOM_FLOW_PROVIDER_SMOKE",
+    "created_at":  "2026-06-30T08:32:13",
+    "active_profile":  {
+                           "profile_id":  "art_lesson_design_profile_v1",
+                           "profile_version":  "1.0.0",
+                           "candidate_contract_version":  "candidate_required_keys_v1"
+                       },
+    "provider":  {
+                     "provider":  "openai_compatible",
+                     "model":  "MiniMax-M3",
+                     "base_url":  "https://api.minimaxi.com/v1",
+                     "credential_source":  "env"
+                 },
+    "input_files":  {
+                        "provider_request":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\r91b_provider_request.json",
+                        "provider_raw_response":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\r91b_provider_raw_response.json",
+                        "strict_validation":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\strict_provider_raw_validation_result.json",
+                        "normalized_candidates":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\normalized_candidates.json",
+                        "quality_sentinel":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\quality_sentinel_v0_result.json"
+                    },
+    "hashes":  {
+                   "provider_request":  {
+                                            "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\r91b_provider_request.json",
+                                            "size":  11039,
+                                            "sha256":  "7d4f4841b5428fcd04f99d7e044b1e1f4f593121480b5d2a699661acad17365b"
+                                        },
+                   "provider_raw_response":  {
+                                                 "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\r91b_provider_raw_response.json",
+                                                 "size":  18875,
+                                                 "sha256":  "abf5f3ca8b70ceef747effc61242c89656776f0fd8157f81e2108e58b255af9a"
+                                             },
+                   "strict_validation":  {
+                                             "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\strict_provider_raw_validation_result.json",
+                                             "size":  3456,
+                                             "sha256":  "f03a51c487b663328f1a70a45bf4569689713a6313345c7e8bcd9dcff05b612c"
+                                         },
+                   "normalized_candidates":  {
+                                                 "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\normalized_candidates.json",
+                                                 "size":  12129,
+                                                 "sha256":  "10a45276d71a3caa8374112cf3ebeede13c275babdb98c6665d01830874fb27e"
+                                             },
+                   "quality_sentinel":  {
+                                            "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R91B_MULTI_STEP_CLASSROOM_FLOW_SMOKE\\quality_sentinel_v0_result.json",
+                                            "size":  2185,
+                                            "sha256":  "c720de4adea3a25559eca939de300781ddeed06aa0d02b55dc3aa52f3cf19584"
+                                        }
+               },
+    "candidate_count":  9,
+    "boundary_flags":  {
+                           "r21_modified":  false,
+                           "r36_modified":  false,
+                           "formal_apply":  false,
+                           "database_written":  false,
+                           "feishu_written":  false,
+                           "memory_written":  false,
+                           "new_fields_added":  false,
+                           "preview_lesson_draft_generated":  false,
+                           "formal_lesson_generated":  false,
+                           "ui_page_connected":  false
+                       }
+}

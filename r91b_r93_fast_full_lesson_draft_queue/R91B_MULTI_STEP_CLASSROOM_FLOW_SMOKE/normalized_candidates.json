@@ -1,0 +1,248 @@
+{
+  "stage": "1013R_R91B_MULTI_STEP_CLASSROOM_FLOW_PROVIDER_SMOKE",
+  "field_patch_candidates": [
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_001",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.teacher_probe_question",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_probe_question",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "旧问题只问颜色多不多，没指向过渡。",
+      "after_candidate": "出示天空与教材色环图：天空上端是什么色？下端是什么色？中间哪一段让两端自然连起来？",
+      "xiaojiao_suggestion": "可补一句：让两三个人先指再全班说。",
+      "impact_scope": [
+        "classroom_flow",
+        "observation_inquiry_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "三连问把观察从看颜色引向端色与中间色的过渡方向。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_002",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.student_observation",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_observation",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "学生只看颜色，不做记录。",
+      "after_candidate": "四人一组，每人用铅笔在天空图上圈出端色、端色和中间色各一处，再向同伴指读。",
+      "xiaojiao_suggestion": "可提醒：端色是离你最远的两种颜色。",
+      "impact_scope": [
+        "classroom_flow",
+        "observation_inquiry_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "圈画与指读让明度与色相的观察落到具体笔触证据。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_003",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.visual_language_focus",
+      "target_section": "teaching_process",
+      "target_step_id": "observation_inquiry_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.visual_language_focus",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "只提渐变二字，学生难抓重点。",
+      "after_candidate": "本环节只学四个词：端色、中间色、过渡、层次；过渡要写出方向。",
+      "xiaojiao_suggestion": "在板书把四个词圈成一组，箭头标方向。",
+      "impact_scope": [
+        "classroom_flow",
+        "observation_inquiry_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "四个词限定了观察语汇，便于后续示范与创作复用。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_004",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.teacher_demo",
+      "target_section": "teaching_process",
+      "target_step_id": "teacher_demo_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_demo",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "示范只是把颜料涂一排。",
+      "after_candidate": "教师在白纸上先点两个端色，再在中间调出三种中间色，做出五条渐变色阶纸条。",
+      "xiaojiao_suggestion": "可让学生报色名，教师再上色。",
+      "impact_scope": [
+        "classroom_flow",
+        "teacher_demo_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "纸条把端色到中间色的步骤外化为可看可量的作品证据。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_005",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.teacher_modeling_language",
+      "target_section": "teaching_process",
+      "target_step_id": "teacher_demo_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.teacher_modeling_language",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "示范时只说看老师做。",
+      "after_candidate": "边画边说：这是深蓝端色，加白变浅蓝，再加一点点紫得中间色，方向是从深到浅。",
+      "xiaojiao_suggestion": "语速放慢，关键词重复两遍。",
+      "impact_scope": [
+        "classroom_flow",
+        "teacher_demo_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "外化语言让学生能照着说端色、加白、方向三件套。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_006",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.technique_focus",
+      "target_section": "teaching_process",
+      "target_step_id": "teacher_demo_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.technique_focus",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "技法讲得太多太杂。",
+      "after_candidate": "只练两招：端色到中间色的湿接过渡，纸半干时再叠一笔让中间色更柔。",
+      "xiaojiao_suggestion": "在纸条背面写湿、干两个字提示。",
+      "impact_scope": [
+        "classroom_flow",
+        "teacher_demo_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "两招让技法焦点紧扣端色—中间色的过渡与层次。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_007",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.student_creation",
+      "target_section": "teaching_process",
+      "target_step_id": "student_creation_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.student_creation",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "学生自由画，常只涂几种颜色。",
+      "after_candidate": "在指定圆形内选两个端色，做出至少三段层次，背面写出端色与中间色各一。",
+      "xiaojiao_suggestion": "提示先小稿再上色，避免边涂边改。",
+      "impact_scope": [
+        "classroom_flow",
+        "student_creation_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "把创作收束到端色、中间色与三段层次，便于后续评价。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_008",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.task_scaffold",
+      "target_section": "teaching_process",
+      "target_step_id": "student_creation_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.task_scaffold",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "任务只给一句就让学生画。",
+      "after_candidate": "每人发一张分层小稿：标好端色位、中间色位和过渡方向箭头，色卡摆在桌面。",
+      "xiaojiao_suggestion": "小稿先打草稿线，再上色。",
+      "impact_scope": [
+        "classroom_flow",
+        "student_creation_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "分层小稿与色卡把端色—中间色—方向拆成可检查的脚手架。"
+    },
+    {
+      "field_patch_id": "1013r_r91b_multi_step_classroom_flow_provider_smoke_candidate_009",
+      "schema_key": "classroom_flow",
+      "canonical_field_key": "classroom_flow",
+      "target_field_key": "lesson.classroom_flow.step.success_criteria",
+      "target_section": "teaching_process",
+      "target_step_id": "student_creation_01",
+      "target_line_contract_id": "R88-GEN/lesson.classroom_flow.step.success_criteria",
+      "target_destination": "existing_edit_card_before_after_suggestion_panel",
+      "before_summary": "评价只看好不好看。",
+      "after_candidate": "看三样：作品里有端色和中间色吗？中间色到端色过渡自然吗？背面能说清层次吗？",
+      "xiaojiao_suggestion": "让同桌先按三项互评，再全班展示。",
+      "impact_scope": [
+        "classroom_flow",
+        "student_creation_01"
+      ],
+      "source_refs": [
+        "active_profile:art_lesson_design_profile_v1@1.0.0",
+        "lesson_case:色彩的渐变"
+      ],
+      "teacher_review_required": true,
+      "preview_only": true,
+      "formal_apply_allowed": false,
+      "applied": false,
+      "patch_type": "profile_targeted_field_candidate",
+      "reasoning_basis": "三条标准把作品证据锁在端色、中间色、过渡与口头说明。"
+    }
+  ]
+}
