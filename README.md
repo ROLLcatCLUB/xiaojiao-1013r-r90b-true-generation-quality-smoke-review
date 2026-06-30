@@ -141,3 +141,42 @@ profile_modified=false
 derived_courseware_worksheet_assessment_generated=false
 r94_executed=false
 ```
+## 1013R_R93-P1 Teaching Logic and Teacher-Readable Repair
+
+R93-P1 has been added under `r93_p1_teaching_logic_teacher_readable_repair/` as a preview-only repair after the R91B-R93 queue.
+
+Result:
+
+```text
+validator=PASS
+quality_sentinel_v0=BASIC_USABLE
+textbook_anchor_status=TEXTBOOK_ANCHOR_NEEDS_TEACHER_CONFIRM
+concept_focus_route=SAFE_PREVIEW_UNTIL_TEXTBOOK_CONFIRMED
+```
+
+Boundary:
+
+```text
+provider_called=false
+model_called=false
+new_classroom_flow_candidates_generated=false
+new_fields_added=false
+profile_modified=false
+r21_modified=false
+r36_modified=false
+ui_page_connected=false
+formal_apply=false
+database_written=false
+feishu_written=false
+memory_written=false
+r94_executed=false
+teacher_review_required=true
+preview_draft_only=true
+```
+
+Review entry points:
+
+- `r93_p1_teaching_logic_teacher_readable_repair/textbook_anchor_audit.md`
+- `r93_p1_teaching_logic_teacher_readable_repair/concept_focus_decision.md`
+- `r93_p1_teaching_logic_teacher_readable_repair/r93_p1_teacher_readable_lesson_draft.md`
+- `r93_p1_teaching_logic_teacher_readable_repair/validate_1013R_R93_P1_teaching_logic_teacher_readable_repair_result.json`

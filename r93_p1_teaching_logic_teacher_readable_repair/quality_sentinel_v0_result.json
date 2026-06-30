@@ -1,0 +1,22 @@
+{
+  "stage": "1013R_R93_P1_TEACHING_LOGIC_AND_TEACHER_READABLE_DRAFT_REPAIR",
+  "quality_sentinel_version": "v0",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "teacher_review_required": true,
+  "preview_draft_only": true,
+  "reasons": [
+    "textbook anchor conflict is explicitly surfaced",
+    "concept focus is narrowed to safe preview route",
+    "teacher-readable draft is more coherent and classroom-oriented",
+    "source gaps are listed for teacher confirmation",
+    "not final because official textbook page and concept focus remain unconfirmed"
+  ],
+  "not_claimed": [
+    "final lesson plan quality",
+    "official textbook anchor confirmed",
+    "formal apply passed",
+    "provider rerun completed",
+    "R94 executed"
+  ]
+}

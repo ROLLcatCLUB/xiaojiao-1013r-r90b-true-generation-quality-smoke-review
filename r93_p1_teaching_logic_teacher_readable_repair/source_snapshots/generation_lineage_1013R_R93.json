@@ -1,0 +1,51 @@
+{
+    "stage":  "1013R_R93_FULL_LESSON_DRAFT_ASSEMBLY",
+    "created_at":  "2026-06-30T08:33:52",
+    "active_profile":  {
+                           "profile_id":  "art_lesson_design_profile_v1",
+                           "profile_version":  "1.0.0",
+                           "candidate_contract_version":  "candidate_required_keys_v1"
+                       },
+    "provider":  {
+                     "provider":  null,
+                     "model":  null,
+                     "base_url":  null,
+                     "credential_source":  null
+                 },
+    "input_files":  {
+                        "draft_md":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft.md",
+                        "draft_structured":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft_structured.json",
+                        "quality_sentinel":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\quality_sentinel_v0_result.json"
+                    },
+    "hashes":  {
+                   "draft_md":  {
+                                    "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft.md",
+                                    "size":  4779,
+                                    "sha256":  "6005d64d45387a51a9176834be606f65187e8edd5a495038dcf2f917fe45ed52"
+                                },
+                   "draft_structured":  {
+                                            "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\r93_full_lesson_draft_structured.json",
+                                            "size":  7413,
+                                            "sha256":  "ffc873fae0aee66c5d41f285404dd89ccd780ef3d0814a73aad831f190a29b6b"
+                                        },
+                   "quality_sentinel":  {
+                                            "path":  "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R91B_R93_FAST_FULL_LESSON_DRAFT_QUEUE\\R93_FULL_LESSON_DRAFT_ASSEMBLY\\quality_sentinel_v0_result.json",
+                                            "size":  1491,
+                                            "sha256":  "08fb7d3b5884b6580c37cb6a31fab651b073d55582a590015e1209882b53e618"
+                                        }
+               },
+    "candidate_count":  21,
+    "boundary_flags":  {
+                           "r21_modified":  false,
+                           "r36_modified":  false,
+                           "formal_apply":  false,
+                           "database_written":  false,
+                           "feishu_written":  false,
+                           "memory_written":  false,
+                           "new_fields_added":  false,
+                           "preview_lesson_draft_generated":  true,
+                           "formal_lesson_generated":  false,
+                           "ui_page_connected":  false
+                       },
+    "source_candidate_stage":  "1013R_R92_FULL_CLASSROOM_FLOW_SMOKE"
+}

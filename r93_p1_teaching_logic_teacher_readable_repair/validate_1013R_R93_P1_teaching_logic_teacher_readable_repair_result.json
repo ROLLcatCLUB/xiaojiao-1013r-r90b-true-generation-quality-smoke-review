@@ -1,0 +1,74 @@
+{
+  "stage": "1013R_R93_P1_TEACHING_LOGIC_AND_TEACHER_READABLE_DRAFT_REPAIR",
+  "created_at": "2026-06-30T12:44:02",
+  "status": "PASS",
+  "teacher_review_required": true,
+  "preview_draft_only": true,
+  "quality_sentinel_v0_result": "BASIC_USABLE",
+  "textbook_anchor_status": "TEXTBOOK_ANCHOR_NEEDS_TEACHER_CONFIRM",
+  "concept_focus_route": "SAFE_PREVIEW_UNTIL_TEXTBOOK_CONFIRMED",
+  "source_gap_marked": true,
+  "boundary": {
+    "provider_called": false,
+    "model_called": false,
+    "new_classroom_flow_candidates_generated": false,
+    "new_fields_added": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "r94_executed": false,
+    "teacher_review_required": true,
+    "preview_draft_only": true
+  },
+  "checks": {
+    "required_files_present": true,
+    "anchor_status_enums_present": true,
+    "draft_keeps_teacher_review_required": true,
+    "draft_keeps_formal_apply_false": true,
+    "draft_removes_page_number_claim": true,
+    "draft_separates_student_language": true,
+    "draft_has_evidence_based_evaluation": true,
+    "quality_sentinel_enum_valid": true
+  },
+  "failed_checks": [],
+  "validator_pass": true,
+  "source_references": [
+    {
+      "id": "zxxk_2025_2026_sync_snippet",
+      "url": "https://www.zxxk.com/docpack/3659930.html",
+      "source_type": "public_search_result_snippet",
+      "observed_claim": "2025-2026学年苏少版美术三年级下册同步课件 includes 第二单元第1课《色彩的渐变》 and 第2课《渐变的节奏》.",
+      "confidence": "candidate_only",
+      "audit_use": "Supports that this newer-looking naming exists, but not enough to write as official textbook fact."
+    },
+    {
+      "id": "dzkbw_org_susan_3s",
+      "url": "https://www.dzkbw.org/book/7402.html",
+      "source_type": "public_textbook_catalog_page",
+      "observed_claim": "Page says the listed 苏少版三年级美术上册 book is not in the 2025 national textbook catalog, and lists 第1课 色彩明度渐变.",
+      "confidence": "conflict_evidence",
+      "audit_use": "Shows 明度渐变 is associated with 三年级上册 on at least one catalog page, and the page itself warns current-use risk."
+    },
+    {
+      "id": "haoduoyun_2012_susan_3x_snippet",
+      "url": "https://www.haoduoyun.cc/book/sjb/meishu/mi3x/3.shtml",
+      "source_type": "public_search_result_snippet",
+      "observed_claim": "Old 2012 苏少/苏教三年级美术下册 catalog snippet lists 第1课 色彩的纯度渐变.",
+      "confidence": "conflict_evidence",
+      "audit_use": "Shows older 三下 resources may anchor the first lesson to 纯度渐变 rather than general 色彩的渐变."
+    },
+    {
+      "id": "yanxiuwang_video_resource_snippet",
+      "url": "https://m.yanxiuwang.cn/Course/play/course_id/31173.html",
+      "source_type": "public_resource_page",
+      "observed_claim": "Video resources list 苏少版三年级下册 色彩的明度渐变 and nearby 色彩的纯度渐变 entries.",
+      "confidence": "conflict_evidence",
+      "audit_use": "Shows teaching-resource pages mix 明度 and 纯度 labels; not authoritative enough for final anchor."
+    }
+  ]
+}
