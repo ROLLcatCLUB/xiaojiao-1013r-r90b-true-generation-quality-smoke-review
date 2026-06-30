@@ -1,0 +1,40 @@
+{
+  "stage": "1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE",
+  "created_at": "2026-06-30T13:11:57",
+  "status": "PASS",
+  "r93_p1_status": "PASS",
+  "decision": "TEACHER_REVIEW_DRAFT_READY",
+  "quality": "BASIC_USABLE",
+  "textbook_anchor": "NEEDS_TEACHER_CONFIRM",
+  "final_lesson_ready": false,
+  "p2_next_stage": "R93-P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT",
+  "p2_requires_teacher_anchor_evidence": true,
+  "r94_allowed": false,
+  "boundary": {
+    "accepts_r93_p1": true,
+    "teacher_review_draft_ready": true,
+    "final_lesson_ready": false,
+    "textbook_anchor_closed": false,
+    "p2_allowed_after_teacher_anchor_confirm": true,
+    "r94_allowed": false,
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false
+  },
+  "p1_reference": {
+    "local_dir": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_TEACHING_LOGIC_AND_TEACHER_READABLE_DRAFT_REPAIR",
+    "github_commit": "cc8405318e2de72094a70cf441d0f55fa5abe6dd",
+    "github_dir": "r93_p1_teaching_logic_teacher_readable_repair",
+    "zip_sha256": "30ba17df236cf2ffa114124045d65601b61320692cfe094795a4759e8f30d936"
+  },
+  "failed_checks": [],
+  "validator_pass": true
+}

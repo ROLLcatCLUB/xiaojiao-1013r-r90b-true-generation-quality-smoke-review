@@ -1,0 +1,20 @@
+{
+  "stage": "1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE",
+  "quality_sentinel_version": "v0",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "teacher_review_required": true,
+  "final_lesson_ready": false,
+  "reasons": [
+    "R93-P1 validator passed",
+    "R93-P1 is appropriate as a teacher-review draft",
+    "textbook anchor remains unresolved",
+    "R94 is correctly held until P2 closes the anchor"
+  ],
+  "not_claimed": [
+    "final lesson approval",
+    "textbook anchor closure",
+    "courseware or worksheet readiness",
+    "formal apply"
+  ]
+}

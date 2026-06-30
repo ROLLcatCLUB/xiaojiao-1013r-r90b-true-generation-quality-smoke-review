@@ -180,3 +180,29 @@ Review entry points:
 - `r93_p1_teaching_logic_teacher_readable_repair/concept_focus_decision.md`
 - `r93_p1_teaching_logic_teacher_readable_repair/r93_p1_teacher_readable_lesson_draft.md`
 - `r93_p1_teaching_logic_teacher_readable_repair/validate_1013R_R93_P1_teaching_logic_teacher_readable_repair_result.json`
+## 1013R_R93-P1 Acceptance And P2 Anchor Gate
+
+R93-P1 acceptance and P2 textbook-anchor gate has been added under `r93_p1_acceptance_and_p2_anchor_gate/`.
+
+Result:
+
+```text
+R93-P1=PASS
+status=TEACHER_REVIEW_DRAFT_READY
+quality=BASIC_USABLE
+textbook_anchor=NEEDS_TEACHER_CONFIRM
+final_lesson_ready=false
+R94_allowed=false
+```
+
+Boundary:
+
+```text
+No provider call, no model call, no new fields, no profile modification, no R21/R36 modification, no UI binding, no formal apply, no database/Feishu/memory write.
+```
+
+Next stage is allowed only after teacher provides textbook anchor evidence:
+
+```text
+R93-P2_TEXTBOOK_ANCHOR_CLOSURE_AND_FINAL_PREVIEW_DRAFT
+```

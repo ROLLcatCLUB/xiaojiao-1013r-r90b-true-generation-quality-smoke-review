@@ -1,0 +1,72 @@
+{
+  "stage": "1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE",
+  "final_status": "PASS_1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE",
+  "zip_path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE.zip",
+  "zip_sha256": "8c21873fd9081c40401909b2aa05850c6dbf3b9e4cf3950f0bccca94803ab67b",
+  "files": [
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\build_1013r_r93_p1_acceptance_and_p2_anchor_gate.py",
+      "size": 13801,
+      "sha256": "726a6164057c39d95058e7064927a0e67f592c6d2f76a18a43dbff228f369e21"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\GPT_REVIEW_PROMPT_1013R_R93_P1_ACCEPTANCE_AND_P2_GATE.md",
+      "size": 528,
+      "sha256": "486730d18f8d504cdde5a6536f1109c16102dea387036c3cac344285c0c87276"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\p2_textbook_anchor_closure_input_checklist.md",
+      "size": 937,
+      "sha256": "ec74042d28aadcf5b0cc8cd29ca7fb303e4d8d70e4e11f85acbfeef36e127cb9"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\quality_sentinel_v0_result.json",
+      "size": 578,
+      "sha256": "40495d3d28c0ad4b4535f913f852aa7169393df91360aac4b52f4d056f2d0e8c"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\r93_p1_acceptance_decision.md",
+      "size": 2588,
+      "sha256": "0078bddb303d43a6d74c3cad075b9398cd93aa8741965a7415a663bd0831f11b"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\r94_hold_decision.md",
+      "size": 556,
+      "sha256": "9769b7882ae005e4fb1ae357e0da0b00387c9adc0e6b0d1440341902417ba0b3"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\README.md",
+      "size": 429,
+      "sha256": "f7bf6e53ce5b09102e4dc362a7955fd20a506f1fc39409c008beb82c98ff111d"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\source_gap_summary_for_teacher.md",
+      "size": 825,
+      "sha256": "8168c9aa9880f9ccecc4203317fc0798ab775e05dbd99ecd0a3556d042f4c7d9"
+    },
+    {
+      "path": "outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R93_P1_ACCEPTANCE_AND_P2_ANCHOR_GATE\\validate_1013R_R93_P1_acceptance_and_p2_anchor_gate_result.json",
+      "size": 1459,
+      "sha256": "e351d96ddd484cc41a6a3178f2075d4270b062dcd255ca4d7e9cda8afb6aeda4"
+    }
+  ],
+  "boundary": {
+    "accepts_r93_p1": true,
+    "teacher_review_draft_ready": true,
+    "final_lesson_ready": false,
+    "textbook_anchor_closed": false,
+    "p2_allowed_after_teacher_anchor_confirm": true,
+    "r94_allowed": false,
+    "provider_called": false,
+    "model_called": false,
+    "new_fields_added": false,
+    "profile_modified": false,
+    "r21_modified": false,
+    "r36_modified": false,
+    "ui_page_connected": false,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false
+  }
+}
