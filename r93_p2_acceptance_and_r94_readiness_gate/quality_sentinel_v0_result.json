@@ -1,0 +1,17 @@
+{
+  "stage": "1013R_R93_P2_ACCEPTANCE_AND_R94_READINESS_GATE",
+  "quality_sentinel_version": "v0",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "teacher_review_required": true,
+  "r93_p2_accepted": true,
+  "textbook_anchor_closed": true,
+  "r94_readiness": "READY_FOR_USER_AUTHORIZATION",
+  "r94_allowed": false,
+  "formal_lesson_ready": false,
+  "notes": [
+    "P2 can be closed as final preview draft.",
+    "R94 may be planned only after explicit user authorization.",
+    "Future R94 must remain derived-artifacts smoke only."
+  ]
+}

@@ -217,3 +217,18 @@ R93-P2 has closed the textbook anchor for 第1课《色彩的渐变》 using tea
 - Quality: BASIC_USABLE
 - Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no UI binding, no formal apply, no database/Feishu/memory write, no R94, no courseware/worksheet/rubric derivation
 - Status: final_preview_draft_ready=true; final_formal_lesson_ready=false; r94_allowed=false
+## R93-P2 Acceptance And R94 Readiness Gate
+
+R93-P2 acceptance and R94 readiness gate has been added under r93_p2_acceptance_and_r94_readiness_gate/.
+
+- Stage: 1013R_R93_P2_ACCEPTANCE_AND_R94_READINESS_GATE
+- R93-P2: PASS
+- Textbook anchor: CLOSED
+- Current status: FINAL_PREVIEW_DRAFT_READY
+- Quality: BASIC_USABLE
+- formal_lesson_ready: false
+- R94_allowed_now: false
+- R94_authorization_status: PENDING_USER_AUTHORIZATION
+- R94 future scope after user authorization: DERIVED_ARTIFACTS_SMOKE_ONLY
+- Allowed future R94 smoke outputs: courseware outline draft, worksheet draft, rubric draft
+- Boundary: no provider/model call, no new fields, no profile/R21/R36 changes, no UI binding, no formal apply, no database/Feishu/memory write, no R94 execution, no courseware/worksheet/rubric generation in this gate

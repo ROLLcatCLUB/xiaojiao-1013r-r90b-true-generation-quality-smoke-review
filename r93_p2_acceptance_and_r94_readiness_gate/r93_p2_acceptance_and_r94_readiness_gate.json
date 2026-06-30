@@ -1,0 +1,25 @@
+{
+  "stage": "1013R_R93_P2_ACCEPTANCE_AND_R94_READINESS_GATE",
+  "r93_p2_acceptance": "PASS",
+  "textbook_anchor": "CLOSED",
+  "current_status": "FINAL_PREVIEW_DRAFT_READY",
+  "quality": "BASIC_USABLE",
+  "formal_lesson_ready": false,
+  "r94_allowed": false,
+  "r94_authorization_status": "PENDING_USER_AUTHORIZATION",
+  "r94_allowed_after_user_authorization": true,
+  "r94_scope_after_authorization": "DERIVED_ARTIFACTS_SMOKE_ONLY",
+  "r94_first_smoke_outputs_allowed": [
+    "courseware_outline_draft_only",
+    "worksheet_draft_only",
+    "rubric_draft_only"
+  ],
+  "r94_first_smoke_outputs_not_allowed": [
+    "formal_ppt_generation",
+    "print_ready_worksheet",
+    "database_rubric_write",
+    "r21_or_r36_update",
+    "ui_binding",
+    "formal_apply"
+  ]
+}
