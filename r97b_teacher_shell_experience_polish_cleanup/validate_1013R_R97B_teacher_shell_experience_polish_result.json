@@ -1,0 +1,70 @@
+{
+  "stage": "1013R_R97B_TEACHER_SHELL_EXPERIENCE_POLISH_AND_STALE_CONTENT_CLEANUP",
+  "status": "PASS",
+  "blocking": [],
+  "checks": {
+    "html_created": true,
+    "source_r97a3_html_exists": true,
+    "r39_mock_candidate_panel_removed_from_static_html": true,
+    "r91a_backfill_panel_removed_from_static_html": true,
+    "r97a2_p6_slot_preserved": true,
+    "r97a3_p6_right_rail_preserved": true,
+    "r97b_cleanup_marker_present": true,
+    "r97b_legacy_rail_collapse_script_present": true,
+    "r97b_episode_context_switching_script_present": true,
+    "teacher_actions_preview_only": true,
+    "episode_count_is_5": true,
+    "courseware_mapping_count_is_5": true,
+    "worksheet_rubric_mapping_count_is_5": true,
+    "xiaojiao_context_count_is_5": true,
+    "formal_apply_false": true,
+    "r95_not_executed": true,
+    "r21_r36_core_not_modified": true
+  },
+  "output_html": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R97B_TEACHER_SHELL_EXPERIENCE_POLISH_AND_STALE_CONTENT_CLEANUP\\r97b_clean_shell_context_preview.html",
+  "output_sha256": "e4b90344e3c292f204574dd5e694a3c097e924904cd467a4532507f519b7db8e",
+  "removed_default_visible_blocks": [
+    {
+      "id": "r39_mock_candidate_preview_panel",
+      "label": "R39 mock candidate preview panel",
+      "matched_count": 1,
+      "default_visible_terms": [
+        "小教候选预览",
+        "source=mock_candidate_fixture",
+        "修改前",
+        "修改后"
+      ],
+      "action": "removed_from_teacher_default_html",
+      "developer_access": "documented_in_cleanup_report_only"
+    },
+    {
+      "id": "r91a_static_backfill_panel",
+      "label": "R90B / R90B-P1 / R91-A static backfill panel",
+      "matched_count": 1,
+      "default_visible_terms": [
+        "R90B / R90B-P1 / R91-A 生成结果回填",
+        "r90b_provider_candidate",
+        "旧审核回填"
+      ],
+      "action": "removed_from_teacher_default_html",
+      "developer_access": "documented_in_cleanup_report_only"
+    }
+  ],
+  "boundary": {
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "r21_core_modified": false,
+    "r36_core_modified": false,
+    "real_ui_runtime_connected": false,
+    "pptx_generated": false,
+    "pdf_docx_generated": false,
+    "R95_executed": false,
+    "source_R91A_R87_modified": false
+  },
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "R95_executed": false,
+  "next_allowed": "R95_STATIC_ARTIFACT_EXPORT_PREVIEW only after user/GPT acceptance"
+}

@@ -1,0 +1,104 @@
+﻿{
+    "stage":  "1013R_R97B_TEACHER_SHELL_EXPERIENCE_POLISH_AND_STALE_CONTENT_CLEANUP",
+    "created_at_utc":  "2026-07-01T09:20:23.8795587Z",
+    "github_repo":  "ROLLcatCLUB/xiaojiao-1013r-r90b-true-generation-quality-smoke-review",
+    "remote_dir":  "r97b_teacher_shell_experience_polish_cleanup",
+    "purpose":  "GPT review package for R97B teacher shell experience cleanup after R97A3 PASS_WITH_NOTES.",
+    "boundary":  {
+                     "main_xiaobei_core_repo_pushed":  false,
+                     "source_R91A_R87_modified":  false,
+                     "original_R21_R36_core_modified":  false,
+                     "formal_apply":  false,
+                     "database_written":  false,
+                     "feishu_written":  false,
+                     "memory_written":  false,
+                     "real_ui_runtime_connected":  false,
+                     "pptx_generated":  false,
+                     "pdf_docx_generated":  false,
+                     "R95_executed":  false
+                 },
+    "files":  [
+                  {
+                      "name":  "1013R_R97B_TEACHER_SHELL_EXPERIENCE_POLISH_REVIEW_PACKAGE.zip",
+                      "bytes":  1844658,
+                      "sha256":  "2e682eccaf198d65497c755b2d9d28654c0278efec34d5250b949fea6f895bad"
+                  },
+                  {
+                      "name":  "build_1013r_r97b_teacher_shell_experience_polish.py",
+                      "bytes":  25937,
+                      "sha256":  "fd532b9ff5fd9374e21716bcb0520a18324da6dbef442c25b61d5a600c1ee7eb"
+                  },
+                  {
+                      "name":  "GPT_REVIEW_PROMPT_1013R_R97B.md",
+                      "bytes":  1364,
+                      "sha256":  "1a051c827f907dd7758abd54aa51d651c03dfc30f697717bf6ce2f2a7475ec72"
+                  },
+                  {
+                      "name":  "r97b_clean_shell_context_dom_dump.html",
+                      "bytes":  1473949,
+                      "sha256":  "620da53cf96b25a467e786a6a414c26c492ceb3cb23298a893fb37fee92a8b50"
+                  },
+                  {
+                      "name":  "r97b_clean_shell_context_preview.html",
+                      "bytes":  1351269,
+                      "sha256":  "e4b90344e3c292f204574dd5e694a3c097e924904cd467a4532507f519b7db8e"
+                  },
+                  {
+                      "name":  "r97b_clean_shell_context_preview_screenshot.png",
+                      "bytes":  1371114,
+                      "sha256":  "36a3800bdea12d7dcd1ab7d553e0c8a9ca328a61ae540e4ce11f8aa8b690e893"
+                  },
+                  {
+                      "name":  "r97b_clean_shell_viewmodel.json",
+                      "bytes":  21865,
+                      "sha256":  "d16d11b473b4695ea93db18f4e088cc7e0f1d5af7c01939ee7a879da547c6711"
+                  },
+                  {
+                      "name":  "r97b_right_rail_priority_policy.md",
+                      "bytes":  623,
+                      "sha256":  "1da16ae062603bb7f24ff92f3e115fc14e050d622b8e322c16e003d712224d9c"
+                  },
+                  {
+                      "name":  "r97b_stale_content_cleanup_report.md",
+                      "bytes":  960,
+                      "sha256":  "2472cf3d1c4393c87d1d2922affb8d88ec424b602758ffe8e4c8201f868ae429"
+                  },
+                  {
+                      "name":  "r97b_teacher_action_preview_state_smoke.md",
+                      "bytes":  739,
+                      "sha256":  "b4ef1c9e0eae7dd59c4d4031e3483fa08c5e47c4de0a35cdf97bb746b22ff1a3"
+                  },
+                  {
+                      "name":  "r97b_xiaojiao_episode_context_smoke.md",
+                      "bytes":  1236,
+                      "sha256":  "598c350fd502ee31e5393799d7f7a8792cf9543e11983fbf17dcf1fea158dadb"
+                  },
+                  {
+                      "name":  "README.md",
+                      "bytes":  986,
+                      "sha256":  "9621e25b7d7f62909d86134c657ebd36de87af929fdc608eb99aa43927141e31"
+                  },
+                  {
+                      "name":  "REVIEW_PACKAGE_MANIFEST.json",
+                      "bytes":  4170,
+                      "sha256":  "102a71ede43d1e6eab8f2e299e596b5ba9d8a66b19a79547bed3740e4d514f05"
+                  },
+                  {
+                      "name":  "REVIEW_PACKAGE_MANIFEST.md",
+                      "bytes":  1847,
+                      "sha256":  "318a09ace300c2ad7898bb4dd3694e47c420ce4e436ee0e806c81c980c65aa8d"
+                  },
+                  {
+                      "name":  "validate_1013R_R97B_teacher_shell_experience_polish_result.json",
+                      "bytes":  2639,
+                      "sha256":  "800d55a7f7c54701a193a5bc234ffc412fdaf530c5a7b2a5f609ecb257b0020e"
+                  },
+                  {
+                      "name":  "ZIP_SHA256.txt",
+                      "bytes":  66,
+                      "sha256":  "012ff14d5aa7cea3d6fbc8ac9795af76739ffe2212edd3496fff0b90a6006cc4"
+                  }
+              ],
+    "zip_file":  "r97b_teacher_shell_experience_polish_cleanup/1013R_R97B_TEACHER_SHELL_EXPERIENCE_POLISH_REVIEW_PACKAGE.zip",
+    "zip_sha256":  "2e682eccaf198d65497c755b2d9d28654c0278efec34d5250b949fea6f895bad"
+}
