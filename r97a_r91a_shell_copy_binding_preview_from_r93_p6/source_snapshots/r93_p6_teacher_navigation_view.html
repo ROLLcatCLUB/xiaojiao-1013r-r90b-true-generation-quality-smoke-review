@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>《色彩的渐变》教师课堂导航版</title>
+  <style>
+    :root {
+      --ink: #263238;
+      --muted: #64727b;
+      --line: #d9e2df;
+      --paper: #fbfcfa;
+      --green: #3f705e;
+      --mint: #e5f2ed;
+      --sun: #f5e7b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.64;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      padding: 24px 28px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 3;
+    }
+    .inner, main { max-width: 1040px; margin: 0 auto; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 56px); line-height: 1.08; letter-spacing: 0; }
+    .subtitle { margin: 10px 0 0; color: var(--muted); }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    nav a { color: var(--green); text-decoration: none; font-weight: 700; border-bottom: 2px solid #bdd8ce; }
+    main { padding: 26px 28px 80px; }
+    .talk-overview {
+      border-top: 2px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0;
+      margin-bottom: 26px;
+    }
+    .talk-overview h2 { margin: 0 0 12px; }
+    .talk-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .talk-grid article {
+      border-left: 3px solid var(--line);
+      padding-left: 10px;
+    }
+    .talk-grid p { color: var(--muted); margin: 6px 0 0; }
+    .episode-block {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+    }
+    .episode-kicker { margin: 0 0 5px; color: var(--green); font-weight: 700; }
+    .episode-block h2 { margin: 0; font-size: 31px; }
+    .goal { color: var(--muted); margin: 10px 0 18px; }
+    .default-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px 24px;
+    }
+    .default-grid section {
+      border-left: 3px solid var(--line);
+      padding-left: 12px;
+    }
+    .default-grid h3 { margin: 0 0 8px; font-size: 18px; }
+    .default-grid p, .default-grid li { color: var(--muted); }
+    blockquote {
+      margin: 8px 0;
+      padding: 10px 12px;
+      border-left: 4px solid var(--green);
+      background: #fffdf4;
+    }
+    .episode-detail {
+      margin-top: 18px;
+      border-top: 1px dashed #c8d6d0;
+      padding-top: 10px;
+    }
+    summary { cursor: pointer; color: var(--green); font-weight: 700; }
+    .micro-row {
+      border-left: 2px solid var(--line);
+      margin: 12px 0;
+      padding: 8px 0 8px 12px;
+    }
+    .micro-row h4 { margin: 0 0 5px; }
+    .micro-row p { margin: 4px 0; color: var(--muted); }
+    .micro-row details { margin-top: 6px; }
+    .more-support {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .talk-grid, .default-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      header, main { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1>《色彩的渐变》教师课堂导航版</h1>
+      <p class="subtitle">默认看 5 个教学节奏块；micro-step、支架、小教和证据折叠保留。</p>
+      <nav><a href="#episode_01_notice_gradient">1. 看见渐变</a><a href="#episode_02_distinguish_brightness_saturation">2. 分清亮暗与鲜灰</a><a href="#episode_03_three_step_color_trial">3. 三格试色</a><a href="#episode_04_apply_to_artwork">4. 放进作品</a><a href="#episode_05_self_check_revision">5. 自查与微修订</a></nav>
+    </div>
+  </header>
+  <main>
+    <!-- FIRST_SCREEN_START -->
+    <section class="talk-overview">
+      <h2>0.1 本课教师话术总览</h2>
+      <div class="talk-grid">
+        <article>
+          <b>1. 看见渐变</b>
+          <p>先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。</p>
+        </article>
+        
+        <article>
+          <b>2. 分清亮暗与鲜灰</b>
+          <p>这一页只看两件事：亮不亮，鲜不鲜。</p>
+        </article>
+        
+        <article>
+          <b>3. 三格试色</b>
+          <p>第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。</p>
+        </article>
+        
+        <article>
+          <b>4. 放进作品</b>
+          <p>你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。</p>
+        </article>
+        
+        <article>
+          <b>5. 自查与微修订</b>
+          <p>最后我们不急着评谁最好，先看自己有没有做到三件事。</p>
+        </article>
+        </div>
+    </section>
+    <!-- FIRST_SCREEN_END -->
+    
+            <section class="episode-block" id="episode_01_notice_gradient">
+              <p class="episode-kicker">观察比较型 · 约5分钟</p>
+              <h2>1. 看见渐变</h2>
+              <p class="goal"><b>本环节目标：</b>引导学生观察生活和教材图中的色彩连续变化，初步建立渐变感知。</p>
+              <div class="default-grid">
+                <section>
+                  <h3>老师三步</h3>
+                  <ol><li>静看图片，先找颜色从哪里变到哪里</li><li>用手指出方向，再用一句话说出来</li><li>用“慢慢变”引出本课的渐变</li></ol>
+                </section>
+                <section>
+                  <h3>学生产出</h3>
+                  <p>能指出颜色变化方向，并用“从___到___”说一句。</p>
+                </section>
+                <section>
+                  <h3>关键话术</h3>
+                  <blockquote>先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。</blockquote>
+                </section>
+                <section>
+                  <h3>小教提醒</h3>
+                  <p>先让学生指出起点和终点，不急着讲术语。</p>
+                </section>
+              </div>
+              <details class="episode-detail">
+                <summary>展开本环节 micro-step、支架、证据和更多小教建议</summary>
+                <div class="micro-list">
+            <section class="micro-row">
+              <h4>1.1 打开图片，先静静看</h4>
+              <p><b>教师：</b>打开生活渐变图或教材图，给学生5秒安静观察。</p>
+              <p><b>话术：</b>先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。</p>
+              <p><b>学生：</b>安静看图，找一处颜色慢慢变化。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示三张图，每张图只保留一个箭头。</p>
+                <p><b>支架：</b>不会说时先用手指，不要求完整句。</p>
+                <p><b>小教：</b>提醒教师先看方向，不讲概念。</p>
+                <p><b>证据：</b>学生眼睛能跟随箭头看变化。</p>
+                <p><b>卡住时：</b>把图片减少到一张最明显的图。</p>
+                <p><b>进入下一步：</b>多数学生能找到一处变化后进入下一步。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>1.2 用手指出方向</h4>
+              <p><b>教师：</b>请学生用手指从起点滑到终点。</p>
+              <p><b>话术：</b>请你用手指滑一滑，颜色从哪里开始，滑到哪里结束？</p>
+              <p><b>学生：</b>用手指比划颜色变化方向。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏保留箭头，教师可圈起点和终点。</p>
+                <p><b>支架：</b>给起点贴一个小圆点，终点贴一个小旗。</p>
+                <p><b>小教：</b>如果学生只说好看，提示追问从哪里到哪里。</p>
+                <p><b>证据：</b>能指出起点和终点。</p>
+                <p><b>卡住时：</b>教师示范一次手指滑动。</p>
+                <p><b>进入下一步：</b>至少2名学生能指出方向后进入表达。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>1.3 说一句从哪里到哪里</h4>
+              <p><b>教师：</b>让学生套用句式说一句。</p>
+              <p><b>话术：</b>你可以这样说：我看到颜色从___变到___。</p>
+              <p><b>学生：</b>用句式说出一处变化。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示句式：从___到___。</p>
+                <p><b>支架：</b>句式板书保留在屏幕边角。</p>
+                <p><b>小教：</b>给教师提示：不要纠结颜色名称是否精确。</p>
+                <p><b>证据：</b>学生能说出完整或半完整句。</p>
+                <p><b>卡住时：</b>让同桌先说，再请一名学生说。</p>
+                <p><b>进入下一步：</b>有学生能说出变化方向后进入比较。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>1.4 判断是不是慢慢变</h4>
+              <p><b>教师：</b>教师追问变化是否连续。</p>
+              <p><b>话术：</b>它是一下子跳过去，还是中间一层一层慢慢变？</p>
+              <p><b>学生：</b>判断“慢慢变”还是“跳过去”。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏放大一处连续色带。</p>
+                <p><b>支架：</b>用“一层一层”替代“连续”术语。</p>
+                <p><b>小教：</b>提醒教师把“颜色多”和“慢慢变”分开。</p>
+                <p><b>证据：</b>学生能说出慢慢变的理由。</p>
+                <p><b>卡住时：</b>对比一张颜色跳得很快的例子。</p>
+                <p><b>进入下一步：</b>学生能说慢慢变后进入概念桥接。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>1.5 轻轻引出渐变</h4>
+              <p><b>教师：</b>教师用学生语言引出“渐变”。</p>
+              <p><b>话术：</b>这种颜色慢慢变过去，美术里可以叫渐变。今天我们就研究它。</p>
+              <p><b>学生：</b>读课题，回到“颜色慢慢变过去”。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏出现课题：色彩的渐变。</p>
+                <p><b>支架：</b>课题旁写：渐变=慢慢变。</p>
+                <p><b>小教：</b>提醒教师术语只出现一次，不展开理论。</p>
+                <p><b>证据：</b>学生能把渐变和慢慢变联系起来。</p>
+                <p><b>卡住时：</b>若学生记不住术语，保留慢慢变即可。</p>
+                <p><b>进入下一步：</b>学生理解课堂主题后进入亮暗/鲜灰辨析。</p>
+              </details>
+            </section>
+            </div>
+                <div class="more-support">
+                  <h3>语言三层</h3>
+                  <p><b>学生话：</b>颜色从哪里开始？ / 慢慢变到哪里？ / 用手指滑一滑。</p>
+                  <p><b>教师补专业词：</b>这种颜色一层一层慢慢变化，在美术里可以叫渐变。</p>
+                  <p><b>教案表达：</b>引导学生观察生活和教材图中的色彩连续变化，初步建立渐变感知。</p>
+                  <h3>更多小教建议</h3>
+                  <ul><li>先让学生指出起点和终点，不急着讲术语。</li><li>它是一下子跳过去，还是一层一层变过去？</li><li>学生可能把颜色多当成渐变。</li><li>记录能用“从___到___”表达变化方向的学生。</li></ul>
+                </div>
+              </details>
+            </section>
+            
+            <section class="episode-block" id="episode_02_distinguish_brightness_saturation">
+              <p class="episode-kicker">概念辨析型 · 约7分钟</p>
+              <h2>2. 分清亮暗与鲜灰</h2>
+              <p class="goal"><b>本环节目标：</b>引导学生用儿童化语言辨析明度与纯度变化，降低概念负荷。</p>
+              <div class="default-grid">
+                <section>
+                  <h3>老师三步</h3>
+                  <ol><li>出示两组色条，只看亮暗和鲜灰</li><li>先分亮暗，再分鲜灰，并说理由</li><li>补上明度、纯度两个美术词</li></ol>
+                </section>
+                <section>
+                  <h3>学生产出</h3>
+                  <p>能把色条分到亮暗或鲜灰，并说出理由。</p>
+                </section>
+                <section>
+                  <h3>关键话术</h3>
+                  <blockquote>这一页只看两件事：亮不亮，鲜不鲜。</blockquote>
+                </section>
+                <section>
+                  <h3>小教提醒</h3>
+                  <p>先让学生分亮暗/鲜灰，再补明度/纯度。</p>
+                </section>
+              </div>
+              <details class="episode-detail">
+                <summary>展开本环节 micro-step、支架、证据和更多小教建议</summary>
+                <div class="micro-list">
+            <section class="micro-row">
+              <h4>2.1 出示两组色条</h4>
+              <p><b>教师：</b>左边放深浅色条，右边放鲜灰色条。</p>
+              <p><b>话术：</b>这一页只看两件事：亮不亮，鲜不鲜。</p>
+              <p><b>学生：</b>观察左右两组色条。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏左右两组色条，文字为亮暗/鲜灰。</p>
+                <p><b>支架：</b>用左右分区降低判断难度。</p>
+                <p><b>小教：</b>提醒教师不要先讲定义。</p>
+                <p><b>证据：</b>学生能看出两组不同。</p>
+                <p><b>卡住时：</b>只保留一组色条先看亮暗。</p>
+                <p><b>进入下一步：</b>学生能说左右不同后进入分类。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>2.2 先判断亮暗</h4>
+              <p><b>教师：</b>指左侧色条，只问亮暗。</p>
+              <p><b>话术：</b>这一组是越来越亮，还是越来越暗？</p>
+              <p><b>学生：</b>举手或口头判断亮暗。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>左侧色条放大。</p>
+                <p><b>支架：</b>给学生两个选项，不开放太多词。</p>
+                <p><b>小教：</b>小教提示教师让学生先二选一。</p>
+                <p><b>证据：</b>学生能用亮/暗判断。</p>
+                <p><b>卡住时：</b>用黑白深浅卡替代彩色色条。</p>
+                <p><b>进入下一步：</b>大多数学生能判断后看鲜灰。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>2.3 再判断鲜灰</h4>
+              <p><b>教师：</b>指右侧色条，只问鲜灰。</p>
+              <p><b>话术：</b>这一组是越来越鲜艳，还是越来越灰？</p>
+              <p><b>学生：</b>判断鲜灰变化。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>右侧色条放大。</p>
+                <p><b>支架：</b>允许学生说“不鲜了”。</p>
+                <p><b>小教：</b>提示教师接纳儿童话。</p>
+                <p><b>证据：</b>学生能说鲜或灰。</p>
+                <p><b>卡住时：</b>拿鲜艳色和灰色实物对比。</p>
+                <p><b>进入下一步：</b>学生能判断后进入分类活动。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>2.4 把色卡放进篮子</h4>
+              <p><b>教师：</b>请学生把色卡放到亮暗篮子或鲜灰篮子。</p>
+              <p><b>话术：</b>这张卡更像亮暗变化，还是鲜灰变化？放到对应篮子里。</p>
+              <p><b>学生：</b>拖动/贴卡/口头选择类别。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示两个篮子：亮暗、鲜灰。</p>
+                <p><b>支架：</b>同桌先讨论再放。</p>
+                <p><b>小教：</b>小教提醒教师追问选择理由。</p>
+                <p><b>证据：</b>学生能分类并说出理由。</p>
+                <p><b>卡住时：</b>不会分类时先问亮不亮，再问鲜不鲜。</p>
+                <p><b>进入下一步：</b>完成2-3张分类后桥接专业词。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>2.5 补专业词并收束</h4>
+              <p><b>教师：</b>教师将儿童话对应到美术词。</p>
+              <p><b>话术：</b>美术里，亮不亮叫明度；鲜不鲜和纯度有关。我们先会看、会说就很好。</p>
+              <p><b>学生：</b>跟读关键词，不背定义。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>板书：明度=亮暗；纯度=鲜灰。</p>
+                <p><b>支架：</b>只保留等号式板书。</p>
+                <p><b>小教：</b>提醒教师不要扩展色相等额外概念。</p>
+                <p><b>证据：</b>学生能把专业词和儿童话连起来。</p>
+                <p><b>卡住时：</b>如果学生负担大，只保留亮暗/鲜灰。</p>
+                <p><b>进入下一步：</b>学生会看会说后进入三格试色。</p>
+              </details>
+            </section>
+            </div>
+                <div class="more-support">
+                  <h3>语言三层</h3>
+                  <p><b>学生话：</b>越来越亮 / 越来越暗 / 越来越鲜 / 越来越灰</p>
+                  <p><b>教师补专业词：</b>亮不亮叫明度，鲜不鲜和纯度有关。</p>
+                  <p><b>教案表达：</b>引导学生用儿童化语言辨析明度与纯度变化，降低概念负荷。</p>
+                  <h3>更多小教建议</h3>
+                  <ul><li>先让学生分亮暗/鲜灰，再补明度/纯度。</li><li>你看的是亮不亮，还是鲜不鲜？</li><li>学生可能把变浅和变灰混为一谈。</li><li>记录能分类并说明理由的学生。</li></ul>
+                </div>
+              </details>
+            </section>
+            
+            <section class="episode-block" id="episode_03_three_step_color_trial">
+              <p class="episode-kicker">示范试做型 · 约8分钟</p>
+              <h2>3. 三格试色</h2>
+              <p class="goal"><b>本环节目标：</b>通过三格小样训练学生控制渐变幅度，形成可迁移的色彩操作经验。</p>
+              <div class="default-grid">
+                <section>
+                  <h3>老师三步</h3>
+                  <ol><li>示范三格渐变小样</li><li>对比自然渐变和跳色反例</li><li>学生试做，并巡视点拨起点、方向和中间格</li></ol>
+                </section>
+                <section>
+                  <h3>学生产出</h3>
+                  <p>完成一组三格渐变小样，并能说明变化方向。</p>
+                </section>
+                <section>
+                  <h3>关键话术</h3>
+                  <blockquote>第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。</blockquote>
+                </section>
+                <section>
+                  <h3>小教提醒</h3>
+                  <p>先做三格小样，不急着画完整作品。</p>
+                </section>
+              </div>
+              <details class="episode-detail">
+                <summary>展开本环节 micro-step、支架、证据和更多小教建议</summary>
+                <div class="micro-list">
+            <section class="micro-row">
+              <h4>3.1 拿出三格小样纸</h4>
+              <p><b>教师：</b>展示三格空框，说明今天先试一条小路。</p>
+              <p><b>话术：</b>今天我们先不画大作品，先让颜色排好队。</p>
+              <p><b>学生：</b>拿出三格小样纸或在学习单上找到三格。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示三格空框和箭头。</p>
+                <p><b>支架：</b>三格框已印好，减少画框负担。</p>
+                <p><b>小教：</b>提醒教师先控任务范围。</p>
+                <p><b>证据：</b>学生找到三格位置。</p>
+                <p><b>卡住时：</b>教师帮学生指认第1、2、3格。</p>
+                <p><b>进入下一步：</b>全班找到三格后开始第一格。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>3.2 画第一格</h4>
+              <p><b>教师：</b>示范把选好的颜色放入第一格。</p>
+              <p><b>话术：</b>第一格先放一个你选好的颜色，别涂太厚，也别着急。</p>
+              <p><b>学生：</b>在第一格涂色。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>第1格被涂上原色。</p>
+                <p><b>支架：</b>可用彩铅/油画棒降低水分风险。</p>
+                <p><b>小教：</b>提示教师关注材料控制。</p>
+                <p><b>证据：</b>学生完成第一格。</p>
+                <p><b>卡住时：</b>材料慢的学生可直接用色卡。</p>
+                <p><b>进入下一步：</b>大多数学生有第一格后进入第二格。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>3.3 画第二格</h4>
+              <p><b>教师：</b>示范第二格只做轻微变化。</p>
+              <p><b>话术：</b>第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。</p>
+              <p><b>学生：</b>调出或选出第二格颜色。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>第2格显示轻微变化，旁边写只变一点点。</p>
+                <p><b>支架：</b>给学生一句判断：像不像第一格的朋友？</p>
+                <p><b>小教：</b>小教提醒教师看第二格是否跳太远。</p>
+                <p><b>证据：</b>第二格与第一格关系接近。</p>
+                <p><b>卡住时：</b>让学生把第二格调回接近第一格。</p>
+                <p><b>进入下一步：</b>第二格基本完成后进入第三格。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>3.4 画第三格</h4>
+              <p><b>教师：</b>示范第三格继续沿同方向变化。</p>
+              <p><b>话术：</b>第三格继续慢慢变，不要一下子跳过去。</p>
+              <p><b>学生：</b>完成第三格。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>第3格显示继续变化，箭头连起三格。</p>
+                <p><b>支架：</b>保留箭头提醒变化方向。</p>
+                <p><b>小教：</b>提示教师要求方向一致。</p>
+                <p><b>证据：</b>学生三格有方向。</p>
+                <p><b>卡住时：</b>让学生先说方向再改色。</p>
+                <p><b>进入下一步：</b>多数学生完成三格后看反例。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>3.5 对比跳色反例</h4>
+              <p><b>教师：</b>展示一组中间跳太快的三格。</p>
+              <p><b>话术：</b>你看这一组第二格一下子跳太远了，像不像中间少了一步？</p>
+              <p><b>学生：</b>判断哪一组更自然。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示自然三格和跳色三格对比。</p>
+                <p><b>支架：</b>用“少了一步”解释断层。</p>
+                <p><b>小教：</b>小教提示教师别批评学生，只说可以补一步。</p>
+                <p><b>证据：</b>学生能识别跳色。</p>
+                <p><b>卡住时：</b>让学生找哪一格需要靠近前一格。</p>
+                <p><b>进入下一步：</b>学生能说出问题后进入自查。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>3.6 学生试做自己的三格</h4>
+              <p><b>教师：</b>让学生独立完成一条三格路。</p>
+              <p><b>话术：</b>现在你也试一条三格路，只要三格，先别急着画完整作品。</p>
+              <p><b>学生：</b>完成自己的三格小样。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏保留步骤：选颜色、三格、箭头。</p>
+                <p><b>支架：</b>基础做三格，进阶做五格。</p>
+                <p><b>小教：</b>小教提示教师巡视起点、方向、中间格。</p>
+                <p><b>证据：</b>学生有一组三格小样。</p>
+                <p><b>卡住时：</b>卡住学生可用色卡排一排。</p>
+                <p><b>进入下一步：</b>学生完成小样后进入巡视判断。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>3.7 巡视并点拨</h4>
+              <p><b>教师：</b>教师巡视，只看三个点：起点、方向、中间是否跳。</p>
+              <p><b>话术：</b>我先看三件事：从哪里开始，往哪里变，中间有没有跳太快。</p>
+              <p><b>学生：</b>按三点检查自己的小样。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示三点自查。</p>
+                <p><b>支架：</b>用手指沿三格滑动检查。</p>
+                <p><b>小教：</b>小教记录典型问题和可展示样本。</p>
+                <p><b>证据：</b>教师能看到过程证据。</p>
+                <p><b>卡住时：</b>时间不足时只保留三格和一句话。</p>
+                <p><b>进入下一步：</b>有可用小样后进入作品迁移。</p>
+              </details>
+            </section>
+            </div>
+                <div class="more-support">
+                  <h3>语言三层</h3>
+                  <p><b>学生话：</b>让颜色排好队 / 每次只变一点点 / 第二格像第一格的朋友</p>
+                  <p><b>教师补专业词：</b>这种一格一格有规律的变化，可以形成明度或纯度渐变。</p>
+                  <p><b>教案表达：</b>通过三格小样训练学生控制渐变幅度，形成可迁移的色彩操作经验。</p>
+                  <h3>更多小教建议</h3>
+                  <ul><li>先做三格小样，不急着画完整作品。</li><li>第二格是不是一下子跑太远了？</li><li>学生可能把三种不同颜色并排当成渐变。</li><li>保存三格小样作为过程证据。</li></ul>
+                </div>
+              </details>
+            </section>
+            
+            <section class="episode-block" id="episode_04_apply_to_artwork">
+              <p class="episode-kicker">创作实践型 · 约14分钟</p>
+              <h2>4. 放进作品</h2>
+              <p class="goal"><b>本环节目标：</b>引导学生将试色规律迁移到图形或小作品中，形成可见的渐变表达。</p>
+              <div class="default-grid">
+                <section>
+                  <h3>老师三步</h3>
+                  <ol><li>选择适合自己的任务层级</li><li>先标变化方向，再把三格小样放进作品</li><li>安静创作，巡视时只抓起点、方向和过渡</li></ol>
+                </section>
+                <section>
+                  <h3>学生产出</h3>
+                  <p>把渐变放进色条、图形或小作品，别人能看出方向。</p>
+                </section>
+                <section>
+                  <h3>关键话术</h3>
+                  <blockquote>你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。</blockquote>
+                </section>
+                <section>
+                  <h3>小教提醒</h3>
+                  <p>提醒教师分层发布任务，避免所有学生做复杂作品。</p>
+                </section>
+              </div>
+              <details class="episode-detail">
+                <summary>展开本环节 micro-step、支架、证据和更多小教建议</summary>
+                <div class="micro-list">
+            <section class="micro-row">
+              <h4>4.1 选择任务层级</h4>
+              <p><b>教师：</b>发布基础、进阶、挑战三类任务。</p>
+              <p><b>话术：</b>你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。</p>
+              <p><b>学生：</b>选择一个任务层级。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示基础/进阶/挑战三栏。</p>
+                <p><b>支架：</b>允许学生从基础做起。</p>
+                <p><b>小教：</b>小教提醒教师不要让复杂图案抢走目标。</p>
+                <p><b>证据：</b>学生能选定任务。</p>
+                <p><b>卡住时：</b>选择困难时统一做基础色条。</p>
+                <p><b>进入下一步：</b>学生选定任务后标方向。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>4.2 先标变化方向</h4>
+              <p><b>教师：</b>要求学生先画箭头或心里确定方向。</p>
+              <p><b>话术：</b>先别急着涂。你要先想：颜色从哪里开始，往哪里走？</p>
+              <p><b>学生：</b>在纸上轻轻标方向或口头说方向。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示起点、箭头、终点。</p>
+                <p><b>支架：</b>用箭头提示方向。</p>
+                <p><b>小教：</b>小教提示教师先问方向再看颜色。</p>
+                <p><b>证据：</b>学生能说出方向。</p>
+                <p><b>卡住时：</b>让学生用手指在画面上滑一次。</p>
+                <p><b>进入下一步：</b>方向明确后迁移小样。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>4.3 把三格小样放进图形</h4>
+              <p><b>教师：</b>示范把小样规律放到一个形状里。</p>
+              <p><b>话术：</b>刚才的小样不是结束，它是一条颜色小路。现在把这条小路放进你的图形里。</p>
+              <p><b>学生：</b>把三格规律迁移到作品局部。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示小样到图形的迁移箭头。</p>
+                <p><b>支架：</b>先放一小块，不要求整张画满。</p>
+                <p><b>小教：</b>小教提醒教师看是否迁移了规律。</p>
+                <p><b>证据：</b>作品中出现渐变局部。</p>
+                <p><b>卡住时：</b>学生不会迁移时让他照着三格画一条色带。</p>
+                <p><b>进入下一步：</b>能迁移后进入创作。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>4.4 开始创作</h4>
+              <p><b>教师：</b>给学生安静创作时间，教师不频繁打断。</p>
+              <p><b>话术：</b>现在给你一段安静时间。记住：不用画很多，先把一处渐变做清楚。</p>
+              <p><b>学生：</b>完成作品或局部设计。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏保留三点提醒：起点、方向、慢慢变。</p>
+                <p><b>支架：</b>大屏提醒替代教师反复口头提醒。</p>
+                <p><b>小教：</b>小教提示教师减少打断，保留巡视。</p>
+                <p><b>证据：</b>学生进入持续创作。</p>
+                <p><b>卡住时：</b>慢学生只完成局部即可。</p>
+                <p><b>进入下一步：</b>创作进行一段后巡视点拨。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>4.5 巡视抓三个点</h4>
+              <p><b>教师：</b>巡视时只看起点、方向、过渡。</p>
+              <p><b>话术：</b>我来看看你的颜色从哪里开始，往哪里变，中间是不是太突然。</p>
+              <p><b>学生：</b>向教师说明自己的变化方向。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示巡视三点。</p>
+                <p><b>支架：</b>让学生用手指解释作品。</p>
+                <p><b>小教：</b>小教生成个别追问：中间是不是跳太快？</p>
+                <p><b>证据：</b>教师获得过程判断。</p>
+                <p><b>卡住时：</b>如果方向不清，让学生加箭头或补一格。</p>
+                <p><b>进入下一步：</b>大部分作品有方向后同伴快看。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>4.6 同桌快看</h4>
+              <p><b>教师：</b>安排同桌只看一件事：方向清不清。</p>
+              <p><b>话术：</b>同桌只帮看一件事：你能不能看出颜色往哪里变？</p>
+              <p><b>学生：</b>同桌互看并指出方向。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示同桌提示句。</p>
+                <p><b>支架：</b>同伴只提一个点，避免干扰创作。</p>
+                <p><b>小教：</b>小教提醒教师控制互评时间。</p>
+                <p><b>证据：</b>同伴能指出或指出不清。</p>
+                <p><b>卡住时：</b>看不出时让作者补一处过渡。</p>
+                <p><b>进入下一步：</b>同伴反馈后进入收束。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>4.7 收束到可展示样本</h4>
+              <p><b>教师：</b>选2-3个样本，不做大范围展示。</p>
+              <p><b>话术：</b>我们先看几处颜色变化，不比谁画得最多，只看哪里变得清楚。</p>
+              <p><b>学生：</b>看样本，说出变化方向。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏或实物投影展示局部。</p>
+                <p><b>支架：</b>只展示局部，减少比较压力。</p>
+                <p><b>小教：</b>小教记录可作为评价样本的作品。</p>
+                <p><b>证据：</b>学生能从作品中看出渐变。</p>
+                <p><b>卡住时：</b>时间不足时跳过全班展示，直接自查。</p>
+                <p><b>进入下一步：</b>选好样本后进入自查微修订。</p>
+              </details>
+            </section>
+            </div>
+                <div class="more-support">
+                  <h3>语言三层</h3>
+                  <p><b>学生话：</b>把颜色小路放进作品 / 别人能看出方向 / 不用画很复杂</p>
+                  <p><b>教师补专业词：</b>把渐变规律迁移到画面局部，形成有方向、有层次的色彩表现。</p>
+                  <p><b>教案表达：</b>引导学生将试色规律迁移到图形或小作品中，形成可见的渐变表达。</p>
+                  <h3>更多小教建议</h3>
+                  <ul><li>提醒教师分层发布任务，避免所有学生做复杂作品。</li><li>别人一眼能看出你的颜色往哪里变吗？</li><li>学生可能追求复杂图案，忽略渐变规律。</li><li>记录作品中能看出明确变化方向的学生样本。</li></ul>
+                </div>
+              </details>
+            </section>
+            
+            <section class="episode-block" id="episode_05_self_check_revision">
+              <p class="episode-kicker">展示修订型 · 约6分钟</p>
+              <h2>5. 自查与微修订</h2>
+              <p class="goal"><b>本环节目标：</b>组织学生依据评价要点进行自查、表达和局部修订，强化学习证据。</p>
+              <div class="default-grid">
+                <section>
+                  <h3>老师三步</h3>
+                  <ol><li>用三项自查先看自己的作品</li><li>同伴只提一处建议</li><li>完成一处微修，并说清自己改了哪里</li></ol>
+                </section>
+                <section>
+                  <h3>学生产出</h3>
+                  <p>完成一处微修订，并说清自己改了哪里。</p>
+                </section>
+                <section>
+                  <h3>关键话术</h3>
+                  <blockquote>最后我们不急着评谁最好，先看自己有没有做到三件事。</blockquote>
+                </section>
+                <section>
+                  <h3>小教提醒</h3>
+                  <p>评价只抓一处微修，不做大评比。</p>
+                </section>
+              </div>
+              <details class="episode-detail">
+                <summary>展开本环节 micro-step、支架、证据和更多小教建议</summary>
+                <div class="micro-list">
+            <section class="micro-row">
+              <h4>5.1 打开三项自查</h4>
+              <p><b>教师：</b>出示自查三问。</p>
+              <p><b>话术：</b>最后我们不急着评谁最好，先看自己有没有做到三件事。</p>
+              <p><b>学生：</b>看自己的小样或作品。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示：方向、慢慢变、能说清。</p>
+                <p><b>支架：</b>自查项不超过三条。</p>
+                <p><b>小教：</b>小教提醒教师压缩评价维度。</p>
+                <p><b>证据：</b>学生能进入自查。</p>
+                <p><b>卡住时：</b>教师带全班一起读三问。</p>
+                <p><b>进入下一步：</b>学生知道查什么后进入同伴建议。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>5.2 同伴只提一处建议</h4>
+              <p><b>教师：</b>安排同伴用固定句式给建议。</p>
+              <p><b>话术：</b>同桌只说一处：我看到___，我建议___。</p>
+              <p><b>学生：</b>给同伴一条建议。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示同伴句式。</p>
+                <p><b>支架：</b>句式帮助学生避免泛泛说好看。</p>
+                <p><b>小教：</b>小教提示教师控制为一条建议。</p>
+                <p><b>证据：</b>学生能获得一条可改建议。</p>
+                <p><b>卡住时：</b>如果不会说，只指出看不清的位置。</p>
+                <p><b>进入下一步：</b>每人收到一条建议后微修。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>5.3 选择一处微修</h4>
+              <p><b>教师：</b>要求学生只改一处。</p>
+              <p><b>话术：</b>你只需要改一处，不用重画。让颜色变化更清楚就可以。</p>
+              <p><b>学生：</b>选择一处修改。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示只改一处。</p>
+                <p><b>支架：</b>用圈画标出要改的位置。</p>
+                <p><b>小教：</b>小教提醒教师防止学生重画。</p>
+                <p><b>证据：</b>学生明确修改点。</p>
+                <p><b>卡住时：</b>时间不足只口头说明要改哪里。</p>
+                <p><b>进入下一步：</b>学生确定修改点后动手。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>5.4 完成小修改</h4>
+              <p><b>教师：</b>给1-2分钟完成局部修改。</p>
+              <p><b>话术：</b>改的时候想一想：它现在是不是更像慢慢变了？</p>
+              <p><b>学生：</b>完成局部修订。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏保留自查三问。</p>
+                <p><b>支架：</b>允许很小的修改。</p>
+                <p><b>小教：</b>小教记录典型微修案例。</p>
+                <p><b>证据：</b>有可见修改或口头修改方案。</p>
+                <p><b>卡住时：</b>材料不便时用铅笔箭头或文字说明替代。</p>
+                <p><b>进入下一步：</b>完成后说一说。</p>
+              </details>
+            </section>
+            
+            <section class="micro-row">
+              <h4>5.5 说清修改并收课</h4>
+              <p><b>教师：</b>请学生说一处修改，教师连接下一课。</p>
+              <p><b>话术：</b>你可以这样说：我改了___，因为原来___，现在___。</p>
+              <p><b>学生：</b>说出修改原因。</p>
+              <details>
+                <summary>大屏 / 支架 / 小教 / 证据</summary>
+                <p><b>大屏：</b>大屏显示表达句式和下节课提示。</p>
+                <p><b>支架：</b>用句式保护表达困难学生。</p>
+                <p><b>小教：</b>小教记录能说清修改的学生。</p>
+                <p><b>证据：</b>学生能说明修改与渐变有关。</p>
+                <p><b>卡住时：</b>不会说完整句时只说改哪里。</p>
+                <p><b>进入下一步：</b>完成表达后收束到下节课“渐变的节奏”。</p>
+              </details>
+            </section>
+            </div>
+                <div class="more-support">
+                  <h3>语言三层</h3>
+                  <p><b>学生话：</b>看一看 / 说一说 / 只改一处</p>
+                  <p><b>教师补专业词：</b>通过自评、同伴建议和微修订形成作品改进证据。</p>
+                  <p><b>教案表达：</b>组织学生依据评价要点进行自查、表达和局部修订，强化学习证据。</p>
+                  <h3>更多小教建议</h3>
+                  <ul><li>评价只抓一处微修，不做大评比。</li><li>改完以后，颜色变化更清楚了吗？</li><li>学生可能以为评价就是重画一遍。</li><li>记录修改前后或学习单自查勾选。</li></ul>
+                </div>
+              </details>
+            </section>
+            
+  </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "stage": "1013R_R97A_R91A_SHELL_COPY_BINDING_PREVIEW_FROM_R93_P6",
+  "quality_sentinel_version": "v1_preview",
+  "result": "BASIC_USABLE",
+  "blocking": false,
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "checks": {
+    "r91a_shell_structure_detected": "PASS",
+    "copy_first_binding": "PASS",
+    "p6_render_layer_binding": "PASS",
+    "bottom_xiaojiao_entry_preserved": "PASS",
+    "unit_context_lightweight": "PASS",
+    "scope_control": "PASS"
+  }
+}
