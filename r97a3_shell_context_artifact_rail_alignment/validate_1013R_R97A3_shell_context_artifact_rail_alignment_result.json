@@ -1,0 +1,40 @@
+{
+  "stage": "1013R_R97A3_SHELL_CONTEXT_AND_ARTIFACT_RAIL_ALIGNMENT",
+  "status": "PASS",
+  "blocking": [],
+  "checks": {
+    "html_created": true,
+    "source_r97a2_html_exists": true,
+    "r97a2_p6_slot_preserved": true,
+    "r97a3_context_marker_present": true,
+    "right_rail_alignment_script_present": true,
+    "bottom_xiaojiao_context_script_present": true,
+    "teacher_action_preview_only_present": true,
+    "episode_count_is_5": true,
+    "courseware_mapping_count_is_5": true,
+    "worksheet_rubric_mapping_count_is_5": true,
+    "xiaojiao_context_count_is_5": true,
+    "slide_count_is_10": true,
+    "formal_apply_false": true,
+    "r95_not_executed": true,
+    "r21_r36_core_not_modified": true
+  },
+  "output_html": "D:\\Documents\\SmartEdu\\xiaobei-core\\outputs\\PREP_ROOM_RENDER_CANVAS_DEEPEN_V1\\1013R_R97A3_SHELL_CONTEXT_AND_ARTIFACT_RAIL_ALIGNMENT\\r97a3_shell_context_binding_preview.html",
+  "output_sha256": "02c03c9f32a8fbfde07975ee1f6255afd5cac4cfd63dabb4df3d076405c651e7",
+  "boundary": {
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "r21_core_modified": false,
+    "r36_core_modified": false,
+    "real_ui_runtime_connected": false,
+    "pptx_generated": false,
+    "pdf_docx_generated": false,
+    "R95_executed": false
+  },
+  "teacher_review_required": true,
+  "formal_apply": false,
+  "next_allowed": "R97B_TEACHER_SHELL_EXPERIENCE_POLISH after user/GPT review",
+  "R95_executed": false
+}

@@ -1,0 +1,113 @@
+{
+  "stage": "1013R_R97A3_SHELL_CONTEXT_AND_ARTIFACT_RAIL_ALIGNMENT",
+  "mapping_type": "episode_to_bottom_xiaojiao_context",
+  "rows": [
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "episode_index": 1,
+      "episode_title": "看见渐变",
+      "teacher_talk": "先别急着说颜色名字，看看颜色是从哪里慢慢变到哪里的。",
+      "student_action": "能指出颜色变化方向，并用“从___到___”说一句。",
+      "misconception": "学生可能把颜色多当成渐变。",
+      "scaffold": "不会说时先用手指，不要求完整句。；给起点贴一个小圆点，终点贴一个小旗。",
+      "evidence_check": "记录能用“从___到___”表达变化方向的学生。",
+      "next_action_hint": "先让学生指出起点和终点，不急着讲术语。",
+      "current_context_for_bottom_xiaojiao": {
+        "lesson_title": "色彩的渐变",
+        "unit": "第二单元《多彩的世界》",
+        "section_slot": "六、教学过程",
+        "episode_id": "episode_01_notice_gradient",
+        "episode_title": "看见渐变",
+        "preview_only": true
+      },
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "episode_index": 2,
+      "episode_title": "分清亮暗与鲜灰",
+      "teacher_talk": "这一页只看两件事：亮不亮，鲜不鲜。",
+      "student_action": "能把色条分到亮暗或鲜灰，并说出理由。",
+      "misconception": "学生可能把变浅和变灰混为一谈。",
+      "scaffold": "用左右分区降低判断难度。；给学生两个选项，不开放太多词。",
+      "evidence_check": "记录能分类并说明理由的学生。",
+      "next_action_hint": "先让学生分亮暗/鲜灰，再补明度/纯度。",
+      "current_context_for_bottom_xiaojiao": {
+        "lesson_title": "色彩的渐变",
+        "unit": "第二单元《多彩的世界》",
+        "section_slot": "六、教学过程",
+        "episode_id": "episode_02_distinguish_brightness_saturation",
+        "episode_title": "分清亮暗与鲜灰",
+        "preview_only": true
+      },
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_index": 3,
+      "episode_title": "三格试色",
+      "teacher_talk": "第二格不要跑太远，它要像第一格的朋友，只是亮一点或灰一点。",
+      "student_action": "完成一组三格渐变小样，并能说明变化方向。",
+      "misconception": "学生可能把三种不同颜色并排当成渐变。",
+      "scaffold": "三格框已印好，减少画框负担。；可用彩铅/油画棒降低水分风险。",
+      "evidence_check": "保存三格小样作为过程证据。",
+      "next_action_hint": "先做三格小样，不急着画完整作品。",
+      "current_context_for_bottom_xiaojiao": {
+        "lesson_title": "色彩的渐变",
+        "unit": "第二单元《多彩的世界》",
+        "section_slot": "六、教学过程",
+        "episode_id": "episode_03_three_step_color_trial",
+        "episode_title": "三格试色",
+        "preview_only": true
+      },
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_index": 4,
+      "episode_title": "放进作品",
+      "teacher_talk": "你可以选适合自己的任务：色条、图形，或者小作品。今天最重要的是看得出颜色怎么变。",
+      "student_action": "把渐变放进色条、图形或小作品，别人能看出方向。",
+      "misconception": "学生可能追求复杂图案，忽略渐变规律。",
+      "scaffold": "允许学生从基础做起。；用箭头提示方向。",
+      "evidence_check": "记录作品中能看出明确变化方向的学生样本。",
+      "next_action_hint": "提醒教师分层发布任务，避免所有学生做复杂作品。",
+      "current_context_for_bottom_xiaojiao": {
+        "lesson_title": "色彩的渐变",
+        "unit": "第二单元《多彩的世界》",
+        "section_slot": "六、教学过程",
+        "episode_id": "episode_04_apply_to_artwork",
+        "episode_title": "放进作品",
+        "preview_only": true
+      },
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "episode_index": 5,
+      "episode_title": "自查与微修订",
+      "teacher_talk": "最后我们不急着评谁最好，先看自己有没有做到三件事。",
+      "student_action": "完成一处微修订，并说清自己改了哪里。",
+      "misconception": "学生可能以为评价就是重画一遍。",
+      "scaffold": "自查项不超过三条。；句式帮助学生避免泛泛说好看。",
+      "evidence_check": "记录修改前后或学习单自查勾选。",
+      "next_action_hint": "评价只抓一处微修，不做大评比。",
+      "current_context_for_bottom_xiaojiao": {
+        "lesson_title": "色彩的渐变",
+        "unit": "第二单元《多彩的世界》",
+        "section_slot": "六、教学过程",
+        "episode_id": "episode_05_self_check_revision",
+        "episode_title": "自查与微修订",
+        "preview_only": true
+      },
+      "teacher_review_required": true,
+      "formal_apply": false
+    }
+  ],
+  "teacher_review_required": true,
+  "formal_apply": false
+}

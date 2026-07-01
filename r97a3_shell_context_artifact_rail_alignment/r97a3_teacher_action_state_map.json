@@ -1,0 +1,52 @@
+{
+  "stage": "1013R_R97A3_SHELL_CONTEXT_AND_ARTIFACT_RAIL_ALIGNMENT",
+  "state_map_type": "teacher_action_preview_only",
+  "actions": [
+    {
+      "action_id": "continue_polish_teaching_process",
+      "label": "继续打磨教学过程",
+      "description": "回到当前 episode，修改教师话术、学生支架或折叠 micro-step。",
+      "state": "preview_only_noop",
+      "enabled_in_preview": true,
+      "formal_apply_allowed": false,
+      "database_write_allowed": false,
+      "runtime_call_allowed": false,
+      "requires_future_gate": false
+    },
+    {
+      "action_id": "preview_classroom_materials",
+      "label": "预览课堂材料",
+      "description": "查看本 episode 对应的大屏页、学习单任务和评价项。",
+      "state": "preview_only_noop",
+      "enabled_in_preview": true,
+      "formal_apply_allowed": false,
+      "database_write_allowed": false,
+      "runtime_call_allowed": false,
+      "requires_future_gate": false
+    },
+    {
+      "action_id": "prepare_export_preview_files",
+      "label": "准备导出预览文件",
+      "description": "进入 R95 前的预览准备，不生成正式 PPT/PDF/DOCX。",
+      "state": "preview_only_noop",
+      "enabled_in_preview": true,
+      "formal_apply_allowed": false,
+      "database_write_allowed": false,
+      "runtime_call_allowed": false,
+      "requires_future_gate": true
+    },
+    {
+      "action_id": "not_adopt_for_now",
+      "label": "暂不采用",
+      "description": "保留当前 preview，不写入正式备课本。",
+      "state": "preview_only_noop",
+      "enabled_in_preview": true,
+      "formal_apply_allowed": false,
+      "database_write_allowed": false,
+      "runtime_call_allowed": false,
+      "requires_future_gate": false
+    }
+  ],
+  "teacher_review_required": true,
+  "formal_apply": false
+}

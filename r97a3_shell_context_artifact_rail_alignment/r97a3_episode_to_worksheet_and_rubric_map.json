@@ -1,0 +1,98 @@
+{
+  "stage": "1013R_R97A3_SHELL_CONTEXT_AND_ARTIFACT_RAIL_ALIGNMENT",
+  "mapping_type": "episode_to_worksheet_and_rubric",
+  "rows": [
+    {
+      "episode_id": "episode_01_notice_gradient",
+      "episode_index": 1,
+      "episode_title": "看见渐变",
+      "worksheet_tasks": [
+        "任务1 找一找：颜色从哪里变到哪里"
+      ],
+      "teacher_observation_dimensions": [
+        "看见变化"
+      ],
+      "student_self_check_items": [
+        "看见变化"
+      ],
+      "source": "R94-P3 episode artifact alignment matrix",
+      "preview_only": true,
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_02_distinguish_brightness_saturation",
+      "episode_index": 2,
+      "episode_title": "分清亮暗与鲜灰",
+      "worksheet_tasks": [
+        "教师口头分类，不强塞学生学习单"
+      ],
+      "teacher_observation_dimensions": [
+        "分清变化"
+      ],
+      "student_self_check_items": [
+        "分清变化"
+      ],
+      "source": "R94-P3 episode artifact alignment matrix",
+      "preview_only": true,
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_03_three_step_color_trial",
+      "episode_index": 3,
+      "episode_title": "三格试色",
+      "worksheet_tasks": [
+        "任务2 试一试：三格颜色小路"
+      ],
+      "teacher_observation_dimensions": [
+        "试出变化"
+      ],
+      "student_self_check_items": [
+        "试出变化"
+      ],
+      "source": "R94-P3 episode artifact alignment matrix",
+      "preview_only": true,
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_04_apply_to_artwork",
+      "episode_index": 4,
+      "episode_title": "放进作品",
+      "worksheet_tasks": [
+        "任务3 用一用：把颜色小路放进作品"
+      ],
+      "teacher_observation_dimensions": [
+        "用到作品"
+      ],
+      "student_self_check_items": [
+        "用到作品"
+      ],
+      "source": "R94-P3 episode artifact alignment matrix",
+      "preview_only": true,
+      "teacher_review_required": true,
+      "formal_apply": false
+    },
+    {
+      "episode_id": "episode_05_self_check_revision",
+      "episode_index": 5,
+      "episode_title": "自查与微修订",
+      "worksheet_tasks": [
+        "任务4 查一查 / 改一改"
+      ],
+      "teacher_observation_dimensions": [
+        "完成微修"
+      ],
+      "student_self_check_items": [
+        "完成微修"
+      ],
+      "source": "R94-P3 episode artifact alignment matrix",
+      "preview_only": true,
+      "teacher_review_required": true,
+      "formal_apply": false
+    }
+  ],
+  "teacher_review_required": true,
+  "formal_apply": false
+}

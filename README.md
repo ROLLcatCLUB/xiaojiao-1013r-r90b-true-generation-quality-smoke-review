@@ -281,3 +281,12 @@ R94-P1 teacher-review polish has been added under r94_p1_derived_artifacts_teach
 - Preserved: original prep-room shell, left notebook tree, right courseware rail, bottom Xiaojiao composer, and surrounding lesson sections such as `本课依据`.
 - Boundary: no formal apply, no database/Feishu/memory write, no real UI runtime connection, no main `xiaobei-core` push.
 - Reviewer entry: `r97a2_prep_notebook_teaching_process_slot_binding_repair/GPT_REVIEW_PROMPT_1013R_R97A2.md`
+
+## 1013R_R97A3_SHELL_CONTEXT_AND_ARTIFACT_RAIL_ALIGNMENT
+
+- Status: `static context alignment preview`
+- Directory: `r97a3_shell_context_artifact_rail_alignment/`
+- Scope: aligns the R97A2 `六、教学过程` slot with right rail artifacts, worksheet/rubric entries, bottom Xiaojiao context, and preview-only teacher actions.
+- Visible marker: `P6 课堂联动` in the right courseware rail.
+- Boundary: no R95, no formal apply, no database/Feishu/memory write, no real UI runtime connection, no main `xiaobei-core` push.
+- Reviewer entry: `r97a3_shell_context_artifact_rail_alignment/GPT_REVIEW_PROMPT_1013R_R97A3.md`
