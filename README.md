@@ -272,3 +272,12 @@ R94-P1 teacher-review polish has been added under r94_p1_derived_artifacts_teach
 - formal_apply: false
 - Not generated: formal PPTX, print final, database/Feishu/memory write, UI binding, R95
 - Boundary: no provider/model call, no new fields, no profile/R21/R36 changes
+
+## 1013R_R97A2_PREP_NOTEBOOK_TEACHING_PROCESS_SLOT_BINDING_REPAIR
+
+- Status: `原壳槽位修复预览`
+- Directory: `r97a2_prep_notebook_teaching_process_slot_binding_repair/`
+- Scope: R93-P6 teacher navigation is bound only into the original R91A prep-notebook `六、教学过程` slot.
+- Preserved: original prep-room shell, left notebook tree, right courseware rail, bottom Xiaojiao composer, and surrounding lesson sections such as `本课依据`.
+- Boundary: no formal apply, no database/Feishu/memory write, no real UI runtime connection, no main `xiaobei-core` push.
+- Reviewer entry: `r97a2_prep_notebook_teaching_process_slot_binding_repair/GPT_REVIEW_PROMPT_1013R_R97A2.md`

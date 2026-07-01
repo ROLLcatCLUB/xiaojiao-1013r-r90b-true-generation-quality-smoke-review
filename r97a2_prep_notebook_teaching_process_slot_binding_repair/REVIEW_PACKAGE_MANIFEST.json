@@ -1,0 +1,101 @@
+{
+  "stage": "1013R_R97A2_PREP_NOTEBOOK_TEACHING_PROCESS_SLOT_BINDING_REPAIR",
+  "created_at_utc": "2026-07-01T00:38:34.833928+00:00",
+  "github_repo": "ROLLcatCLUB/xiaojiao-1013r-r90b-true-generation-quality-smoke-review",
+  "remote_dir": "r97a2_prep_notebook_teaching_process_slot_binding_repair",
+  "zip_file": "r97a2_prep_notebook_teaching_process_slot_binding_repair/1013R_R97A2_PREP_NOTEBOOK_TEACHING_PROCESS_SLOT_BINDING_REPAIR_REVIEW_PACKAGE.zip",
+  "purpose": "GPT review package for verifying that R93-P6 teacher navigation is bound only into the original R91A prep-notebook '六、教学过程' slot, preserving the surrounding prep-room shell and other lesson sections.",
+  "boundary": {
+    "main_xiaobei_core_repo_pushed": false,
+    "source_R91A_R87_modified": false,
+    "original_R21_R36_core_modified": false,
+    "copied_shell_r21_package_process_steps_patched": true,
+    "copied_shell_r21_normalize_adapter_patched": true,
+    "formal_apply": false,
+    "database_written": false,
+    "feishu_written": false,
+    "memory_written": false,
+    "real_ui_runtime_connected": false
+  },
+  "review_focus": [
+    "Does the copied R91A shell preserve topbar, left notebook tree, right courseware rail, and bottom Xiaojiao composer?",
+    "Is R93-P6 inserted only into '六、教学过程' rather than replacing the full shell/renderLayer?",
+    "Are '一、本课依据', '二、学情分析', '三、教学目标', '四、教学重难点', '五、教学准备', '七、学习单与评价', and '课堂后记' preserved?",
+    "Is the previous R97A shell-copy approach correctly demoted?",
+    "Is the R21 copied-shell adapter patch justified by the final overwrite layer?"
+  ],
+  "files_in_review_package_except_zip": [
+    {
+      "path": "build_1013r_r97a2_prep_notebook_teaching_process_slot_binding_repair.py",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/build_1013r_r97a2_prep_notebook_teaching_process_slot_binding_repair.py",
+      "size_bytes": 36961,
+      "sha256": "1b7c88576ce055bddf9894577a5f196ec4159d882851e4a16a5463ec3118fa15"
+    },
+    {
+      "path": "GPT_REVIEW_PROMPT_1013R_R97A2.md",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/GPT_REVIEW_PROMPT_1013R_R97A2.md",
+      "size_bytes": 1454,
+      "sha256": "994ee752f3aa8b51552630f9b98c0a9bece58c9b684ad16e2994e330e4db647c"
+    },
+    {
+      "path": "R91A_prep_notebook_teaching_process_slot_binding_from_R93_P6.html",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/R91A_prep_notebook_teaching_process_slot_binding_from_R93_P6.html",
+      "size_bytes": 1305787,
+      "sha256": "627887bc63c7cf78de42a8918b91cc6258383a8309cc510db31843b1f0f769bc"
+    },
+    {
+      "path": "R91A_slot_binding_dom_dump.html",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/R91A_slot_binding_dom_dump.html",
+      "size_bytes": 1419836,
+      "sha256": "f046bf202d8fb522e8782cdba57e929b5e158d492c0ee6f31b8851735a70b882"
+    },
+    {
+      "path": "R91A_slot_binding_from_R93_P6_screenshot.png",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/R91A_slot_binding_from_R93_P6_screenshot.png",
+      "size_bytes": 1280050,
+      "sha256": "c3d35fc7f01e0e9f9fe4f7b96b4cf012cc157140250ce5c90862d318f2b89dbc"
+    },
+    {
+      "path": "R91A_slot_binding_teaching_process_section_screenshot.png",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/R91A_slot_binding_teaching_process_section_screenshot.png",
+      "size_bytes": 1191787,
+      "sha256": "e7c5db4fe937ef76f588c556e2067d19ce5c729244f2917bdb94591438cb9088"
+    },
+    {
+      "path": "r97a2_original_shell_slot_audit.md",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/r97a2_original_shell_slot_audit.md",
+      "size_bytes": 1324,
+      "sha256": "0363bac09c2495111736ae2851e9545c1257d6e77a310fe4699f27efce72267c"
+    },
+    {
+      "path": "r97a2_previous_r97a_demote_decision.md",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/r97a2_previous_r97a_demote_decision.md",
+      "size_bytes": 536,
+      "sha256": "1fec53676dcae89885c5caa0fa9f55fdad341522dd4392361323b16dd0281a28"
+    },
+    {
+      "path": "r97a2_slot_binding_viewmodel.json",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/r97a2_slot_binding_viewmodel.json",
+      "size_bytes": 81226,
+      "sha256": "a3024ecb1f31a58159506fa79f6a69b315519852f6e23cbe610872739b49fb38"
+    },
+    {
+      "path": "r97a2_visual_slot_smoke.md",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/r97a2_visual_slot_smoke.md",
+      "size_bytes": 1331,
+      "sha256": "8074aac20a29e62d514e383b34524142bd729e868f4444578971a35e018bbdd0"
+    },
+    {
+      "path": "README.md",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/README.md",
+      "size_bytes": 1046,
+      "sha256": "cd54791e5f5530cdae6936af0777698b2a46455f9d2a021ad0de3b5575ae303b"
+    },
+    {
+      "path": "validate_1013R_R97A2_prep_notebook_teaching_process_slot_binding_repair_result.json",
+      "remote_path": "r97a2_prep_notebook_teaching_process_slot_binding_repair/validate_1013R_R97A2_prep_notebook_teaching_process_slot_binding_repair_result.json",
+      "size_bytes": 2187,
+      "sha256": "9615ab110a15a76fffb495fc95e12c676041446fd4813b2532b4b92910a6c002"
+    }
+  ]
+}
